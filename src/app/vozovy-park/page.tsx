@@ -34,7 +34,7 @@ export default function VozovyPark() {
               <th className="px-4 py-2 border-b border-gray-300 text-gray-700">
                 {t("fleet.headers.vehicleName")}
               </th>
-              <th className="px-4 py-2 border-b border-gray-300 text-gray-700">
+              <th className="px-4 py-2 border-b border-gray-300 text-gray-700 text-center">
                 {t("fleet.headers.seats")}
               </th>
               {featureHeaders.map((header, index) => (
@@ -59,7 +59,7 @@ export default function VozovyPark() {
                 </td>
 
                 {/* Number of Seats */}
-                <td className="px-4 py-2 border-b border-gray-300">
+                <td className="px-4 py-2 border-b border-gray-300 text-center">
                   {vehicle.seats}
                 </td>
 

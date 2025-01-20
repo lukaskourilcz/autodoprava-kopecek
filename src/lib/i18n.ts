@@ -76,7 +76,8 @@ i18n.use(initReactI18next).init({
         },
         fleet: {
           title: "Vozový park",
-          description: "Moderní a spolehlivá vozidla pro různé potřeby.",
+          description:
+            "Náš vozový park tvoří pouze moderní a spolehlivá vozidla vybavená klimatizací a bezpečnostními pásy, připravená spolehlivě splnit vaše požadavky na přepravu.",
           vehicles: [
             "Autobusy pro 50+ osob",
             "Dodávky do 3,5 tuny",
@@ -88,10 +89,7 @@ i18n.use(initReactI18next).init({
           },
           featureHeaders: [
             "Zájezd",
-            "Klima",
-            "Pásy",
-            "Sedadla",
-            "TV",
+            "Televize",
             "Mikrofon",
             "Lednice",
             "Toaleta",
@@ -100,42 +98,42 @@ i18n.use(initReactI18next).init({
             {
               name: "Mercedes-Benz Travego",
               seats: "61+1",
-              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+              features: ["A", "A", "A", "A", "A"],
             },
             {
               name: "Mercedes-Benz Tourismo",
               seats: "49+2",
-              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+              features: ["A", "A", "A", "A", "A"],
             },
             {
               name: "Setra Multiclass",
               seats: "67",
-              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+              features: ["N", "A", "N", "N", "N"],
             },
             {
               name: "MAN Lion's Regio",
               seats: "57",
-              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+              features: ["N", "A", "N", "N", "N"],
             },
             {
               name: "Karosa Axer",
               seats: "59",
-              features: ["N", "A", "A", "N", "N", "N", "N", "N"],
+              features: ["N", "N", "N", "N", "N"],
             },
             {
               name: "Mercedes-Benz Tourino",
               seats: "35+1",
-              features: ["N", "A", "A", "A", "A", "A", "A", "N"],
+              features: ["N",  "A", "A", "A", "N"],
             },
             {
               name: "Ford F-Max + návěs 13,6 m",
               seats: "Návěs - walking floor",
-              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+              features: ["N", "N", "N", "N", "N"],
             },
             {
               name: "DAF XF 510 FT",
               seats: "",
-              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+              features: ["N", "N", "N", "N", "N"],
             },
           ],
         },
@@ -229,7 +227,8 @@ i18n.use(initReactI18next).init({
         },
         fleet: {
           title: "Fleet",
-          description: "Modern and reliable vehicles for various needs.",
+          description:
+            "Our fleet consists exclusively of modern and reliable vehicles equipped with air conditioning and seat belts, ready to reliably meet your transportation needs.",
           vehicles: [
             "Buses for 50+ passengers",
             "Vans up to 3.5 tons",
@@ -237,13 +236,10 @@ i18n.use(initReactI18next).init({
           ],
           headers: {
             vehicleName: "Vehicle Name",
-            seats: "Number of Seats",
+            seats: "Seats",
           },
           featureHeaders: [
             "Excursion",
-            "Air Conditioning",
-            "Seat Belts",
-            "Seats",
             "TV",
             "Microphone",
             "Refrigerator",
@@ -253,42 +249,42 @@ i18n.use(initReactI18next).init({
             {
               name: "Mercedes-Benz Travego",
               seats: "61+1",
-              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+              features: ["A", "A", "A", "A", "A"],
             },
             {
               name: "Mercedes-Benz Tourismo",
               seats: "49+2",
-              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+              features: ["A", "A", "A", "A", "A"],
             },
             {
               name: "Setra Multiclass",
               seats: "67",
-              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+              features: ["N", "A", "N", "N", "N"],
             },
             {
               name: "MAN Lion's Regio",
               seats: "57",
-              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+              features: ["N", "A", "N", "N", "N"],
             },
             {
               name: "Karosa Axer",
               seats: "59",
-              features: ["N", "A", "A", "N", "N", "N", "N", "N"],
+              features: ["N", "N", "N", "N", "N"],
             },
             {
               name: "Mercedes-Benz Tourino",
               seats: "35+1",
-              features: ["N", "A", "A", "A", "A", "A", "A", "N"],
+              features: ["N", "A", "A", "A", "N"],
             },
             {
               name: "Ford F-Max + trailer 13.6 m",
-              seats: "Trailer - walking floor",
-              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+              seats: "",
+              features: ["N", "N", "N", "N", "N"],
             },
             {
               name: "DAF XF 510 FT",
               seats: "",
-              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+              features: ["N", "N", "N", "N", "N"],
             },
           ],
         },
@@ -384,7 +380,7 @@ i18n.use(initReactI18next).init({
         fleet: {
           title: "Fuhrpark",
           description:
-            "Moderne und zuverlässige Fahrzeuge für unterschiedliche Bedürfnisse.",
+            "Unsere Flotte besteht ausschließlich aus modernen und zuverlässigen Fahrzeugen, die mit Klimaanlage und Sicherheitsgurten ausgestattet sind und zuverlässig Ihre Transportanforderungen erfüllen.",
           vehicles: [
             "Busse für 50+ Passagiere",
             "Transporter bis 3,5 Tonnen",
@@ -392,13 +388,10 @@ i18n.use(initReactI18next).init({
           ],
           headers: {
             vehicleName: "Fahrzeugname",
-            seats: "Anzahl der Sitzplätze",
+            seats: "Sitzplätze",
           },
           featureHeaders: [
             "Ausflug",
-            "Klimaanlage",
-            "Sicherheitsgurte",
-            "Sitze",
             "Fernseher",
             "Mikrofon",
             "Kühlschrank",
@@ -408,42 +401,42 @@ i18n.use(initReactI18next).init({
             {
               name: "Mercedes-Benz Travego",
               seats: "61+1",
-              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+              features: ["A", "A", "A", "A", "A"],
             },
             {
               name: "Mercedes-Benz Tourismo",
               seats: "49+2",
-              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+              features: ["A", "A", "A", "A", "A"],
             },
             {
               name: "Setra Multiclass",
               seats: "67",
-              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+              features: ["N", "A", "N", "N", "N"],
             },
             {
               name: "MAN Lion's Regio",
               seats: "57",
-              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+              features: ["N", "A", "N", "N", "N"],
             },
             {
               name: "Karosa Axer",
               seats: "59",
-              features: ["N", "A", "A", "N", "N", "N", "N", "N"],
+              features: ["N", "N", "N", "N", "N"],
             },
             {
               name: "Mercedes-Benz Tourino",
               seats: "35+1",
-              features: ["N", "A", "A", "A", "A", "A", "A", "N"],
+              features: ["N", "A", "A", "A", "N"],
             },
             {
               name: "Ford F-Max + Anhänger 13,6 m",
-              seats: "Anhänger - Walking Floor",
-              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+              seats: "",
+              features: ["N", "N", "N", "N", "N"],
             },
             {
               name: "DAF XF 510 FT",
               seats: "",
-              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+              features: ["N", "N", "N", "N", "N"],
             },
           ],
         },
