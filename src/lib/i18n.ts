@@ -8,7 +8,8 @@ i18n.use(initReactI18next).init({
         home: {
           title: "Domů",
           subtitle: "Autodoprava Kopeček",
-          description: "Vítejte na stránkách Autodopravy Kopeček.",
+          description:
+            "Naše společnost se specializuje na autobusovou a nákladní dopravu. Díky širokému vozovému parku a zkušenému týmu jsme připraveni zajistit veškeré vaše dopravní potřeby s důrazem na spolehlivost, pohodlí a bezpečnost. Nabízíme pestrou škálu služeb pro přepravu osob i zboží, a to nejen po České republice, ale i do zahraničí. Jsme tu pro vás, abychom vám poskytli profesionální a přátelský přístup ke každé zakázce.",
           heroText: "Spolehlivá doprava pro vaše potřeby.",
         },
         about: {
@@ -152,7 +153,8 @@ i18n.use(initReactI18next).init({
         home: {
           title: "Home",
           subtitle: "Kopeček Transport Services",
-          description: "Welcome to the Kopeček Transport Services website.",
+          description:
+            "Our company specializes in bus and freight transportation. With our extensive fleet and experienced team, we are ready to meet all your transportation needs, focusing on reliability, comfort, and safety. We offer a wide range of services for the transport of passengers and goods, not only within the Czech Republic but also abroad. We are here to provide you with a professional and friendly approach to every order.",
           heroText: "Reliable transport for your needs.",
         },
         about: {
@@ -296,7 +298,8 @@ i18n.use(initReactI18next).init({
         home: {
           title: "Startseite",
           subtitle: "Kopeček Transport Dienstleistungen",
-          description: "Willkommen auf der Website von Kopeček Transport.",
+          description:
+            "Unser Unternehmen ist auf Bus- und Gütertransport spezialisiert. Mit unserer umfangreichen Fahrzeugflotte und unserem erfahrenen Team sind wir bereit, all Ihre Transportanforderungen zu erfüllen, wobei wir besonderen Wert auf Zuverlässigkeit, Komfort und Sicherheit legen. Wir bieten eine breite Palette an Dienstleistungen für den Transport von Personen und Waren, sowohl innerhalb der Tschechischen Republik als auch ins Ausland. Wir sind hier, um Ihnen einen professionellen und freundlichen Service für jede Bestellung zu bieten.",
           heroText: "Zuverlässiger Transport für Ihre Bedürfnisse.",
         },
         about: {

@@ -27,7 +27,7 @@ export default function Header() {
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
           {t("home.subtitle")}
         </h1>
-        <p className="text-base sm:text-lg lg:text-xl">
+        <p className="text-sm sm:text-base lg:text-lg">
           {t("home.description")}
         </p>
       </div>

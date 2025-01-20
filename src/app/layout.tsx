@@ -6,7 +6,11 @@ export const metadata = {
   description: "Your trusted transportation partner",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="cs">
       <body>

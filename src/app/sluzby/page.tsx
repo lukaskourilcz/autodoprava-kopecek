@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   BriefcaseConveyorBelt,
   Users,
   HeartHandshake,
   Heater,
-} from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Sluzby() {
   const { t } = useTranslation();
@@ -15,23 +15,23 @@ export default function Sluzby() {
   const services = [
     {
       icon: <HeartHandshake className="w-20 h-20 mb-4" />,
-      title: t('services.items.safety.title'),
-      description: t('services.items.safety.description'),
+      title: t("services.items.safety.title"),
+      description: t("services.items.safety.description"),
     },
     {
       icon: <Heater className="w-20 h-20 mb-4" />,
-      title: t('services.items.comfort.title'),
-      description: t('services.items.comfort.description'),
+      title: t("services.items.comfort.title"),
+      description: t("services.items.comfort.description"),
     },
     {
       icon: <Users className="w-20 h-20 mb-4" />,
-      title: t('services.items.capacity.title'),
-      description: t('services.items.capacity.description'),
+      title: t("services.items.capacity.title"),
+      description: t("services.items.capacity.description"),
     },
     {
       icon: <BriefcaseConveyorBelt className="w-20 h-20 mb-4" />,
-      title: t('services.items.luggage.title'),
-      description: t('services.items.luggage.description'),
+      title: t("services.items.luggage.title"),
+      description: t("services.items.luggage.description"),
     },
   ];
 
@@ -42,7 +42,7 @@ export default function Sluzby() {
     >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-12">
-          {t('services.title')}
+          {t("services.title")}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
