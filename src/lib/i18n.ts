@@ -50,6 +50,28 @@ i18n.use(initReactI18next).init({
             "Nákladní doprava do zahraničí",
             "Expresní kurýrní služby",
           ],
+          items: {
+            safety: {
+              title: "Bezpečnost",
+              description:
+                "Bezpečnost je naší prioritou. Všechny vozy jsou vybaveny bezpečnostními pásy, pro všechny přepravované osoby. Vozy prochází pravidelnou údržbou a servisem.",
+            },
+            comfort: {
+              title: "Komfort",
+              description:
+                "Vozy jsou plně klimatizovány a vybaveny pohodlnými sklápěcími sedadli s opěrkami na ruce a záclonami pro maximální pohodlí.",
+            },
+            capacity: {
+              title: "Kapacita",
+              description:
+                "Naše vozová flotila nabízí širokou škálu vozidel s variabilní kapacitou, aby co nejvstřícněji vyhověla vašim potřebám.",
+            },
+            luggage: {
+              title: "Nadrozměrná zavazadla",
+              description:
+                "Nabízíme možnost připojení přívěsu nebo skiboxu, pro přepravu objemných zavazadel jako jsou třeba kola, lyže, kánoe.",
+            },
+          },
         },
         fleet: {
           title: "Vozový park",
@@ -172,6 +194,28 @@ i18n.use(initReactI18next).init({
             "Freight transport across borders",
             "Express courier services",
           ],
+          items: {
+            safety: {
+              title: "Safety",
+              description:
+                "Safety is our priority. All vehicles are equipped with seat belts for all passengers. Vehicles undergo regular maintenance and service.",
+            },
+            comfort: {
+              title: "Comfort",
+              description:
+                "Vehicles are fully air-conditioned and equipped with comfortable reclining seats with armrests and curtains for maximum comfort.",
+            },
+            capacity: {
+              title: "Capacity",
+              description:
+                "Our fleet offers a wide range of vehicles with variable capacity to best meet your needs.",
+            },
+            luggage: {
+              title: "Oversized Luggage",
+              description:
+                "We offer the option of attaching a trailer or ski box for transporting bulky luggage such as bicycles, skis, or canoes.",
+            },
+          },
         },
         fleet: {
           title: "Fleet",
@@ -295,6 +339,28 @@ i18n.use(initReactI18next).init({
             "Frachttransporte ins Ausland",
             "Express-Kurierdienste",
           ],
+          items: {
+            safety: {
+              title: "Sicherheit",
+              description:
+                "Sicherheit ist unsere Priorität. Alle Fahrzeuge sind mit Sicherheitsgurten für alle Passagiere ausgestattet. Fahrzeuge werden regelmäßig gewartet und überprüft.",
+            },
+            comfort: {
+              title: "Komfort",
+              description:
+                "Fahrzeuge sind voll klimatisiert und mit bequemen, verstellbaren Sitzen mit Armlehnen und Vorhängen für maximalen Komfort ausgestattet.",
+            },
+            capacity: {
+              title: "Kapazität",
+              description:
+                "Unsere Flotte bietet eine breite Auswahl an Fahrzeugen mit variabler Kapazität, um Ihre Bedürfnisse optimal zu erfüllen.",
+            },
+            luggage: {
+              title: "Übergroßes Gepäck",
+              description:
+                "Wir bieten die Möglichkeit, einen Anhänger oder Skibox anzuschließen, um sperriges Gepäck wie Fahrräder, Skier oder Kanus zu transportieren.",
+            },
+          },
         },
         fleet: {
           title: "Fuhrpark",
