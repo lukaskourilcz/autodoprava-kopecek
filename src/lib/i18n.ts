@@ -31,11 +31,13 @@ i18n.use(initReactI18next).init({
       },
     },
   },
-  lng: 'cs',
-  fallbackLng: 'cs',
+  lng: 'cs', // Default language
+  fallbackLng: 'cs', // Fallback language
+  defaultNS: 'common', // Set default namespace to 'common'
   interpolation: {
     escapeValue: false, // React already escapes values
   },
+  debug: true, // Enable debugging to verify namespace usage
 });
 
 export default i18n;

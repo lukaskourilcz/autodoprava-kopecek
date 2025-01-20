@@ -1,22 +1,22 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
-import '../../lib/i18n'
+import '../../lib/i18n'; // Ensure this points to the correct path for your i18n.ts file
 
 export default function Navbar() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const currentLocale = searchParams.get('locale') || 'cs';
+  const router = useRouter();
+  const currentLocale = pathname.split('/')[1] || 'cs'; // Extract locale from the URL
 
+  const { t, i18n } = useTranslation(); // UseTranslation with default namespace 'common'
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const { t, i18n } = useTranslation();
 
-  // Set the language dynamically
+  // Dynamically change language when URL locale changes
   useEffect(() => {
     if (i18n.language !== currentLocale) {
       i18n.changeLanguage(currentLocale).catch((err) =>
@@ -31,10 +31,43 @@ export default function Navbar() {
     { code: 'de', label: 'Deutsch', flag: '/flags/de.png' },
   ];
 
+  const handleLanguageChange = (code: string) => {
+    router.push(`/${code}${pathname.slice(currentLocale.length + 1)}`); // Update the URL with the new locale
+    setDropdownVisible(false);
+  };
+
   return (
     <nav className="sticky top-0 bg-gray-800 text-white p-4 flex justify-between items-center z-50">
-      <h1>{t('navbar.title', 'Default Title')}</h1>
+      {/* Navbar Sections */}
+      <ul className="flex space-x-6">
+        <li>
+          <Link href={`/${currentLocale}`} className="hover:text-gray-400">
+            {t('home')}
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${currentLocale}/about`} className="hover:text-gray-400">
+            {t('about')}
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${currentLocale}/services`} className="hover:text-gray-400">
+            {t('services')}
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${currentLocale}/fleet`} className="hover:text-gray-400">
+            {t('fleet')}
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${currentLocale}/contact`} className="hover:text-gray-400">
+            {t('contact')}
+          </Link>
+        </li>
+      </ul>
 
+      {/* Language Dropdown */}
       <div className="relative">
         <button
           onClick={() => setDropdownVisible(!dropdownVisible)}
@@ -53,10 +86,9 @@ export default function Navbar() {
         {dropdownVisible && (
           <div className="absolute right-0 mt-2 bg-white text-gray-800 rounded-md shadow-lg w-36">
             {languages.map(({ code, label, flag }) => (
-              <Link
+              <button
                 key={code}
-                href={`${pathname}?locale=${code}`}
-                onClick={() => setDropdownVisible(false)}
+                onClick={() => handleLanguageChange(code)}
                 className="flex items-center space-x-2 w-full px-4 py-2 hover:bg-gray-100"
               >
                 <Image
@@ -67,7 +99,7 @@ export default function Navbar() {
                   className="rounded-full"
                 />
                 <span>{label}</span>
-              </Link>
+              </button>
             ))}
           </div>
         )}
