@@ -14,14 +14,13 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const activeLocale = searchParams.get("lang") || "cs"; // Get the current language from query params
+  const activeLocale = searchParams.get("lang") || "cs";
 
-  // Change language only after render
   useEffect(() => {
     if (i18n.language !== activeLocale) {
-      i18n
-        .changeLanguage(activeLocale)
-        .catch((err) => console.error("Failed to change language:", err));
+      i18n.changeLanguage(activeLocale).catch((err) =>
+        console.error("Failed to change language:", err)
+      );
     }
   }, [activeLocale, i18n]);
 
@@ -32,9 +31,12 @@ export default function Navbar() {
   ];
 
   const handleLanguageChange = (code: string) => {
-    router.push(`/?lang=${code}`);
+    const currentHash = window.location.hash; // Includes the hash (#services, #about)
+    const basePath = window.location.pathname; // Base path of the URL (e.g., "/")
+    router.push(`${basePath}?lang=${code}${currentHash}`); // Ensure correct order
     setDropdownVisible(false);
   };
+  
 
   return (
     <nav className="sticky top-0 bg-gray-800 text-white p-4 flex justify-between items-center z-50">
