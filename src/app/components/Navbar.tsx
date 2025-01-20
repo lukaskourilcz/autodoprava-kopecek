@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import "../../lib/i18n";
 
 export default function Navbar() {
@@ -14,6 +14,7 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const activeLocale = searchParams.get("lang") || "cs";
 
   useEffect(() => {
@@ -51,50 +52,62 @@ export default function Navbar() {
             priority
           />
         </div>
-        {/* Navigation Links */}
-        <ul className="flex space-x-6">
-          <li>
-            <Link
-              href={`/?lang=${activeLocale}#header`}
-              className="hover:text-gray-400"
-            >
-              {t("home.title")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/?lang=${activeLocale}#about`}
-              className="hover:text-gray-400"
-            >
-              {t("about.title")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/?lang=${activeLocale}#services`}
-              className="hover:text-gray-400"
-            >
-              {t("services.title")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/?lang=${activeLocale}#fleet`}
-              className="hover:text-gray-400"
-            >
-              {t("fleet.title")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/?lang=${activeLocale}#contact`}
-              className="hover:text-gray-400"
-            >
-              {t("contact.title")}
-            </Link>
-          </li>
-        </ul>
+        {/* Hamburger Icon */}
+        <button
+          className="sm:block lg:hidden text-white focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {/* Navigation Links */}
+      <ul
+        className={`${
+          menuOpen ? "block" : "hidden"
+        } lg:flex space-y-4 lg:space-y-0 lg:space-x-6 bg-gray-800 lg:bg-transparent lg:flex-row lg:static absolute top-full left-0 w-full lg:w-auto p-4 pl-8 lg:p-0`}
+      >
+        <li>
+          <Link
+            href={`/?lang=${activeLocale}#header`}
+            className="hover:text-gray-400 block"
+          >
+            {t("home.title")}
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/?lang=${activeLocale}#about`}
+            className="hover:text-gray-400 block"
+          >
+            {t("about.title")}
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/?lang=${activeLocale}#services`}
+            className="hover:text-gray-400 block"
+          >
+            {t("services.title")}
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/?lang=${activeLocale}#fleet`}
+            className="hover:text-gray-400 block"
+          >
+            {t("fleet.title")}
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={`/?lang=${activeLocale}#contact`}
+            className="hover:text-gray-400 block"
+          >
+            {t("contact.title")}
+          </Link>
+        </li>
+      </ul>
 
       {/* Language Selector */}
       <div className="relative">
