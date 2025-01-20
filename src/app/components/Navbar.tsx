@@ -18,9 +18,9 @@ export default function Navbar() {
 
   useEffect(() => {
     if (i18n.language !== activeLocale) {
-      i18n.changeLanguage(activeLocale).catch((err) =>
-        console.error("Failed to change language:", err)
-      );
+      i18n
+        .changeLanguage(activeLocale)
+        .catch((err) => console.error("Failed to change language:", err));
     }
   }, [activeLocale, i18n]);
 
@@ -36,50 +36,67 @@ export default function Navbar() {
     router.push(`${basePath}?lang=${code}${currentHash}`); // Ensure correct order
     setDropdownVisible(false);
   };
-  
 
   return (
     <nav className="sticky top-0 bg-gray-800 text-white p-4 flex justify-between items-center z-50">
-      <ul className="flex space-x-6">
-        <li>
-          <Link href={`/?lang=${activeLocale}`} className="hover:text-gray-400">
-            {t("home.title")}
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={`/?lang=${activeLocale}#about`}
-            className="hover:text-gray-400"
-          >
-            {t("about.title")}
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={`/?lang=${activeLocale}#services`}
-            className="hover:text-gray-400"
-          >
-            {t("services.title")}
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={`/?lang=${activeLocale}#fleet`}
-            className="hover:text-gray-400"
-          >
-            {t("fleet.title")}
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={`/?lang=${activeLocale}#contact`}
-            className="hover:text-gray-400"
-          >
-            {t("contact.title")}
-          </Link>
-        </li>
-      </ul>
+      <div className="flex items-center space-x-4">
+        {/* Logo */}
+        <div className="logo-container">
+          <Image
+            src="/pics/logo-white-nav.png"
+            alt="Logo"
+            width={85}
+            height={85}
+            className="logo-animation mx-3"
+            priority
+          />
+        </div>
+        {/* Navigation Links */}
+        <ul className="flex space-x-6">
+          <li>
+            <Link
+              href={`/?lang=${activeLocale}#header`}
+              className="hover:text-gray-400"
+            >
+              {t("home.title")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={`/?lang=${activeLocale}#about`}
+              className="hover:text-gray-400"
+            >
+              {t("about.title")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={`/?lang=${activeLocale}#services`}
+              className="hover:text-gray-400"
+            >
+              {t("services.title")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={`/?lang=${activeLocale}#fleet`}
+              className="hover:text-gray-400"
+            >
+              {t("fleet.title")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={`/?lang=${activeLocale}#contact`}
+              className="hover:text-gray-400"
+            >
+              {t("contact.title")}
+            </Link>
+          </li>
+        </ul>
+      </div>
 
+      {/* Language Selector */}
       <div className="relative">
         <button
           onClick={() => setDropdownVisible(!dropdownVisible)}
