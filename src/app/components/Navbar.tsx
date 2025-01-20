@@ -2,28 +2,28 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
-import '../../lib/i18n'; // Ensure this points to the correct path for your i18n.ts file
+import '../../lib/i18n';
 
 export default function Navbar() {
-  const pathname = usePathname();
   const router = useRouter();
-  const currentLocale = pathname.split('/')[1] || 'cs'; // Extract locale from the URL
+  const searchParams = useSearchParams();
+  const { t, i18n } = useTranslation();
 
-  const { t, i18n } = useTranslation(); // UseTranslation with default namespace 'common'
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const activeLocale = searchParams.get('lang') || 'cs'; // Get the current language from query params
 
-  // Dynamically change language when URL locale changes
+  // Dynamically change language when the query parameter changes
   useEffect(() => {
-    if (i18n.language !== currentLocale) {
-      i18n.changeLanguage(currentLocale).catch((err) =>
+    if (i18n.language !== activeLocale) {
+      i18n.changeLanguage(activeLocale).catch((err) =>
         console.error('Failed to change language:', err)
       );
     }
-  }, [currentLocale, i18n]);
+  }, [activeLocale, i18n]);
 
   const languages = [
     { code: 'cs', label: 'Čeština', flag: '/flags/cz.png' },
@@ -32,7 +32,7 @@ export default function Navbar() {
   ];
 
   const handleLanguageChange = (code: string) => {
-    router.push(`/${code}${pathname.slice(currentLocale.length + 1)}`); // Update the URL with the new locale
+    router.push(`/?lang=${code}`);
     setDropdownVisible(false);
   };
 
@@ -41,28 +41,28 @@ export default function Navbar() {
       {/* Navbar Sections */}
       <ul className="flex space-x-6">
         <li>
-          <Link href={`/${currentLocale}`} className="hover:text-gray-400">
-            {t('home')}
+          <Link href={`#header`} className="hover:text-gray-400">
+            {t('home.title')}
           </Link>
         </li>
         <li>
-          <Link href={`/${currentLocale}/about`} className="hover:text-gray-400">
-            {t('about')}
+          <Link href={`#about`} className="hover:text-gray-400">
+            {t('about.title')}
           </Link>
         </li>
         <li>
-          <Link href={`/${currentLocale}/services`} className="hover:text-gray-400">
-            {t('services')}
+          <Link href={`#services`} className="hover:text-gray-400">
+            {t('services.title')}
           </Link>
         </li>
         <li>
-          <Link href={`/${currentLocale}/fleet`} className="hover:text-gray-400">
-            {t('fleet')}
+          <Link href={`#fleet`} className="hover:text-gray-400">
+            {t('fleet.title')}
           </Link>
         </li>
         <li>
-          <Link href={`/${currentLocale}/contact`} className="hover:text-gray-400">
-            {t('contact')}
+          <Link href={`#contact`} className="hover:text-gray-400">
+            {t('contact.title')}
           </Link>
         </li>
       </ul>
@@ -74,13 +74,13 @@ export default function Navbar() {
           className="flex items-center space-x-2 bg-gray-700 px-4 py-2 rounded-md hover:bg-gray-600"
         >
           <Image
-            src={languages.find((lang) => lang.code === currentLocale)?.flag || ''}
-            alt={currentLocale}
+            src={languages.find((lang) => lang.code === activeLocale)?.flag || ''}
+            alt={activeLocale}
             width={20}
             height={20}
             className="rounded-full"
           />
-          <span>{languages.find((lang) => lang.code === currentLocale)?.label}</span>
+          <span>{languages.find((lang) => lang.code === activeLocale)?.label}</span>
           <ChevronDown size={16} />
         </button>
         {dropdownVisible && (
