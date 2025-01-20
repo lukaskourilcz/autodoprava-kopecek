@@ -1,11 +1,12 @@
 'use client';
 
-import { ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
+import { ChevronDown } from 'lucide-react';
+import '../../lib/i18n'
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,7 +16,14 @@ export default function Navbar() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const { t, i18n } = useTranslation();
 
-  i18n.changeLanguage(currentLocale); // Set the language dynamically
+  // Set the language dynamically
+  useEffect(() => {
+    if (i18n.language !== currentLocale) {
+      i18n.changeLanguage(currentLocale).catch((err) =>
+        console.error('Failed to change language:', err)
+      );
+    }
+  }, [currentLocale, i18n]);
 
   const languages = [
     { code: 'cs', label: 'Čeština', flag: '/flags/cz.png' },
@@ -25,7 +33,8 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 bg-gray-800 text-white p-4 flex justify-between items-center z-50">
-      {/* Language Dropdown */}
+      <h1>{t('navbar.title', 'Default Title')}</h1>
+
       <div className="relative">
         <button
           onClick={() => setDropdownVisible(!dropdownVisible)}
@@ -46,7 +55,7 @@ export default function Navbar() {
             {languages.map(({ code, label, flag }) => (
               <Link
                 key={code}
-                href={`${pathname}?locale=${code}`} // Update locale in the URL
+                href={`${pathname}?locale=${code}`}
                 onClick={() => setDropdownVisible(false)}
                 className="flex items-center space-x-2 w-full px-4 py-2 hover:bg-gray-100"
               >

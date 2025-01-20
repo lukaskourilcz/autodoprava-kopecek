@@ -31,10 +31,10 @@ i18n.use(initReactI18next).init({
       },
     },
   },
-  lng: 'cs', // Default language
-  fallbackLng: 'cs', // Fallback language if the key is missing
+  lng: 'cs',
+  fallbackLng: 'cs',
   interpolation: {
-    escapeValue: false, // React already escapes content
+    escapeValue: false, // React already escapes values
   },
 });
 

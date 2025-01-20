@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import Navbar from "./components/Navbar";
-import '../i18n'
 
 export const metadata = {
   title: "Autodoprava Kopecek",
