@@ -16,7 +16,7 @@ export default function Navbar() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const activeLocale = searchParams.get('lang') || 'cs'; // Get the current language from query params
 
-  // Dynamically change language when the query parameter changes
+  // Change language only after render
   useEffect(() => {
     if (i18n.language !== activeLocale) {
       i18n.changeLanguage(activeLocale).catch((err) =>
@@ -38,36 +38,34 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 bg-gray-800 text-white p-4 flex justify-between items-center z-50">
-      {/* Navbar Sections */}
       <ul className="flex space-x-6">
         <li>
-          <Link href={`#header`} className="hover:text-gray-400">
+          <Link href={`/?lang=${activeLocale}`} className="hover:text-gray-400">
             {t('home.title')}
           </Link>
         </li>
         <li>
-          <Link href={`#about`} className="hover:text-gray-400">
+          <Link href={`/?lang=${activeLocale}#about`} className="hover:text-gray-400">
             {t('about.title')}
           </Link>
         </li>
         <li>
-          <Link href={`#services`} className="hover:text-gray-400">
+          <Link href={`/?lang=${activeLocale}#services`} className="hover:text-gray-400">
             {t('services.title')}
           </Link>
         </li>
         <li>
-          <Link href={`#fleet`} className="hover:text-gray-400">
+          <Link href={`/?lang=${activeLocale}#fleet`} className="hover:text-gray-400">
             {t('fleet.title')}
           </Link>
         </li>
         <li>
-          <Link href={`#contact`} className="hover:text-gray-400">
+          <Link href={`/?lang=${activeLocale}#contact`} className="hover:text-gray-400">
             {t('contact.title')}
           </Link>
         </li>
       </ul>
 
-      {/* Language Dropdown */}
       <div className="relative">
         <button
           onClick={() => setDropdownVisible(!dropdownVisible)}

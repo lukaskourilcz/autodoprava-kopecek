@@ -59,6 +59,62 @@ i18n.use(initReactI18next).init({
             "Dodávky do 3,5 tuny",
             "Nákladní vozy s chlazením",
           ],
+          headers: {
+            vehicleName: "Název vozidla",
+            seats: "Počet míst",
+          },
+          featureHeaders: [
+            "Zájezd",
+            "Klima",
+            "Pásy",
+            "Sedadla",
+            "TV",
+            "Mikrofon",
+            "Lednice",
+            "Toaleta",
+          ],
+          vehicleDetails: [
+            {
+              name: "Mercedes-Benz Travego",
+              seats: "61+1",
+              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+            },
+            {
+              name: "Mercedes-Benz Tourismo",
+              seats: "49+2",
+              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+            },
+            {
+              name: "Setra Multiclass",
+              seats: "67",
+              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+            },
+            {
+              name: "MAN Lion's Regio",
+              seats: "57",
+              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+            },
+            {
+              name: "Karosa Axer",
+              seats: "59",
+              features: ["N", "A", "A", "N", "N", "N", "N", "N"],
+            },
+            {
+              name: "Mercedes-Benz Tourino",
+              seats: "35+1",
+              features: ["N", "A", "A", "A", "A", "A", "A", "N"],
+            },
+            {
+              name: "Ford F-Max + návěs 13,6 m",
+              seats: "Návěs - walking floor",
+              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+            },
+            {
+              name: "DAF XF 510 FT",
+              seats: "",
+              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+            },
+          ],
         },
         contact: {
           title: "Kontakt",
@@ -124,6 +180,62 @@ i18n.use(initReactI18next).init({
             "Buses for 50+ passengers",
             "Vans up to 3.5 tons",
             "Refrigerated trucks",
+          ],
+          headers: {
+            vehicleName: "Vehicle Name",
+            seats: "Number of Seats",
+          },
+          featureHeaders: [
+            "Excursion",
+            "Air Conditioning",
+            "Seat Belts",
+            "Seats",
+            "TV",
+            "Microphone",
+            "Refrigerator",
+            "Toilet",
+          ],
+          vehicleDetails: [
+            {
+              name: "Mercedes-Benz Travego",
+              seats: "61+1",
+              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+            },
+            {
+              name: "Mercedes-Benz Tourismo",
+              seats: "49+2",
+              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+            },
+            {
+              name: "Setra Multiclass",
+              seats: "67",
+              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+            },
+            {
+              name: "MAN Lion's Regio",
+              seats: "57",
+              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+            },
+            {
+              name: "Karosa Axer",
+              seats: "59",
+              features: ["N", "A", "A", "N", "N", "N", "N", "N"],
+            },
+            {
+              name: "Mercedes-Benz Tourino",
+              seats: "35+1",
+              features: ["N", "A", "A", "A", "A", "A", "A", "N"],
+            },
+            {
+              name: "Ford F-Max + trailer 13.6 m",
+              seats: "Trailer - walking floor",
+              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+            },
+            {
+              name: "DAF XF 510 FT",
+              seats: "",
+              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+            },
           ],
         },
         contact: {
@@ -192,6 +304,62 @@ i18n.use(initReactI18next).init({
             "Busse für 50+ Passagiere",
             "Transporter bis 3,5 Tonnen",
             "Kühlfahrzeuge",
+          ],
+          headers: {
+            vehicleName: "Fahrzeugname",
+            seats: "Anzahl der Sitzplätze",
+          },
+          featureHeaders: [
+            "Ausflug",
+            "Klimaanlage",
+            "Sicherheitsgurte",
+            "Sitze",
+            "Fernseher",
+            "Mikrofon",
+            "Kühlschrank",
+            "Toilette",
+          ],
+          vehicleDetails: [
+            {
+              name: "Mercedes-Benz Travego",
+              seats: "61+1",
+              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+            },
+            {
+              name: "Mercedes-Benz Tourismo",
+              seats: "49+2",
+              features: ["A", "A", "A", "A", "A", "A", "A", "A"],
+            },
+            {
+              name: "Setra Multiclass",
+              seats: "67",
+              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+            },
+            {
+              name: "MAN Lion's Regio",
+              seats: "57",
+              features: ["N", "A", "A", "N", "A", "N", "N", "N"],
+            },
+            {
+              name: "Karosa Axer",
+              seats: "59",
+              features: ["N", "A", "A", "N", "N", "N", "N", "N"],
+            },
+            {
+              name: "Mercedes-Benz Tourino",
+              seats: "35+1",
+              features: ["N", "A", "A", "A", "A", "A", "A", "N"],
+            },
+            {
+              name: "Ford F-Max + Anhänger 13,6 m",
+              seats: "Anhänger - Walking Floor",
+              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+            },
+            {
+              name: "DAF XF 510 FT",
+              seats: "",
+              features: ["N", "N", "N", "N", "N", "N", "N", "N"],
+            },
           ],
         },
         contact: {
