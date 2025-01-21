@@ -27,7 +27,7 @@ export default function Header() {
     setTimeout(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length); // Move to the next image
       setIsFading(false); // End fade-in
-    }, 200); // Match fade duration
+    }, 400); // Match fade duration
   };
 
   const handleDotClick = (index: number) => {
@@ -36,7 +36,7 @@ export default function Header() {
       setTimeout(() => {
         setCurrentImage(index); // Directly set the selected image
         setIsFading(false); // End fade-in
-      }, 200); // Match fade duration
+      }, 400); // Match fade duration
     }
   };
 
@@ -57,12 +57,12 @@ export default function Header() {
 
       {/* Content */}
       <div
-        className="w-5/6 absolute left-1/2 transform -translate-x-1/2 top-2/3 p-8 bg-white bg-opacity-70 rounded-lg shadow-lg text-center"
+        className="w-5/6 absolute left-1/2 transform -translate-x-1/2 top-2/3 p-8 bg-white bg-opacity-80 rounded-lg shadow-lg text-center"
         style={{
           transform: "translate(-50%, -33.33%)",
         }}
       >
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-2 text-black">
           {t("home.subtitle")}
         </h1>
         <p className="text-sm md:text-base lg:text-lg">
