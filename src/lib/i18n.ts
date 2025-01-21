@@ -74,7 +74,7 @@ i18n.use(initReactI18next).init({
             },
           },
           irregularBusTransport: {
-            title: "Nepravidelná autobusová doprava",
+            title: "Autobusová a nákladní doprava",
             schoolTransport: {
               title: "Doprava pro školy",
               description:
@@ -86,7 +86,7 @@ i18n.use(initReactI18next).init({
                 "Už léta jsme spolehlivým partnerem pro mnoho sportovních klubů. Naše autobusy jsou vybaveny bezpečnostními pásy na každém sedadle a v případě potřeby nabízejí úložný prostor pro vaše sportovní potřeby.",
             },
             groupsTransport: {
-              title: "Přeprava spolků, organizací a individuálních osob",
+              title: "Přeprava spolků a organizací",
               description:
                 "Hledáte spolehlivého dopravce pro váš klub, spolek nebo skupinu přátel? Rádi vás pohodlně a bezstarostně dopravíme kamkoliv si přejete, ať už k moři, do hor, k hradům a zámkům, nebo kamkoliv jinam. Nabízíme také možnost převozu kol, lyží, kajaků, nebo jiných nadměrných zavazadel vyžadujících přívěs.",
             },
@@ -114,7 +114,7 @@ i18n.use(initReactI18next).init({
           cargoTransport: {
             title: "Nákladní doprava",
             description:
-              "V naší autodopravě se specializujeme na spolehlivou a efektivní přepravu zboží. Disponujeme soupravou s návěsem walking floor. Díky této technice zvládneme bez problémů přepravovat širokou škálu materiálů, ať už se jedná o sypké materiály, zemědělské komodity, recykláty, štěpku a jiné náklady vyžadující speciální manipulaci, nebo i běžnou paletovou přepravu. Naše vozidla splňují přísné ekologické normy a pravidelně prochází důkladnou údržbou, abychom zajistili maximální bezpečnost a spolehlivost.",
+              "Specializujeme se na spolehlivou přepravu zboží pomocí soupravy s návěsem walking floor. Bez problémů přepravíme sypké materiály, zemědělské komodity, recykláty, štěpku i paletové náklady. Naše ekologická vozidla pravidelně udržujeme pro maximální bezpečnost a spolehlivost.",
           },
         },
         fleet: {
@@ -166,7 +166,7 @@ i18n.use(initReactI18next).init({
             {
               name: "Mercedes-Benz Tourino",
               seats: "35+1",
-              features: ["N",  "A", "A", "A", "N"],
+              features: ["N", "A", "A", "A", "N"],
             },
             {
               name: "Ford F-Max + návěs 13,6 m",
@@ -182,7 +182,8 @@ i18n.use(initReactI18next).init({
         },
         contact: {
           title: "Kontakt",
-          description: "Pokud vás zajímá nacenění zakázky, chcete si domluvit termín, nebo se jen dozvědět více o našich službách, jsme tady, abychom vám pomohli. Stačí se nám ozvat – ať už telefonicky nebo e-mailem. Náš přátelský a zkušený tým vám rád zodpoví všechny dotazy, vysvětlí detaily a postará se o to, aby vše proběhlo hladce a k vaší maximální spokojenosti. Těšíme se na naši budoucí spolupráci.",
+          description:
+            "Pokud vás zajímá nacenění zakázky, chcete si domluvit termín, nebo se jen dozvědět více o našich službách, jsme tady, abychom vám pomohli. Stačí se nám ozvat – ať už telefonicky nebo e-mailem. Náš přátelský a zkušený tým vám rád zodpoví všechny dotazy, vysvětlí detaily a postará se o to, aby vše proběhlo hladce a k vaší maximální spokojenosti. Těšíme se na naši budoucí spolupráci.",
           address: "V Chalupách 50, Lužice 696 18, Česká republika",
           addressLabel: "Adresa",
           phone: "+420 777 685 331",
@@ -267,49 +268,49 @@ i18n.use(initReactI18next).init({
                 "We offer the option of attaching a trailer or ski box for transporting bulky luggage such as bicycles, skis, or canoes.",
             },
           },
-                irregularBusTransport: {
-        title: "Irregular Bus Transport",
-        schoolTransport: {
-          title: "School Transport",
-          description:
-            "We provide transport for school activities such as trips, ski courses, swimming, ice-skating, or school camps. With us, children travel safely. Our buses are equipped with seatbelts on every seat and microphones for easier communication.",
-        },
-        sportsTransport: {
-          title: "Transport for Sports Clubs and Groups",
-          description:
-            "For years, we have been a reliable partner for many sports clubs. Our buses have seatbelts on every seat and storage space for your sports equipment if needed.",
-        },
-        groupsTransport: {
-          title: "Transport for Associations, Organizations, and Individuals",
-          description:
-            "Looking for reliable transport for your club, association, or group of friends? We will take you comfortably and worry-free wherever you wish—whether to the sea, mountains, castles, or anywhere else. We also offer transport for bicycles, skis, kayaks, or other oversized luggage requiring a trailer.",
-        },
-        airportTransfers: {
-          title: "Airport Transfers",
-          description:
-            "Need transport to the airport? We are happy to assist. Regardless of the time, you can rely on us to take you anywhere, anytime, including Vienna, Brno, and other destinations.",
-        },
-        weddingTransport: {
-          title: "Wedding Transport",
-          description:
-            "We know that planning a wedding can be overwhelming, and parking in city centers can be tricky. Let us handle it for you. We’ll provide a bus with a driver who will be at your service throughout the event.",
-        },
-        replacementTransport: {
-          title: "Replacement Bus Transport",
-          description:
-            "Looking for a replacement transport service? We are here to help, whether the issue is planned or unplanned. With extensive experience in scheduled transport, you can rely on our assistance.",
-        },
-      },
-      corporateTransport: {
-        title: "Corporate Shuttle Services",
-        description:
-          "We offer long-term collaboration to ensure employee transport. With extensive experience in scheduled transport, we provide a wide range of vehicles to find the best and most efficient solution for your needs. We are happy to create a customized plan, including pricing.",
-      },
-      cargoTransport: {
-        title: "Cargo Transport",
-        description:
-          "We specialize in reliable and efficient goods transport. With a walking floor trailer, we handle a wide range of materials, from bulk goods and agricultural commodities to recyclables, wood chips, and even standard pallet transport. Our vehicles meet strict environmental standards and undergo regular maintenance to ensure maximum safety and reliability.",
-      },
+          irregularBusTransport: {
+            title: "Bus and Freight Transport",
+            schoolTransport: {
+              title: "School Transport",
+              description:
+                "We provide transport for school activities such as trips, ski courses, swimming, ice-skating, or school camps. With us, children travel safely. Our buses are equipped with seatbelts on every seat and microphones for easier communication.",
+            },
+            sportsTransport: {
+              title: "Transport for Sports Clubs and Groups",
+              description:
+                "For years, we have been a reliable partner for many sports clubs. Our buses have seatbelts on every seat and storage space for your sports equipment if needed.",
+            },
+            groupsTransport: {
+              title: "Transport for Associations and Organizations",
+              description:
+                "Looking for reliable transport for your club, association, or group of friends? We will take you comfortably and worry-free wherever you wish—whether to the sea, mountains, castles, or anywhere else. We also offer transport for bicycles, skis, kayaks, or other oversized luggage requiring a trailer.",
+            },
+            airportTransfers: {
+              title: "Airport Transfers",
+              description:
+                "Need transport to the airport? We are happy to assist. Regardless of the time, you can rely on us to take you anywhere, anytime, including Vienna, Brno, and other destinations.",
+            },
+            weddingTransport: {
+              title: "Wedding Transport",
+              description:
+                "We know that planning a wedding can be overwhelming, and parking in city centers can be tricky. Let us handle it for you. We’ll provide a bus with a driver who will be at your service throughout the event.",
+            },
+            replacementTransport: {
+              title: "Replacement Bus Transport",
+              description:
+                "Looking for a replacement transport service? We are here to help, whether the issue is planned or unplanned. With extensive experience in scheduled transport, you can rely on our assistance.",
+            },
+          },
+          corporateTransport: {
+            title: "Corporate Shuttle Services",
+            description:
+              "We offer long-term collaboration to ensure employee transport. With extensive experience in scheduled transport, we provide a wide range of vehicles to find the best and most efficient solution for your needs. We are happy to create a customized plan, including pricing.",
+          },
+          cargoTransport: {
+            title: "Cargo Transport",
+            description:
+              "We specialize in reliable freight transport using a walking floor trailer. We efficiently handle bulk materials, agricultural commodities, recyclables, wood chips, and palletized goods. Our eco-friendly vehicles are regularly maintained to ensure maximum safety and reliability.",
+          },
         },
         fleet: {
           title: "Fleet",
@@ -376,7 +377,8 @@ i18n.use(initReactI18next).init({
         },
         contact: {
           title: "Contact",
-          description: "If you're interested in getting a quote for your project, setting up a date, or simply learning more about our services, we're here to help. Just reach out to us – whether by phone or email. Our friendly and experienced team will gladly answer all your questions, explain the details, and ensure that everything runs smoothly to your complete satisfaction. We look forward to our future cooperation.",
+          description:
+            "If you're interested in getting a quote for your project, setting up a date, or simply learning more about our services, we're here to help. Just reach out to us – whether by phone or email. Our friendly and experienced team will gladly answer all your questions, explain the details, and ensure that everything runs smoothly to your complete satisfaction. We look forward to our future cooperation.",
           address: "V Chalupách 50, Lužice 696 18, Czech Republic",
           addressLabel: "Address",
           phone: "+420 777 685 331",
@@ -463,7 +465,7 @@ i18n.use(initReactI18next).init({
             },
           },
           irregularBusTransport: {
-            title: "Unregelmäßiger Busverkehr",
+            title: "Bus- und Güterverkehr",
             schoolTransport: {
               title: "Schultransport",
               description:
@@ -475,7 +477,7 @@ i18n.use(initReactI18next).init({
                 "Seit Jahren sind wir ein zuverlässiger Partner für viele Sportvereine. Unsere Busse verfügen über Sicherheitsgurte an jedem Sitzplatz und bieten bei Bedarf Stauraum für Ihre Sportausrüstung.",
             },
             groupsTransport: {
-              title: "Transport für Vereine, Organisationen und Einzelpersonen",
+              title: "Transport für Vereine und Organisationen",
               description:
                 "Suchen Sie einen zuverlässigen Transport für Ihren Club, Verein oder eine Gruppe von Freunden? Wir bringen Sie bequem und sorgenfrei überall hin – ob ans Meer, in die Berge, zu Burgen oder Schlössern. Wir bieten auch den Transport von Fahrrädern, Skiern, Kajaks oder anderen sperrigen Gepäckstücken, die einen Anhänger erfordern.",
             },
@@ -503,7 +505,7 @@ i18n.use(initReactI18next).init({
           cargoTransport: {
             title: "Güterverkehr",
             description:
-              "Wir sind spezialisiert auf zuverlässigen und effizienten Warentransport. Mit einem Walking-Floor-Auflieger können wir eine Vielzahl von Materialien transportieren, von Schüttgut und landwirtschaftlichen Produkten bis hin zu Recyclingmaterialien, Hackschnitzeln und sogar Standardpaletten. Unsere Fahrzeuge erfüllen strenge Umweltauflagen und werden regelmäßig gewartet, um maximale Sicherheit und Zuverlässigkeit zu gewährleisten.",
+              "Wir spezialisieren uns auf zuverlässigen Gütertransport mit einem Walking-Floor-Auflieger. Wir transportieren effizient Schüttgüter, landwirtschaftliche Erzeugnisse, Recyclingmaterialien, Hackschnitzel und palettierte Waren. Unsere umweltfreundlichen Fahrzeuge werden regelmäßig gewartet, um maximale Sicherheit und Zuverlässigkeit zu gewährleisten.",
           },
         },
         fleet: {
@@ -571,7 +573,8 @@ i18n.use(initReactI18next).init({
         },
         contact: {
           title: "Kontakt",
-          description: "Wenn Sie ein Angebot für Ihr Projekt erhalten, einen Termin vereinbaren oder einfach mehr über unsere Dienstleistungen erfahren möchten, sind wir für Sie da. Kontaktieren Sie uns einfach – per Telefon oder E-Mail. Unser freundliches und erfahrenes Team beantwortet gerne all Ihre Fragen, erklärt die Details und sorgt dafür, dass alles reibungslos und zu Ihrer vollsten Zufriedenheit abläuft. Wir freuen uns auf unsere zukünftige Zusammenarbeit.",
+          description:
+            "Wenn Sie ein Angebot für Ihr Projekt erhalten, einen Termin vereinbaren oder einfach mehr über unsere Dienstleistungen erfahren möchten, sind wir für Sie da. Kontaktieren Sie uns einfach – per Telefon oder E-Mail. Unser freundliches und erfahrenes Team beantwortet gerne all Ihre Fragen, erklärt die Details und sorgt dafür, dass alles reibungslos und zu Ihrer vollsten Zufriedenheit abläuft. Wir freuen uns auf unsere zukünftige Zusammenarbeit.",
           address: "V Chalupách 50, Lužice 696 18, Tschechien",
           addressLabel: "Adresse",
           phone: "+420 777 685 331",

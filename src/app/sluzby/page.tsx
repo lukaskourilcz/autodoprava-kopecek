@@ -45,14 +45,14 @@ export default function Sluzby() {
 
   const irregularTransportSections = [
     {
-      icon: <Backpack className="w-6 h-6 text-gray-600" />,
+      icon: <Backpack className="w-12 h-12 text-gray-600" />,
       title: t("services.irregularBusTransport.schoolTransport.title"),
       description: t(
         "services.irregularBusTransport.schoolTransport.description"
       ),
     },
     {
-      icon: <Volleyball className="w-6 h-6 text-gray-600" />,
+      icon: <Volleyball className="w-12 h-12 text-gray-600" />,
       title: t("services.irregularBusTransport.sportsTransport.title"),
       description: t(
         "services.irregularBusTransport.sportsTransport.description"
@@ -66,21 +66,21 @@ export default function Sluzby() {
       ),
     },
     {
-      icon: <PlaneTakeoff className="w-6 h-6 text-gray-600" />,
+      icon: <PlaneTakeoff className="w-12 h-12 text-gray-600" />,
       title: t("services.irregularBusTransport.airportTransfers.title"),
       description: t(
         "services.irregularBusTransport.airportTransfers.description"
       ),
     },
     {
-      icon: <BookHeart className="w-6 h-6 text-gray-600" />,
+      icon: <BookHeart className="w-12 h-12 text-gray-600" />,
       title: t("services.irregularBusTransport.weddingTransport.title"),
       description: t(
         "services.irregularBusTransport.weddingTransport.description"
       ),
     },
     {
-      icon: <Bus className="w-6 h-6 text-gray-600" />,
+      icon: <Bus className="w-12 h-12 text-gray-600" />,
       title: t("services.irregularBusTransport.replacementTransport.title"),
       description: t(
         "services.irregularBusTransport.replacementTransport.description"
