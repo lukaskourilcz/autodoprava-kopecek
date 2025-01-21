@@ -109,7 +109,7 @@ i18n.use(initReactI18next).init({
           corporateTransport: {
             title: "Firemní linková doprava",
             description:
-              "Nabízíme firmám dlouhodobou spolupráci pro zajištění přepravy zaměstnanců do práce. S pravidelnou linkovou dopravou máme bohaté zkušenosti. Naše nabídka vozidel je široká, věříme proto, že s námi najdete vždy to nejlepší a nejefektivnější řešení vašich dopravních potřeb. Rádi vám vypracujeme individuální plán včetně cenového návrhu.",
+              "Nabízíme firmám spolehlivou přepravu zaměstnanců s širokou nabídkou vozidel. S pravidelnou linkovou dopravou máme bohaté zkušenosti a rádi vám vypracujeme individuální plán včetně cenového návrhu.",
           },
           cargoTransport: {
             title: "Nákladní doprava",
@@ -304,7 +304,7 @@ i18n.use(initReactI18next).init({
           corporateTransport: {
             title: "Corporate Shuttle Services",
             description:
-              "We offer long-term collaboration to ensure employee transport. With extensive experience in scheduled transport, we provide a wide range of vehicles to find the best and most efficient solution for your needs. We are happy to create a customized plan, including pricing.",
+              "We offer companies reliable employee transport with a wide range of vehicles. With extensive experience in regular shuttle services, we are happy to create a customized plan, including pricing.",
           },
           cargoTransport: {
             title: "Cargo Transport",
@@ -500,7 +500,7 @@ i18n.use(initReactI18next).init({
           corporateTransport: {
             title: "Firmenlinienverkehr",
             description:
-              "Wir bieten Unternehmen eine langfristige Zusammenarbeit zur Sicherstellung des Mitarbeitertransports. Mit umfangreicher Erfahrung im Linienverkehr bieten wir eine große Auswahl an Fahrzeugen, um die beste und effizienteste Lösung für Ihre Bedürfnisse zu finden. Gerne erstellen wir einen individuellen Plan inklusive Preisangebot.",
+              "Wir bieten Unternehmen zuverlässigen Mitarbeitertransport mit einer großen Auswahl an Fahrzeugen. Mit umfassender Erfahrung im regelmäßigen Linienverkehr erstellen wir gerne einen individuellen Plan inklusive Preisangebot.",
           },
           cargoTransport: {
             title: "Güterverkehr",
