@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 export default function Kontakt() {
   const { t } = useTranslation();
@@ -14,19 +15,19 @@ export default function Kontakt() {
         <h2 className="text-4xl font-bold text-gray-800 mb-8">
           {t("contact.title")}
         </h2>
-        <p className="text-lg text-gray-700 mb-6">{t("contact.description")}</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+        <p className="text-lg text-gray-700 mb-12">{t("contact.description")}</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:text-left sm:text-center items-center">
+          {/* Contact Details */}
           <div>
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              {t("contact.title")}
+              {t("")}
             </h3>
-            <p className="text-gray-700">
-              <span className="font-bold">{t("contact.addressLabel")}:</span>{" "}
-              {t("contact.address")}
+            <p className="text-gray-700 mb-2">
+              <span className="font-bold">{t("contact.addressLabel")}:</span> {t("contact.address")}
             </p>
-            <p className="text-gray-700">
-              <span className="font-bold">{t("contact.phoneLabel")}:</span>{" "}
-              {t("contact.phone")}
+            <p className="text-gray-700 mb-2">
+              <span className="font-bold">{t("contact.phoneLabel")}:</span> {t("contact.phone")}
             </p>
             <p className="text-gray-700">
               <span className="font-bold">{t("contact.emailLabel")}:</span>{" "}
@@ -38,18 +39,29 @@ export default function Kontakt() {
               </a>
             </p>
           </div>
+
+          {/* Billing Information */}
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
               {t("contact.billingTitle")}
             </h3>
-            <p className="text-gray-700">
-              <span className="font-bold">{t("contact.companyIDLabel")}:</span>{" "}
-              {t("contact.companyID")}
+            <p className="text-gray-700 mb-2">
+              <span className="font-bold">{t("contact.companyIDLabel")}:</span> {t("contact.companyID")}
             </p>
             <p className="text-gray-700">
-              <span className="font-bold">{t("contact.taxIDLabel")}:</span>{" "}
-              {t("contact.taxID")}
+              <span className="font-bold">{t("contact.taxIDLabel")}:</span> {t("contact.taxID")}
             </p>
+          </div>
+
+          {/* Logo */}
+          <div className="flex justify-center items-center">
+            <Image
+              src="/pics/logo-black-footer.png"
+              alt={t("contact.logoAlt")}
+              width={300}
+              height={300}
+              className="object-contain"
+            />
           </div>
         </div>
       </div>
