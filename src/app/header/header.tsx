@@ -17,7 +17,7 @@ export default function Header() {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNextImage();
-    }, 5000); // Change image every 5 seconds
+    }, 8000); // Change image every 8 seconds
 
     return () => clearInterval(interval);
   }, [currentImage]);
@@ -62,7 +62,7 @@ export default function Header() {
           transform: "translate(-50%, -33.33%)",
         }}
       >
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-2 text-black">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 text-black">
           {t("home.subtitle")}
         </h1>
         <p className="text-sm md:text-base lg:text-lg">

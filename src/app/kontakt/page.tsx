@@ -9,9 +9,15 @@ export default function Kontakt() {
   return (
     <section
       id="kontakt"
-      className="bg-gray-100 py-16 px-4 sm:px-8 md:px-16 lg:px-32"
+      className="bg-gray-100 py-16 px-4 sm:px-8 md:px-16 lg:px-32 relative"
+      style={{
+        backgroundImage: "url('/pics/footer-map.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "fixed",
+        opacity: "1",
+      }}
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center bg-white bg-opacity-75 p-8 rounded-lg">
         <h2 className="text-4xl font-bold text-gray-800 mb-8">
           {t("contact.title")}
         </h2>
