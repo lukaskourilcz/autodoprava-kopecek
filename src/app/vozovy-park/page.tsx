@@ -1,13 +1,12 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { Check, Slash, X } from "lucide-react"; // Import icons from Lucide React
+import { Check, Slash, X } from "lucide-react";
 import Image from "next/image";
 
 export default function VozovyPark() {
   const { t } = useTranslation();
 
-  // Retrieve vehicle details and feature headers from translations, providing defaults if missing
   const vehicles = (t("fleet.vehicleDetails", { returnObjects: true }) ||
     []) as Array<{
     name: string;
@@ -18,51 +17,49 @@ export default function VozovyPark() {
   const featureHeaders = (t("fleet.featureHeaders", { returnObjects: true }) ||
     []) as string[];
 
-  // Sample data for excursion transport (Zájezdová doprava)
   const excursionTransport = [
     {
-      img: "/images/bus1.jpg",
-      name: "Karosa karosa 600",
-      description: "Moderní autobus s kapacitou 50 osob.",
+      img: "/pics/mercedes1.png",
+      name: "Mercedes-Benz Travego",
+      description: "Moderní autobus s kapacitou 62 osob.",
     },
     {
-      img: "/images/bus2.jpg",
-      name: "Karosa karosa 600",
-      description: "Luxusní klimatizovaný autobus s TV a lednicí.",
+      img: "/pics/mercedes2.png",
+      name: "Mercedes-Benz Tourismo",
+      description: "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
     },
     {
-      img: "/images/bus3.jpg",
-      name: "Karosa karosa 600",
-      description: "Ekologický autobus vhodný pro dlouhé cesty.",
+      img: "/pics/setra.png",
+      name: "Setra Multiclass",
+      description: "Moderní autobus s kapacitou 67 osob.",
     },
     {
-      img: "/images/bus4.jpg",
-      name: "Karosa karosa 600",
-      description: "Kompaktní autobus pro menší skupiny.",
+      img: "/pics/mercedes2.png",
+      name: "MAN Lion's Regio",
+      description: "Kompaktní autobus pro skupiny do 57 osob.",
     },
     {
-      img: "/images/bus5.jpg",
-      name: "Karosa karosa 600",
-      description: "Ideální autobus pro firemní výlety.",
+      img: "/pics/setra.png",
+      name: "Karosa Axer",
+      description: "Ideální autobus pro výlety po tuzemsku, kapacita 59 osob.",
     },
     {
-      img: "/images/bus6.jpg",
-      name: "Karosa karosa 600",
-      description: "Stylový autobus s veškerým komfortem.",
+      img: "/pics/mercedes1.png",
+      name: "Mercedes-Benz Tourino",
+      description: "Stylový autobus s veškerým komfortem pro 36 osob.",
     },
   ];
 
-  // Sample data for freight transport (Nákladní doprava)
   const freightTransport = [
     {
-      img: "/images/truck1.jpg",
-      name: "Karosa karosa 600",
+      img: "/pics/fmax.png",
+      name: "Ford F-Max + 13.6m návěs",
       description: "Nákladní vůz pro velkoobjemový transport.",
     },
     {
-      img: "/images/truck2.jpg",
-      name: "Karosa karosa 600",
-      description: "Chlazený vůz pro přepravu potravin.",
+      img: "/pics/daf.png",
+      name: "DAF XF 510 FT",
+      description: "Nákladní vůz pro velkoobjemový transport.",
     },
   ];
 
@@ -76,9 +73,6 @@ export default function VozovyPark() {
       </div>
       {/* Excursion Transport (Zájezdová doprava) */}
       <div className="mb-16">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">
-          Zájezdová doprava
-        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {excursionTransport.map((bus, index) => (
             <div key={index} className="flex flex-col items-center">
@@ -87,7 +81,7 @@ export default function VozovyPark() {
                 alt={`Bus ${index + 1}`}
                 width={300}
                 height={200}
-                className="rounded-md"
+                className="rounded-[15%]"
               />
               <p className="mt-4 text-gray-700 font-bold text-center">
                 {bus.name}
@@ -102,9 +96,6 @@ export default function VozovyPark() {
 
       {/* Freight Transport (Nákladní doprava) */}
       <div className="mb-16">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">
-          Nákladní doprava
-        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {freightTransport.map((truck, index) => (
             <div key={index} className="flex flex-col items-center">
@@ -113,7 +104,7 @@ export default function VozovyPark() {
                 alt={`Truck ${index + 1}`}
                 width={300}
                 height={200}
-                className="rounded-md"
+                className="rounded-[15%]"
               />
               <p className="mt-4 text-gray-700 font-bold text-center">
                 {truck.name}
