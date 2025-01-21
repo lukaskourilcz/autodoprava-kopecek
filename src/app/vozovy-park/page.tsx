@@ -95,7 +95,7 @@ export default function VozovyPark() {
       </div>
 
       {/* Freight Transport (Nákladní doprava) */}
-      <div className="mb-16">
+      <div className="">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {freightTransport.map((truck, index) => (
             <div key={index} className="flex flex-col items-center">
@@ -118,7 +118,7 @@ export default function VozovyPark() {
         </div>
       </div>
       {/* Merged Table */}
-      <div className="overflow-x-auto">
+      {/* <div className="overflow-x-auto">
         <table className="w-full border border-gray-300 text-left">
           <thead className="bg-gray-100">
             <tr>
@@ -168,7 +168,7 @@ export default function VozovyPark() {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </section>
   );
 }
