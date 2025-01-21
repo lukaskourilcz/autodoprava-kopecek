@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { Check, X } from "lucide-react"; // Import icons from Lucide React
+import { Check, Slash, X } from "lucide-react"; // Import icons from Lucide React
 import Image from "next/image";
 
 export default function VozovyPark() {
@@ -166,7 +166,9 @@ export default function VozovyPark() {
                   >
                     {feature === "A" ? (
                       <Check className="text-green-500 w-5 h-5 mx-auto" />
-                    ) : (
+                    ) : feature === "/" ? (
+                      <Slash className="text-gray-500 w-5 h-5 mx-auto" />
+                    ): (
                       <X className="text-red-500 w-5 h-5 mx-auto" />
                     )}
                   </td>

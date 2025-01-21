@@ -127,13 +127,13 @@ i18n.use(initReactI18next).init({
             },
             {
               name: "Ford F-Max + návěs 13,6 m",
-              seats: "Návěs - walking floor",
-              features: ["N", "N", "N", "N", "N"],
+              seats: "",
+              features: ["/", "/", "/", "/", "/"],
             },
             {
               name: "DAF XF 510 FT",
               seats: "",
-              features: ["N", "N", "N", "N", "N"],
+              features: ["/", "/", "/", "/", "/"],
             },
           ],
         },
@@ -279,12 +279,12 @@ i18n.use(initReactI18next).init({
             {
               name: "Ford F-Max + trailer 13.6 m",
               seats: "",
-              features: ["N", "N", "N", "N", "N"],
+              features: ["/", "/", "/", "/", "/"],
             },
             {
               name: "DAF XF 510 FT",
               seats: "",
-              features: ["N", "N", "N", "N", "N"],
+              features: ["/", "/", "/", "/", "/"],
             },
           ],
         },
@@ -431,12 +431,12 @@ i18n.use(initReactI18next).init({
             {
               name: "Ford F-Max + Anhänger 13,6 m",
               seats: "",
-              features: ["N", "N", "N", "N", "N"],
+              features: ["/", "/", "/", "/", "/"],
             },
             {
               name: "DAF XF 510 FT",
               seats: "",
-              features: ["N", "N", "N", "N", "N"],
+              features: ["/", "/", "/", "/", "/"],
             },
           ],
         },
