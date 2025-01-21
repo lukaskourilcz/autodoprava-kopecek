@@ -79,8 +79,8 @@ export default function VozovyPark() {
               <Image
                 src={bus.img}
                 alt={`Bus ${index + 1}`}
-                width={300}
-                height={200}
+                width={350}
+                height={350}
                 className="rounded-[15%]"
               />
               <p className="mt-4 text-gray-700 font-bold text-center">
@@ -102,8 +102,8 @@ export default function VozovyPark() {
               <Image
                 src={truck.img}
                 alt={`Truck ${index + 1}`}
-                width={300}
-                height={200}
+                width={350}
+                height={350}
                 className="rounded-[15%]"
               />
               <p className="mt-4 text-gray-700 font-bold text-center">
@@ -118,7 +118,7 @@ export default function VozovyPark() {
         </div>
       </div>
       {/* Merged Table */}
-      <div className="overflow-x-auto mb-16">
+      <div className="overflow-x-auto">
         <table className="w-full border border-gray-300 text-left">
           <thead className="bg-gray-100">
             <tr>

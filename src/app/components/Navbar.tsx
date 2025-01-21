@@ -39,7 +39,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 bg-gray-800 text-white p-4 flex justify-between items-center z-50">
+    <nav className="sticky top-0 bg-gray-800 opacity-90 text-white p-4 flex justify-between items-center z-50">
       <div className="flex items-center space-x-4">
         {/* Logo */}
         <div className="logo-container">
