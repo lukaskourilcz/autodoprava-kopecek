@@ -44,7 +44,7 @@ export default function Sluzby() {
         <h2 className="text-4xl font-bold text-gray-800 mb-12">
           {t("services.title")}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {services.map((service, index) => (
             <div key={index} className="flex flex-col items-center">
               {service.icon}
@@ -56,6 +56,83 @@ export default function Sluzby() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Nepravidelná autobusová doprava */}
+        <div className="mb-12">
+          <h3 className="text-3xl font-bold text-gray-800 mb-6">
+            {t("services.irregularBusTransport.title")}
+          </h3>
+          <div className="space-y-6 text-left">
+            <div>
+              <h4 className="text-2xl font-semibold text-gray-800 mb-2">
+                {t("services.irregularBusTransport.schoolTransport.title")}
+              </h4>
+              <p className="text-gray-600">
+                {t("services.irregularBusTransport.schoolTransport.description")}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-semibold text-gray-800 mb-2">
+                {t("services.irregularBusTransport.sportsTransport.title")}
+              </h4>
+              <p className="text-gray-600">
+                {t("services.irregularBusTransport.sportsTransport.description")}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-semibold text-gray-800 mb-2">
+                {t("services.irregularBusTransport.groupsTransport.title")}
+              </h4>
+              <p className="text-gray-600">
+                {t("services.irregularBusTransport.groupsTransport.description")}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-semibold text-gray-800 mb-2">
+                {t("services.irregularBusTransport.airportTransfers.title")}
+              </h4>
+              <p className="text-gray-600">
+                {t("services.irregularBusTransport.airportTransfers.description")}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-semibold text-gray-800 mb-2">
+                {t("services.irregularBusTransport.weddingTransport.title")}
+              </h4>
+              <p className="text-gray-600">
+                {t("services.irregularBusTransport.weddingTransport.description")}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-2xl font-semibold text-gray-800 mb-2">
+                {t("services.irregularBusTransport.replacementTransport.title")}
+              </h4>
+              <p className="text-gray-600">
+                {t("services.irregularBusTransport.replacementTransport.description")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Firemní linková doprava */}
+        <div className="mb-12">
+          <h3 className="text-3xl font-bold text-gray-800 mb-6">
+            {t("services.corporateTransport.title")}
+          </h3>
+          <p className="text-gray-600 text-left">
+            {t("services.corporateTransport.description")}
+          </p>
+        </div>
+
+        {/* Nákladní doprava */}
+        <div>
+          <h3 className="text-3xl font-bold text-gray-800 mb-6">
+            {t("services.cargoTransport.title")}
+          </h3>
+          <p className="text-gray-600 text-left">
+            {t("services.cargoTransport.description")}
+          </p>
         </div>
       </div>
     </section>

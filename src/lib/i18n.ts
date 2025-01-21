@@ -73,6 +73,49 @@ i18n.use(initReactI18next).init({
                 "Nabízíme možnost připojení přívěsu nebo skiboxu, pro přepravu objemných zavazadel jako jsou třeba kola, lyže, kánoe.",
             },
           },
+          irregularBusTransport: {
+            title: "Nepravidelná autobusová doprava",
+            schoolTransport: {
+              title: "Doprava pro školy",
+              description:
+                "Poskytujeme dopravu na školní aktivity jako jsou výlety, lyžařské výcviky, plavání, bruslení nebo školy v přírodě. S námi dopravíte děti bezpečně. Autobusy jsou vybaveny bezpečnostními pásy pro každé sedadlo a mikrofony pro jednodušší komunikaci.",
+            },
+            sportsTransport: {
+              title: "Doprava sportovních klubů a kroužků",
+              description:
+                "Už léta jsme spolehlivým partnerem pro mnoho sportovních klubů. Naše autobusy jsou vybaveny bezpečnostními pásy na každém sedadle a v případě potřeby nabízejí úložný prostor pro vaše sportovní potřeby.",
+            },
+            groupsTransport: {
+              title: "Přeprava spolků, organizací a individuálních osob",
+              description:
+                "Hledáte spolehlivého dopravce pro váš klub, spolek nebo skupinu přátel? Rádi vás pohodlně a bezstarostně dopravíme kamkoliv si přejete, ať už k moři, do hor, k hradům a zámkům, nebo kamkoliv jinam. Nabízíme také možnost převozu kol, lyží, kajaků, nebo jiných nadměrných zavazadel vyžadujících přívěs.",
+            },
+            airportTransfers: {
+              title: "Letištní transfery",
+              description:
+                "Potřebujete dopravu na letiště? S radostí vám s tím pomůžeme. Nezáleží na čase, můžete se spolehnout, že vás odvezeme kdykoliv, kamkoliv – včetně Vídně, Brna a dalších destinací.",
+            },
+            weddingTransport: {
+              title: "Svatební přeprava",
+              description:
+                "Sami víme, že plánovat svatbu není jednoduché a parkování v centru města může být obtížné. Nechte to na nás. Zajistíme vám autobus s řidičem, který se vám bude věnovat po celou dobu svatby.",
+            },
+            replacementTransport: {
+              title: "Náhradní autobusová doprava",
+              description:
+                "Sháníte náhradu za vaši dopravu? Jsme tu pro vás a rádi vám s těmito potížemi pomůžeme, ať už je problém plánovaný či neplánovaný. S linkovou dopravou máme bohaté zkušenosti a na naší pomoc se můžete spolehnout.",
+            },
+          },
+          corporateTransport: {
+            title: "Firemní linková doprava",
+            description:
+              "Nabízíme firmám dlouhodobou spolupráci pro zajištění přepravy zaměstnanců do práce. S pravidelnou linkovou dopravou máme bohaté zkušenosti. Naše nabídka vozidel je široká, věříme proto, že s námi najdete vždy to nejlepší a nejefektivnější řešení vašich dopravních potřeb. Rádi vám vypracujeme individuální plán včetně cenového návrhu.",
+          },
+          cargoTransport: {
+            title: "Nákladní doprava",
+            description:
+              "V naší autodopravě se specializujeme na spolehlivou a efektivní přepravu zboží. Disponujeme soupravou s návěsem walking floor. Díky této technice zvládneme bez problémů přepravovat širokou škálu materiálů, ať už se jedná o sypké materiály, zemědělské komodity, recykláty, štěpku a jiné náklady vyžadující speciální manipulaci, nebo i běžnou paletovou přepravu. Naše vozidla splňují přísné ekologické normy a pravidelně prochází důkladnou údržbou, abychom zajistili maximální bezpečnost a spolehlivost.",
+          },
         },
         fleet: {
           title: "Vozový park",
@@ -224,6 +267,49 @@ i18n.use(initReactI18next).init({
                 "We offer the option of attaching a trailer or ski box for transporting bulky luggage such as bicycles, skis, or canoes.",
             },
           },
+                irregularBusTransport: {
+        title: "Irregular Bus Transport",
+        schoolTransport: {
+          title: "School Transport",
+          description:
+            "We provide transport for school activities such as trips, ski courses, swimming, ice-skating, or school camps. With us, children travel safely. Our buses are equipped with seatbelts on every seat and microphones for easier communication.",
+        },
+        sportsTransport: {
+          title: "Transport for Sports Clubs and Groups",
+          description:
+            "For years, we have been a reliable partner for many sports clubs. Our buses have seatbelts on every seat and storage space for your sports equipment if needed.",
+        },
+        groupsTransport: {
+          title: "Transport for Associations, Organizations, and Individuals",
+          description:
+            "Looking for reliable transport for your club, association, or group of friends? We will take you comfortably and worry-free wherever you wish—whether to the sea, mountains, castles, or anywhere else. We also offer transport for bicycles, skis, kayaks, or other oversized luggage requiring a trailer.",
+        },
+        airportTransfers: {
+          title: "Airport Transfers",
+          description:
+            "Need transport to the airport? We are happy to assist. Regardless of the time, you can rely on us to take you anywhere, anytime, including Vienna, Brno, and other destinations.",
+        },
+        weddingTransport: {
+          title: "Wedding Transport",
+          description:
+            "We know that planning a wedding can be overwhelming, and parking in city centers can be tricky. Let us handle it for you. We’ll provide a bus with a driver who will be at your service throughout the event.",
+        },
+        replacementTransport: {
+          title: "Replacement Bus Transport",
+          description:
+            "Looking for a replacement transport service? We are here to help, whether the issue is planned or unplanned. With extensive experience in scheduled transport, you can rely on our assistance.",
+        },
+      },
+      corporateTransport: {
+        title: "Corporate Shuttle Services",
+        description:
+          "We offer long-term collaboration to ensure employee transport. With extensive experience in scheduled transport, we provide a wide range of vehicles to find the best and most efficient solution for your needs. We are happy to create a customized plan, including pricing.",
+      },
+      cargoTransport: {
+        title: "Cargo Transport",
+        description:
+          "We specialize in reliable and efficient goods transport. With a walking floor trailer, we handle a wide range of materials, from bulk goods and agricultural commodities to recyclables, wood chips, and even standard pallet transport. Our vehicles meet strict environmental standards and undergo regular maintenance to ensure maximum safety and reliability.",
+      },
         },
         fleet: {
           title: "Fleet",
@@ -375,6 +461,49 @@ i18n.use(initReactI18next).init({
               description:
                 "Wir bieten die Möglichkeit, einen Anhänger oder Skibox anzuschließen, um sperriges Gepäck wie Fahrräder, Skier oder Kanus zu transportieren.",
             },
+          },
+          irregularBusTransport: {
+            title: "Unregelmäßiger Busverkehr",
+            schoolTransport: {
+              title: "Schultransport",
+              description:
+                "Wir bieten Transport für Schulaktivitäten wie Ausflüge, Skikurse, Schwimmen, Schlittschuhlaufen oder Schullandheime. Mit uns reisen Kinder sicher. Unsere Busse sind mit Sicherheitsgurten an jedem Sitzplatz und Mikrofonen für eine einfache Kommunikation ausgestattet.",
+            },
+            sportsTransport: {
+              title: "Transport für Sportvereine und Gruppen",
+              description:
+                "Seit Jahren sind wir ein zuverlässiger Partner für viele Sportvereine. Unsere Busse verfügen über Sicherheitsgurte an jedem Sitzplatz und bieten bei Bedarf Stauraum für Ihre Sportausrüstung.",
+            },
+            groupsTransport: {
+              title: "Transport für Vereine, Organisationen und Einzelpersonen",
+              description:
+                "Suchen Sie einen zuverlässigen Transport für Ihren Club, Verein oder eine Gruppe von Freunden? Wir bringen Sie bequem und sorgenfrei überall hin – ob ans Meer, in die Berge, zu Burgen oder Schlössern. Wir bieten auch den Transport von Fahrrädern, Skiern, Kajaks oder anderen sperrigen Gepäckstücken, die einen Anhänger erfordern.",
+            },
+            airportTransfers: {
+              title: "Flughafentransfers",
+              description:
+                "Benötigen Sie einen Transport zum Flughafen? Wir helfen Ihnen gerne. Unabhängig von der Uhrzeit können Sie sich darauf verlassen, dass wir Sie jederzeit und überall hinbringen, einschließlich Wien, Brünn und anderen Zielen.",
+            },
+            weddingTransport: {
+              title: "Hochzeitstransport",
+              description:
+                "Wir wissen, dass die Planung einer Hochzeit stressig sein kann und das Parken in Stadtzentren schwierig ist. Überlassen Sie das uns. Wir stellen Ihnen einen Bus mit Fahrer zur Verfügung, der während der gesamten Veranstaltung für Sie da ist.",
+            },
+            replacementTransport: {
+              title: "Ersatzbusverkehr",
+              description:
+                "Suchen Sie nach einem Ersatzverkehr? Wir sind für Sie da, ob das Problem geplant oder ungeplant ist. Mit umfangreicher Erfahrung im Linienverkehr können Sie auf unsere Unterstützung zählen.",
+            },
+          },
+          corporateTransport: {
+            title: "Firmenlinienverkehr",
+            description:
+              "Wir bieten Unternehmen eine langfristige Zusammenarbeit zur Sicherstellung des Mitarbeitertransports. Mit umfangreicher Erfahrung im Linienverkehr bieten wir eine große Auswahl an Fahrzeugen, um die beste und effizienteste Lösung für Ihre Bedürfnisse zu finden. Gerne erstellen wir einen individuellen Plan inklusive Preisangebot.",
+          },
+          cargoTransport: {
+            title: "Güterverkehr",
+            description:
+              "Wir sind spezialisiert auf zuverlässigen und effizienten Warentransport. Mit einem Walking-Floor-Auflieger können wir eine Vielzahl von Materialien transportieren, von Schüttgut und landwirtschaftlichen Produkten bis hin zu Recyclingmaterialien, Hackschnitzeln und sogar Standardpaletten. Unsere Fahrzeuge erfüllen strenge Umweltauflagen und werden regelmäßig gewartet, um maximale Sicherheit und Zuverlässigkeit zu gewährleisten.",
           },
         },
         fleet: {
