@@ -60,12 +60,12 @@ export default function VozovyPark() {
 
   const vehicles = [
     {
-      images: ["/pics/mercedes1.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: ["/pics/travego.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Travego",
       description: "Moderní autobus s kapacitou 62 osob.",
     },
     {
-      images: ["/pics/mercedes2.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: ["/pics/tourismo.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Tourismo",
       description: "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
     },
@@ -75,17 +75,17 @@ export default function VozovyPark() {
       description: "Moderní autobus s kapacitou 67 osob.",
     },
     {
-      images: ["/pics/mercedes2.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: ["/pics/man.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "MAN Lion's Regio",
       description: "Kompaktní autobus pro skupiny do 57 osob.",
     },
     {
-      images: ["/pics/setra.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: ["/pics/karosa.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Karosa Axer",
       description: "Ideální autobus pro výlety po tuzemsku, kapacita 59 osob.",
     },
     {
-      images: ["/pics/mercedes1.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: ["/pics/tourino.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Tourino",
       description: "Stylový autobus s veškerým komfortem pro 36 osob.",
     },
