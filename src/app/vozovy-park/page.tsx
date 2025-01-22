@@ -1,50 +1,95 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Check, Slash, X } from "lucide-react";
 import Image from "next/image";
 
+const Carousel = ({ images }: { images: string[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToIndex = (index: number) => {
+    setCurrentIndex(index);
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        left: index * 350, // Assuming each image width is 350px
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <div className="relative w-full">
+      {/* Image Container */}
+      <div
+        ref={containerRef}
+        className="flex overflow-x-scroll scroll-smooth space-x-4 no-scrollbar"
+        style={{ scrollSnapType: "x mandatory" }}
+      >
+        {images.map((img, index) => (
+          <Image
+            key={index}
+            src={img}
+            alt={`Carousel Image ${index + 1}`}
+            width={350}
+            height={350}
+            className="rounded-[15%] flex-shrink-0"
+            style={{ scrollSnapAlign: "center" }}
+          />
+        ))}
+      </div>
+
+      {/* Navigation Dots */}
+      <div className="flex justify-center mt-4 space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToIndex(index)}
+            className={`w-3 h-3 rounded-full ${
+              currentIndex === index
+                ? "bg-blue-500"
+                : "bg-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default function VozovyPark() {
   const { t } = useTranslation();
 
-  const vehicles = (t("fleet.vehicleDetails", { returnObjects: true }) ||
-    []) as Array<{
-    name: string;
-    seats: string;
-    features: string[];
-  }>;
-
-  const featureHeaders = (t("fleet.featureHeaders", { returnObjects: true }) ||
-    []) as string[];
-
   const excursionTransport = [
     {
-      img: "/pics/mercedes1.png",
+      images: ["/pics/mercedes1.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Travego",
       description: "Moderní autobus s kapacitou 62 osob.",
     },
     {
-      img: "/pics/mercedes2.png",
+      images: ["/pics/mercedes2.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Tourismo",
-      description: "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
+      description:
+        "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
     },
     {
-      img: "/pics/setra.png",
+      images: ["/pics/setra.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Setra Multiclass",
       description: "Moderní autobus s kapacitou 67 osob.",
     },
     {
-      img: "/pics/mercedes2.png",
+      images: ["/pics/mercedes2.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "MAN Lion's Regio",
       description: "Kompaktní autobus pro skupiny do 57 osob.",
     },
     {
-      img: "/pics/setra.png",
+      images: ["/pics/setra.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Karosa Axer",
       description: "Ideální autobus pro výlety po tuzemsku, kapacita 59 osob.",
     },
     {
-      img: "/pics/mercedes1.png",
+      images: ["/pics/mercedes1.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Tourino",
       description: "Stylový autobus s veškerým komfortem pro 36 osob.",
     },
@@ -52,12 +97,12 @@ export default function VozovyPark() {
 
   const freightTransport = [
     {
-      img: "/pics/fmax.png",
+      images: ["/pics/fmax.png", "/pics/truckDetail1.png", "/pics/truckDetail2.png"],
       name: "Ford F-Max + 13.6m návěs",
       description: "Nákladní vůz pro velkoobjemový transport.",
     },
     {
-      img: "/pics/daf.png",
+      images: ["/pics/daf.png", "/pics/truckDetail1.png", "/pics/truckDetail2.png"],
       name: "DAF XF 510 FT",
       description: "Nákladní vůz pro velkoobjemový transport.",
     },
@@ -71,18 +116,13 @@ export default function VozovyPark() {
         </h2>
         <p className="text-base text-gray-700">{t("fleet.description")}</p>
       </div>
-      {/* Excursion Transport (Zájezdová doprava) */}
+
+      {/* Excursion Transport */}
       <div className="mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {excursionTransport.map((bus, index) => (
             <div key={index} className="flex flex-col items-center">
-              <Image
-                src={bus.img}
-                alt={`Bus ${index + 1}`}
-                width={350}
-                height={350}
-                className="rounded-[15%]"
-              />
+              <Carousel images={bus.images} />
               <p className="mt-4 text-gray-700 font-bold text-center">
                 {bus.name}
               </p>
@@ -94,22 +134,15 @@ export default function VozovyPark() {
         </div>
       </div>
 
-      {/* Freight Transport (Nákladní doprava) */}
-      <div className="">
+      {/* Freight Transport */}
+      <div className="mb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {freightTransport.map((truck, index) => (
             <div key={index} className="flex flex-col items-center">
-              <Image
-                src={truck.img}
-                alt={`Truck ${index + 1}`}
-                width={350}
-                height={350}
-                className="rounded-[15%]"
-              />
+              <Carousel images={truck.images} />
               <p className="mt-4 text-gray-700 font-bold text-center">
                 {truck.name}
               </p>
-
               <p className="mt-4 text-gray-700 text-center">
                 {truck.description}
               </p>
@@ -117,58 +150,6 @@ export default function VozovyPark() {
           ))}
         </div>
       </div>
-      {/* Merged Table */}
-      {/* <div className="overflow-x-auto">
-        <table className="w-full border border-gray-300 text-left">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="px-4 py-2 border-b border-gray-300 text-gray-700">
-                {t("fleet.headers.vehicleName")}
-              </th>
-              <th className="px-4 py-2 border-b border-gray-300 text-gray-700 text-center">
-                {t("fleet.headers.seats")}
-              </th>
-              {featureHeaders.map((header, index) => (
-                <th
-                  key={index}
-                  className="px-4 py-2 border-b border-gray-300 text-gray-700 text-center"
-                >
-                  {header}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {vehicles.map((vehicle, index) => (
-              <tr
-                key={index}
-                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
-              >
-                <td className="px-4 py-2 border-b border-gray-300">
-                  {vehicle.name}
-                </td>
-                <td className="px-4 py-2 border-b border-gray-300 text-center">
-                  {vehicle.seats}
-                </td>
-                {vehicle.features.map((feature, i) => (
-                  <td
-                    key={i}
-                    className="px-4 py-2 border-b border-gray-300 text-center"
-                  >
-                    {feature === "A" ? (
-                      <Check className="text-green-500 w-5 h-5 mx-auto" />
-                    ) : feature === "/" ? (
-                      <Slash className="text-gray-500 w-5 h-5 mx-auto" />
-                    ): (
-                      <X className="text-red-500 w-5 h-5 mx-auto" />
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div> */}
     </section>
   );
 }
