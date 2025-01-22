@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 
@@ -17,6 +17,32 @@ const Carousel = ({ images }: { images: string[] }) => {
       });
     }
   };
+
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const scrollLeft = containerRef.current.scrollLeft;
+      const containerWidth = containerRef.current.offsetWidth;
+      const totalScrollWidth = containerRef.current.scrollWidth;
+
+      const index = Math.round(
+        (scrollLeft / (totalScrollWidth - containerWidth)) * (images.length - 1)
+      );
+
+      setCurrentIndex(index);
+    }
+  };
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
 
   return (
     <div className="relative w-full">
