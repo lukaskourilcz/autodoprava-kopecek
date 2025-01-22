@@ -62,8 +62,12 @@ export default function VozovyPark() {
     {
       images: [
         "/pics/tourismo.png",
-        "/pics/busDetail1.png",
-        "/pics/busDetail2.png",
+        "/pics/tourismo1.png",
+        "/pics/tourismo2.png",
+        "/pics/tourismo3.png",
+        "/pics/tourismo4.png",
+        "/pics/tourismo5.png",
+        "/pics/tourismo6.png",
       ],
       name: "Mercedes-Benz Tourismo",
       description:
@@ -84,8 +88,10 @@ export default function VozovyPark() {
     {
       images: [
         "/pics/setra.png",
-        "/pics/busDetail1.png",
-        "/pics/busDetail2.png",
+        "/pics/setra1.png",
+        "/pics/setra2.png",
+        "/pics/setra3.png",
+        "/pics/setra4.png",
       ],
       name: "Setra Multiclass",
       description: "Moderní autobus s kapacitou 67 osob.",
@@ -104,8 +110,9 @@ export default function VozovyPark() {
     {
       images: [
         "/pics/karosa.png",
-        "/pics/busDetail1.png",
-        "/pics/busDetail2.png",
+        "/pics/karosa1.png",
+        "/pics/karosa2.png",
+        "/pics/karosa3.png",
       ],
       name: "Karosa Axer",
       description: "Ideální autobus pro výlety po tuzemsku, kapacita 59 osob.",

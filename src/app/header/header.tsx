@@ -13,7 +13,7 @@ export default function Header() {
     "/pics/uvodka7.png",
     "/pics/uvodka8.png",
     "/pics/uvodka9.png",
-
+    "/pics/uvodka10.png",
   ];
 
   const [currentImage, setCurrentImage] = useState<number>(0);
@@ -61,17 +61,14 @@ export default function Header() {
       ></div>
 
       {/* Content */}
-      <div
-  className="absolute left-1/2 top-2/3 transform -translate-x-1/2 -translate-y-1/2 w-5/6 sm:w-3/4 lg:w-1/2 bg-white bg-opacity-60 backdrop-blur-lg rounded-lg shadow-lg text-center p-8"
->
-  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide text-black mb-6">
-    {t("home.subtitle")}
-  </h1>
-  <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
-    {t("home.description")}
-  </p>
-</div>
-
+      <div className="absolute left-1/2 top-2/3 transform -translate-x-1/2 -translate-y-1/2 w-5/6 sm:w-3/4 lg:w-1/2 bg-white bg-opacity-60 backdrop-blur-lg rounded-lg shadow-lg text-center p-8">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide text-black mb-6">
+          {t("home.subtitle")}
+        </h1>
+        <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+          {t("home.description")}
+        </p>
+      </div>
 
       {/* Dots for manual navigation */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
