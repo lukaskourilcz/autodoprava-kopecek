@@ -121,64 +121,28 @@ i18n.use(initReactI18next).init({
           title: "Vozový park",
           description:
             "Náš vozový park tvoří pouze moderní a spolehlivá vozidla vybavená klimatizací a bezpečnostními pásy, připravená spolehlivě splnit vaše požadavky na přepravu.",
-          vehicles: [
-            "Autobusy pro 50+ osob",
-            "Dodávky do 3,5 tuny",
-            "Nákladní vozy s chlazením",
-          ],
-          headers: {
-            vehicleName: "Název vozidla",
-            seats: "Počet míst",
-          },
-          featureHeaders: [
-            "Zájezd",
-            "Televize",
-            "Mikrofon",
-            "Lednice",
-            "Toaleta",
-          ],
-          vehicleDetails: [
-            {
-              name: "Mercedes-Benz Travego",
-              seats: "61+1",
-              features: ["A", "A", "A", "A", "A"],
+            vehicles: {
+              title: {
+                tourismo: "Mercedes-Benz Tourismo",
+                travego: "Mercedes-Benz Travego",
+                multiclass: "Setra Multiclass",
+                regio: "MAN Lion's Regio",
+                axer: "Karosa Axer",
+                tourino: "Mercedes-Benz Tourino",
+                fmax: "Ford F-Max + 13.6m návěs",
+                daf: "DAF XF 510 FT",
+              },
+              description: {
+                tourismo: "Tento luxusní klimatizovaný autobus je ideální volbou pro dálkové zájezdy. Nabízí pohodlné polohovatelné sedačky, TV, lednici a mikrofon pro vašeho průvodce. Pro maximální komfort cestujících je vybaven také toaletou. Kapacita 51 míst z něj činí skvělého partnera na cestách.",
+                travego: "Moderní a prostorný autobus, který pojme až 62 cestujících. Perfektní na dlouhé cesty, kde oceníte vybavení jako televizi, lednici, mikrofon, polohovatelné sedačky a toaletu. Díky klimatizaci si užijete pohodlí v každém ročním období.",
+                multiclass: "Skvělá volba pro vnitrostátní přepravu nebo pravidelné linky. Tento moderní autobus s kapacitou 67 osob je vybaven klimatizací, televizí a mikrofonem, což zaručuje komfortní a příjemné cestování pro každého.",
+                regio: "Kompaktní, ale prostorný autobus, ideální pro skupiny do 57 cestujících. Díky klimatizaci, polohovatelným sedačkám a lednici si můžete užít pohodlí i na delších cestách.",
+                axer: "Spolehlivý autobus určený na výlety po Česku nebo pravidelné linkové trasy. Kapacita 59 míst, klimatizace, polohovatelné sedačky a lednice vám zajistí komfortní cestování za každé situace.",
+                tourino: "Stylový menší autobus, který přináší maximální komfort až pro 36 osob. Ideální volba pro menší skupiny, s klimatizací, polohovatelnými sedačkami, televizí, mikrofonem a lednicí.",
+                fmax: "Tento robustní tahač s dlouhým návěsem je připraven na ty nejnáročnější transporty. Bez problému zvládá i velké vzdálenosti a spolehlivě doručí váš náklad včas na místo určení.",
+                daf: "Výkonný nákladní vůz určený pro velkoobjemovou přepravu. S tímto spolehlivým partnerem dorazí vaše zásilky bezpečně a efektivně, ať už jedete kamkoliv."
+              },
             },
-            {
-              name: "Mercedes-Benz Tourismo",
-              seats: "49+2",
-              features: ["A", "A", "A", "A", "A"],
-            },
-            {
-              name: "Setra Multiclass",
-              seats: "67",
-              features: ["N", "A", "N", "N", "N"],
-            },
-            {
-              name: "MAN Lion's Regio",
-              seats: "57",
-              features: ["N", "A", "N", "N", "N"],
-            },
-            {
-              name: "Karosa Axer",
-              seats: "59",
-              features: ["N", "N", "N", "N", "N"],
-            },
-            {
-              name: "Mercedes-Benz Tourino",
-              seats: "35+1",
-              features: ["N", "A", "A", "A", "N"],
-            },
-            {
-              name: "Ford F-Max + návěs 13,6 m",
-              seats: "",
-              features: ["/", "/", "/", "/", "/"],
-            },
-            {
-              name: "DAF XF 510 FT",
-              seats: "",
-              features: ["/", "/", "/", "/", "/"],
-            },
-          ],
         },
         contact: {
           title: "Kontakt",
@@ -316,64 +280,28 @@ i18n.use(initReactI18next).init({
           title: "Fleet",
           description:
             "Our fleet consists exclusively of modern and reliable vehicles equipped with air conditioning and seat belts, ready to reliably meet your transportation needs.",
-          vehicles: [
-            "Buses for 50+ passengers",
-            "Vans up to 3.5 tons",
-            "Refrigerated trucks",
-          ],
-          headers: {
-            vehicleName: "Vehicle Name",
-            seats: "Seats",
-          },
-          featureHeaders: [
-            "Excursion",
-            "TV",
-            "Microphone",
-            "Refrigerator",
-            "Toilet",
-          ],
-          vehicleDetails: [
-            {
-              name: "Mercedes-Benz Travego",
-              seats: "61+1",
-              features: ["A", "A", "A", "A", "A"],
+            vehicles: {
+              title: {
+                tourismo: "Mercedes-Benz Tourismo",
+                travego: "Mercedes-Benz Travego",
+                multiclass: "Setra Multiclass",
+                regio: "MAN Lion's Regio",
+                axer: "Karosa Axer",
+                tourino: "Mercedes-Benz Tourino",
+                fmax: "Ford F-Max + 13.6m trailer",
+                daf: "DAF XF 510 FT",
+              },
+              description: {
+                tourismo: "This luxurious air-conditioned bus is the perfect choice for long-distance trips. It features comfortable reclining seats, a TV, a refrigerator, and a microphone for your guide. For maximum passenger comfort, it also includes a restroom. With a capacity of 51 seats, it’s a great travel companion.",
+        travego: "A modern and spacious bus that accommodates up to 62 passengers. Perfect for long journeys, offering features such as a TV, refrigerator, microphone, reclining seats, and a restroom. The air-conditioning ensures comfort in any season.",
+        multiclass: "An excellent choice for domestic transport or regular routes. This modern bus, with a capacity of 67 passengers, is equipped with air-conditioning, a TV, and a microphone, ensuring a comfortable and pleasant journey for everyone.",
+        regio: "Compact yet spacious, this bus is ideal for groups of up to 57 passengers. With air-conditioning, reclining seats, and a refrigerator, you can enjoy comfort even on longer journeys.",
+        axer: "A reliable bus designed for trips around the Czech Republic or regular routes. With a capacity of 59 seats, air-conditioning, reclining seats, and a refrigerator, it guarantees comfortable travel in any situation.",
+        tourino: "A stylish smaller bus offering maximum comfort for up to 36 passengers. An ideal choice for smaller groups, featuring air-conditioning, reclining seats, a TV, a microphone, and a refrigerator.",
+        fmax: "This robust truck with a long trailer is ready for the most demanding transports. It handles even long distances effortlessly and reliably delivers your cargo on time.",
+        daf: "A powerful truck designed for high-volume transport. This reliable partner ensures your shipments arrive safely and efficiently, no matter the destination."
+              },
             },
-            {
-              name: "Mercedes-Benz Tourismo",
-              seats: "49+2",
-              features: ["A", "A", "A", "A", "A"],
-            },
-            {
-              name: "Setra Multiclass",
-              seats: "67",
-              features: ["N", "A", "N", "N", "N"],
-            },
-            {
-              name: "MAN Lion's Regio",
-              seats: "57",
-              features: ["N", "A", "N", "N", "N"],
-            },
-            {
-              name: "Karosa Axer",
-              seats: "59",
-              features: ["N", "N", "N", "N", "N"],
-            },
-            {
-              name: "Mercedes-Benz Tourino",
-              seats: "35+1",
-              features: ["N", "A", "A", "A", "N"],
-            },
-            {
-              name: "Ford F-Max + trailer 13.6 m",
-              seats: "",
-              features: ["/", "/", "/", "/", "/"],
-            },
-            {
-              name: "DAF XF 510 FT",
-              seats: "",
-              features: ["/", "/", "/", "/", "/"],
-            },
-          ],
         },
         contact: {
           title: "Contact",
@@ -512,64 +440,33 @@ i18n.use(initReactI18next).init({
           title: "Fuhrpark",
           description:
             "Unsere Flotte besteht ausschließlich aus modernen und zuverlässigen Fahrzeugen, die mit Klimaanlage und Sicherheitsgurten ausgestattet sind und zuverlässig Ihre Transportanforderungen erfüllen.",
-          vehicles: [
-            "Busse für 50+ Passagiere",
-            "Transporter bis 3,5 Tonnen",
-            "Kühlfahrzeuge",
-          ],
-          headers: {
-            vehicleName: "Fahrzeugname",
-            seats: "Sitzplätze",
+          vehicles: {
+            title: {
+              tourismo: "Mercedes-Benz Tourismo",
+              travego: "Mercedes-Benz Travego",
+              multiclass: "Setra Multiclass",
+              regio: "MAN Lion's Regio",
+              axer: "Karosa Axer",
+              tourino: "Mercedes-Benz Tourino",
+              fmax: "Ford F-Max + 13.6m Anhänger",
+              daf: "DAF XF 510 FT",
+            },
+            description: {
+              tourismo:
+                "Dieser luxuriöse, klimatisierte Bus ist die perfekte Wahl für Fernreisen. Er bietet bequeme verstellbare Sitze, einen Fernseher, einen Kühlschrank und ein Mikrofon für Ihren Reiseleiter. Für maximalen Komfort der Passagiere ist er auch mit einer Toilette ausgestattet. Mit einer Kapazität von 51 Plätzen ist er ein großartiger Begleiter auf Reisen.",
+              travego:
+                "Ein moderner und geräumiger Bus, der bis zu 62 Passagiere aufnehmen kann. Perfekt für lange Reisen, ausgestattet mit einem Fernseher, Kühlschrank, Mikrofon, verstellbaren Sitzen und einer Toilette. Dank der Klimaanlage genießen Sie Komfort zu jeder Jahreszeit.",
+              multiclass:
+                "Eine ausgezeichnete Wahl für Inlandsfahrten oder regelmäßige Linienverbindungen. Dieser moderne Bus mit einer Kapazität von 67 Personen ist mit Klimaanlage, Fernseher und Mikrofon ausgestattet und sorgt für eine komfortable und angenehme Reise für alle.",
+              regio:
+                "Kompakt und doch geräumig, ideal für Gruppen von bis zu 57 Personen. Mit Klimaanlage, verstellbaren Sitzen und Kühlschrank genießen Sie auch auf längeren Strecken höchsten Komfort.",
+              axer: "Ein zuverlässiger Bus, der für Reisen innerhalb der Tschechischen Republik oder regelmäßige Linienverbindungen ausgelegt ist. Mit einer Kapazität von 59 Sitzen, Klimaanlage, verstellbaren Sitzen und einem Kühlschrank garantiert er komfortables Reisen in jeder Situation.",
+              tourino:
+                "Ein stilvoller kleinerer Bus, der maximalen Komfort für bis zu 36 Personen bietet. Eine ideale Wahl für kleinere Gruppen mit Klimaanlage, verstellbaren Sitzen, Fernseher, Mikrofon und Kühlschrank.",
+              fmax: "Dieser robuste Lkw mit langem Anhänger ist bereit für die anspruchsvollsten Transporte. Er bewältigt problemlos auch große Entfernungen und liefert Ihre Ladung pünktlich und zuverlässig ans Ziel.",
+              daf: "Ein leistungsstarker Lkw für den Großvolumentransport. Dieser zuverlässige Partner sorgt dafür, dass Ihre Sendungen sicher und effizient an ihrem Ziel ankommen, egal wohin die Reise geht.",
+            },
           },
-          featureHeaders: [
-            "Ausflug",
-            "Fernseher",
-            "Mikrofon",
-            "Kühlschrank",
-            "Toilette",
-          ],
-          vehicleDetails: [
-            {
-              name: "Mercedes-Benz Travego",
-              seats: "61+1",
-              features: ["A", "A", "A", "A", "A"],
-            },
-            {
-              name: "Mercedes-Benz Tourismo",
-              seats: "49+2",
-              features: ["A", "A", "A", "A", "A"],
-            },
-            {
-              name: "Setra Multiclass",
-              seats: "67",
-              features: ["N", "A", "N", "N", "N"],
-            },
-            {
-              name: "MAN Lion's Regio",
-              seats: "57",
-              features: ["N", "A", "N", "N", "N"],
-            },
-            {
-              name: "Karosa Axer",
-              seats: "59",
-              features: ["N", "N", "N", "N", "N"],
-            },
-            {
-              name: "Mercedes-Benz Tourino",
-              seats: "35+1",
-              features: ["N", "A", "A", "A", "N"],
-            },
-            {
-              name: "Ford F-Max + Anhänger 13,6 m",
-              seats: "",
-              features: ["/", "/", "/", "/", "/"],
-            },
-            {
-              name: "DAF XF 510 FT",
-              seats: "",
-              features: ["/", "/", "/", "/", "/"],
-            },
-          ],
         },
         contact: {
           title: "Kontakt",
