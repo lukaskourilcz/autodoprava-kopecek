@@ -301,11 +301,11 @@ i18n.use(initReactI18next).init({
                 "This luxurious air-conditioned bus is the perfect choice for long-distance trips. It features comfortable reclining seats, restroom, a TV, a refrigerator, and a microphone for your guide. With a capacity of 51 seats, it’s a great travel companion.",
               travego:
                 "A modern and spacious bus that accommodates up to 62 passengers. Perfect for long journeys, offering features such as a TV, refrigerator, microphone, reclining seats, and a restroom. The air-conditioning ensures comfort in any season.",
-              multiclass:
+              setra:
                 "An excellent choice for domestic transport or regular routes. This modern bus, with a capacity of 67 passengers, is equipped with air-conditioning, a TV, and a microphone, ensuring a comfortable and pleasant journey for everyone.",
-              regio:
+              man:
                 "Compact yet spacious, this bus is ideal for groups of up to 57 passengers. With air-conditioning, reclining seats, and a refrigerator, you can enjoy comfort even on longer journeys.",
-              axer: "A reliable bus designed for trips around the Czech Republic or regular routes. With a capacity of 59 seats, air-conditioning, reclining seats, and a refrigerator, it guarantees comfortable travel in any situation.",
+              karosa: "A reliable bus designed for trips around the Czech Republic or regular routes. With a capacity of 59 seats, air-conditioning, reclining seats, and a refrigerator, it guarantees comfortable travel in any situation.",
               tourino:
                 "A stylish smaller bus offering maximum comfort for up to 36 passengers. An ideal choice for smaller groups, featuring air-conditioning, reclining seats, a TV, a microphone, and a refrigerator.",
               fmax: "This robust truck with a long trailer is ready for the most demanding transports. It handles even long distances effortlessly and reliably delivers your cargo on time.",

@@ -180,6 +180,7 @@ export default function VozovyPark() {
             <p className="mt-4 text-gray-700 font-bold text-center">
               {vehicle.name}
             </p>
+            <p className="text-base text-gray-700">Kapacita: 58 mist</p>
             <p className="mt-4 text-gray-700 text-center">
               {vehicle.description}
             </p>
