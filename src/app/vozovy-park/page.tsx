@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Check, Slash, X } from "lucide-react";
 import Image from "next/image";
 
 const Carousel = ({ images }: { images: string[] }) => {
@@ -47,9 +46,7 @@ const Carousel = ({ images }: { images: string[] }) => {
             key={index}
             onClick={() => scrollToIndex(index)}
             className={`w-3 h-3 rounded-full ${
-              currentIndex === index
-                ? "bg-blue-500"
-                : "bg-gray-300"
+              currentIndex === index ? "bg-blue-500" : "bg-gray-300"
             }`}
           />
         ))}
@@ -61,7 +58,7 @@ const Carousel = ({ images }: { images: string[] }) => {
 export default function VozovyPark() {
   const { t } = useTranslation();
 
-  const excursionTransport = [
+  const vehicles = [
     {
       images: ["/pics/mercedes1.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Travego",
@@ -70,8 +67,7 @@ export default function VozovyPark() {
     {
       images: ["/pics/mercedes2.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
       name: "Mercedes-Benz Tourismo",
-      description:
-        "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
+      description: "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
     },
     {
       images: ["/pics/setra.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
@@ -93,9 +89,6 @@ export default function VozovyPark() {
       name: "Mercedes-Benz Tourino",
       description: "Stylový autobus s veškerým komfortem pro 36 osob.",
     },
-  ];
-
-  const freightTransport = [
     {
       images: ["/pics/fmax.png", "/pics/truckDetail1.png", "/pics/truckDetail2.png"],
       name: "Ford F-Max + 13.6m návěs",
@@ -117,38 +110,18 @@ export default function VozovyPark() {
         <p className="text-base text-gray-700">{t("fleet.description")}</p>
       </div>
 
-      {/* Excursion Transport */}
-      <div className="mb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {excursionTransport.map((bus, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <Carousel images={bus.images} />
-              <p className="mt-4 text-gray-700 font-bold text-center">
-                {bus.name}
-              </p>
-              <p className="mt-4 text-gray-700 text-center">
-                {bus.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Freight Transport */}
-      <div className="mb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {freightTransport.map((truck, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <Carousel images={truck.images} />
-              <p className="mt-4 text-gray-700 font-bold text-center">
-                {truck.name}
-              </p>
-              <p className="mt-4 text-gray-700 text-center">
-                {truck.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {vehicles.map((vehicle, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <Carousel images={vehicle.images} />
+            <p className="mt-4 text-gray-700 font-bold text-center">
+              {vehicle.name}
+            </p>
+            <p className="mt-4 text-gray-700 text-center">
+              {vehicle.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
