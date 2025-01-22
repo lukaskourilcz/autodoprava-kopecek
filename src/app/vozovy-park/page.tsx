@@ -60,42 +60,73 @@ export default function VozovyPark() {
 
   const vehicles = [
     {
-      images: ["/pics/travego.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: [
+        "/pics/tourismo.png",
+        "/pics/busDetail1.png",
+        "/pics/busDetail2.png",
+      ],
+      name: "Mercedes-Benz Tourismo",
+      description:
+        "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
+    },
+    {
+      images: [
+        "/pics/travego.png",
+        "/pics/travego1.png",
+        "/pics/travego2.png",
+        "/pics/travego3.png",
+        "/pics/travego4.png",
+        "/pics/travego5.png",
+      ],
       name: "Mercedes-Benz Travego",
       description: "Moderní autobus s kapacitou 62 osob.",
     },
     {
-      images: ["/pics/tourismo.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
-      name: "Mercedes-Benz Tourismo",
-      description: "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
-    },
-    {
-      images: ["/pics/setra.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: [
+        "/pics/setra.png",
+        "/pics/busDetail1.png",
+        "/pics/busDetail2.png",
+      ],
       name: "Setra Multiclass",
       description: "Moderní autobus s kapacitou 67 osob.",
     },
     {
-      images: ["/pics/man.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: [
+        "/pics/man.png",
+        "/pics/man1.png",
+        "/pics/man2.png",
+        "/pics/man3.png",
+        "/pics/man4.png",
+      ],
       name: "MAN Lion's Regio",
       description: "Kompaktní autobus pro skupiny do 57 osob.",
     },
     {
-      images: ["/pics/karosa.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: [
+        "/pics/karosa.png",
+        "/pics/busDetail1.png",
+        "/pics/busDetail2.png",
+      ],
       name: "Karosa Axer",
       description: "Ideální autobus pro výlety po tuzemsku, kapacita 59 osob.",
     },
     {
-      images: ["/pics/tourino.png", "/pics/busDetail1.png", "/pics/busDetail2.png"],
+      images: ["/pics/tourino.png", "/pics/tourino2.png"],
       name: "Mercedes-Benz Tourino",
       description: "Stylový autobus s veškerým komfortem pro 36 osob.",
     },
     {
-      images: ["/pics/fmax.png", "/pics/truckDetail1.png", "/pics/truckDetail2.png"],
+      images: ["/pics/fmax.png", "/pics/fmax1.png", "/pics/fmax2.png"],
       name: "Ford F-Max + 13.6m návěs",
       description: "Nákladní vůz pro velkoobjemový transport.",
     },
     {
-      images: ["/pics/daf.png", "/pics/truckDetail1.png", "/pics/truckDetail2.png"],
+      images: [
+        "/pics/daf.png",
+        "/pics/daf1.png",
+        "/pics/daf2.png",
+        "/pics/daf3.png",
+      ],
       name: "DAF XF 510 FT",
       description: "Nákladní vůz pro velkoobjemový transport.",
     },
