@@ -148,7 +148,7 @@ export default function VozovyPark() {
       description: t("fleet.vehicles.description.tourino"),
     },
     {
-      images: ["/pics/fmax.png", "/pics/fmax1.png", "/pics/fmax2.png"],
+      images: ["/pics/fmax.png", "/pics/fmax1.png"],
       name: t("fleet.vehicles.name.fmax"),
       description: t("fleet.vehicles.description.fmax"),
     },
