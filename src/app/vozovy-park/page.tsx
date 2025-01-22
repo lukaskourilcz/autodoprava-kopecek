@@ -95,9 +95,8 @@ export default function VozovyPark() {
         "/pics/tourismo5.png",
         "/pics/tourismo6.png",
       ],
-      name: "Mercedes-Benz Tourismo",
-      description:
-        "Luxusní klimatizovaný autobus s TV a lednicí, kapacita 51 osob.",
+      name: t("fleet.vehicles.name.tourismo"),
+      description: t("fleet.vehicles.description.tourismo"),
     },
     {
       images: [
@@ -108,8 +107,8 @@ export default function VozovyPark() {
         "/pics/travego4.png",
         "/pics/travego5.png",
       ],
-      name: "Mercedes-Benz Travego",
-      description: "Moderní autobus s kapacitou 62 osob.",
+      name: t("fleet.vehicles.name.travego"),
+      description: t("fleet.vehicles.description.travego"),
     },
     {
       images: [
@@ -119,8 +118,8 @@ export default function VozovyPark() {
         "/pics/setra3.png",
         "/pics/setra4.png",
       ],
-      name: "Setra Multiclass",
-      description: "Moderní autobus s kapacitou 67 osob.",
+      name: t("fleet.vehicles.name.setra"),
+      description: t("fleet.vehicles.description.setra"),
     },
     {
       images: [
@@ -130,8 +129,8 @@ export default function VozovyPark() {
         "/pics/man3.png",
         "/pics/man4.png",
       ],
-      name: "MAN Lion's Regio",
-      description: "Kompaktní autobus pro skupiny do 57 osob.",
+      name: t("fleet.vehicles.name.man"),
+      description: t("fleet.vehicles.description.man"),
     },
     {
       images: [
@@ -140,18 +139,18 @@ export default function VozovyPark() {
         "/pics/karosa2.png",
         "/pics/karosa3.png",
       ],
-      name: "Karosa Axer",
-      description: "Ideální autobus pro výlety po tuzemsku, kapacita 59 osob.",
+      name: t("fleet.vehicles.name.karosa"),
+      description: t("fleet.vehicles.description.karosa"),
     },
     {
       images: ["/pics/tourino.png", "/pics/tourino2.png"],
-      name: "Mercedes-Benz Tourino",
-      description: "Stylový autobus s veškerým komfortem pro 36 osob.",
+      name: t("fleet.vehicles.name.tourino"),
+      description: t("fleet.vehicles.description.tourino"),
     },
     {
       images: ["/pics/fmax.png", "/pics/fmax1.png", "/pics/fmax2.png"],
-      name: "Ford F-Max + 13.6m návěs",
-      description: "Nákladní vůz pro velkoobjemový transport.",
+      name: t("fleet.vehicles.name.fmax"),
+      description: t("fleet.vehicles.description.fmax"),
     },
     {
       images: [
@@ -160,8 +159,8 @@ export default function VozovyPark() {
         "/pics/daf2.png",
         "/pics/daf3.png",
       ],
-      name: "DAF XF 510 FT",
-      description: "Nákladní vůz pro velkoobjemový transport.",
+      name: t("fleet.vehicles.name.daf"),
+      description: t("fleet.vehicles.description.daf"),
     },
   ];
 
