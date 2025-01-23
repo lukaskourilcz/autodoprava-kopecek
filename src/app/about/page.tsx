@@ -11,7 +11,7 @@ type Reason = {
   description: string;
 };
 
-export default function ONas() {
+export default function About() {
   const { t } = useTranslation();
 
   // Cast `t('about.reasons')` as an array of reasons

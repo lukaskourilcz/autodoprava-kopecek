@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { Mail, MapPinHouse, Phone } from "lucide-react";
 
-export default function Kontakt() {
+export default function Contact() {
   const { t } = useTranslation();
 
   return (

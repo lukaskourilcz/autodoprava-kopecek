@@ -81,7 +81,7 @@ const Carousel = ({ images }: { images: string[] }) => {
   );
 };
 
-export default function VozovyPark() {
+export default function Fleet() {
   const { t } = useTranslation();
 
   const vehicles = [

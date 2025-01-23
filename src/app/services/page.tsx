@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-export default function Sluzby() {
+export default function Services() {
   const { t } = useTranslation();
 
   const services = [

@@ -3,11 +3,11 @@
 import React, { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import Header from "./header/header";
-import Kontakt from "./kontakt/page";
-import ONas from "./o-nas/page";
-import Sluzby from "./sluzby/page";
-import VozovyPark from "./vozovy-park/page";
+import Header from "./header/page";
+import Contact from "./contact/page";
+import About from "./about/page";
+import Services from "./services/page";
+import Fleet from "./fleet/page";
 
 export default function HomePage() {
   const searchParams = useSearchParams();
@@ -29,16 +29,16 @@ export default function HomePage() {
         <Header />
       </section>
       <section id="about">
-        <ONas />
+        <About />
       </section>
       <section id="services">
-        <Sluzby />
+        <Services />
       </section>
       <section id="fleet">
-        <VozovyPark />
+        <Fleet />
       </section>
       <section id="contact">
-        <Kontakt />
+        <Contact />
       </section>
     </main>
   );
