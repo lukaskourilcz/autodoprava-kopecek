@@ -134,18 +134,18 @@ i18n.use(initReactI18next).init({
             },
             description: {
               tourismo:
-                "Tento luxusní klimatizovaný autobus je ideální volbou pro dálkové zájezdy. Nabízí pohodlné polohovatelné sedačky, toaletu, TV, lednici a mikrofon pro vašeho průvodce. Kapacita 51 míst z něj činí skvělého partnera na cestách.",
+                "Tento luxusní klimatizovaný autobus s <strong>kapacitou 51 míst</strong> je ideální volbou pro dálkové zájezdy.",
               travego:
-                "Moderní a prostorný autobus, který pojme až 62 cestujících. Perfektní na dlouhé cesty, kde oceníte vybavení jako televizi, lednici, mikrofon, polohovatelné sedačky a toaletu. Díky klimatizaci si užijete pohodlí v každém ročním období.",
+                "Moderní a prostorný autobus, který pojme až <strong>62 cestujících</strong>, je perfektní volbou na dlouhé cesty.",
               setra:
-                "Skvělá volba pro vnitrostátní přepravu nebo pravidelné linky. Tento moderní autobus s kapacitou 67 osob je vybaven klimatizací, televizí a mikrofonem, což zaručuje komfortní a příjemné cestování pro každého.",
-              man: "Kompaktní, ale prostorný autobus, ideální pro skupiny do 57 cestujících. Díky klimatizaci, polohovatelným sedačkám a lednici si můžete užít pohodlí i na delších cestách.",
+                "Skvělá volba pro vnitrostátní přepravu nebo pravidelné linky. Tento moderní autobus má <strong>kapacitu 67 míst</strong>.",
+              man: "Kompaktní, ale velice prostorný autobus, ideální pro skupiny <strong>do 57 cestujících</strong>.",
               karosa:
-                "Spolehlivý autobus určený na výlety po Česku nebo pravidelné linkové trasy. Kapacita 59 míst, klimatizace, polohovatelné sedačky a lednice vám zajistí komfortní cestování za každé situace.",
+                "Spolehlivý autobus určený na vnitrostátní výlety nebo pravidelné linkové trasy s <strong>kapacitou 59 míst</strong>.",
               tourino:
-                "Stylový menší autobus, který přináší maximální komfort až pro 36 osob. Ideální volba pro menší skupiny, s klimatizací, polohovatelnými sedačkami, televizí, mikrofonem a lednicí.",
-              fmax: "Tento robustní tahač s dlouhým návěsem je připraven na ty nejnáročnější transporty. Bez problému zvládá i velké vzdálenosti a spolehlivě doručí váš náklad včas na místo určení.",
-              daf: "Výkonný nákladní vůz určený pro velkoobjemovou přepravu. S tímto spolehlivým partnerem dorazí vaše zásilky bezpečně a efektivně, ať už jedete kamkoliv.",
+                "Stylový menší autobus, který přináší maximální komfort až <strong>pro 36 osob</strong>. Ideální volba pro menší skupiny.",
+              fmax: "Tento robustní tahač s dlouhým návěsem je připraven na ty nejnáročnější transporty.",
+              daf: "Výkonný nákladní vůz určený pro velkoobjemovou a efektivní přepravu zboží na dlouhé vzdálenosti.",
             },
           },
         },

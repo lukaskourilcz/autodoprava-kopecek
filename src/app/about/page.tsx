@@ -4,6 +4,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Waypoints, ChevronsUp, ShieldPlus } from "lucide-react";
 
+
+
 // Define the type for reasons
 type Reason = {
   icon: "Waypoints" | "ChevronsUp" | "ShieldPlus";
