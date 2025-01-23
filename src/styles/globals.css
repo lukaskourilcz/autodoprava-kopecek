@@ -39,3 +39,7 @@ html {
 .logo-animation {
   animation: fadeInScale 1s ease-out forwards;
 }
+
+.section {
+  scroll-margin-top: 50px;
+}

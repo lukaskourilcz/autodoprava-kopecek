@@ -51,11 +51,16 @@ export default function Navbar() {
             className="logo-animation mx-3"
             priority
           />
-          <span className="font-bold text-lg uppercase leading-tight ml-4">
-  <span className="text-yellow-400">AUTODOPRAVA</span>
-  <br />
-  <span>KOPEČEK.CZ</span>
-</span>
+          <Link
+            href={`/?lang=${activeLocale}#home`}
+            className="hover:text-gray-200 block ml-4"
+          >
+            <span className="font-bold text-lg uppercase leading-tight">
+              <span className="text-yellow-400">AUTODOPRAVA</span>
+              <br />
+              <span>KOPEČEK.CZ</span>
+            </span>
+          </Link>
         </div>
         {/* Hamburger Icon */}
         <button

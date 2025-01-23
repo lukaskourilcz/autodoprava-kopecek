@@ -25,19 +25,19 @@ export default function HomePage() {
 
   return (
     <main>
-      <section id="header">
+      <section id="header" className="section">
         <Header />
       </section>
-      <section id="about">
+      <section id="about" className="section">
         <About />
       </section>
-      <section id="services">
+      <section id="services" className="section">
         <Services />
       </section>
-      <section id="fleet">
+      <section id="fleet" className="section">
         <Fleet />
       </section>
-      <section id="contact">
+      <section id="contact" className="section">
         <Contact />
       </section>
     </main>
