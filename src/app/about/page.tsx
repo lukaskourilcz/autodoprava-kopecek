@@ -30,7 +30,7 @@ export default function About() {
   return (
     <section
       id="o-nas"
-      className="bg-white py-16 px-4 sm:px-8 md:px-16 lg:px-32"
+      className="bg-gradient-to-b from-gray-100 to-gray-200 py-16 px-4 sm:px-8 md:px-16 lg:px-32"
     >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">

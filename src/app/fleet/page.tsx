@@ -165,9 +165,9 @@ export default function Fleet() {
   ];
 
   return (
-    <section id="vozovy-park" className="bg-white py-16 px-8 sm:px-16 lg:px-32">
+    <section id="vozovy-park" className="bg-gradient-to-b from-gray-100 to-white py-16 px-8 sm:px-16 lg:px-32">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-semibold text-red-600 mb-4">
+        <h2 className="text-4xl font-semibold text-gray-800 mb-4">
           {t("fleet.title")}
         </h2>
         <p className="text-base text-gray-700">{t("fleet.description")}</p>
