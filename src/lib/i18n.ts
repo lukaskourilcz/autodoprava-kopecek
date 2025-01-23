@@ -120,7 +120,7 @@ i18n.use(initReactI18next).init({
         fleet: {
           title: "Vozový park",
           description:
-            "Náš vozový park tvoří pouze moderní a spolehlivá vozidla vybavená klimatizací a bezpečnostními pásy, připravená spolehlivě splnit vaše požadavky na přepravu.",
+            "Náš vozový park tvoří pouze moderní a spolehlivá vozidla, připravená bezpečně splnit vaše požadavky na přepravu.",
           vehicles: {
             name: {
               tourismo: "Mercedes-Benz Tourismo",
@@ -284,7 +284,7 @@ i18n.use(initReactI18next).init({
         fleet: {
           title: "Fleet",
           description:
-            "Our fleet consists exclusively of modern and reliable vehicles equipped with air conditioning and seat belts, ready to reliably meet your transportation needs.",
+            "Our fleet consists exclusively of modern and reliable vehicles, ready to safely meet your transportation needs.",
           vehicles: {
             name: {
               tourismo: "Mercedes-Benz Tourismo",
@@ -303,9 +303,9 @@ i18n.use(initReactI18next).init({
                 "A modern and spacious bus that accommodates up to 62 passengers. Perfect for long journeys, offering features such as a TV, refrigerator, microphone, reclining seats, and a restroom. The air-conditioning ensures comfort in any season.",
               setra:
                 "An excellent choice for domestic transport or regular routes. This modern bus, with a capacity of 67 passengers, is equipped with air-conditioning, a TV, and a microphone, ensuring a comfortable and pleasant journey for everyone.",
-              man:
-                "Compact yet spacious, this bus is ideal for groups of up to 57 passengers. With air-conditioning, reclining seats, and a refrigerator, you can enjoy comfort even on longer journeys.",
-              karosa: "A reliable bus designed for trips around the Czech Republic or regular routes. With a capacity of 59 seats, air-conditioning, reclining seats, and a refrigerator, it guarantees comfortable travel in any situation.",
+              man: "Compact yet spacious, this bus is ideal for groups of up to 57 passengers. With air-conditioning, reclining seats, and a refrigerator, you can enjoy comfort even on longer journeys.",
+              karosa:
+                "A reliable bus designed for trips around the Czech Republic or regular routes. With a capacity of 59 seats, air-conditioning, reclining seats, and a refrigerator, it guarantees comfortable travel in any situation.",
               tourino:
                 "A stylish smaller bus offering maximum comfort for up to 36 passengers. An ideal choice for smaller groups, featuring air-conditioning, reclining seats, a TV, a microphone, and a refrigerator.",
               fmax: "This robust truck with a long trailer is ready for the most demanding transports. It handles even long distances effortlessly and reliably delivers your cargo on time.",
@@ -449,7 +449,7 @@ i18n.use(initReactI18next).init({
         fleet: {
           title: "Fuhrpark",
           description:
-            "Unsere Flotte besteht ausschließlich aus modernen und zuverlässigen Fahrzeugen, die mit Klimaanlage und Sicherheitsgurten ausgestattet sind und zuverlässig Ihre Transportanforderungen erfüllen.",
+            "Unser Fuhrpark besteht ausschließlich aus modernen und zuverlässigen Fahrzeugen, die Ihren Transportanforderungen sicher gerecht werden.",
           vehicles: {
             name: {
               tourismo: "Mercedes-Benz Tourismo",
