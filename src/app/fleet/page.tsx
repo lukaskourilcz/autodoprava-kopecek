@@ -182,16 +182,10 @@ export default function Fleet() {
       icons: [BeachIcon, AirplaneSeatIcon, BeltIcon, ThermometerColdIcon, TvSmartIcon, Mic01Icon, FridgeIcon, Toilet01Icon],
     },
     {
-      images: [
-        "/pics/setra.png",
-        "/pics/setra1.png",
-        "/pics/setra2.png",
-        "/pics/setra3.png",
-        "/pics/setra4.png",
-      ],
-      name: t("fleet.vehicles.name.setra"),
-      description: t("fleet.vehicles.description.setra"),
-      icons: [BeltIcon, ThermometerColdIcon, TvSmartIcon, Mic01Icon],
+      images: ["/pics/tourino.png", "/pics/tourino2.png"],
+      name: t("fleet.vehicles.name.tourino"),
+      description: t("fleet.vehicles.description.tourino"),
+      icons: [AirplaneSeatIcon, BeltIcon, ThermometerColdIcon, TvSmartIcon, Mic01Icon, FridgeIcon],
     },
     {
       images: [
@@ -207,6 +201,18 @@ export default function Fleet() {
     },
     {
       images: [
+        "/pics/setra.png",
+        "/pics/setra1.png",
+        "/pics/setra2.png",
+        "/pics/setra3.png",
+        "/pics/setra4.png",
+      ],
+      name: t("fleet.vehicles.name.setra"),
+      description: t("fleet.vehicles.description.setra"),
+      icons: [BeltIcon, ThermometerColdIcon, TvSmartIcon, Mic01Icon],
+    },
+    {
+      images: [
         "/pics/karosa.png",
         "/pics/karosa1.png",
         "/pics/karosa2.png",
@@ -216,12 +222,7 @@ export default function Fleet() {
       description: t("fleet.vehicles.description.karosa"),
       icons: [AirplaneSeatIcon, BeltIcon, ThermometerColdIcon, FridgeIcon],
     },
-    {
-      images: ["/pics/tourino.png", "/pics/tourino2.png"],
-      name: t("fleet.vehicles.name.tourino"),
-      description: t("fleet.vehicles.description.tourino"),
-      icons: [AirplaneSeatIcon, BeltIcon, ThermometerColdIcon, TvSmartIcon, Mic01Icon, FridgeIcon],
-    },
+
     {
       images: ["/pics/fmax.png", "/pics/fmax1.png"],
       name: t("fleet.vehicles.name.fmax"),
