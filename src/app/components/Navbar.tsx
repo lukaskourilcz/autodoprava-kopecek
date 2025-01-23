@@ -40,9 +40,9 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 bg-gray-800 opacity-90 text-white p-4 flex justify-between items-center z-50">
+      {/* Logo and Brand */}
       <div className="flex items-center space-x-4">
-        {/* Logo */}
-        <div className="logo-container">
+        <div className="logo-container flex items-center">
           <Image
             src="/pics/logo-white-nav.png"
             alt="Logo"
@@ -51,6 +51,11 @@ export default function Navbar() {
             className="logo-animation mx-3"
             priority
           />
+          <span className="font-bold text-lg uppercase leading-tight ml-4">
+  <span className="text-yellow-400">AUTODOPRAVA</span>
+  <br />
+  <span>KOPEČEK.CZ</span>
+</span>
         </div>
         {/* Hamburger Icon */}
         <button
@@ -69,16 +74,8 @@ export default function Navbar() {
       >
         <li>
           <Link
-            href={`/?lang=${activeLocale}#header`}
-            className="hover:text-gray-400 block"
-          >
-            {t("home.title")}
-          </Link>
-        </li>
-        <li>
-          <Link
             href={`/?lang=${activeLocale}#about`}
-            className="hover:text-gray-400 block"
+            className="hover:text-yellow-400 block"
           >
             {t("about.title")}
           </Link>
@@ -86,7 +83,7 @@ export default function Navbar() {
         <li>
           <Link
             href={`/?lang=${activeLocale}#services`}
-            className="hover:text-gray-400 block"
+            className="hover:text-yellow-400 block"
           >
             {t("services.title")}
           </Link>
@@ -94,7 +91,7 @@ export default function Navbar() {
         <li>
           <Link
             href={`/?lang=${activeLocale}#fleet`}
-            className="hover:text-gray-400 block"
+            className="hover:text-yellow-400 block"
           >
             {t("fleet.title")}
           </Link>
@@ -102,7 +99,7 @@ export default function Navbar() {
         <li>
           <Link
             href={`/?lang=${activeLocale}#contact`}
-            className="hover:text-gray-400 block"
+            className="hover:text-yellow-400 block"
           >
             {t("contact.title")}
           </Link>
