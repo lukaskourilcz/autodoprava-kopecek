@@ -19,7 +19,7 @@ export default function Contact() {
           opacity: "1",
         }}
       >
-        <div className="max-w-4xl mx-auto text-center bg-white bg-opacity-75 p-8 rounded-3xl shadow-lg">
+        <div className="max-w-4xl mx-auto text-center bg-white bg-opacity-80 p-8 rounded-3xl shadow-lg">
           <h2 className="text-4xl font-bold text-gray-800 mb-5">
             {t("contact.title")}
           </h2>
