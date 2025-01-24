@@ -58,7 +58,7 @@ export default function Navbar() {
             <span className="font-bold text-lg uppercase leading-tight">
               <span className="text-yellow-400">AUTODOPRAVA</span>
               <br />
-              <span>KOPEČEK.CZ</span>
+              <span>KOPEČEK</span>
             </span>
           </Link>
         </div>
