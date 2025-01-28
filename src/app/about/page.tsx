@@ -4,9 +4,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Waypoints, ChevronsUp, ShieldPlus } from "lucide-react";
 
-
-
-// Define the type for reasons
 type Reason = {
   icon: "Waypoints" | "ChevronsUp" | "ShieldPlus";
   title: string;
@@ -16,12 +13,10 @@ type Reason = {
 export default function About() {
   const { t } = useTranslation();
 
-  // Cast `t('about.reasons')` as an array of reasons
   const reasons: Reason[] = t("about.reasons", {
     returnObjects: true,
   }) as Reason[];
 
-  // Define the icons mapping with explicit type
   const icons: Record<"Waypoints" | "ChevronsUp" | "ShieldPlus", JSX.Element> =
     {
       Waypoints: <Waypoints />,
