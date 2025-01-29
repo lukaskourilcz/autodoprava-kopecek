@@ -4,8 +4,14 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Waypoints, ChevronsUp, ShieldPlus } from "lucide-react";
 
+const icons = {
+  Waypoints,
+  ChevronsUp,
+  ShieldPlus,
+};
+
 type Reason = {
-  icon: "Waypoints" | "ChevronsUp" | "ShieldPlus";
+  icon: keyof typeof icons;
   title: string;
   description: string;
 };
@@ -13,16 +19,7 @@ type Reason = {
 export default function About() {
   const { t } = useTranslation();
 
-  const reasons: Reason[] = t("about.reasons", {
-    returnObjects: true,
-  }) as Reason[];
-
-  const icons: Record<"Waypoints" | "ChevronsUp" | "ShieldPlus", JSX.Element> =
-    {
-      Waypoints: <Waypoints />,
-      ChevronsUp: <ChevronsUp />,
-      ShieldPlus: <ShieldPlus />,
-    };
+  const reasons = (t("about.reasons", { returnObjects: true }) as Reason[]) || [];
 
   return (
     <section
@@ -35,33 +32,32 @@ export default function About() {
         </h2>
         <div className="w-5/6 mx-auto mb-4 border-t-2 border-gray-300"></div>
 
-
-        {t("about.paragraphs", { returnObjects: true }).map(
-          (paragraph: string, index: number) => (
-            <p
-              key={index}
-              className="text-lg text-gray-700 leading-relaxed mb-6"
-            >
+        {(t("about.paragraphs", { returnObjects: true }) as string[]).map(
+          (paragraph, index) => (
+            <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6">
               {paragraph}
             </p>
           )
         )}
+
         <div className="bg-gray-50 p-8 rounded-lg shadow-lg">
           <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             {t("about.reasonsTitle")}
           </h3>
           <ul className="space-y-6">
-            {reasons.map((reason, index) => (
-              <li key={index} className="flex items-center space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold">
-                  {icons[reason.icon]}
-                </div>
-                <p className="text-lg text-gray-700">
-                  <span className="font-bold">{reason.title}:</span>{" "}
-                  {reason.description}
-                </p>
-              </li>
-            ))}
+            {reasons.map((reason, index) => {
+              const IconComponent = icons[reason.icon];
+              return (
+                <li key={index} className="flex items-center space-x-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold">
+                    <IconComponent />
+                  </div>
+                  <p className="text-lg text-gray-700">
+                    <span className="font-bold">{reason.title}:</span> {reason.description}
+                  </p>
+                </li>
+              );
+            })}
           </ul>
           <p className="text-lg text-gray-700 mt-8">{t("about.closingText")}</p>
         </div>
