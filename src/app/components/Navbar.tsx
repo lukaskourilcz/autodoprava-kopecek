@@ -108,6 +108,7 @@ export default function Navbar() {
         </li>
       </ul>
 
+      {/* Language Selector */}
       <div className="relative">
         <button
           onClick={() => setDropdownVisible(!dropdownVisible)}
