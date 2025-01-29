@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import "../styles/globals.css";
 import Navbar from "./components/Navbar";
 
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body>
-        <Navbar />
+        <Suspense fallback={<p>Loading navbar...</p>}>
+          <Navbar />
+        </Suspense>
         {children}
       </body>
     </html>
