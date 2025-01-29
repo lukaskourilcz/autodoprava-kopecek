@@ -24,7 +24,7 @@ export default function Header() {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
       setIsFading(false);
     }, 400);
-  }, [images.length]); // Dependency array ensures function is stable
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +32,7 @@ export default function Header() {
     }, 8000);
 
     return () => clearInterval(interval);
-  }, [handleNextImage]); // Now `useEffect` is properly dependent on `handleNextImage`
+  }, [handleNextImage]);
 
   const handleDotClick = (index: number) => {
     if (index !== currentImage) {

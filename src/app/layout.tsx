@@ -3,8 +3,9 @@ import "../styles/globals.css";
 import Navbar from "./components/Navbar";
 
 export const metadata = {
-  title: "Autodoprava Kopecek",
-  description: "Your trusted transportation partner",
+  title: "Autodoprava Kopeček",
+  description:
+    "Jsme tu pro vás, ať už potřebujete zajistit pohodlnou přepravu osob nebo bezpečný transport nákladu.",
 };
 
 export default function RootLayout({

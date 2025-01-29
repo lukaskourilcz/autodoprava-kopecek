@@ -32,15 +32,14 @@ export default function Navbar() {
   ];
 
   const handleLanguageChange = (code: string) => {
-    const currentHash = window.location.hash; // Includes the hash (#services, #about)
-    const basePath = window.location.pathname; // Base path of the URL (e.g., "/")
-    router.push(`${basePath}?lang=${code}${currentHash}`); // Ensure correct order
+    const currentHash = window.location.hash;
+    const basePath = window.location.pathname;
+    router.push(`${basePath}?lang=${code}${currentHash}`);
     setDropdownVisible(false);
   };
 
   return (
     <nav className="sticky top-0 bg-gray-800 opacity-90 text-white p-4 flex justify-between items-center z-50">
-      {/* Logo and Brand */}
       <div className="flex items-center space-x-4">
         <div className="logo-container flex items-center">
           <Image
@@ -62,7 +61,6 @@ export default function Navbar() {
             </span>
           </Link>
         </div>
-        {/* Hamburger Icon */}
         <button
           className="sm:block lg:hidden text-white focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -71,7 +69,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Navigation Links */}
       <ul
         className={`${
           menuOpen ? "block" : "hidden"
@@ -111,7 +108,6 @@ export default function Navbar() {
         </li>
       </ul>
 
-      {/* Language Selector */}
       <div className="relative">
         <button
           onClick={() => setDropdownVisible(!dropdownVisible)}

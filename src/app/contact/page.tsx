@@ -28,7 +28,6 @@ export default function Contact() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center justify-items-center text-center md:text-left">
-            {/* Contact Details */}
             <div className="max-w-xs ml-4">
               <p className="text-gray-700 mb-4 flex items-center">
                 <span className="text-gray-600 w-6 h-6 mx-2">
@@ -68,7 +67,6 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* Billing Information */}
             <div className="max-w-xs">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 {t("contact.billingTitle")}
@@ -85,7 +83,6 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* Logo */}
             <div className="flex justify-center items-center">
               <Image
                 src="/pics/logo-black-footer.png"
@@ -99,7 +96,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-800 opacity-90 py-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-white text-sm">

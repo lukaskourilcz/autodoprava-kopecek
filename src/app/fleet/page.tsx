@@ -46,7 +46,6 @@ const Carousel = ({ images }: { images: string[] }) => {
 
   return (
     <div className="relative w-full">
-      {/* Image Container */}
       <div
         ref={containerRef}
         className="flex overflow-x-scroll scroll-smooth space-x-4 no-scrollbar"
@@ -65,7 +64,6 @@ const Carousel = ({ images }: { images: string[] }) => {
         ))}
       </div>
 
-      {/* Navigation Dots */}
       <div className="flex justify-center mt-4 space-x-2">
         {images.map((_, index) => (
           <button
