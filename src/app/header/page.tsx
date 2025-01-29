@@ -1,6 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -18,21 +18,21 @@ export default function Header() {
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [isFading, setIsFading] = useState<boolean>(false);
 
+  const handleNextImage = useCallback(() => {
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+      setIsFading(false);
+    }, 400);
+  }, [images.length]); // Dependency array ensures function is stable
+
   useEffect(() => {
     const interval = setInterval(() => {
       handleNextImage();
     }, 8000);
 
     return () => clearInterval(interval);
-  }, [currentImage]);
-
-  const handleNextImage = () => {
-    setIsFading(true);
-    setTimeout(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-      setIsFading(false);
-    }, 400);
-  };
+  }, [handleNextImage]); // Now `useEffect` is properly dependent on `handleNextImage`
 
   const handleDotClick = (index: number) => {
     if (index !== currentImage) {
