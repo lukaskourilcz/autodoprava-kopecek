@@ -121,6 +121,16 @@ i18n.use(initReactI18next).init({
           title: "Vozový park",
           description:
             "Náš vozový park tvoří pouze moderní a spolehlivá vozidla, připravená bezpečně splnit vaše požadavky na přepravu.",
+          icons: {
+            BeachIcon: "Vhodný na zájezd do zahraničí",
+            AirplaneSeatIcon: "Polohovaná sedadla",
+            BeltIcon: "Bezpečnostní pásy",
+            ThermometerColdIcon: "Klimatizace",
+            TvSmartIcon: "Chytrá televize",
+            Mic01Icon: "Mikrofonní systém",
+            FridgeIcon: "Lednička",
+            Toilet01Icon: "Palubní toaleta",
+          },
           vehicles: {
             name: {
               tourismo: "Mercedes-Benz Tourismo",
@@ -285,6 +295,16 @@ i18n.use(initReactI18next).init({
           title: "Fleet",
           description:
             "Our fleet consists exclusively of modern and reliable vehicles, ready to safely meet your transportation needs.",
+          icons: {
+            BeachIcon: "Suitable for trips abroad",
+            AirplaneSeatIcon: "Reclining seats",
+            BeltIcon: "Seat Belts",
+            ThermometerColdIcon: "Air Conditioning",
+            TvSmartIcon: "Smart TV",
+            Mic01Icon: "Microphone System",
+            FridgeIcon: "Refrigerator",
+            Toilet01Icon: "Onboard Toilet",
+          },
           vehicles: {
             name: {
               tourismo: "Mercedes-Benz Tourismo",
@@ -450,6 +470,16 @@ i18n.use(initReactI18next).init({
           title: "Fuhrpark",
           description:
             "Unser Fuhrpark besteht ausschließlich aus modernen und zuverlässigen Fahrzeugen, die Ihren Transportanforderungen sicher gerecht werden.",
+          icons: {
+            BeachIcon: "Geeignet für Reisen ins Ausland",
+            AirplaneSeatIcon: "Verstellbare Sitze",
+            BeltIcon: "Sicherheitsgurte",
+            ThermometerColdIcon: "Klimaanlage",
+            TvSmartIcon: "Smart TV",
+            Mic01Icon: "Mikrofonsystem",
+            FridgeIcon: "Kühlschrank",
+            Toilet01Icon: "Bordtoilette",
+          },
           vehicles: {
             name: {
               tourismo: "Mercedes-Benz Tourismo",

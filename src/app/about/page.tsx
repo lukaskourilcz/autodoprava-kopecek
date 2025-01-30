@@ -19,7 +19,13 @@ type Reason = {
 export default function About() {
   const { t } = useTranslation();
 
-  const reasons = (t("about.reasons", { returnObjects: true }) as Reason[]) || [];
+  // Ensure t() returns an array or fallback to an empty array
+  const paragraphs = t("about.paragraphs", { returnObjects: true });
+  const paragraphArray = Array.isArray(paragraphs) ? paragraphs : [];
+
+  // Ensure reasons is an array
+  const reasons = t("about.reasons", { returnObjects: true });
+  const reasonsArray: Reason[] = Array.isArray(reasons) ? reasons : [];
 
   return (
     <section
@@ -32,20 +38,18 @@ export default function About() {
         </h2>
         <div className="w-5/6 mx-auto mb-4 border-t-2 border-gray-300"></div>
 
-        {(t("about.paragraphs", { returnObjects: true }) as string[]).map(
-          (paragraph, index) => (
-            <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6 md:text-left text-center px-4">
-              {paragraph}
-            </p>
-          )
-        )}
+        {paragraphArray.map((paragraph, index) => (
+          <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6 md:text-left text-center px-4">
+            {paragraph}
+          </p>
+        ))}
 
         <div className="bg-gray-50 p-8 rounded-lg shadow-lg">
           <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             {t("about.reasonsTitle")}
           </h3>
           <ul className="space-y-6">
-            {reasons.map((reason, index) => {
+            {reasonsArray.map((reason, index) => {
               const IconComponent = icons[reason.icon];
               return (
                 <li key={index} className="flex items-center space-x-4">
