@@ -139,7 +139,7 @@ i18n.use(initReactI18next).init({
               man: "MAN Lion's Regio",
               karosa: "Karosa Axer",
               tourino: "Mercedes-Benz Tourino",
-              fmax: "Ford F-Max + 13.6m návěs",
+              fmax: "Ford F-Max + 13.6m walking floor",
               daf: "DAF XF 510 FT",
             },
             description: {
