@@ -45,28 +45,22 @@ export default function Navbar() {
           <Image
             src="/pics/logo-whiteyellow-nav.png"
             alt="Logo"
-            width={95}
-            height={95}
-            className="logo-animation mx-3"
+            width={90}
+            height={90}
+            className="logo-animation"
             priority
           />
           <Link
             href={`/?lang=${activeLocale}#home`}
             className="hover:text-gray-200 block ml-4"
           >
-            <span className="font-bold text-lg uppercase leading-tight">
+            <span className="font-bold text-sm md:text-lg uppercase md:leading-tight">
               <span className="text-yellow-400">AUTODOPRAVA</span>
               <br />
               <span>KOPEČEK</span>
             </span>
           </Link>
         </div>
-        <button
-          className="sm:block lg:hidden text-white focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
       <ul
@@ -108,46 +102,53 @@ export default function Navbar() {
         </li>
       </ul>
 
-      {/* Language Selector */}
-      <div className="relative">
-        <button
-          onClick={() => setDropdownVisible(!dropdownVisible)}
-          className="flex items-center space-x-2 bg-gray-700 px-4 py-2 rounded-md hover:bg-gray-600"
+      <div className="flex items-center space-x-4">
+      <button
+          className="sm:block lg:hidden text-white focus:outline-none -mr-1"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <Image
-            src={
-              languages.find((lang) => lang.code === activeLocale)?.flag || ""
-            }
-            alt={activeLocale}
-            width={20}
-            height={20}
-            className="rounded-full"
-          />
-          <span>
-            {languages.find((lang) => lang.code === activeLocale)?.label}
-          </span>
-          <ChevronDown size={16} />
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-        {dropdownVisible && (
-          <div className="absolute right-0 mt-2 bg-white text-gray-800 rounded-md shadow-lg w-36">
-            {languages.map(({ code, label, flag }) => (
-              <button
-                key={code}
-                onClick={() => handleLanguageChange(code)}
-                className="flex items-center space-x-2 w-full px-4 py-2 hover:bg-gray-100"
-              >
-                <Image
-                  src={flag}
-                  alt={code}
-                  width={20}
-                  height={20}
-                  className="rounded-full"
-                />
-                <span>{label}</span>
-              </button>
-            ))}
-          </div>
-        )}
+        <div className="relative">
+          <button
+            onClick={() => setDropdownVisible(!dropdownVisible)}
+            className="flex items-center space-x-2 bg-gray-700 px-4 py-2 rounded-md hover:bg-gray-600"
+          >
+            <Image
+              src={
+                languages.find((lang) => lang.code === activeLocale)?.flag || ""
+              }
+              alt={activeLocale}
+              width={20}
+              height={20}
+              className="rounded-full"
+            />
+            <span className="hidden sm:inline">
+              {languages.find((lang) => lang.code === activeLocale)?.label}
+            </span>
+            <ChevronDown size={16} />
+          </button>
+          {dropdownVisible && (
+            <div className="absolute right-0 mt-2 bg-white text-gray-800 rounded-md shadow-lg w-36">
+              {languages.map(({ code, label, flag }) => (
+                <button
+                  key={code}
+                  onClick={() => handleLanguageChange(code)}
+                  className="flex items-center space-x-2 w-full px-4 py-2 hover:bg-gray-100"
+                >
+                  <Image
+                    src={flag}
+                    alt={code}
+                    width={20}
+                    height={20}
+                    className="rounded-full"
+                  />
+                  <span className="hidden sm:inline">{label}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );
