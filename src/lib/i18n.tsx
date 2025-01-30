@@ -138,8 +138,8 @@ i18n.use(initReactI18next).init({
               travego:
                 "Moderní a prostorný autobus, který pojme až <strong>62 cestujících</strong>, je perfektní volbou na dlouhé cesty.",
               setra:
-                "Skvělá volba pro vnitrostátní přepravu nebo pravidelné linky. Tento moderní autobus má <strong>kapacitu 67 míst</strong>.",
-              man: "Kompaktní, ale velice prostorný autobus, ideální pro skupiny <strong>do 57 cestujících</strong>.",
+                "Tento moderní autobus má <strong>kapacitu 67 míst</strong>. Skvělá volba pro vnitrostátní přepravu nebo pravidelné linky.",
+              man: "Kompaktní, ale velice prostorný autobus, ideální pro <strong>skupiny do 57 cestujících</strong>.",
               karosa:
                 "Spolehlivý autobus určený na vnitrostátní výlety nebo pravidelné linkové trasy s <strong>kapacitou 59 míst</strong>.",
               tourino:
@@ -298,18 +298,18 @@ i18n.use(initReactI18next).init({
             },
             description: {
               tourismo:
-                "This luxurious air-conditioned bus is the perfect choice for long-distance trips. It features comfortable reclining seats, restroom, a TV, a refrigerator, and a microphone for your guide. With a capacity of 51 seats, it’s a great travel companion.",
+                "This luxurious air-conditioned coach with a <strong>capacity of 51 seats</strong> is the ideal choice for long-distance tours.",
               travego:
-                "A modern and spacious bus that accommodates up to 62 passengers. Perfect for long journeys, offering features such as a TV, refrigerator, microphone, reclining seats, and a restroom. The air-conditioning ensures comfort in any season.",
+                "A modern and spacious coach that accommodates up to <strong>62 passengers</strong>, making it perfect for long journeys.",
               setra:
-                "An excellent choice for domestic transport or regular routes. This modern bus, with a capacity of 67 passengers, is equipped with air-conditioning, a TV, and a microphone, ensuring a comfortable and pleasant journey for everyone.",
-              man: "Compact yet spacious, this bus is ideal for groups of up to 57 passengers. With air-conditioning, reclining seats, and a refrigerator, you can enjoy comfort even on longer journeys.",
+                "This modern coach has a <strong>capacity of 67 seats</strong>. An excellent choice for domestic transport or regular routes.",
+              man: "Compact yet very spacious coach, ideal for groups of up to <strong>57 passengers</strong>.",
               karosa:
-                "A reliable bus designed for trips around the Czech Republic or regular routes. With a capacity of 59 seats, air-conditioning, reclining seats, and a refrigerator, it guarantees comfortable travel in any situation.",
+                "A reliable coach designed for domestic trips or regular scheduled routes with a capacity of <strong>59 seats</strong>.",
               tourino:
-                "A stylish smaller bus offering maximum comfort for up to 36 passengers. An ideal choice for smaller groups, featuring air-conditioning, reclining seats, a TV, a microphone, and a refrigerator.",
-              fmax: "This robust truck with a long trailer is ready for the most demanding transports. It handles even long distances effortlessly and reliably delivers your cargo on time.",
-              daf: "A powerful truck designed for high-volume transport. This reliable partner ensures your shipments arrive safely and efficiently, no matter the destination.",
+                "A stylish smaller coach that offers maximum comfort for up to <strong>36 people</strong>. Ideal choice for smaller groups.",
+              fmax: "This robust tractor unit with a long trailer is ready for the most demanding transport tasks.",
+              daf: "A powerful truck designed for large-volume and efficient transportation of goods over long distances.",
             },
           },
         },
@@ -463,18 +463,18 @@ i18n.use(initReactI18next).init({
             },
             description: {
               tourismo:
-                "Dieser luxuriöse, klimatisierte Bus ist die perfekte Wahl für Fernreisen. Er bietet bequeme Liegesitze, eine Toilette, einen Fernseher, einen Kühlschrank und ein Mikrofon für Ihren Reiseleiter. Mit einer Kapazität von 51 Sitzplätzen ist er ein großartiger Begleiter auf Reisen.",
+                "Dieser luxuriöse, klimatisierte Reisebus mit einer <strong>Kapazität von 51 Sitzplätzen</strong> ist die ideale Wahl für Fernreisen.",
               travego:
-                "Ein moderner und geräumiger Bus, der bis zu 62 Passagiere aufnehmen kann. Perfekt für lange Reisen, ausgestattet mit einem Fernseher, Kühlschrank, Mikrofon, verstellbaren Sitzen und einer Toilette. Dank der Klimaanlage genießen Sie Komfort zu jeder Jahreszeit.",
+                "Ein moderner und geräumiger Reisebus, der bis zu <strong>62 Passagiere</strong> aufnehmen kann – perfekt für lange Reisen.",
               setra:
-                "Eine ausgezeichnete Wahl für Inlandsfahrten oder regelmäßige Linienverbindungen. Dieser moderne Bus mit einer Kapazität von 67 Personen ist mit Klimaanlage, Fernseher und Mikrofon ausgestattet und sorgt für eine komfortable und angenehme Reise für alle.",
-              man: "Kompakt und doch geräumig, ideal für Gruppen von bis zu 57 Personen. Mit Klimaanlage, verstellbaren Sitzen und Kühlschrank genießen Sie auch auf längeren Strecken höchsten Komfort.",
+                "Eine ausgezeichnete Wahl für den nationalen Transport oder regelmäßige Linienfahrten. Dieser moderne Bus bietet <strong>67 Sitzplätze</strong>.",
+              man: "Kompakt, aber sehr geräumig – ideal für Gruppen von <strong>bis zu 57 Passagieren</strong>.",
               karosa:
-                "Ein zuverlässiger Bus, der für Reisen innerhalb der Tschechischen Republik oder regelmäßige Linienverbindungen ausgelegt ist. Mit einer Kapazität von 59 Sitzen, Klimaanlage, verstellbaren Sitzen und einem Kühlschrank garantiert er komfortables Reisen in jeder Situation.",
+                "Ein zuverlässiger Reisebus für Inlandsreisen oder regelmäßige Linienfahrten mit einer <strong>Kapazität von 59 Sitzplätzen</strong>.",
               tourino:
-                "Ein stilvoller kleinerer Bus, der maximalen Komfort für bis zu 36 Personen bietet. Eine ideale Wahl für kleinere Gruppen mit Klimaanlage, verstellbaren Sitzen, Fernseher, Mikrofon und Kühlschrank.",
-              fmax: "Dieser robuste Lkw mit langem Anhänger ist bereit für die anspruchsvollsten Transporte. Er bewältigt problemlos auch große Entfernungen und liefert Ihre Ladung pünktlich und zuverlässig ans Ziel.",
-              daf: "Ein leistungsstarker Lkw für den Großvolumentransport. Dieser zuverlässige Partner sorgt dafür, dass Ihre Sendungen sicher und effizient an ihrem Ziel ankommen, egal wohin die Reise geht.",
+                "Ein stilvoller, kleinerer Reisebus, der maximalen Komfort für bis zu <strong>36 Personen</strong> bietet. Perfekt für kleinere Gruppen.",
+              fmax: "Diese robuste Sattelzugmaschine mit langem Auflieger ist bereit für die anspruchsvollsten Transporte.",
+              daf: "Ein leistungsstarker LKW für großvolumige und effiziente Warentransporte über lange Strecken.",
             },
           },
         },
