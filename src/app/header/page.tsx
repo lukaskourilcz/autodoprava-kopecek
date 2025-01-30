@@ -58,7 +58,7 @@ export default function Header() {
         }}
       ></div>
 
-      <div className="absolute left-1/2 top-[70%] transform -translate-x-1/2 -translate-y-1/2 w-5/6 sm:w-3/4 lg:w-2/3 bg-white bg-opacity-75 backdrop-blur-sm rounded-[10px] shadow-xl text-center p-6 border border-white border-opacity-30">
+      <div className="absolute left-1/2 top-[70%] transform -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-3/4 lg:w-2/3 bg-white bg-opacity-75 backdrop-blur-sm rounded-[10px] shadow-xl text-center p-6 border border-white border-opacity-30">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider text-gray-900 mb-3 drop-shadow-md">
           {t("home.subtitle")}
         </h1>

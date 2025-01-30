@@ -34,7 +34,7 @@ export default function About() {
 
         {(t("about.paragraphs", { returnObjects: true }) as string[]).map(
           (paragraph, index) => (
-            <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6 md:text-left text-center px-4">
               {paragraph}
             </p>
           )

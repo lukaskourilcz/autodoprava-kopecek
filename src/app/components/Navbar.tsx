@@ -54,7 +54,7 @@ export default function Navbar() {
             href={`/?lang=${activeLocale}#home`}
             className="hover:text-gray-200 block ml-4"
           >
-            <span className="font-bold text-sm md:text-lg uppercase md:leading-tight">
+            <span className="font-bold text-base md:text-lg uppercase md:leading-tight">
               <span className="text-yellow-400">AUTODOPRAVA</span>
               <br />
               <span>KOPEČEK</span>
