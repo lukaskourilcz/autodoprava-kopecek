@@ -163,7 +163,7 @@ i18n.use(initReactI18next).init({
           title: "Kontakt",
           description:
             "Pokud vás zajímá nacenění zakázky, chcete si domluvit termín, nebo se jen dozvědět více o našich službách, jsme tady, abychom vám pomohli. Stačí se nám ozvat – ať už telefonicky nebo e-mailem. Náš přátelský a zkušený tým vám rád zodpoví všechny dotazy, vysvětlí detaily a postará se o to, aby vše proběhlo hladce a k vaší maximální spokojenosti. Těšíme se na naši budoucí spolupráci.",
-          address: "V Chalupách 50,<br>Lužice 696 18, ČR",
+          address: "V Chalupách 228/50,<br>Lužice 696 18, ČR",
           addressLabel: "Adresa",
           phone: "+420 777 685 331",
           phoneLabel: "Telefon",
@@ -337,7 +337,7 @@ i18n.use(initReactI18next).init({
           title: "Contact",
           description:
             "If you're interested in getting a quote for your project, setting up a date, or simply learning more about our services, we're here to help. Just reach out to us – whether by phone or email. Our friendly and experienced team will gladly answer all your questions, explain the details, and ensure that everything runs smoothly to your complete satisfaction. We look forward to our future cooperation.",
-          address: "V Chalupách 50,<br>Lužice 696 18, CZ",
+          address: "V Chalupách 228/50,<br>Lužice 696 18, CZ",
           addressLabel: "Address",
           phone: "+420 777 685 331",
           phoneLabel: "Phone",
@@ -512,7 +512,7 @@ i18n.use(initReactI18next).init({
           title: "Kontakt",
           description:
             "Wenn Sie ein Angebot für Ihr Projekt erhalten, einen Termin vereinbaren oder einfach mehr über unsere Dienstleistungen erfahren möchten, sind wir für Sie da. Kontaktieren Sie uns einfach – per Telefon oder E-Mail. Unser freundliches und erfahrenes Team beantwortet gerne all Ihre Fragen, erklärt die Details und sorgt dafür, dass alles reibungslos und zu Ihrer vollsten Zufriedenheit abläuft. Wir freuen uns auf unsere zukünftige Zusammenarbeit.",
-          address: "V Chalupách 50,<br>Lužice 696 18, CZ",
+          address: "V Chalupách 228/50,<br>Lužice 696 18, CZ",
           addressLabel: "Adresse",
           phone: "+420 777 685 331",
           phoneLabel: "Telefon",
