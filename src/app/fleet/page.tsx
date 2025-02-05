@@ -60,8 +60,11 @@ const Carousel = ({ images }: { images: string[] }) => {
     <div className="relative w-full">
       <div
         ref={containerRef}
-        className="flex overflow-x-scroll scroll-smooth space-x-4 no-scrollbar"
-        style={{ scrollSnapType: "x mandatory" }}
+        className="flex overflow-x-scroll scroll-smooth space-x-4 scrollbar-hide"
+        style={{
+          scrollSnapType: "x mandatory",
+          WebkitOverflowScrolling: "touch",
+        }}
       >
         {images.map((img, index) => (
           <Image
