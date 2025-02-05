@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body>
-        <Suspense fallback={<p>Loading navbar...</p>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Navbar />
         </Suspense>
         {children}
