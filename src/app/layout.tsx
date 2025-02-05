@@ -1,17 +1,30 @@
 import { Suspense } from "react";
 import "../styles/globals.css";
 import Navbar from "./components/Navbar";
-import Head from "next/head";
 
 export const metadata = {
   title: "Autodoprava Kopeček | Váš spolehlivý dopravní partner",
-  description:
-    "Jsme tu pro vás, ať už potřebujete zajistit pohodlnou přepravu osob nebo bezpečný transport nákladu.",
-    icons: {
-      icon: "/favicon.ico", 
-      shortcut: "/favicon.ico",
-      apple: "/favicon.png",
-    },
+  description: "Moderní a spolehlivá autobusová doprava v Hodoníně. Zajišťujeme komfortní přepravu pro skupiny i jednotlivce.",
+  icons: {
+    icon: "/favicon.ico", 
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
+  },
+  openGraph: {
+    title: "Autodoprava Kopeček | Váš spolehlivý dopravní partner",
+    description: "Moderní a spolehlivá autobusová doprava v Hodoníně. Zajišťujeme komfortní přepravu pro skupiny i jednotlivce.",
+    url: "https://www.autobusyhodonin.cz",
+    type: "website",
+    images: [
+      {
+        url: "https://www.autobusyhodonin.cz/_next/image?url=%2Fpics%2Ftourismo.png&w=750&q=75",
+        width: 750,
+        height: 500,
+        alt: "Autodoprava Kopeček autobus",
+      },
+    ],
+    locale: "cs_CZ",
+  },
 };
 
 export default function RootLayout({
@@ -21,14 +34,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
-      <Head>
-      <meta property="og:title" content="Autodoprava Kopeček | Váš spolehlivý dopravní partner" />
-        <meta property="og:description" content="Moderní a spolehlivá autobusová doprava v Hodoníně. Zajišťujeme komfortní přepravu pro skupiny i jednotlivce." />
-        <meta property="og:image" content="https://www.autobusyhodonin.cz/_next/image?url=%2Fpics%2Ftourismo.png&w=750&q=75" />
-        <meta property="og:url" content="https://www.autobusyhodonin.cz" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="cs_CZ" />
-      </Head>
       <body>
         <Suspense fallback={<p>Loading navbar...</p>}>
           <Navbar />
