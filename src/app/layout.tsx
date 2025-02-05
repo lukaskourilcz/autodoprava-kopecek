@@ -17,7 +17,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.autobusyhodonin.cz/_next/image?url=%2Fpics%2Ftourismo.png&w=750&q=75",
+        url: "https://www.autobusyhodonin.cz/pics/tourismo.png",
         width: 750,
         height: 500,
         alt: "Autodoprava Kopeček autobus",
