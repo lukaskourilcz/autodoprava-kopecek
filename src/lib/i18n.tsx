@@ -9,13 +9,13 @@ i18n.use(initReactI18next).init({
           title: "Domů",
           subtitle: "Autodoprava Kopeček",
           description:
-            "Naše společnost se specializuje na autobusovou a nákladní dopravu. Díky širokému vozovému parku a zkušenému týmu jsme připraveni zajistit veškeré vaše dopravní potřeby s důrazem na spolehlivost, pohodlí a bezpečnost. Nabízíme pestrou škálu služeb pro přepravu osob i zboží, a to nejen po České republice, ale i do zahraničí. Jsme tu pro vás, abychom vám poskytli profesionální a přátelský přístup ke každé zakázce.",
+            "Naše společnost se specializuje na autobusovou a nákladní dopravu. S našim rozsáhlým vozovým parkem a zkušeným týmem jsme připraveni zajistit veškeré vaše dopravní potřeby s důrazem na spolehlivost, pohodlí a bezpečnost. Nabízíme širokou nabídku služeb pro přepravu osob i zboží, a to nejen po České republice, ale i do zahraničí. Jsme tu pro vás, abychom vám poskytli profesionální a přátelský přístup ke každé zakázce.",
           heroText: "Spolehlivá doprava pro vaše potřeby.",
         },
         about: {
           title: "O nás",
           paragraphs: [
-            "Jsme rodinná dopravní společnost, která působí na trhu již od roku 2012. Za tuhle dobu jsme nasbírali bohaté zkušenosti v oblasti autobusové dopravy a získali si důvěru mnoha spokojených zákazníků. Naším cílem je zajišťovat spolehlivé, bezpečné a pohodlné cestování pro jednotlivce, skupiny i firmy. Společnost vede pan Jiří Kopeček.",
+            "Jsme rodinná dopravní firma, která působí na trhu již od roku 2012. Za tuhle dobu jsme nasbírali bohaté zkušenosti v oblasti autobusové dopravy a získali si důvěru mnoha spokojených zákazníků. Naším cílem je zajišťovat spolehlivé, bezpečné a pohodlné cestování pro jednotlivce, skupiny i firmy. Společnost vede pan Jiří Kopeček.",
             "Primárně se specializujeme na nepravidelnou autobusovou dopravu, ať už jde o školní výlety, firemní akce, sportovní turnaje nebo jiné skupinové přepravy. Díky pravidelně udržovaným autobusům zajišťujeme maximální bezpečnost a komfort během cesty.",
             "Jsme tu pro vás, ať už potřebujete zajistit pohodlnou přepravu osob, nebo bezpečný transport nákladu. Rádi vám připravíme nabídku na míru – kontaktujte nás a přesvědčte se o kvalitě našich služeb sami!",
           ],
@@ -41,7 +41,7 @@ i18n.use(initReactI18next).init({
             },
           ],
           closingText:
-            "Máte speciální požadavky na přepravu? Rádi vám vyjdeme vstříc! Neváhejte nás kontaktovat a společně najdeme to nejlepší řešení pro váš náklad.",
+            "Máte speciální požadavky na přepravu? Rádi vám vyjdeme vstříc! Neváhejte nás kontaktovat a společně najdeme to nejlepší řešení pro přepravu vašeho zboží či osob.",
         },
         services: {
           title: "Služby",
@@ -65,7 +65,7 @@ i18n.use(initReactI18next).init({
             capacity: {
               title: "Kapacita",
               description:
-                "Naše vozová flotila nabízí širokou škálu vozidel s variabilní kapacitou, aby co nejvstřícněji vyhověla vašim potřebám.",
+                "Naše vozová flotila zahrnuje různé typy vozidel s variabilní kapacitou, aby co nejlépe vyhověla vašim potřebám.",
             },
             luggage: {
               title: "Nadrozměrná zavazadla",
@@ -74,7 +74,6 @@ i18n.use(initReactI18next).init({
             },
           },
           irregularBusTransport: {
-            title: "Autobusová a nákladní doprava",
             schoolTransport: {
               title: "Doprava pro školy",
               description:
@@ -88,12 +87,12 @@ i18n.use(initReactI18next).init({
             groupsTransport: {
               title: "Přeprava spolků a organizací",
               description:
-                "Hledáte spolehlivého dopravce pro váš klub, spolek nebo skupinu přátel? Rádi vás pohodlně a bezstarostně dopravíme kamkoliv si přejete, ať už k moři, do hor, k hradům a zámkům, nebo kamkoliv jinam. Nabízíme také možnost převozu kol, lyží, kajaků, nebo jiných nadměrných zavazadel vyžadujících přívěs.",
+                "Rádi vás pohodlně a bezstarostně dopravíme kamkoliv si přejete, ať už k moři, do hor, k hradům a zámkům, nebo kamkoliv jinam. Nabízíme také možnost převozu kol, lyží, kajaků, nebo jiných nadměrných zavazadel vyžadujících přívěs.",
             },
             airportTransfers: {
               title: "Letištní transfery",
               description:
-                "Potřebujete dopravu na letiště? S radostí vám s tím pomůžeme. Nezáleží na čase, můžete se spolehnout, že vás odvezeme kdykoliv, kamkoliv – včetně Vídně, Brna a dalších destinací.",
+                "Nabízíme spolehlivé letištní transfery do Vídně, Brna a dalších destinací. Na čase nezáleží, můžete se spolehnout, že vás odvezeme kdykoliv včas a bezpečně, ať už se jedná o brzké ranní nebo pozdní večerní hodiny.",
             },
             weddingTransport: {
               title: "Svatební přeprava",
@@ -103,7 +102,7 @@ i18n.use(initReactI18next).init({
             replacementTransport: {
               title: "Náhradní autobusová doprava",
               description:
-                "Sháníte náhradu za vaši dopravu? Jsme tu pro vás a rádi vám s těmito potížemi pomůžeme, ať už je problém plánovaný či neplánovaný. S linkovou dopravou máme bohaté zkušenosti a na naší pomoc se můžete spolehnout.",
+                "Jsme tu pro vás a rádi vám s vašimi potížemi pomůžeme, ať už je problém plánovaný či neplánovaný. S linkovou dopravou máme bohaté zkušenosti a na naší pomoc se můžete spolehnout.",
             },
           },
           corporateTransport: {
@@ -114,20 +113,20 @@ i18n.use(initReactI18next).init({
           cargoTransport: {
             title: "Nákladní doprava",
             description:
-              "Specializujeme se na spolehlivou přepravu zboží pomocí soupravy s návěsem walking floor. Bez problémů přepravíme sypké materiály, zemědělské komodity, recykláty, štěpku i paletové náklady. Naše ekologická vozidla pravidelně udržujeme pro maximální bezpečnost a spolehlivost.",
+              "Specializujeme se na spolehlivou přepravu zboží pomocí soupravy s návěsem walking floor. Bez problémů přepravíme sypké materiály, recykláty i paletové náklady. Naše vozidla pravidelně udržujeme pro maximální bezpečnost a spolehlivost.",
           },
         },
         fleet: {
           title: "Vozový park",
           description:
-            "Náš vozový park tvoří pouze moderní a spolehlivá vozidla, připravená bezpečně splnit vaše požadavky na přepravu.",
+            "Náš vozový park tvoří moderní a spolehlivá vozidla, připravená bezpečně splnit vaše požadavky na přepravu.",
           icons: {
-            BeachIcon: "Vhodný na zájezd do zahraničí",
+            BeachIcon: "Zájezdová konfigurace",
             AirplaneSeatIcon: "Polohovaná sedadla",
             BeltIcon: "Bezpečnostní pásy",
             ThermometerColdIcon: "Klimatizace",
-            TvSmartIcon: "Chytrá televize",
-            Mic01Icon: "Mikrofonní systém",
+            TvSmartIcon: "Televize",
+            Mic01Icon: "Mikrofon",
             FridgeIcon: "Lednička",
             Toilet01Icon: "Palubní toaleta",
           },
@@ -148,14 +147,14 @@ i18n.use(initReactI18next).init({
               travego:
                 "Moderní a prostorný autobus, který pojme až <strong>62 cestujících</strong>, je perfektní volbou na dlouhé cesty.",
               setra:
-                "Tento moderní autobus má <strong>kapacitu 67 míst</strong>. Skvělá volba pro vnitrostátní přepravu nebo pravidelné linky.",
+                "Tříosý moderní autobus s <strong>kapacitou 67 míst</strong>. Skvělá volba pro pravidelné linky a početnější skupiny.",
               man: "Kompaktní, ale velice prostorný autobus, ideální pro <strong>skupiny do 57 cestujících</strong>.",
               karosa:
                 "Spolehlivý autobus určený na vnitrostátní výlety nebo pravidelné linkové trasy s <strong>kapacitou 59 míst</strong>.",
               tourino:
                 "Stylový menší autobus, který přináší maximální komfort až <strong>pro 36 osob</strong>. Ideální volba pro menší skupiny.",
-              fmax: "Tento robustní tahač s dlouhým návěsem je připraven na ty nejnáročnější transporty.",
-              daf: "Výkonný nákladní vůz určený pro velkoobjemovou a efektivní přepravu zboží na dlouhé vzdálenosti.",
+              fmax: "Tento robustní hydraulický tahač s návěsem walking floor je připraven na ty nejnáročnější transporty.",
+              daf: "Výkonný tahač s hydraulickým okruhem, schopen splnit i náročnější přepravu nákladů v těžším terénu.",
             },
           },
         },
@@ -183,7 +182,7 @@ i18n.use(initReactI18next).init({
           title: "Home",
           subtitle: "Kopeček Transport Services",
           description:
-            "Our company specializes in bus and freight transportation. With our extensive fleet and experienced team, we are ready to meet all your transportation needs, focusing on reliability, comfort, and safety. We offer a wide range of services for the transport of passengers and goods, not only within the Czech Republic but also abroad. We are here to provide you with a professional and friendly approach to every order.",
+            "Our company specializes in bus and freight transportation. With our extensive fleet and experienced team, we are ready to meet all your transportation needs with a focus on reliability, comfort, and safety. We offer a wide range of services for the transportation of passengers and goods, not only within the Czech Republic but also abroad. We are here for you to provide a professional and friendly approach to every order.",
           heroText: "Reliable transport for your needs.",
         },
         about: {
@@ -248,7 +247,6 @@ i18n.use(initReactI18next).init({
             },
           },
           irregularBusTransport: {
-            title: "Bus and Freight Transport",
             schoolTransport: {
               title: "School Transport",
               description:
@@ -262,12 +260,12 @@ i18n.use(initReactI18next).init({
             groupsTransport: {
               title: "Transport for Associations and Organizations",
               description:
-                "Looking for reliable transport for your club, association, or group of friends? We will take you comfortably and worry-free wherever you wish—whether to the sea, mountains, castles, or anywhere else. We also offer transport for bicycles, skis, kayaks, or other oversized luggage requiring a trailer.",
+                "We will take you comfortably and worry-free wherever you wish—whether to the sea, mountains, castles, or anywhere else. We also offer transport for bicycles, skis, kayaks, or other oversized luggage requiring a trailer.",
             },
             airportTransfers: {
               title: "Airport Transfers",
               description:
-                "Need transport to the airport? We are happy to assist. Regardless of the time, you can rely on us to take you anywhere, anytime, including Vienna, Brno, and other destinations.",
+                "Regardless of the time, you can rely on us to take you anywhere, anytime, including Vienna, Brno, and other destinations.",
             },
             weddingTransport: {
               title: "Wedding Transport",
@@ -357,7 +355,7 @@ i18n.use(initReactI18next).init({
           title: "Startseite",
           subtitle: "Kopeček Transport Dienstleistungen",
           description:
-            "Unser Unternehmen ist auf Bus- und Gütertransport spezialisiert. Mit unserer umfangreichen Fahrzeugflotte und unserem erfahrenen Team sind wir bereit, all Ihre Transportanforderungen zu erfüllen, wobei wir besonderen Wert auf Zuverlässigkeit, Komfort und Sicherheit legen. Wir bieten eine breite Palette an Dienstleistungen für den Transport von Personen und Waren, sowohl innerhalb der Tschechischen Republik als auch ins Ausland. Wir sind hier, um Ihnen einen professionellen und freundlichen Service für jede Bestellung zu bieten.",
+            "Unser Unternehmen ist auf Bus- und Gütertransport spezialisiert. Mit unserem umfangreichen Fuhrpark und erfahrenen Team sind wir bereit, all Ihre Transportbedürfnisse mit Fokus auf Zuverlässigkeit, Komfort und Sicherheit zu erfüllen. Wir bieten eine breite Palette an Dienstleistungen für den Personen- und Gütertransport, nicht nur innerhalb der Tschechischen Republik, sondern auch ins Ausland. Wir sind für Sie da, um Ihnen einen professionellen und freundlichen Service für jede Bestellung zu bieten.",
           heroText: "Zuverlässiger Transport für Ihre Bedürfnisse.",
         },
         about: {
@@ -423,7 +421,6 @@ i18n.use(initReactI18next).init({
             },
           },
           irregularBusTransport: {
-            title: "Bus- und Güterverkehr",
             schoolTransport: {
               title: "Schultransport",
               description:
@@ -437,7 +434,7 @@ i18n.use(initReactI18next).init({
             groupsTransport: {
               title: "Transport für Vereine und Organisationen",
               description:
-                "Suchen Sie einen zuverlässigen Transport für Ihren Club, Verein oder eine Gruppe von Freunden? Wir bringen Sie bequem und sorgenfrei überall hin – ob ans Meer, in die Berge, zu Burgen oder Schlössern. Wir bieten auch den Transport von Fahrrädern, Skiern, Kajaks oder anderen sperrigen Gepäckstücken, die einen Anhänger erfordern.",
+                "Wir bringen Sie bequem und sorgenfrei überall hin – ob ans Meer, in die Berge, zu Burgen oder Schlössern. Wir bieten auch den Transport von Fahrrädern, Skiern, Kajaks oder anderen sperrigen Gepäckstücken, die einen Anhänger erfordern.",
             },
             airportTransfers: {
               title: "Flughafentransfers",

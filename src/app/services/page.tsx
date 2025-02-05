@@ -66,12 +66,11 @@ export default function Services() {
       ),
     },
     {
-      icon: <PlaneTakeoff className="w-12 h-12 text-gray-600" />,
-      title: t("services.irregularBusTransport.airportTransfers.title"),
-      description: t(
-        "services.irregularBusTransport.airportTransfers.description"
-      ),
+      icon: <Route className="w-12 h-12 text-gray-600" />,
+      title: t("services.corporateTransport.title"),
+      description: t("services.corporateTransport.description"),
     },
+
     {
       icon: <BookHeart className="w-12 h-12 text-gray-600" />,
       title: t("services.irregularBusTransport.weddingTransport.title"),
@@ -85,6 +84,18 @@ export default function Services() {
       description: t(
         "services.irregularBusTransport.replacementTransport.description"
       ),
+    },
+    {
+      icon: <PlaneTakeoff className="w-12 h-12 text-gray-600" />,
+      title: t("services.irregularBusTransport.airportTransfers.title"),
+      description: t(
+        "services.irregularBusTransport.airportTransfers.description"
+      ),
+    },
+    {
+      icon: <Truck className="w-12 h-12 text-gray-600" />,
+      title: t("services.cargoTransport.title"),
+      description: t("services.cargoTransport.description"),
     },
   ];
 
@@ -111,49 +122,23 @@ export default function Services() {
           ))}
         </div>
         <div className="mb-12">
-  <h3 className="text-4xl font-bold text-gray-800 mb-12 text-center">
-    {t("services.irregularBusTransport.title")}
-  </h3>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 -mb-8">
-    {irregularTransportSections.map((section, index) => (
-      <div
-        key={index}
-        className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6"
-      >
-        <div className="w-12 h-12 mb-4 text-gray-600">{section.icon}</div>
-        <h4 className="text-xl font-semibold text-gray-800 mb-2">
-          {section.title}
-        </h4>
-        <p className="text-gray-600 text-sm">{section.description}</p>
-      </div>
-    ))}
-    <div className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6">
-      <div className="w-12 h-12 mb-4 text-gray-600">
-        <Route className="w-full h-full" />
-      </div>
-      <h4 className="text-xl font-semibold text-gray-800 mb-2">
-        {t("services.corporateTransport.title")}
-      </h4>
-      <p className="text-gray-600 text-sm">
-        {t("services.corporateTransport.description")}
-      </p>
-    </div>
-    <div className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6">
-      <div className="w-12 h-12 mb-4 text-gray-600">
-        <Truck className="w-full h-full" />
-      </div>
-      <h4 className="text-xl font-semibold text-gray-800 mb-2">
-        {t("services.cargoTransport.title")}
-      </h4>
-      <p className="text-gray-600 text-sm">
-        {t("services.cargoTransport.description")}
-      </p>
-    </div>
-  </div>
-</div>
-
-
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 -mb-8">
+            {irregularTransportSections.map((section, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6"
+              >
+                <div className="w-12 h-12 mb-4 text-gray-600">
+                  {section.icon}
+                </div>
+                <h4 className="text-xl font-semibold text-gray-800 mb-2">
+                  {section.title}
+                </h4>
+                <p className="text-gray-600 text-sm">{section.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

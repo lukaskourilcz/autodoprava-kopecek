@@ -141,17 +141,16 @@ export default function Fleet() {
       ],
     },
     {
-      images: ["/pics/tourino.png", "/pics/tourino2.png"],
-      name: t("fleet.vehicles.name.tourino"),
-      description: t("fleet.vehicles.description.tourino"),
-      icons: [
-        "AirplaneSeatIcon",
-        "BeltIcon",
-        "ThermometerColdIcon",
-        "TvSmartIcon",
-        "Mic01Icon",
-        "FridgeIcon",
+      images: [
+        "/pics/setra.png",
+        "/pics/setra1.png",
+        "/pics/setra2.png",
+        "/pics/setra3.png",
+        "/pics/setra4.png",
       ],
+      name: t("fleet.vehicles.name.setra"),
+      description: t("fleet.vehicles.description.setra"),
+      icons: ["BeltIcon", "ThermometerColdIcon", "TvSmartIcon", "Mic01Icon"],
     },
     {
       images: [
@@ -172,16 +171,17 @@ export default function Fleet() {
       ],
     },
     {
-      images: [
-        "/pics/setra.png",
-        "/pics/setra1.png",
-        "/pics/setra2.png",
-        "/pics/setra3.png",
-        "/pics/setra4.png",
+      images: ["/pics/tourino.png", "/pics/tourino2.png"],
+      name: t("fleet.vehicles.name.tourino"),
+      description: t("fleet.vehicles.description.tourino"),
+      icons: [
+        "AirplaneSeatIcon",
+        "BeltIcon",
+        "ThermometerColdIcon",
+        "TvSmartIcon",
+        "Mic01Icon",
+        "FridgeIcon",
       ],
-      name: t("fleet.vehicles.name.setra"),
-      description: t("fleet.vehicles.description.setra"),
-      icons: ["BeltIcon", "ThermometerColdIcon", "TvSmartIcon", "Mic01Icon"],
     },
     {
       images: [
