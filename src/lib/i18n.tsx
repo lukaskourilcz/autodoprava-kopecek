@@ -145,7 +145,7 @@ i18n.use(initReactI18next).init({
               tourismo:
                 "Tento luxusní klimatizovaný autobus s <strong>kapacitou 51 míst</strong> je ideální volbou pro dálkové zájezdy.",
               travego:
-                "Moderní a prostorný autobus, který pojme až <strong>62 cestujících</strong>, je perfektní volbou na dlouhé cesty.",
+                "Moderní a prostorný tříosý autobus, který pojme až <strong>62 cestujících</strong>, je perfektní volbou na dlouhé cesty.",
               setra:
                 "Tříosý moderní autobus s <strong>kapacitou 67 míst</strong>. Skvělá volba pro pravidelné linky a početnější skupiny.",
               man: "Kompaktní, ale velice prostorný autobus, ideální pro <strong>skupiny do 57 cestujících</strong>.",
@@ -265,7 +265,7 @@ i18n.use(initReactI18next).init({
             airportTransfers: {
               title: "Airport Transfers",
               description:
-                "Regardless of the time, you can rely on us to take you anywhere, anytime, including Vienna, Brno, and other destinations.",
+                "We offer airport transfers to Vienna, Brno, and other destinations. Time doesn't matter – you can count on us to take you safely and on time, whether it's early in the morning or late at night.",
             },
             weddingTransport: {
               title: "Wedding Transport",
@@ -292,13 +292,13 @@ i18n.use(initReactI18next).init({
         fleet: {
           title: "Fleet",
           description:
-            "Our fleet consists exclusively of modern and reliable vehicles, ready to safely meet your transportation needs.",
+            "Our fleet consists of modern and reliable vehicles, ready to safely meet your transportation needs.",
           icons: {
-            BeachIcon: "Suitable for trips abroad",
+            BeachIcon: "Coach configuration",
             AirplaneSeatIcon: "Reclining seats",
             BeltIcon: "Seat Belts",
             ThermometerColdIcon: "Air Conditioning",
-            TvSmartIcon: "Smart TV",
+            TvSmartIcon: "TV",
             Mic01Icon: "Microphone System",
             FridgeIcon: "Refrigerator",
             Toilet01Icon: "Onboard Toilet",
@@ -311,23 +311,23 @@ i18n.use(initReactI18next).init({
               man: "MAN Lion's Regio",
               karosa: "Karosa Axer",
               tourino: "Mercedes-Benz Tourino",
-              fmax: "Ford F-Max + 13.6m trailer",
+              fmax: "Ford F-Max + 13.6m walking floor",
               daf: "DAF XF 510 FT",
             },
             description: {
               tourismo:
                 "This luxurious air-conditioned coach with a <strong>capacity of 51 seats</strong> is the ideal choice for long-distance tours.",
               travego:
-                "A modern and spacious coach that accommodates up to <strong>62 passengers</strong>, making it perfect for long journeys.",
+                "A modern, spacious three-axle coach that accommodates up to <strong>62 passengers</strong>, making it perfect for long journeys.",
               setra:
-                "This modern coach has a <strong>capacity of 67 seats</strong>. An excellent choice for domestic transport or regular routes.",
-              man: "Compact yet very spacious coach, ideal for groups of up to <strong>57 passengers</strong>.",
+                "A modern three-axle bus with a <strong>capacity of 67 seats</strong>. A great choice for regular bus service and larger groups.",
+              man: "Compact yet very spacious bus, ideal for groups of up to <strong>57 passengers</strong>.",
               karosa:
-                "A reliable coach designed for domestic trips or regular scheduled routes with a capacity of <strong>59 seats</strong>.",
+                "A reliable bus designed for domestic trips or regular bus service with a capacity of <strong>59 seats</strong>.",
               tourino:
-                "A stylish smaller coach that offers maximum comfort for up to <strong>36 people</strong>. Ideal choice for smaller groups.",
-              fmax: "This robust tractor unit with a long trailer is ready for the most demanding transport tasks.",
-              daf: "A powerful truck designed for large-volume and efficient transportation of goods over long distances.",
+                "A stylish smaller bus that offers maximum comfort for up to <strong>36 people</strong>. Ideal choice for smaller groups.",
+              fmax: "This robust hydraulic truck unit with a walking floor is ready for the most difficult transports.",
+              daf: "A powerful truck with a hydraulic circuit, capable of handling even more challenging transport in rough terrain.",
             },
           },
         },
