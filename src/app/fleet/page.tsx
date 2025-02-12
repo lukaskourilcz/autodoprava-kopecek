@@ -205,7 +205,7 @@ export default function Fleet() {
       ],
     },
     {
-      images: ["/pics/fmax.png", "/pics/fmax1.png", "/pics/fmax2.png", "/pics/fmax3.png", "/pics/fmax4.png"],
+      images: ["/pics/fmax.png", "/pics/fmax1.png", "/pics/fmax3.png", "/pics/fmax4.png", "/pics/fmax2.png"],
       name: t("fleet.vehicles.name.fmax"),
       description: t("fleet.vehicles.description.fmax"),
     },
