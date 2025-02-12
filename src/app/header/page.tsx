@@ -49,7 +49,7 @@ export default function Header() {
     id="uvod"
     className="relative bg-white bg-cover bg-center"
     style={{
-      height: "calc(100vh - 60px)", // Adjusts dynamically, assuming navbar is ~60px tall
+      height: "calc(100vh - 60px)",
     }}
   >
     <div
