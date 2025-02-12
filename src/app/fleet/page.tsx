@@ -21,28 +21,25 @@ const Carousel = ({ images }: { images: string[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scrollToIndex = (index: number) => {
-    setCurrentIndex(index);
     if (containerRef.current) {
+      const imageWidth = containerRef.current.children[0]?.clientWidth || 350;
       containerRef.current.scrollTo({
-        left: index * 350,
+        left: index * imageWidth,
         behavior: "smooth",
       });
+      setCurrentIndex(index);
     }
   };
 
   const handleScroll = useCallback(() => {
     if (containerRef.current) {
       const scrollLeft = containerRef.current.scrollLeft;
-      const containerWidth = containerRef.current.offsetWidth;
-      const totalScrollWidth = containerRef.current.scrollWidth;
-
-      const index = Math.round(
-        (scrollLeft / (totalScrollWidth - containerWidth)) * (images.length - 1)
-      );
-
+      const imageWidth = containerRef.current.children[0]?.clientWidth || 350; // Default 350 if not found
+  
+      const index = Math.round(scrollLeft / imageWidth);
       setCurrentIndex(index);
     }
-  }, [images.length]);
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
