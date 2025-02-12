@@ -34,7 +34,7 @@ const Carousel = ({ images }: { images: string[] }) => {
   const handleScroll = useCallback(() => {
     if (containerRef.current) {
       const scrollLeft = containerRef.current.scrollLeft;
-      const imageWidth = containerRef.current.children[0]?.clientWidth || 350; // Default 350 if not found
+      const imageWidth = containerRef.current.children[0]?.clientWidth || 350;
   
       const index = Math.round(scrollLeft / imageWidth);
       setCurrentIndex(index);
