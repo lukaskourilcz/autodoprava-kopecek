@@ -25,7 +25,7 @@ const Carousel = ({ images }: { images: string[] }) => {
       const imageWidth = containerRef.current.children[0]?.clientWidth || 350;
       containerRef.current.scrollTo({
         left: index * imageWidth,
-        behavior: "smooth",
+        behavior: "instant",
       });
       setCurrentIndex(index);
     }
