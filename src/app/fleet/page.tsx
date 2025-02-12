@@ -192,6 +192,8 @@ export default function Fleet() {
         "/pics/karosa1.png",
         "/pics/karosa2.png",
         "/pics/karosa3.png",
+        "/pics/karosa4.png",
+
       ],
       name: t("fleet.vehicles.name.karosa"),
       description: t("fleet.vehicles.description.karosa"),
