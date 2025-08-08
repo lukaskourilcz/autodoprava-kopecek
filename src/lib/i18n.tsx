@@ -294,7 +294,7 @@ i18n.use(initReactI18next).init({
               tourismo: "Mercedes-Benz Tourismo",
               travego: "Mercedes-Benz Travego",
               setra: "Setra Multiclass",
-              man: "MAN Lion's Regio",
+              man: "Mercedes-Benz Viano",
               karosa: "Karosa Axer",
               tourino: "Mercedes-Benz Tourino",
               fmax: "Ford F-Max + 13.6m walking floor",

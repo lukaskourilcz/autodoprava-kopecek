@@ -35,7 +35,7 @@ const Carousel = ({ images }: { images: string[] }) => {
     if (containerRef.current) {
       const scrollLeft = containerRef.current.scrollLeft;
       const imageWidth = containerRef.current.children[0]?.clientWidth || 350;
-  
+
       const index = Math.round(scrollLeft / imageWidth);
       setCurrentIndex(index);
     }
@@ -70,8 +70,11 @@ const Carousel = ({ images }: { images: string[] }) => {
             alt={`Carousel Image ${index + 1}`}
             width={350}
             height={350}
-            className="rounded-[15%] flex-shrink-0"
-            style={{ scrollSnapAlign: "center" }}
+            className="rounded-[15%] flex-shrink-0 snap-center transition-opacity duration-300"
+            style={{
+              scrollSnapAlign: "center",
+              opacity: index === currentIndex ? 1 : 0.5,
+            }}
           />
         ))}
       </div>
@@ -166,8 +169,7 @@ export default function Fleet() {
         "AirplaneSeatIcon",
         "BeltIcon",
         "ThermometerColdIcon",
-        "Mic01Icon",
-        "FridgeIcon",
+        "TvSmartIcon",
       ],
     },
     {
@@ -190,7 +192,6 @@ export default function Fleet() {
         "/pics/karosa2.png",
         "/pics/karosa3.png",
         "/pics/karosa4.png",
-
       ],
       name: t("fleet.vehicles.name.karosa"),
       description: t("fleet.vehicles.description.karosa"),
@@ -200,21 +201,6 @@ export default function Fleet() {
         "ThermometerColdIcon",
         "FridgeIcon",
       ],
-    },
-    {
-      images: ["/pics/fmax.png", "/pics/fmax1.png", "/pics/fmax3.png", "/pics/fmax4.png", "/pics/fmax2.png"],
-      name: t("fleet.vehicles.name.fmax"),
-      description: t("fleet.vehicles.description.fmax"),
-    },
-    {
-      images: [
-        "/pics/daf.png",
-        "/pics/daf1.png",
-        "/pics/daf2.png",
-        "/pics/daf3.png",
-      ],
-      name: t("fleet.vehicles.name.daf"),
-      description: t("fleet.vehicles.description.daf"),
     },
   ];
 
