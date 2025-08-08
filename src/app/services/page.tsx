@@ -92,11 +92,6 @@ export default function Services() {
         "services.irregularBusTransport.airportTransfers.description"
       ),
     },
-    {
-      icon: <Truck className="w-12 h-12 text-gray-600" />,
-      title: t("services.cargoTransport.title"),
-      description: t("services.cargoTransport.description"),
-    },
   ];
 
   return (
@@ -122,11 +117,11 @@ export default function Services() {
           ))}
         </div>
         <div className="mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 -mb-8">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-12">
             {irregularTransportSections.map((section, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6"
+                className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6 w-full sm:w-[calc(50%-2rem)] md:w-[calc(25%-2rem)]"
               >
                 <div className="w-12 h-12 mb-4 text-gray-600">
                   {section.icon}
