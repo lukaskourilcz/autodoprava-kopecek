@@ -19,11 +19,13 @@ type Reason = {
 export default function About() {
   const { t } = useTranslation();
 
-  // Ensure t() returns an array or fallback to an empty array
-  const paragraphs = t("about.paragraphs", { returnObjects: true });
-  const paragraphArray = Array.isArray(paragraphs) ? paragraphs : [];
+  const paragraphs = 
+  t("about.paragraphs", 
+    { returnObjects: true });
+  const paragraphArray =
+   Array.isArray(paragraphs) ? 
+   paragraphs : [];
 
-  // Ensure reasons is an array
   const reasons = t("about.reasons", { returnObjects: true });
   const reasonsArray: Reason[] = Array.isArray(reasons) ? reasons : [];
 
