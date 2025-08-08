@@ -13,7 +13,6 @@ import {
   BookHeart,
   Bus,
   Route,
-  Truck,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
