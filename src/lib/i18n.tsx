@@ -141,7 +141,7 @@ i18n.use(initReactI18next).init({
                 "Moderní a prostorný tříosý autobus, který pojme až <strong>62 cestujících</strong>, je perfektní volbou na dlouhé cesty.",
               setra:
                 "Tříosý moderní autobus s <strong>kapacitou 67 míst</strong>. Skvělá volba pro pravidelné linky a početnější skupiny.",
-              man: "Kompaktní, ale velice prostorný autobus, ideální pro <strong>skupiny do 57 cestujících</strong>.",
+              man: "Elegantní a prostorný Mercedes Viano s <strong>kapacitou 7+1</strong> je ideální pro pohodlnou dopravu menších skupin.",
               karosa:
                 "Spolehlivý autobus určený na vnitrostátní výlety nebo pravidelné linkové trasy s <strong>kapacitou 59 míst</strong>.",
               tourino:
