@@ -307,7 +307,7 @@ i18n.use(initReactI18next).init({
                 "A modern, spacious three-axle coach that accommodates up to <strong>62 passengers</strong>, making it perfect for long journeys.",
               setra:
                 "A modern three-axle bus with a <strong>capacity of 67 seats</strong>. A great choice for regular bus service and larger groups.",
-              man: "Compact yet very spacious bus, ideal for groups of up to <strong>57 passengers</strong>.",
+              man: "Elegant and spacious Mercedes Viano with a <strong>7+1 seating capacity</strong> is ideal for the comfortable transportation of small groups.",
               karosa:
                 "A reliable bus designed for domestic trips or regular bus service with a capacity of <strong>59 seats</strong>.",
               tourino:
@@ -476,7 +476,7 @@ i18n.use(initReactI18next).init({
                 "Ein moderner und geräumiger Reisebus, der bis zu <strong>62 Passagiere</strong> aufnehmen kann – perfekt für lange Reisen.",
               setra:
                 "Eine ausgezeichnete Wahl für den nationalen Transport oder regelmäßige Linienfahrten. Dieser moderne Bus bietet <strong>67 Sitzplätze</strong>.",
-              man: "Kompakt, aber sehr geräumig – ideal für Gruppen von <strong>bis zu 57 Passagieren</strong>.",
+              man: "Eleganter und geräumiger Mercedes Viano mit einer <strong>Kapazität von 7+1 Sitzplätzen</strong> ist ideal für den komfortablen Transport kleiner Gruppen.",
               karosa:
                 "Ein zuverlässiger Reisebus für Inlandsreisen oder regelmäßige Linienfahrten mit einer <strong>Kapazität von 59 Sitzplätzen</strong>.",
               tourino:

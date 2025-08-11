@@ -160,6 +160,8 @@ export default function Fleet() {
         "/pics/man.png",
         "/pics/man1.png",
         "/pics/man2.png",
+        "/pics/man5.png",
+        "/pics/man6.png",
         "/pics/man3.png",
         "/pics/man4.png",
       ],
