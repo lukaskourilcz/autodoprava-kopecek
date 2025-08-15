@@ -138,6 +138,7 @@ i18n.use(initReactI18next).init({
               man: "Mercedes-Benz Viano",
               karosa: "Karosa Axer",
               tourino: "Mercedes-Benz Tourino",
+              daf: "DAF XF 510 FT",
             },
             description: {
               tourismo:
@@ -151,6 +152,7 @@ i18n.use(initReactI18next).init({
                 "Spolehlivý autobus určený na vnitrostátní výlety nebo pravidelné linkové trasy s <strong>kapacitou 59 míst</strong>.",
               tourino:
                 "Stylový menší autobus, který přináší maximální komfort až <strong>pro 36 osob</strong>. Ideální volba pro menší skupiny.",
+              daf: "Výkonný tahač s hydraulickým okruhem, schopen splnit i náročnější přepravu nákladů v těžším terénu.",
             },
           },
         },
