@@ -13,6 +13,7 @@ import {
   BookHeart,
   Bus,
   Route,
+  Truck,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -90,6 +91,11 @@ export default function Services() {
       description: t(
         "services.irregularBusTransport.airportTransfers.description"
       ),
+    },
+        {
+      icon: <Truck className="w-12 h-12 text-gray-600" />,
+      title: t("services.cargoTransport.title"),
+      description: t("services.cargoTransport.description"),
     },
   ];
 

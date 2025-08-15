@@ -110,6 +110,11 @@ i18n.use(initReactI18next).init({
             description:
               "Nabízíme firmám spolehlivou přepravu zaměstnanců s širokou nabídkou vozidel. S pravidelnou linkovou dopravou máme bohaté zkušenosti a rádi vám vypracujeme individuální plán včetně cenového návrhu.",
           },
+          cargoTransport: {
+            title: "Nákladní doprava",
+            description:
+              "Specializujeme se na spolehlivou přepravu zboží pomocí soupravy s návěsem walking floor. Bez problémů přepravíme sypké materiály, recykláty i paletové náklady. Naše vozidla pravidelně udržujeme pro maximální bezpečnost a spolehlivost.",
+          },
         },
         fleet: {
           title: "Vozový park",
@@ -273,6 +278,11 @@ i18n.use(initReactI18next).init({
             title: "Corporate Shuttle Services",
             description:
               "We offer companies reliable employee transport with a wide range of vehicles. With extensive experience in regular shuttle services, we are happy to create a customized plan, including pricing.",
+          },
+          cargoTransport: {
+            title: "Cargo Transport",
+            description:
+              "We specialize in reliable freight transport using a walking floor trailer. We efficiently handle bulk materials, agricultural commodities, recyclables, wood chips, and palletized goods. Our eco-friendly vehicles are regularly maintained to ensure maximum safety and reliability.",
           },
         },
         fleet: {
@@ -442,6 +452,11 @@ i18n.use(initReactI18next).init({
             title: "Firmenlinienverkehr",
             description:
               "Wir bieten Unternehmen zuverlässigen Mitarbeitertransport mit einer großen Auswahl an Fahrzeugen. Mit umfassender Erfahrung im regelmäßigen Linienverkehr erstellen wir gerne einen individuellen Plan inklusive Preisangebot.",
+          },
+          cargoTransport: {
+            title: "Güterverkehr",
+            description:
+              "Wir spezialisieren uns auf zuverlässigen Gütertransport mit einem Walking-Floor-Auflieger. Wir transportieren effizient Schüttgüter, landwirtschaftliche Erzeugnisse, Recyclingmaterialien, Hackschnitzel und palettierte Waren. Unsere umweltfreundlichen Fahrzeuge werden regelmäßig gewartet, um maximale Sicherheit und Zuverlässigkeit zu gewährleisten.",
           },
         },
         fleet: {
