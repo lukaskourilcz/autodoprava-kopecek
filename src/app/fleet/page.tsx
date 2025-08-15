@@ -204,6 +204,16 @@ export default function Fleet() {
         "FridgeIcon",
       ],
     },
+    {
+      images: [
+        "/pics/daf.png",
+        "/pics/daf1.png",
+        "/pics/daf2.png",
+        "/pics/daf3.png",
+      ],
+      name: t("fleet.vehicles.name.daf"),
+      description: t("fleet.vehicles.description.daf"),
+    },
   ];
 
   return (
@@ -218,7 +228,7 @@ export default function Fleet() {
         <p className="text-base text-gray-700">{t("fleet.description")}</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {vehicles.map((vehicle, index) => (
           <div key={index} className="flex flex-col items-center">
             <Carousel images={vehicle.images} />
