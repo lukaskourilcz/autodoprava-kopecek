@@ -23,7 +23,7 @@ export default function HomePage() {
   }, [lang, i18n]);
 
   return (
-    <main>
+    <main id="main-content">
       <section id="header" className="section">
         <Header />
       </section>

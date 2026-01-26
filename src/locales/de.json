@@ -1,0 +1,171 @@
+{
+  "home": {
+    "title": "Startseite",
+    "subtitle": "Kopeček Transport Dienstleistungen",
+    "description": "Unser Unternehmen ist auf Bus- und Gütertransport spezialisiert. Mit unserem umfangreichen Fuhrpark und erfahrenen Team sind wir bereit, all Ihre Transportbedürfnisse mit Fokus auf Zuverlässigkeit, Komfort und Sicherheit zu erfüllen. Wir bieten eine breite Palette an Dienstleistungen für den Personen- und Gütertransport, nicht nur innerhalb der Tschechischen Republik, sondern auch ins Ausland. Wir sind für Sie da, um Ihnen einen professionellen und freundlichen Service für jede Bestellung zu bieten.",
+    "heroText": "Zuverlässiger Transport für Ihre Bedürfnisse."
+  },
+  "about": {
+    "title": "Über uns",
+    "paragraphs": [
+      "Wir sind ein familiengeführtes Transportunternehmen, das seit 2012 tätig ist. Im Laufe der Jahre haben wir umfangreiche Erfahrungen im Busverkehr gesammelt und das Vertrauen vieler zufriedener Kunden gewonnen. Unser Ziel ist es, zuverlässige, sichere und komfortable Reisen für Einzelpersonen, Gruppen und Unternehmen zu gewährleisten. Das Unternehmen wird von Herrn Jiří Kopeček geleitet.",
+      "Wir sind auf unregelmäßigen und Linienverkehr spezialisiert, sei es für Schulausflüge, Firmenveranstaltungen, Sportturniere oder andere Gruppenreisen. Dank regelmäßig gewarteter Busse gewährleisten wir maximale Sicherheit und Komfort während der Fahrt.",
+      "Wir sind für Sie da, egal ob Sie einen komfortablen Personentransport oder einen sicheren Warentransport benötigen. Wir erstellen Ihnen gerne ein maßgeschneidertes Angebot – kontaktieren Sie uns und überzeugen Sie sich selbst von der Qualität unserer Dienstleistungen!"
+    ],
+    "reasonsTitle": "Warum uns wählen?",
+    "reasons": [
+      {
+        "icon": "Waypoints",
+        "title": "Flexibilität",
+        "description": "Wir passen uns Ihren Bedürfnissen an und bieten individuelle Lösungen für jede Bestellung."
+      },
+      {
+        "icon": "ChevronsUp",
+        "title": "Geschwindigkeit und Zuverlässigkeit",
+        "description": "Wir halten vereinbarte Termine ein und legen Wert auf die präzise Ausführung jedes Transports."
+      },
+      {
+        "icon": "ShieldPlus",
+        "title": "Professioneller Ansatz",
+        "description": "Unsere erfahrenen Fahrer und moderne Ausstattung garantieren Qualität und Sicherheit."
+      }
+    ],
+    "closingText": "Haben Sie spezielle Anforderungen an den Transport? Wir kommen Ihnen gerne entgegen! Kontaktieren Sie uns, und gemeinsam finden wir die beste Lösung für Ihre Fracht."
+  },
+  "services": {
+    "title": "Dienstleistungen",
+    "description": "Wir bieten eine Vielzahl von Transportdienstleistungen an.",
+    "list": [
+      "Personenbeförderung in modernen Bussen",
+      "Frachttransporte ins Ausland",
+      "Express-Kurierdienste"
+    ],
+    "items": {
+      "safety": {
+        "title": "Sicherheit",
+        "description": "Sicherheit ist unsere Priorität. Alle Fahrzeuge sind mit Sicherheitsgurten für alle Passagiere ausgestattet. Fahrzeuge werden regelmäßig gewartet und überprüft."
+      },
+      "comfort": {
+        "title": "Komfort",
+        "description": "Fahrzeuge sind voll klimatisiert und mit bequemen, verstellbaren Sitzen mit Armlehnen und Vorhängen für maximalen Komfort ausgestattet."
+      },
+      "capacity": {
+        "title": "Kapazität",
+        "description": "Unsere Flotte bietet eine breite Auswahl an Fahrzeugen mit variabler Kapazität, um Ihre Bedürfnisse optimal zu erfüllen."
+      },
+      "luggage": {
+        "title": "Übergroßes Gepäck",
+        "description": "Wir bieten die Möglichkeit, einen Anhänger oder Skibox anzuschließen, um sperriges Gepäck wie Fahrräder, Skier oder Kanus zu transportieren."
+      }
+    },
+    "irregularBusTransport": {
+      "schoolTransport": {
+        "title": "Schultransport",
+        "description": "Wir bieten Transport für Schulaktivitäten wie Ausflüge, Skikurse, Schwimmen, Schlittschuhlaufen oder Schullandheime. Mit uns reisen Kinder sicher. Unsere Busse sind mit Sicherheitsgurten an jedem Sitzplatz und Mikrofonen für eine einfache Kommunikation ausgestattet."
+      },
+      "sportsTransport": {
+        "title": "Transport für Sportvereine und Gruppen",
+        "description": "Seit Jahren sind wir ein zuverlässiger Partner für viele Sportvereine. Unsere Busse verfügen über Sicherheitsgurte an jedem Sitzplatz und bieten bei Bedarf Stauraum für Ihre Sportausrüstung."
+      },
+      "groupsTransport": {
+        "title": "Transport für Vereine und Organisationen",
+        "description": "Wir bringen Sie bequem und sorgenfrei überall hin – ob ans Meer, in die Berge, zu Burgen oder Schlössern. Wir bieten auch den Transport von Fahrrädern, Skiern, Kajaks oder anderen sperrigen Gepäckstücken, die einen Anhänger erfordern."
+      },
+      "airportTransfers": {
+        "title": "Flughafentransfers",
+        "description": "Benötigen Sie einen Transport zum Flughafen? Wir helfen Ihnen gerne. Unabhängig von der Uhrzeit können Sie sich darauf verlassen, dass wir Sie jederzeit und überall hinbringen, einschließlich Wien, Brünn und anderen Zielen."
+      },
+      "weddingTransport": {
+        "title": "Hochzeitstransport",
+        "description": "Wir wissen, dass die Planung einer Hochzeit stressig sein kann und das Parken in Stadtzentren schwierig ist. Überlassen Sie das uns. Wir stellen Ihnen einen Bus mit Fahrer zur Verfügung, der während der gesamten Veranstaltung für Sie da ist."
+      },
+      "replacementTransport": {
+        "title": "Ersatzbusverkehr",
+        "description": "Suchen Sie nach einem Ersatzverkehr? Wir sind für Sie da, ob das Problem geplant oder ungeplant ist. Mit umfangreicher Erfahrung im Linienverkehr können Sie auf unsere Unterstützung zählen."
+      }
+    },
+    "corporateTransport": {
+      "title": "Firmenlinienverkehr",
+      "description": "Wir bieten Unternehmen zuverlässigen Mitarbeitertransport mit einer großen Auswahl an Fahrzeugen. Mit umfassender Erfahrung im regelmäßigen Linienverkehr erstellen wir gerne einen individuellen Plan inklusive Preisangebot."
+    },
+    "cargoTransport": {
+      "title": "Güterverkehr",
+      "description": "Wir spezialisieren uns auf zuverlässigen Gütertransport mit einem Walking-Floor-Auflieger. Wir transportieren effizient Schüttgüter, landwirtschaftliche Erzeugnisse, Recyclingmaterialien, Hackschnitzel und palettierte Waren. Unsere umweltfreundlichen Fahrzeuge werden regelmäßig gewartet, um maximale Sicherheit und Zuverlässigkeit zu gewährleisten."
+    }
+  },
+  "fleet": {
+    "title": "Fuhrpark",
+    "description": "Unser Fuhrpark besteht ausschließlich aus modernen und zuverlässigen Fahrzeugen, die Ihren Transportanforderungen sicher gerecht werden.",
+    "icons": {
+      "BeachIcon": "Geeignet für Reisen ins Ausland",
+      "AirplaneSeatIcon": "Verstellbare Sitze",
+      "BeltIcon": "Sicherheitsgurte",
+      "ThermometerColdIcon": "Klimaanlage",
+      "TvSmartIcon": "Smart TV",
+      "Mic01Icon": "Mikrofonsystem",
+      "FridgeIcon": "Kühlschrank",
+      "Toilet01Icon": "Bordtoilette"
+    },
+    "vehicles": {
+      "name": {
+        "tourismo": "Mercedes-Benz Tourismo",
+        "travego": "Mercedes-Benz Travego",
+        "setra": "Setra Multiclass",
+        "man": "Mercedes-Benz Viano",
+        "karosa": "Karosa Axer",
+        "tourino": "Mercedes-Benz Tourino",
+        "fmax": "Ford F-Max + 13.6m Anhänger",
+        "daf": "DAF XF 510 FT"
+      },
+      "description": {
+        "tourismo": "Dieser luxuriöse, klimatisierte Reisebus mit einer <strong>Kapazität von 51 Sitzplätzen</strong> ist die ideale Wahl für Fernreisen.",
+        "travego": "Ein moderner und geräumiger Reisebus, der bis zu <strong>62 Passagiere</strong> aufnehmen kann – perfekt für lange Reisen.",
+        "setra": "Eine ausgezeichnete Wahl für den nationalen Transport oder regelmäßige Linienfahrten. Dieser moderne Bus bietet <strong>67 Sitzplätze</strong>.",
+        "man": "Eleganter und geräumiger Mercedes Viano mit einer <strong>Kapazität von 7+1 Sitzplätzen</strong> ist ideal für den komfortablen Transport kleiner Gruppen.",
+        "karosa": "Ein zuverlässiger Reisebus für Inlandsreisen oder regelmäßige Linienfahrten mit einer <strong>Kapazität von 59 Sitzplätzen</strong>.",
+        "tourino": "Ein stilvoller, kleinerer Reisebus, der maximalen Komfort für bis zu <strong>36 Personen</strong> bietet. Perfekt für kleinere Gruppen.",
+        "fmax": "Diese robuste Sattelzugmaschine mit langem Auflieger ist bereit für die anspruchsvollsten Transporte.",
+        "daf": "Ein leistungsstarker LKW für großvolumige und effiziente Warentransporte über lange Strecken."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Wenn Sie ein Angebot für Ihr Projekt erhalten, einen Termin vereinbaren oder einfach mehr über unsere Dienstleistungen erfahren möchten, sind wir für Sie da. Kontaktieren Sie uns einfach – per Telefon oder E-Mail. Unser freundliches und erfahrenes Team beantwortet gerne all Ihre Fragen, erklärt die Details und sorgt dafür, dass alles reibungslos und zu Ihrer vollsten Zufriedenheit abläuft. Wir freuen uns auf unsere zukünftige Zusammenarbeit.",
+    "address": "V Chalupách 228/50,<br>Lužice 696 18, CZ",
+    "addressLabel": "Adresse",
+    "phone": "+420 777 685 331",
+    "phoneLabel": "Telefon",
+    "email": "jirikopecek@seznam.cz",
+    "emailLabel": "Email",
+    "billingTitle": "Rechnungsinformationen",
+    "companyID": "67004997",
+    "companyIDLabel": "Unternehmens-ID",
+    "taxID": "CZ7504284304",
+    "taxIDLabel": "Steuer-ID",
+    "logoAlt": "Autodoprava Kopeček logo",
+    "form": {
+      "title": "Schreiben Sie uns",
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "email": "Email",
+      "emailPlaceholder": "ihre@email.de",
+      "message": "Nachricht",
+      "messagePlaceholder": "Ihre Nachricht...",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet!",
+      "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Zum Inhalt springen",
+    "mainNavigation": "Hauptnavigation",
+    "languageSelector": "Sprachauswahl",
+    "menuToggle": "Menü umschalten",
+    "carouselPrevious": "Vorheriges Bild",
+    "carouselNext": "Nächstes Bild",
+    "carouselDot": "Zu Bild {{number}} wechseln",
+    "currentSlide": "Aktuelles Bild {{current}} von {{total}}"
+  }
+}

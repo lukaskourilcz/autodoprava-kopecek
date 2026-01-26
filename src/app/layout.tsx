@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import "../styles/globals.css";
 import Navbar from "./components/Navbar";
+import { JsonLdSchema } from "./components/JsonLd";
 
 export const metadata = {
   title: "Autodoprava Kopeček | Váš spolehlivý dopravní partner",
@@ -17,7 +18,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.autobusyhodonin.cz/pics/uvodka.png",
+        url: "https://www.autobusyhodonin.cz/pics/uvodka.webp",
         width: 750,
         height: 500,
         alt: "Autodoprava Kopeček",
@@ -34,6 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
+      <head>
+        <JsonLdSchema />
+      </head>
       <body>
         <Suspense fallback={<p>Loading...</p>}>
           <Navbar />
