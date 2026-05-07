@@ -64,10 +64,10 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
 
   return (
     <nav className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80 text-white shadow-lg shadow-black/10 border-b border-white/5">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-1.5">
         <Link
           href={`/${locale}#home`}
-          className="flex items-center min-w-0 -ml-1 px-1 py-1 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+          className="flex items-center min-w-0 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
           aria-label={t("contact.logoAlt")}
         >
           <Image
@@ -75,7 +75,7 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
             alt={t("contact.logoAlt")}
             width={881}
             height={411}
-            className="logo-animation h-8 sm:h-9 w-auto"
+            className="logo-animation h-9 w-auto"
             priority
           />
         </Link>
@@ -101,7 +101,7 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
               aria-haspopup="menu"
               aria-expanded={dropdownVisible}
               onClick={() => setDropdownVisible(!dropdownVisible)}
-              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 text-sm font-medium text-gray-100 hover:bg-white/5 rounded-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 min-h-[40px]"
+              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 text-sm font-medium text-gray-100 hover:bg-white/5 rounded-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
             >
               <Image
                 src={activeLang.flag}
@@ -156,7 +156,7 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
             aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"}
             aria-expanded={menuOpen}
             aria-controls="primary-menu"
-            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-white hover:bg-white/5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+            className="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-md text-white hover:bg-white/5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
