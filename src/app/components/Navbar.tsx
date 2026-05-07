@@ -64,21 +64,21 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
 
   return (
     <nav className="sticky top-0 bg-gray-800/95 text-white p-4 flex justify-between items-center z-50">
-      <div className="flex items-center space-x-4">
-        <div className="logo-container flex items-center">
+      <div className="flex items-center min-w-0 flex-shrink">
+        <div className="logo-container flex items-center min-w-0">
           <Image
             src="/pics/logo-whiteyellow-nav.png"
             alt={t("contact.logoAlt")}
             width={90}
             height={90}
-            className="logo-animation"
+            className="logo-animation w-14 h-14 sm:w-[90px] sm:h-[90px] flex-shrink-0"
             priority
           />
           <Link
             href={`/${locale}#home`}
-            className="hover:text-gray-200 block ml-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded"
+            className="hover:text-gray-200 block ml-2 sm:ml-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded min-w-0"
           >
-            <span className="font-bold text-base md:text-lg uppercase md:leading-tight">
+            <span className="font-bold text-sm md:text-lg uppercase leading-tight md:leading-tight">
               <span className="text-yellow-400">AUTODOPRAVA</span>
               <br />
               <span>KOPEČEK</span>

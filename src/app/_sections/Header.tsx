@@ -49,7 +49,7 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
     <section
       id="hero"
       className="relative bg-white overflow-hidden"
-      style={{ height: "calc(100dvh - 122px)", minHeight: "480px" }}
+      style={{ height: "calc(100dvh - var(--nav-height))", minHeight: "480px" }}
     >
       {images.map((src, index) => (
         <Image
@@ -81,12 +81,12 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href={phoneHref}
+              aria-label={`${t("contact.callCta")}: ${phone}`}
               className="inline-flex items-center justify-center gap-2 bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500 min-h-[44px]"
             >
               <Phone size={18} aria-hidden="true" />
-              <span>
-                {t("contact.callCta")}: {phone}
-              </span>
+              <span>{t("contact.callCta")}</span>
+              <span className="hidden sm:inline">: {phone}</span>
             </a>
             <Link
               href={`/${locale}#contact`}

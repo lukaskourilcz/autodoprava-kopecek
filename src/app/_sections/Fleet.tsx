@@ -116,7 +116,11 @@ const Carousel = ({
         </>
       )}
 
-      <div className="flex justify-center mt-3" role="tablist" aria-label="Snímky">
+      <div
+        className="flex flex-wrap justify-center mt-3"
+        role="tablist"
+        aria-label="Snímky"
+      >
         {images.map((_, index) => (
           <button
             key={index}
@@ -261,7 +265,7 @@ export default function FleetSection() {
   return (
     <section
       id="fleet-content"
-      className="bg-gradient-to-b from-gray-100 to-white py-16 px-8 sm:px-16 lg:px-32"
+      className="bg-gradient-to-b from-gray-100 to-white py-16 px-4 sm:px-8 md:px-16 lg:px-32"
     >
       <div className="text-center mb-8">
         <h2 className="text-4xl font-semibold text-gray-800 mb-4">

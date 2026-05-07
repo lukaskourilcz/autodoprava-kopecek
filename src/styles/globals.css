@@ -45,8 +45,18 @@ html {
   animation: fadeInScale 1s ease-out forwards;
 }
 
+:root {
+  --nav-height: 88px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --nav-height: 122px;
+  }
+}
+
 .section {
-  scroll-margin-top: 130px;
+  scroll-margin-top: var(--nav-height);
 }
 
 @layer utilities {
