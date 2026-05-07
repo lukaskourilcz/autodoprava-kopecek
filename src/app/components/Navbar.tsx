@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
-import "../../lib/i18n";
-import { normalizeLocale, SUPPORTED_LOCALES } from "../../lib/i18n";
+import { SUPPORTED_LOCALES, type SupportedLocale } from "../../lib/locale";
+import { useTranslation } from "./TranslationProvider";
 
 const languages = [
   { code: "cs" as const, label: "Čeština", short: "CS", flag: "/flags/cz.png" },
@@ -15,25 +14,13 @@ const languages = [
   { code: "de" as const, label: "Deutsch", short: "DE", flag: "/flags/de.png" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ locale }: { locale: SupportedLocale }) {
   const router = useRouter();
-  const pathname = usePathname();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const segment = pathname?.split("/")[1] ?? "";
-  const activeLocale = normalizeLocale(segment);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (i18n.language !== activeLocale) {
-      i18n
-        .changeLanguage(activeLocale)
-        .catch((err) => console.error("Failed to change language:", err));
-    }
-  }, [activeLocale, i18n]);
 
   useEffect(() => {
     const onClickOutside = (e: MouseEvent) => {
@@ -73,7 +60,7 @@ export default function Navbar() {
   ];
 
   const activeLang =
-    languages.find((lang) => lang.code === activeLocale) ?? languages[0];
+    languages.find((lang) => lang.code === locale) ?? languages[0];
 
   return (
     <nav className="sticky top-0 bg-gray-800/95 text-white p-4 flex justify-between items-center z-50">
@@ -88,7 +75,7 @@ export default function Navbar() {
             priority
           />
           <Link
-            href={`/${activeLocale}#home`}
+            href={`/${locale}#home`}
             className="hover:text-gray-200 block ml-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded"
           >
             <span className="font-bold text-base md:text-lg uppercase md:leading-tight">
@@ -109,7 +96,7 @@ export default function Navbar() {
         {navLinks.map(({ hash, label }) => (
           <li key={hash} className="text-center">
             <Link
-              href={`/${activeLocale}#${hash}`}
+              href={`/${locale}#${hash}`}
               onClick={() => setMenuOpen(false)}
               className="hover:text-yellow-400 block py-3 lg:py-1 px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded"
             >
@@ -161,9 +148,9 @@ export default function Navbar() {
                   role="menuitem"
                   key={code}
                   onClick={() => handleLanguageChange(code)}
-                  aria-current={code === activeLocale}
+                  aria-current={code === locale}
                   className={`flex items-center space-x-3 w-full px-4 py-3 hover:bg-gray-100 focus-visible:bg-gray-100 focus-visible:outline-none ${
-                    code === activeLocale ? "font-semibold" : ""
+                    code === locale ? "font-semibold" : ""
                   }`}
                 >
                   <Image

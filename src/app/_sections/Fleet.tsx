@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation, RichText } from "../components/TranslationProvider";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Icons } from "../components/icons";
@@ -306,10 +306,7 @@ export default function FleetSection() {
                 </ul>
               )}
               <p className="mt-3 text-gray-700 text-center">
-                <Trans
-                  i18nKey={`fleet.vehicles.description.${vehicle.id}`}
-                  components={{ b: <strong /> }}
-                />
+                <RichText text={t(`fleet.vehicles.description.${vehicle.id}`)} />
               </p>
             </article>
           );

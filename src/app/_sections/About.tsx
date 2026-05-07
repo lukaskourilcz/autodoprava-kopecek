@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../components/TranslationProvider";
 import { Waypoints, ChevronsUp, ShieldPlus } from "lucide-react";
 
 const icons = {
@@ -17,17 +17,10 @@ type Reason = {
 };
 
 export default function AboutSection() {
-  const { t } = useTranslation();
+  const { t, tx } = useTranslation();
 
-  const paragraphs = 
-  t("about.paragraphs", 
-    { returnObjects: true });
-  const paragraphArray =
-   Array.isArray(paragraphs) ? 
-   paragraphs : [];
-
-  const reasons = t("about.reasons", { returnObjects: true });
-  const reasonsArray: Reason[] = Array.isArray(reasons) ? reasons : [];
+  const paragraphArray = tx<string[]>("about.paragraphs") ?? [];
+  const reasonsArray = (tx<Reason[]>("about.reasons") ?? []) as Reason[];
 
   return (
     <section

@@ -15,7 +15,7 @@ import {
   Route,
   Truck,
 } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../components/TranslationProvider";
 
 export default function ServicesSection() {
   const { t } = useTranslation();

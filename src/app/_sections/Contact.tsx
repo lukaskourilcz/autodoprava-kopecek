@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../components/TranslationProvider";
 import Image from "next/image";
 import { Clock, Mail, MapPinHouse, Phone } from "lucide-react";
 

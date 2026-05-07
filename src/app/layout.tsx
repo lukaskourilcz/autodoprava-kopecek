@@ -1,7 +1,6 @@
-import { Suspense } from "react";
+import { headers } from "next/headers";
 import "../styles/globals.css";
-import Navbar from "./components/Navbar";
-import HtmlLangSync from "./components/HtmlLangSync";
+import { normalizeLocale } from "../lib/locale";
 
 export const metadata = {
   title: "Autodoprava Kopeček | Váš spolehlivý dopravní partner",
@@ -30,20 +29,16 @@ export const metadata = {
   },
 };
 
-const NavbarSkeleton = () => (
-  <div
-    aria-hidden="true"
-    className="sticky top-0 bg-gray-800 text-white p-4 h-[122px] z-50"
-  />
-);
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const h = await headers();
+  const lang = normalizeLocale(h.get("x-locale"));
+
   return (
-    <html lang="cs">
+    <html lang={lang}>
       <body>
         <a
           href="#main-content"
@@ -51,10 +46,6 @@ export default function RootLayout({
         >
           Přeskočit na obsah
         </a>
-        <HtmlLangSync />
-        <Suspense fallback={<NavbarSkeleton />}>
-          <Navbar />
-        </Suspense>
         {children}
       </body>
     </html>

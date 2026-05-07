@@ -1,11 +1,11 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../components/TranslationProvider";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
-import type { SupportedLocale } from "../../lib/i18n";
+import type { SupportedLocale } from "../../lib/locale";
 
 const images = [
   "/pics/uvodka.jpg",
