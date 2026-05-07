@@ -5,7 +5,7 @@ import HomePage from "./HomePage";
 
 export default function Page() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={null}>
       <HomePage />
     </Suspense>
   );

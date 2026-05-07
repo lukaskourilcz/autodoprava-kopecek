@@ -101,7 +101,7 @@ export default function Services() {
 
   return (
     <section
-      id="sluzby"
+      id="services-content"
       className="bg-gray-100 py-16 px-4 sm:px-8 md:px-16 lg:px-32 bg-gradient-to-b from-white to-gray-300"
     >
       <div className="max-w-6xl mx-auto text-center">

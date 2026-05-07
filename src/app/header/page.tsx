@@ -1,94 +1,132 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect, useCallback } from "react";
+import { Suspense, useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Phone } from "lucide-react";
+import { normalizeLocale } from "../../lib/i18n";
+import { useSearchParams } from "next/navigation";
+
+const images = [
+  "/pics/uvodka.png",
+  "/pics/uvodka1.png",
+  "/pics/uvodka2.png",
+  "/pics/uvodka3.png",
+  "/pics/uvodka4.png",
+  "/pics/uvodka5.png",
+  "/pics/uvodka6.png",
+  "/pics/uvodka7.png",
+  "/pics/uvodka8.png",
+];
 
 export default function Header() {
+  return (
+    <Suspense fallback={null}>
+      <HeaderInner />
+    </Suspense>
+  );
+}
+
+function HeaderInner() {
   const { t } = useTranslation();
-  const images = [
-    "/pics/uvodka.png",
-    "/pics/uvodka1.png",
-    "/pics/uvodka2.png",
-    "/pics/uvodka3.png",
-    "/pics/uvodka4.png",
-    "/pics/uvodka5.png",
-    "/pics/uvodka6.png",
-    "/pics/uvodka7.png",
-    "/pics/uvodka8.png",
-  ];
+  const searchParams = useSearchParams();
+  const activeLocale = normalizeLocale(searchParams.get("lang"));
+  const phone = t("contact.phone");
+  const phoneHref = `tel:${phone.replace(/\s+/g, "")}`;
 
   const [currentImage, setCurrentImage] = useState<number>(0);
-  const [isFading, setIsFading] = useState<boolean>(false);
-
-  const handleNextImage = useCallback(() => {
-    setIsFading(true);
-    setTimeout(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-      setIsFading(false);
-    }, 400);
-  }, [images.length]);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      handleNextImage();
-    }, 8000);
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const onChange = () => setReducedMotion(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
+  const advance = useCallback(() => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return;
+    const interval = setInterval(advance, 8000);
     return () => clearInterval(interval);
-  }, [handleNextImage]);
-
-  const handleDotClick = (index: number) => {
-    if (index !== currentImage) {
-      setIsFading(true);
-      setTimeout(() => {
-        setCurrentImage(index);
-        setIsFading(false);
-      }, 400);
-    }
-  };
+  }, [advance, reducedMotion]);
 
   return (
     <section
       id="uvod"
-      className="relative bg-white bg-cover bg-center"
-      style={{
-        height: "calc(100vh - 60px)",
-      }}
+      className="relative bg-white overflow-hidden"
+      style={{ height: "calc(100dvh - 122px)", minHeight: "480px" }}
     >
-      <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ease-in-out ${
-          isFading ? "opacity-0" : "opacity-100"
-        }`}
-        style={{
-          backgroundImage: `url('${images[currentImage]}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100%",
-        }}
-      ></div>
+      {images.map((src, index) => (
+        <Image
+          key={src}
+          src={src}
+          alt=""
+          fill
+          priority={index === 0}
+          loading={index === 0 ? undefined : "lazy"}
+          sizes="100vw"
+          className={`object-cover object-center transition-opacity duration-700 ease-in-out ${
+            index === currentImage ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
 
-      <div className="absolute left-1/2 top-[67%] transform -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-3/4 lg:w-2/3 bg-white bg-opacity-75 backdrop-blur-sm rounded-[10px] shadow-xl text-center p-6 border border-white border-opacity-30">
-        <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-wider text-gray-900 mb-3 drop-shadow-md">
-          {t("home.subtitle")}
-        </h1>
-        <div className="my-2 w-4/5 mx-auto border-t-2 border-gray-500"></div>
-        <p className="text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed tracking-wide drop-shadow-sm">
-          {t("home.description")}
-        </p>
+      <div className="relative z-10 h-full flex items-center justify-center px-4">
+        <div className="w-full max-w-3xl bg-white/85 backdrop-blur-sm rounded-2xl shadow-xl text-center p-6 sm:p-10 border border-white/30">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-wider text-gray-900 mb-3 drop-shadow-md">
+            {t("home.heroText")}
+          </h1>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-semibold mb-2">
+            {t("home.subtitle")}
+          </p>
+          <div className="my-3 w-4/5 mx-auto border-t-2 border-gray-300" aria-hidden="true"></div>
+          <p className="text-sm sm:text-base text-gray-800 leading-relaxed tracking-wide drop-shadow-sm">
+            {t("home.description")}
+          </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={phoneHref}
+              className="inline-flex items-center justify-center gap-2 bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500 min-h-[44px]"
+            >
+              <Phone size={18} aria-hidden="true" />
+              <span>{t("contact.callCta")}: {phone}</span>
+            </a>
+            <Link
+              href={`/?lang=${activeLocale}#contact`}
+              className="inline-flex items-center justify-center bg-gray-800 text-white font-semibold px-6 py-3 rounded-md hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 min-h-[44px]"
+            >
+              {t("contact.contactCta")}
+            </Link>
+          </div>
+        </div>
       </div>
 
       <div
-        className="absolute left-1/2 flex space-x-2 transform -translate-x-1/2"
-        style={{
-          bottom: "2.5%",
-        }}
+        className="absolute left-1/2 bottom-4 flex space-x-2 transform -translate-x-1/2 z-20"
+        role="tablist"
+        aria-label="Hero slides"
       >
         {images.map((_, index) => (
           <button
             key={index}
-            onClick={() => handleDotClick(index)}
-            className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-              index === currentImage ? "bg-blue-500" : "bg-gray-300"
-            }`}
-          ></button>
+            type="button"
+            role="tab"
+            aria-selected={index === currentImage}
+            aria-label={`Snímek ${index + 1} z ${images.length}`}
+            onClick={() => setCurrentImage(index)}
+            className={`min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400`}
+          >
+            <span
+              className={`block w-3 h-3 rounded-full transition-colors duration-300 ${
+                index === currentImage ? "bg-yellow-500" : "bg-white/70"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

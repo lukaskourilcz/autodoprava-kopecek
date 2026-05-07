@@ -31,17 +31,20 @@ export default function About() {
 
   return (
     <section
-      id="o-nas"
+      id="about-content"
       className="bg-gradient-to-b from-gray-100 to-gray-200 py-16 px-4 sm:px-8 md:px-16 lg:px-32"
     >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
           {t("about.title")}
         </h2>
-        <div className="w-5/6 mx-auto mb-4 border-t-2 border-gray-300"></div>
+        <div className="w-5/6 mx-auto mb-4 border-t-2 border-gray-300" aria-hidden="true"></div>
 
         {paragraphArray.map((paragraph, index) => (
-          <p key={index} className="text-lg text-gray-700 leading-relaxed mb-6 md:text-left text-center px-4">
+          <p
+            key={index}
+            className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:text-left text-center px-4 max-w-prose mx-auto"
+          >
             {paragraph}
           </p>
         ))}

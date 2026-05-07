@@ -1,6 +1,17 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+export const SUPPORTED_LOCALES = ["cs", "en", "de"] as const;
+export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
+export const DEFAULT_LOCALE: SupportedLocale = "cs";
+
+export function normalizeLocale(value: string | null | undefined): SupportedLocale {
+  if (value && (SUPPORTED_LOCALES as readonly string[]).includes(value)) {
+    return value as SupportedLocale;
+  }
+  return DEFAULT_LOCALE;
+}
+
 i18n.use(initReactI18next).init({
   resources: {
     cs: {
@@ -142,16 +153,16 @@ i18n.use(initReactI18next).init({
             },
             description: {
               tourismo:
-                "Tento luxusní klimatizovaný autobus s <strong>kapacitou 51 míst</strong> je ideální volbou pro dálkové zájezdy.",
+                "Tento luxusní klimatizovaný autobus s <b>kapacitou 51 míst</b> je ideální volbou pro dálkové zájezdy.",
               travego:
-                "Moderní a prostorný tříosý autobus, který pojme až <strong>62 cestujících</strong>, je perfektní volbou na dlouhé cesty.",
+                "Moderní a prostorný tříosý autobus, který pojme až <b>62 cestujících</b>, je perfektní volbou na dlouhé cesty.",
               setra:
-                "Tříosý moderní autobus s <strong>kapacitou 67 míst</strong>. Skvělá volba pro pravidelné linky a početnější skupiny.",
-              man: "Elegantní a prostorný Mercedes Viano s <strong>kapacitou 7+1</strong> je ideální pro pohodlnou dopravu menších skupin.",
+                "Tříosý moderní autobus s <b>kapacitou 67 míst</b>. Skvělá volba pro pravidelné linky a početnější skupiny.",
+              man: "Elegantní a prostorný Mercedes Viano s <b>kapacitou 7+1</b> je ideální pro pohodlnou dopravu menších skupin.",
               karosa:
-                "Spolehlivý autobus určený na vnitrostátní výlety nebo pravidelné linkové trasy s <strong>kapacitou 59 míst</strong>.",
+                "Spolehlivý autobus určený na vnitrostátní výlety nebo pravidelné linkové trasy s <b>kapacitou 59 míst</b>.",
               tourino:
-                "Stylový menší autobus, který přináší maximální komfort až <strong>pro 36 osob</strong>. Ideální volba pro menší skupiny.",
+                "Stylový menší autobus, který přináší maximální komfort až <b>pro 36 osob</b>. Ideální volba pro menší skupiny.",
               daf: "Výkonný tahač s hydraulickým okruhem, schopen splnit i náročnější přepravu nákladů v těžším terénu.",
             },
           },
@@ -160,17 +171,26 @@ i18n.use(initReactI18next).init({
           title: "Kontakt",
           description:
             "Pokud vás zajímá nacenění zakázky, chcete si domluvit termín, nebo se jen dozvědět více o našich službách, jsme tady, abychom vám pomohli. Stačí se nám ozvat – ať už telefonicky nebo e-mailem. Náš přátelský a zkušený tým vám rád zodpoví všechny dotazy, vysvětlí detaily a postará se o to, aby vše proběhlo hladce a k vaší maximální spokojenosti. Těšíme se na naši budoucí spolupráci.",
-          address: "V Chalupách 228/50,<br>Lužice 696 18, ČR",
+          addressLine1: "V Chalupách 228/50",
+          addressLine2: "Lužice 696 18, ČR",
           addressLabel: "Adresa",
+          mapLabel: "Otevřít v Mapách",
           phone: "+420 777 685 331",
           phoneLabel: "Telefon",
+          callCta: "Zavolat",
           email: "jirikopecek@seznam.cz",
           emailLabel: "Email",
+          mailSubject: "Poptávka přepravy",
+          hoursLabel: "Provozní doba",
+          hours: "Po–Pá 7:00–17:00",
           billingTitle: "Fakturační údaje",
           companyID: "67004997",
           companyIDLabel: "IČ",
           taxID: "CZ7504284304",
           taxIDLabel: "DIČ",
+          logoAlt: "Logo Autodoprava Kopeček",
+          footerNote: "© {{year}} Autodoprava Kopeček. Všechna práva vyhrazena.",
+          contactCta: "Kontaktujte nás",
         },
       },
     },
@@ -309,22 +329,20 @@ i18n.use(initReactI18next).init({
               man: "Mercedes-Benz Viano",
               karosa: "Karosa Axer",
               tourino: "Mercedes-Benz Tourino",
-              fmax: "Ford F-Max + 13.6m walking floor",
               daf: "DAF XF 510 FT",
             },
             description: {
               tourismo:
-                "This luxurious air-conditioned coach with a <strong>capacity of 51 seats</strong> is the ideal choice for long-distance tours.",
+                "This luxurious air-conditioned coach with a <b>capacity of 51 seats</b> is the ideal choice for long-distance tours.",
               travego:
-                "A modern, spacious three-axle coach that accommodates up to <strong>62 passengers</strong>, making it perfect for long journeys.",
+                "A modern, spacious three-axle coach that accommodates up to <b>62 passengers</b>, making it perfect for long journeys.",
               setra:
-                "A modern three-axle bus with a <strong>capacity of 67 seats</strong>. A great choice for regular bus service and larger groups.",
-              man: "Elegant and spacious Mercedes Viano with a <strong>7+1 seating capacity</strong> is ideal for the comfortable transportation of small groups.",
+                "A modern three-axle bus with a <b>capacity of 67 seats</b>. A great choice for regular bus service and larger groups.",
+              man: "Elegant and spacious Mercedes Viano with a <b>7+1 seating capacity</b> is ideal for the comfortable transportation of small groups.",
               karosa:
-                "A reliable bus designed for domestic trips or regular bus service with a capacity of <strong>59 seats</strong>.",
+                "A reliable bus designed for domestic trips or regular bus service with a capacity of <b>59 seats</b>.",
               tourino:
-                "A stylish smaller bus that offers maximum comfort for up to <strong>36 people</strong>. Ideal choice for smaller groups.",
-              fmax: "This robust hydraulic truck unit with a walking floor is ready for the most difficult transports.",
+                "A stylish smaller bus that offers maximum comfort for up to <b>36 people</b>. Ideal choice for smaller groups.",
               daf: "A powerful truck with a hydraulic circuit, capable of handling even more challenging transport in rough terrain.",
             },
           },
@@ -333,17 +351,26 @@ i18n.use(initReactI18next).init({
           title: "Contact",
           description:
             "If you're interested in getting a quote for your project, setting up a date, or simply learning more about our services, we're here to help. Just reach out to us – whether by phone or email. Our friendly and experienced team will gladly answer all your questions, explain the details, and ensure that everything runs smoothly to your complete satisfaction. We look forward to our future cooperation.",
-          address: "V Chalupách 228/50,<br>Lužice 696 18, CZ",
+          addressLine1: "V Chalupách 228/50",
+          addressLine2: "Lužice 696 18, CZ",
           addressLabel: "Address",
+          mapLabel: "Open in Maps",
           phone: "+420 777 685 331",
           phoneLabel: "Phone",
+          callCta: "Call",
           email: "jirikopecek@seznam.cz",
           emailLabel: "Email",
+          mailSubject: "Transport inquiry",
+          hoursLabel: "Office hours",
+          hours: "Mon–Fri 7:00–17:00",
           billingTitle: "Billing Information",
           companyID: "67004997",
           companyIDLabel: "Company ID",
           taxID: "CZ7504284304",
           taxIDLabel: "Tax ID",
+          logoAlt: "Autodoprava Kopeček logo",
+          footerNote: "© {{year}} Autodoprava Kopeček. All rights reserved.",
+          contactCta: "Contact us",
         },
       },
     },
@@ -466,7 +493,7 @@ i18n.use(initReactI18next).init({
           description:
             "Unser Fuhrpark besteht ausschließlich aus modernen und zuverlässigen Fahrzeugen, die Ihren Transportanforderungen sicher gerecht werden.",
           icons: {
-            BeachIcon: "Geeignet für Reisen ins Ausland",
+            BeachIcon: "Reisekonfiguration",
             AirplaneSeatIcon: "Verstellbare Sitze",
             BeltIcon: "Sicherheitsgurte",
             ThermometerColdIcon: "Klimaanlage",
@@ -483,22 +510,20 @@ i18n.use(initReactI18next).init({
               man: "Mercedes-Benz Viano",
               karosa: "Karosa Axer",
               tourino: "Mercedes-Benz Tourino",
-              fmax: "Ford F-Max + 13.6m Anhänger",
               daf: "DAF XF 510 FT",
             },
             description: {
               tourismo:
-                "Dieser luxuriöse, klimatisierte Reisebus mit einer <strong>Kapazität von 51 Sitzplätzen</strong> ist die ideale Wahl für Fernreisen.",
+                "Dieser luxuriöse, klimatisierte Reisebus mit einer <b>Kapazität von 51 Sitzplätzen</b> ist die ideale Wahl für Fernreisen.",
               travego:
-                "Ein moderner und geräumiger Reisebus, der bis zu <strong>62 Passagiere</strong> aufnehmen kann – perfekt für lange Reisen.",
+                "Ein moderner und geräumiger Reisebus, der bis zu <b>62 Passagiere</b> aufnehmen kann – perfekt für lange Reisen.",
               setra:
-                "Eine ausgezeichnete Wahl für den nationalen Transport oder regelmäßige Linienfahrten. Dieser moderne Bus bietet <strong>67 Sitzplätze</strong>.",
-              man: "Eleganter und geräumiger Mercedes Viano mit einer <strong>Kapazität von 7+1 Sitzplätzen</strong> ist ideal für den komfortablen Transport kleiner Gruppen.",
+                "Eine ausgezeichnete Wahl für den nationalen Transport oder regelmäßige Linienfahrten. Dieser moderne Bus bietet <b>67 Sitzplätze</b>.",
+              man: "Eleganter und geräumiger Mercedes Viano mit einer <b>Kapazität von 7+1 Sitzplätzen</b> ist ideal für den komfortablen Transport kleiner Gruppen.",
               karosa:
-                "Ein zuverlässiger Reisebus für Inlandsreisen oder regelmäßige Linienfahrten mit einer <strong>Kapazität von 59 Sitzplätzen</strong>.",
+                "Ein zuverlässiger Reisebus für Inlandsreisen oder regelmäßige Linienfahrten mit einer <b>Kapazität von 59 Sitzplätzen</b>.",
               tourino:
-                "Ein stilvoller, kleinerer Reisebus, der maximalen Komfort für bis zu <strong>36 Personen</strong> bietet. Perfekt für kleinere Gruppen.",
-              fmax: "Diese robuste Sattelzugmaschine mit langem Auflieger ist bereit für die anspruchsvollsten Transporte.",
+                "Ein stilvoller, kleinerer Reisebus, der maximalen Komfort für bis zu <b>36 Personen</b> bietet. Perfekt für kleinere Gruppen.",
               daf: "Ein leistungsstarker LKW für großvolumige und effiziente Warentransporte über lange Strecken.",
             },
           },
@@ -507,28 +532,38 @@ i18n.use(initReactI18next).init({
           title: "Kontakt",
           description:
             "Wenn Sie ein Angebot für Ihr Projekt erhalten, einen Termin vereinbaren oder einfach mehr über unsere Dienstleistungen erfahren möchten, sind wir für Sie da. Kontaktieren Sie uns einfach – per Telefon oder E-Mail. Unser freundliches und erfahrenes Team beantwortet gerne all Ihre Fragen, erklärt die Details und sorgt dafür, dass alles reibungslos und zu Ihrer vollsten Zufriedenheit abläuft. Wir freuen uns auf unsere zukünftige Zusammenarbeit.",
-          address: "V Chalupách 228/50,<br>Lužice 696 18, CZ",
+          addressLine1: "V Chalupách 228/50",
+          addressLine2: "Lužice 696 18, CZ",
           addressLabel: "Adresse",
+          mapLabel: "In Karten öffnen",
           phone: "+420 777 685 331",
           phoneLabel: "Telefon",
+          callCta: "Anrufen",
           email: "jirikopecek@seznam.cz",
           emailLabel: "Email",
+          mailSubject: "Transportanfrage",
+          hoursLabel: "Öffnungszeiten",
+          hours: "Mo–Fr 7:00–17:00",
           billingTitle: "Rechnungsinformationen",
           companyID: "67004997",
           companyIDLabel: "Unternehmens-ID",
           taxID: "CZ7504284304",
           taxIDLabel: "Steuer-ID",
+          logoAlt: "Autodoprava Kopeček Logo",
+          footerNote: "© {{year}} Autodoprava Kopeček. Alle Rechte vorbehalten.",
+          contactCta: "Kontaktieren Sie uns",
         },
       },
     },
   },
-  lng: "cs",
-  fallbackLng: "cs",
+  lng: DEFAULT_LOCALE,
+  fallbackLng: DEFAULT_LOCALE,
+  supportedLngs: SUPPORTED_LOCALES,
   defaultNS: "common",
   interpolation: {
     escapeValue: false,
   },
-  debug: true,
+  debug: process.env.NODE_ENV !== "production",
 });
 
 export default i18n;

@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { normalizeLocale } from "../lib/i18n";
 import Header from "./header/page";
 import Contact from "./contact/page";
 import About from "./about/page";
@@ -11,20 +12,20 @@ import Fleet from "./fleet/page";
 
 export default function HomePage() {
   const searchParams = useSearchParams();
-  const lang = searchParams.get("lang") || "cs";
+  const lang = normalizeLocale(searchParams.get("lang"));
   const { i18n } = useTranslation();
 
   useEffect(() => {
     if (i18n.language !== lang) {
-      i18n.changeLanguage(lang).catch((err) =>
-        console.error("Failed to change language:", err)
-      );
+      i18n
+        .changeLanguage(lang)
+        .catch((err) => console.error("Failed to change language:", err));
     }
   }, [lang, i18n]);
 
   return (
-    <main>
-      <section id="header" className="section">
+    <main id="main-content">
+      <section id="home" className="section">
         <Header />
       </section>
       <section id="about" className="section">

@@ -1,18 +1,21 @@
 import { Suspense } from "react";
 import "../styles/globals.css";
 import Navbar from "./components/Navbar";
+import HtmlLangSync from "./components/HtmlLangSync";
 
 export const metadata = {
   title: "Autodoprava Kopeček | Váš spolehlivý dopravní partner",
-  description: "Moderní a spolehlivá autobusová doprava v Hodoníně. Zajišťujeme komfortní přepravu pro skupiny i jednotlivce.",
+  description:
+    "Moderní a spolehlivá autobusová doprava v Hodoníně. Zajišťujeme komfortní přepravu pro skupiny i jednotlivce.",
   icons: {
-    icon: "/favicon.ico", 
+    icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.png",
   },
   openGraph: {
     title: "Autodoprava Kopeček | Váš spolehlivý dopravní partner",
-    description: "Moderní a spolehlivá autobusová doprava v Hodoníně. Zajišťujeme komfortní přepravu pro skupiny i jednotlivce.",
+    description:
+      "Moderní a spolehlivá autobusová doprava v Hodoníně. Zajišťujeme komfortní přepravu pro skupiny i jednotlivce.",
     url: "https://www.autobusyhodonin.cz",
     type: "website",
     images: [
@@ -27,6 +30,13 @@ export const metadata = {
   },
 };
 
+const NavbarSkeleton = () => (
+  <div
+    aria-hidden="true"
+    className="sticky top-0 bg-gray-800 text-white p-4 h-[122px] z-50"
+  />
+);
+
 export default function RootLayout({
   children,
 }: {
@@ -35,7 +45,16 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body>
-        <Suspense fallback={<p>Loading...</p>}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-yellow-500 focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold"
+        >
+          Přeskočit na obsah
+        </a>
+        <Suspense fallback={null}>
+          <HtmlLangSync />
+        </Suspense>
+        <Suspense fallback={<NavbarSkeleton />}>
           <Navbar />
         </Suspense>
         {children}
