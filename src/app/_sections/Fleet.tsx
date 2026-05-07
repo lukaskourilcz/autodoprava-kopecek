@@ -265,24 +265,28 @@ export default function FleetSection() {
   return (
     <section
       id="fleet-content"
-      className="bg-gradient-to-b from-gray-100 to-white py-16 px-4 sm:px-8 md:px-16 lg:px-32"
+      className="bg-gradient-to-b from-gray-200 to-white py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-32"
     >
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-semibold text-gray-800 mb-4">
+      <div className="text-center mb-12">
+        <span className="section-accent mx-auto" aria-hidden="true" />
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-3">
           {t("fleet.title")}
         </h2>
-        <p className="text-base text-gray-700 max-w-prose mx-auto">
+        <p className="text-base text-gray-600 max-w-prose mx-auto">
           {t("fleet.description")}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center max-w-6xl mx-auto">
         {vehicles.map((vehicle) => {
           const name = t(`fleet.vehicles.name.${vehicle.id}`);
           return (
-            <article key={vehicle.id} className="flex flex-col items-center">
+            <article
+              key={vehicle.id}
+              className="flex flex-col items-center bg-white rounded-2xl p-4 shadow-sm ring-1 ring-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all"
+            >
               <Carousel images={vehicle.images} vehicleName={name} />
-              <h3 className="mt-4 text-gray-700 font-bold text-center">
+              <h3 className="mt-4 text-gray-900 font-bold text-center">
                 {name}
               </h3>
               {vehicle.icons && vehicle.icons.length > 0 && (

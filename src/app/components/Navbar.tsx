@@ -63,27 +63,107 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
     languages.find((lang) => lang.code === locale) ?? languages[0];
 
   return (
-    <nav className="sticky top-0 bg-gray-800/95 text-white p-4 flex justify-between items-center z-50">
-      <div className="flex items-center min-w-0 flex-shrink">
-        <div className="logo-container flex items-center min-w-0">
+    <nav className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80 text-white shadow-lg shadow-black/10 border-b border-white/5">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+        <Link
+          href={`/${locale}#home`}
+          className="flex items-center gap-2 sm:gap-3 min-w-0 -ml-1 px-1 py-1 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+        >
           <Image
             src="/pics/logo-whiteyellow-nav.png"
             alt={t("contact.logoAlt")}
             width={90}
             height={90}
-            className="logo-animation w-14 h-14 sm:w-[90px] sm:h-[90px] flex-shrink-0"
+            className="logo-animation w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0"
             priority
           />
-          <Link
-            href={`/${locale}#home`}
-            className="hover:text-gray-200 block ml-2 sm:ml-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded min-w-0"
+          <span className="font-bold uppercase tracking-wider leading-none text-[11px] sm:text-xs md:text-sm whitespace-nowrap">
+            <span className="text-yellow-400">Autodoprava</span>
+            <span className="text-white"> Kopeček</span>
+          </span>
+        </Link>
+
+        <ul className="hidden lg:flex items-center gap-1">
+          {navLinks.map(({ hash, label }) => (
+            <li key={hash}>
+              <Link
+                href={`/${locale}#${hash}`}
+                className="block px-3 py-2 text-sm font-medium text-gray-100 hover:text-yellow-400 hover:bg-white/5 rounded-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-1 sm:gap-2">
+          <div className="relative" ref={dropdownRef}>
+            <button
+              type="button"
+              aria-label={`Změnit jazyk (aktuální: ${activeLang.label})`}
+              aria-haspopup="menu"
+              aria-expanded={dropdownVisible}
+              onClick={() => setDropdownVisible(!dropdownVisible)}
+              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 text-sm font-medium text-gray-100 hover:bg-white/5 rounded-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 min-h-[40px]"
+            >
+              <Image
+                src={activeLang.flag}
+                alt=""
+                width={20}
+                height={20}
+                className="rounded-full flex-shrink-0"
+              />
+              <span className="font-semibold">{activeLang.short}</span>
+              <ChevronDown
+                size={14}
+                aria-hidden="true"
+                className={`transition-transform ${
+                  dropdownVisible ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {dropdownVisible && (
+              <div
+                role="menu"
+                className="absolute right-0 mt-2 w-44 bg-white text-gray-800 rounded-lg shadow-xl ring-1 ring-black/5 py-1 overflow-hidden"
+              >
+                {languages.map(({ code, label, flag }) => (
+                  <button
+                    type="button"
+                    role="menuitem"
+                    key={code}
+                    onClick={() => handleLanguageChange(code)}
+                    aria-current={code === locale}
+                    className={`flex items-center gap-3 w-full px-4 py-2.5 text-sm hover:bg-gray-50 focus-visible:bg-gray-50 focus-visible:outline-none ${
+                      code === locale
+                        ? "font-semibold text-gray-900 bg-gray-50"
+                        : "text-gray-700"
+                    }`}
+                  >
+                    <Image
+                      src={flag}
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="rounded-full"
+                    />
+                    <span>{label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button
+            type="button"
+            aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"}
+            aria-expanded={menuOpen}
+            aria-controls="primary-menu"
+            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-white hover:bg-white/5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <span className="font-bold text-sm md:text-lg uppercase leading-tight md:leading-tight">
-              <span className="text-yellow-400">AUTODOPRAVA</span>
-              <br />
-              <span>KOPEČEK</span>
-            </span>
-          </Link>
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
 
@@ -91,82 +171,20 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
         id="primary-menu"
         className={`${
           menuOpen ? "block" : "hidden"
-        } lg:flex lg:space-x-6 bg-gray-800 lg:bg-transparent lg:flex-row lg:static absolute top-full left-0 w-full lg:w-auto p-4 lg:p-0`}
+        } lg:hidden border-t border-white/5 bg-gray-900/98 backdrop-blur px-4 py-2`}
       >
         {navLinks.map(({ hash, label }) => (
-          <li key={hash} className="text-center">
+          <li key={hash}>
             <Link
               href={`/${locale}#${hash}`}
               onClick={() => setMenuOpen(false)}
-              className="hover:text-yellow-400 block py-3 lg:py-1 px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded"
+              className="block px-3 py-3 text-base font-medium text-gray-100 hover:text-yellow-400 hover:bg-white/5 rounded-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
             >
               {label}
             </Link>
           </li>
         ))}
       </ul>
-
-      <div className="flex items-center space-x-4">
-        <button
-          type="button"
-          aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"}
-          aria-expanded={menuOpen}
-          aria-controls="primary-menu"
-          className="block lg:hidden text-white p-2 -mr-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-        <div className="relative" ref={dropdownRef}>
-          <button
-            type="button"
-            aria-label={`Změnit jazyk (aktuální: ${activeLang.label})`}
-            aria-haspopup="menu"
-            aria-expanded={dropdownVisible}
-            onClick={() => setDropdownVisible(!dropdownVisible)}
-            className="flex items-center space-x-2 bg-gray-700 px-4 py-2 rounded-md hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
-          >
-            <Image
-              src={activeLang.flag}
-              alt=""
-              width={20}
-              height={20}
-              className="rounded-full"
-            />
-            <span className="sm:hidden font-semibold">{activeLang.short}</span>
-            <span className="hidden sm:inline">{activeLang.label}</span>
-            <ChevronDown size={16} aria-hidden="true" />
-          </button>
-          {dropdownVisible && (
-            <div
-              role="menu"
-              className="absolute right-0 mt-2 bg-white text-gray-800 rounded-md shadow-lg w-44 py-1"
-            >
-              {languages.map(({ code, label, flag }) => (
-                <button
-                  type="button"
-                  role="menuitem"
-                  key={code}
-                  onClick={() => handleLanguageChange(code)}
-                  aria-current={code === locale}
-                  className={`flex items-center space-x-3 w-full px-4 py-3 hover:bg-gray-100 focus-visible:bg-gray-100 focus-visible:outline-none ${
-                    code === locale ? "font-semibold" : ""
-                  }`}
-                >
-                  <Image
-                    src={flag}
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="rounded-full"
-                  />
-                  <span>{label}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
     </nav>
   );
 }
