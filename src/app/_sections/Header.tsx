@@ -66,23 +66,28 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
         />
       ))}
 
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40"
+        aria-hidden="true"
+      />
+
       <div className="relative z-10 h-full flex items-center justify-center px-4">
-        <div className="w-full max-w-3xl bg-white/85 backdrop-blur-sm rounded-2xl shadow-xl text-center p-6 sm:p-10 border border-white/30">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-wider text-gray-900 mb-3 drop-shadow-md">
+        <div className="w-full max-w-2xl bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl text-center p-7 sm:p-10 ring-1 ring-black/5">
+          <span className="section-accent" aria-hidden="true" />
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 mb-3">
             {t("home.heroText")}
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-semibold mb-2">
+          <p className="text-sm sm:text-base text-gray-600 font-medium mb-5 uppercase tracking-widest">
             {t("home.subtitle")}
           </p>
-          <div className="my-3 w-4/5 mx-auto border-t-2 border-gray-300" aria-hidden="true" />
-          <p className="text-sm sm:text-base text-gray-800 leading-relaxed tracking-wide drop-shadow-sm">
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-xl mx-auto">
             {t("home.description")}
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href={phoneHref}
               aria-label={`${t("contact.callCta")}: ${phone}`}
-              className="inline-flex items-center justify-center gap-2 bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500 min-h-[44px]"
+              className="inline-flex items-center justify-center gap-2 bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-400 hover:shadow-lg active:translate-y-px transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500 min-h-[44px]"
             >
               <Phone size={18} aria-hidden="true" />
               <span>{t("contact.callCta")}</span>
@@ -90,7 +95,7 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
             </a>
             <Link
               href={`/${locale}#contact`}
-              className="inline-flex items-center justify-center bg-gray-800 text-white font-semibold px-6 py-3 rounded-md hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 min-h-[44px]"
+              className="inline-flex items-center justify-center bg-gray-900 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-800 hover:shadow-lg active:translate-y-px transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 min-h-[44px]"
             >
               {t("contact.contactCta")}
             </Link>
@@ -99,7 +104,7 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
       </div>
 
       <div
-        className="absolute left-1/2 bottom-4 flex space-x-2 transform -translate-x-1/2 z-20"
+        className="absolute left-1/2 bottom-3 flex flex-wrap justify-center transform -translate-x-1/2 z-20"
         role="tablist"
         aria-label="Hero slides"
       >
@@ -114,8 +119,10 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
             className="min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
           >
             <span
-              className={`block w-3 h-3 rounded-full transition-colors duration-300 ${
-                index === currentImage ? "bg-yellow-500" : "bg-white/70"
+              className={`block rounded-full transition-all duration-300 ${
+                index === currentImage
+                  ? "w-8 h-2 bg-yellow-500"
+                  : "w-2 h-2 bg-white/70 hover:bg-white"
               }`}
             />
           </button>
