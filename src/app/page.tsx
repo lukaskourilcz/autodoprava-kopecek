@@ -1,12 +1,6 @@
-"use client";
+import { redirect } from "next/navigation";
+import { DEFAULT_LOCALE } from "../lib/locale";
 
-import React, { Suspense } from "react";
-import HomePage from "./HomePage";
-
-export default function Page() {
-  return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <HomePage />
-    </Suspense>
-  );
+export default function RootPage() {
+  redirect(`/${DEFAULT_LOCALE}`);
 }
