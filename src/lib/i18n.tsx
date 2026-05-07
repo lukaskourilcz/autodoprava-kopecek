@@ -1,16 +1,13 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from "./locale";
 
-export const SUPPORTED_LOCALES = ["cs", "en", "de"] as const;
-export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
-export const DEFAULT_LOCALE: SupportedLocale = "cs";
-
-export function normalizeLocale(value: string | null | undefined): SupportedLocale {
-  if (value && (SUPPORTED_LOCALES as readonly string[]).includes(value)) {
-    return value as SupportedLocale;
-  }
-  return DEFAULT_LOCALE;
-}
+export {
+  DEFAULT_LOCALE,
+  SUPPORTED_LOCALES,
+  normalizeLocale,
+} from "./locale";
+export type { SupportedLocale } from "./locale";
 
 i18n.use(initReactI18next).init({
   resources: {

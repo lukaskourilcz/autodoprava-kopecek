@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -17,12 +17,14 @@ const languages = [
 
 export default function Navbar() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const pathname = usePathname();
   const { t, i18n } = useTranslation();
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const activeLocale = normalizeLocale(searchParams.get("lang"));
+
+  const segment = pathname?.split("/")[1] ?? "";
+  const activeLocale = normalizeLocale(segment);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -59,9 +61,7 @@ export default function Navbar() {
   const handleLanguageChange = (code: (typeof SUPPORTED_LOCALES)[number]) => {
     const currentHash =
       typeof window !== "undefined" ? window.location.hash : "";
-    const basePath =
-      typeof window !== "undefined" ? window.location.pathname : "/";
-    router.replace(`${basePath}?lang=${code}${currentHash}`, { scroll: false });
+    router.replace(`/${code}${currentHash}`, { scroll: false });
     setDropdownVisible(false);
   };
 
@@ -88,7 +88,7 @@ export default function Navbar() {
             priority
           />
           <Link
-            href={`/?lang=${activeLocale}#home`}
+            href={`/${activeLocale}#home`}
             className="hover:text-gray-200 block ml-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded"
           >
             <span className="font-bold text-base md:text-lg uppercase md:leading-tight">
@@ -109,7 +109,7 @@ export default function Navbar() {
         {navLinks.map(({ hash, label }) => (
           <li key={hash} className="text-center">
             <Link
-              href={`/?lang=${activeLocale}#${hash}`}
+              href={`/${activeLocale}#${hash}`}
               onClick={() => setMenuOpen(false)}
               className="hover:text-yellow-400 block py-3 lg:py-1 px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400 rounded"
             >

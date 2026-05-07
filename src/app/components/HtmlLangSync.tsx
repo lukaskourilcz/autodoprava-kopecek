@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { normalizeLocale } from "../../lib/i18n";
 
 export default function HtmlLangSync() {
-  const searchParams = useSearchParams();
-  const lang = normalizeLocale(searchParams.get("lang"));
+  const pathname = usePathname();
+  const segment = pathname?.split("/")[1] ?? "";
+  const lang = normalizeLocale(segment);
 
   useEffect(() => {
     if (typeof document !== "undefined") {

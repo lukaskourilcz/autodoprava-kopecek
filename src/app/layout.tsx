@@ -20,7 +20,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.autobusyhodonin.cz/pics/uvodka.png",
+        url: "https://www.autobusyhodonin.cz/pics/uvodka.jpg",
         width: 750,
         height: 500,
         alt: "Autodoprava Kopeček",
@@ -51,9 +51,7 @@ export default function RootLayout({
         >
           Přeskočit na obsah
         </a>
-        <Suspense fallback={null}>
-          <HtmlLangSync />
-        </Suspense>
+        <HtmlLangSync />
         <Suspense fallback={<NavbarSkeleton />}>
           <Navbar />
         </Suspense>
