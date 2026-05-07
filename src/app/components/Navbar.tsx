@@ -64,20 +64,24 @@ export default function Navbar({ locale }: { locale: SupportedLocale }) {
 
   return (
     <nav className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80 text-white shadow-lg shadow-black/10 border-b border-white/5">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-1.5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link
           href={`/${locale}#home`}
-          className="flex items-center min-w-0 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+          className="flex items-center gap-2 sm:gap-3 min-w-0 -ml-1 px-1 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
           aria-label={t("contact.logoAlt")}
         >
           <Image
             src="/pics/logo-whiteyellow-nav.png"
-            alt={t("contact.logoAlt")}
+            alt=""
             width={881}
             height={411}
-            className="logo-animation h-9 w-auto"
+            className="logo-animation h-9 w-auto block"
             priority
           />
+          <span className="font-bold uppercase tracking-wider leading-none text-[11px] sm:text-xs whitespace-nowrap">
+            <span className="text-yellow-400">Autodoprava</span>
+            <span className="text-white"> Kopeček</span>
+          </span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-1">
