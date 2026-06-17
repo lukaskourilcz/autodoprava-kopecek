@@ -1,3 +1,5 @@
+import { Reveal } from "./Reveal";
+
 /** The yellow accent bar + title (+ optional intro) shown at the top of every section. */
 export function SectionHeading({
   title,
@@ -9,16 +11,16 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <div className={`text-center ${className}`}>
+    <Reveal className={`text-center ${className}`}>
       <span className="section-accent mx-auto" aria-hidden="true" />
-      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
+      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base md:text-lg text-gray-600 max-w-prose mx-auto">
+        <p className="mx-auto mt-4 max-w-prose text-base text-gray-600 md:text-lg">
           {description}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }

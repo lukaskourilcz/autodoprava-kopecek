@@ -9,7 +9,7 @@ const variantClasses: Record<Variant, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg active:translate-y-px transition-all min-h-[44px] focus-ring";
+  "inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 min-h-[44px] focus-ring";
 
 type ButtonProps = {
   children: ReactNode;

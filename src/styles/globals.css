@@ -5,13 +5,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --nav-height: 48px;
+  --nav-height: 56px;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui,
+    sans-serif;
+  letter-spacing: -0.02em;
 }
 
 html {
@@ -26,8 +39,32 @@ html {
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/*
+ * Scroll-reveal. The hidden starting state only applies when JavaScript has
+ * added `.reveal-enabled` to <html> AND the visitor hasn't requested reduced
+ * motion — so no-JS and reduced-motion visitors always get fully visible
+ * content. `--reveal-delay` lets grouped items stagger in.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  html.reveal-enabled [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  html.reveal-enabled [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
   }
 }
 

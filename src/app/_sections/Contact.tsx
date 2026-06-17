@@ -5,12 +5,16 @@ import { Clock, Mail, MapPinHouse, Phone } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { telHref, mailtoHref, mapsSearchHref } from "@/lib/contactLinks";
 import { interpolate } from "@/lib/format";
+import { uiStrings } from "@/lib/ui-strings";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { IconBadge } from "../components/ui/IconBadge";
 import { Button } from "../components/ui/Button";
+import { Reveal } from "../components/ui/Reveal";
 
 export default function Contact() {
-  const { contact } = useContent().texts;
+  const { locale, texts } = useContent();
+  const contact = texts.contact;
+  const ui = uiStrings(locale);
 
   const phoneLink = telHref(contact.phone);
   const mailLink = mailtoHref(contact.email, contact.mailSubject);
@@ -21,11 +25,17 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="section relative bg-cover bg-center md:bg-fixed py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-32"
-        style={{ backgroundImage: "url('/pics/footer-map.jpg')" }}
+        className="section relative overflow-hidden px-4 py-20 sm:px-8 sm:py-24 md:px-16 lg:px-32"
       >
+        <Image
+          src="/pics/footer-map.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-gray-900/40" aria-hidden="true" />
-        <div className="relative max-w-4xl mx-auto bg-white/95 backdrop-blur-sm p-6 sm:p-10 rounded-2xl shadow-xl ring-1 ring-black/5">
+        <Reveal className="relative z-10 mx-auto max-w-4xl rounded-2xl bg-white/95 p-6 shadow-xl ring-1 ring-black/5 backdrop-blur-sm sm:p-10">
           <SectionHeading title={contact.title} description={contact.description} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
@@ -132,10 +142,10 @@ export default function Contact() {
             </Button>
             <Button href={mailLink} variant="secondary">
               <Mail size={18} aria-hidden="true" />
-              {contact.emailLabel}
+              {ui.sendEmail}
             </Button>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <footer className="bg-gray-900 py-6 border-t border-white/5">

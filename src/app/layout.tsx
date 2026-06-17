@@ -1,6 +1,21 @@
 import { headers } from "next/headers";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { normalizeLocale } from "../lib/locale";
+import { uiStrings } from "../lib/ui-strings";
+
+const fontSans = Inter({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const fontDisplay = Plus_Jakarta_Sans({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["600", "700", "800"],
+});
 
 export const metadata = {
   title: "Autodoprava Kopeček | Váš spolehlivý dopravní partner",
@@ -36,15 +51,23 @@ export default async function RootLayout({
 }) {
   const h = await headers();
   const lang = normalizeLocale(h.get("x-locale"));
+  const ui = uiStrings(lang);
 
   return (
-    <html lang={lang}>
-      <body>
+    <html lang={lang} suppressHydrationWarning>
+      <body className={`${fontSans.variable} ${fontDisplay.variable}`}>
+        {/* Enable scroll-reveal before first paint; gated so no-JS visitors still
+            see content (the hidden state in globals.css requires this class). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('reveal-enabled')",
+          }}
+        />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-yellow-500 focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold"
         >
-          Přeskočit na obsah
+          {ui.skipToContent}
         </a>
         {children}
       </body>
