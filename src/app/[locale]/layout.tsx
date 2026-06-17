@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { SUPPORTED_LOCALES, type SupportedLocale } from "../../lib/locale";
-import { TranslationProvider } from "../components/TranslationProvider";
+import { SUPPORTED_LOCALES, isSupportedLocale } from "@/lib/locale";
+import { LocaleProvider } from "@/content/locale-context";
 import Navbar from "../components/Navbar";
 
 export function generateStaticParams() {
@@ -15,15 +15,14 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!(SUPPORTED_LOCALES as readonly string[]).includes(locale)) {
+  if (!isSupportedLocale(locale)) {
     notFound();
   }
-  const typedLocale = locale as SupportedLocale;
 
   return (
-    <TranslationProvider locale={typedLocale}>
-      <Navbar locale={typedLocale} />
+    <LocaleProvider locale={locale}>
+      <Navbar />
       {children}
-    </TranslationProvider>
+    </LocaleProvider>
   );
 }

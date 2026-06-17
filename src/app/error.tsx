@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Button } from "./components/ui/Button";
 
 export default function Error({ reset }: { reset: () => void }) {
   return (
@@ -11,18 +11,10 @@ export default function Error({ reset }: { reset: () => void }) {
         telefonicky.
       </p>
       <div className="flex gap-3">
-        <button
-          onClick={reset}
-          className="bg-yellow-500 text-gray-900 font-semibold px-5 py-3 rounded-md hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500"
-        >
-          Zkusit znovu
-        </button>
-        <Link
-          href="/"
-          className="bg-gray-800 text-white font-semibold px-5 py-3 rounded-md hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800"
-        >
+        <Button onClick={reset}>Zkusit znovu</Button>
+        <Button href="/" variant="secondary">
           Domů
-        </Link>
+        </Button>
       </div>
     </main>
   );

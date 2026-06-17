@@ -1,13 +1,8 @@
 import LocalePage from "./LocalePage";
-import type { SupportedLocale } from "../../lib/locale";
 
+// Only the locales from the parent layout's generateStaticParams are built.
 export const dynamicParams = false;
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  return <LocalePage locale={locale as SupportedLocale} />;
+export default function Page() {
+  return <LocalePage />;
 }

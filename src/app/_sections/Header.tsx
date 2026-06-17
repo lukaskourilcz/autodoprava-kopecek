@@ -1,13 +1,15 @@
 "use client";
 
-import { useTranslation } from "../components/TranslationProvider";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Phone } from "lucide-react";
-import type { SupportedLocale } from "../../lib/locale";
+import { useContent } from "@/content/useContent";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { telHref } from "@/lib/contactLinks";
+import { Button } from "../components/ui/Button";
+import { SlideDots } from "../components/ui/SlideDots";
 
-const images = [
+const heroImages = [
   "/pics/uvodka.jpg",
   "/pics/uvodka1.jpg",
   "/pics/uvodka2.jpg",
@@ -19,39 +21,32 @@ const images = [
   "/pics/uvodka8.jpg",
 ];
 
-export default function Header({ locale }: { locale: SupportedLocale }) {
-  const { t } = useTranslation();
-  const phone = t("contact.phone");
-  const phoneHref = `tel:${phone.replace(/\s+/g, "")}`;
+const SLIDE_INTERVAL_MS = 8000;
 
-  const [currentImage, setCurrentImage] = useState<number>(0);
-  const [reducedMotion, setReducedMotion] = useState(false);
+export default function Header() {
+  const { locale, texts } = useContent();
+  const phone = texts.contact.phone;
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-    const onChange = () => setReducedMotion(mq.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
-  const advance = useCallback(() => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
-  }, []);
+  const showNextSlide = useCallback(
+    () => setActiveSlide((index) => (index + 1) % heroImages.length),
+    []
+  );
 
   useEffect(() => {
-    if (reducedMotion) return;
-    const interval = setInterval(advance, 8000);
-    return () => clearInterval(interval);
-  }, [advance, reducedMotion]);
+    if (prefersReducedMotion) return;
+    const timer = setInterval(showNextSlide, SLIDE_INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, [showNextSlide, prefersReducedMotion]);
 
   return (
     <section
-      id="hero"
-      className="relative bg-white overflow-hidden"
+      id="home"
+      className="section relative bg-white overflow-hidden"
       style={{ height: "calc(100dvh - var(--nav-height))", minHeight: "480px" }}
     >
-      {images.map((src, index) => (
+      {heroImages.map((src, index) => (
         <Image
           key={src}
           src={src}
@@ -61,7 +56,7 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
           loading={index === 0 ? undefined : "lazy"}
           sizes="100vw"
           className={`object-cover object-center transition-opacity duration-700 ease-in-out ${
-            index === currentImage ? "opacity-100" : "opacity-0"
+            index === activeSlide ? "opacity-100" : "opacity-0"
           }`}
         />
       ))}
@@ -75,59 +70,36 @@ export default function Header({ locale }: { locale: SupportedLocale }) {
         <div className="w-full max-w-2xl bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl text-center p-7 sm:p-10 ring-1 ring-black/5">
           <span className="section-accent" aria-hidden="true" />
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 mb-3">
-            {t("home.heroText")}
+            {texts.home.heroText}
           </h1>
           <p className="text-sm sm:text-base text-gray-600 font-medium mb-5 uppercase tracking-widest">
-            {t("home.subtitle")}
+            {texts.home.subtitle}
           </p>
           <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-xl mx-auto">
-            {t("home.description")}
+            {texts.home.description}
           </p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={phoneHref}
-              aria-label={`${t("contact.callCta")}: ${phone}`}
-              className="inline-flex items-center justify-center gap-2 bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-400 hover:shadow-lg active:translate-y-px transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500 min-h-[44px]"
-            >
+            <Button href={telHref(phone)} ariaLabel={`${texts.contact.callCta}: ${phone}`}>
               <Phone size={18} aria-hidden="true" />
-              <span>{t("contact.callCta")}</span>
+              <span>{texts.contact.callCta}</span>
               <span className="hidden sm:inline">: {phone}</span>
-            </a>
-            <Link
-              href={`/${locale}#contact`}
-              className="inline-flex items-center justify-center bg-gray-900 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-800 hover:shadow-lg active:translate-y-px transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 min-h-[44px]"
-            >
-              {t("contact.contactCta")}
-            </Link>
+            </Button>
+            <Button href={`/${locale}#contact`} variant="secondary">
+              {texts.contact.contactCta}
+            </Button>
           </div>
         </div>
       </div>
 
-      <div
-        className="absolute left-1/2 bottom-3 flex flex-wrap justify-center transform -translate-x-1/2 z-20"
-        role="tablist"
-        aria-label="Hero slides"
-      >
-        {images.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            role="tab"
-            aria-selected={index === currentImage}
-            aria-label={`Snímek ${index + 1} z ${images.length}`}
-            onClick={() => setCurrentImage(index)}
-            className="min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
-          >
-            <span
-              className={`block rounded-full transition-all duration-300 ${
-                index === currentImage
-                  ? "w-8 h-2 bg-yellow-500"
-                  : "w-2 h-2 bg-white/70 hover:bg-white"
-              }`}
-            />
-          </button>
-        ))}
-      </div>
+      <SlideDots
+        count={heroImages.length}
+        current={activeSlide}
+        onSelect={setActiveSlide}
+        variant="bar"
+        label="Hero slides"
+        slideLabel={(index, total) => `Snímek ${index} z ${total}`}
+        className="absolute left-1/2 bottom-3 -translate-x-1/2 z-20"
+      />
     </section>
   );
 }
