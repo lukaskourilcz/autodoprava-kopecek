@@ -1,21 +1,22 @@
-/** The yellow accent bar + title (+ optional intro) shown at the top of every section. */
+/**
+ * The title (+ optional intro) shown at the top of every cloud-canvas section.
+ * Left-edge anchored, monumental 46px display type, no decorative accent — the
+ * type does all the work.
+ */
 export function SectionHeading({
   title,
   description,
-  className = "mb-10",
+  className = "mb-12",
 }: {
   title: string;
   description?: string;
   className?: string;
 }) {
   return (
-    <div className={`text-center ${className}`}>
-      <span className="section-accent mx-auto" aria-hidden="true" />
-      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-        {title}
-      </h2>
+    <div className={`max-w-prose ${className}`}>
+      <h2 className="text-heading text-onyx">{title}</h2>
       {description && (
-        <p className="mt-4 text-base md:text-lg text-gray-600 max-w-prose mx-auto">
+        <p className="mt-6 text-[18px] leading-[1.3] tracking-body text-onyx/70">
           {description}
         </p>
       )}

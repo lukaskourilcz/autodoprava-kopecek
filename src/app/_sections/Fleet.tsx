@@ -4,7 +4,6 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useContent } from "@/content/useContent";
-import { FEATURE_ICONS } from "../components/icons";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { SlideDots } from "../components/ui/SlideDots";
 import { RichText } from "../components/ui/RichText";
@@ -26,7 +25,7 @@ function VehicleCarousel({
   const scrollToIndex = useCallback((index: number) => {
     const track = trackRef.current;
     if (!track) return;
-    const slideWidth = track.children[0]?.clientWidth || 350;
+    const slideWidth = track.children[0]?.clientWidth || track.clientWidth;
     track.scrollTo({ left: index * slideWidth, behavior: "smooth" });
     setCurrentIndex(index);
   }, []);
@@ -38,7 +37,7 @@ function VehicleCarousel({
       scrollFrameRef.current = null;
       const track = trackRef.current;
       if (!track) return;
-      const slideWidth = track.children[0]?.clientWidth || 350;
+      const slideWidth = track.children[0]?.clientWidth || track.clientWidth;
       setCurrentIndex(Math.round(track.scrollLeft / slideWidth));
     });
   }, []);
@@ -57,25 +56,24 @@ function VehicleCarousel({
     <div className="relative w-full" aria-roledescription="carousel" aria-label={vehicleName}>
       <div
         ref={trackRef}
-        className="flex overflow-x-scroll scroll-smooth space-x-4 scrollbar-hide"
-        style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
+        className="flex snap-x snap-mandatory overflow-x-scroll scroll-smooth scrollbar-hide"
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
         {images.map((src, index) => (
-          <Image
+          <div
             key={`${src}-${index}`}
-            src={src}
-            alt={`${vehicleName} – fotografie ${index + 1}`}
-            width={350}
-            height={350}
-            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 350px"
-            loading={index === 0 ? "eager" : "lazy"}
-            unoptimized={!isLocalImage(src)}
-            className="rounded-[15%] flex-shrink-0 snap-center transition-opacity duration-300"
-            style={{
-              scrollSnapAlign: "center",
-              opacity: index === currentIndex ? 1 : 0.5,
-            }}
-          />
+            className="relative aspect-[4/3] w-full flex-shrink-0 snap-center border-[1.5px] border-jetstream bg-stratosphere"
+          >
+            <Image
+              src={src}
+              alt={`${vehicleName} – fotografie ${index + 1}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading={index === 0 ? "eager" : "lazy"}
+              unoptimized={!isLocalImage(src)}
+              className="object-cover"
+            />
+          </div>
         ))}
       </div>
 
@@ -86,7 +84,7 @@ function VehicleCarousel({
             onClick={() => scrollToIndex(Math.max(currentIndex - 1, 0))}
             aria-label="Předchozí fotografie"
             disabled={currentIndex === 0}
-            className="absolute left-1 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 rounded-full w-11 h-11 flex items-center justify-center shadow disabled:opacity-30 disabled:cursor-not-allowed focus-ring"
+            className="absolute left-0 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-cloud text-onyx disabled:opacity-0 focus-ring"
           >
             <ChevronLeft size={22} aria-hidden="true" />
           </button>
@@ -95,7 +93,7 @@ function VehicleCarousel({
             onClick={() => scrollToIndex(Math.min(currentIndex + 1, images.length - 1))}
             aria-label="Další fotografie"
             disabled={currentIndex === images.length - 1}
-            className="absolute right-1 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 rounded-full w-11 h-11 flex items-center justify-center shadow disabled:opacity-30 disabled:cursor-not-allowed focus-ring"
+            className="absolute right-0 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center bg-cloud text-onyx disabled:opacity-0 focus-ring"
           >
             <ChevronRight size={22} aria-hidden="true" />
           </button>
@@ -108,7 +106,7 @@ function VehicleCarousel({
         onSelect={scrollToIndex}
         label="Snímky"
         slideLabel={(index, total) => `Snímek ${index} z ${total}`}
-        className="mt-3"
+        className="mt-4 justify-start gap-1"
       />
     </div>
   );
@@ -120,41 +118,26 @@ export default function Fleet() {
   return (
     <section
       id="fleet"
-      className="section bg-gradient-to-b from-gray-200 to-white py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-32"
+      className="section bg-cloud py-[70px] px-[40px] max-[640px]:px-5"
     >
-      <SectionHeading
-        title={texts.fleet.title}
-        description={texts.fleet.description}
-        className="mb-12"
-      />
+      <SectionHeading title={texts.fleet.title} description={texts.fleet.description} />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 gap-x-12 gap-y-[70px] md:grid-cols-2">
         {vehicles.map((vehicle) => (
-          <article
-            key={vehicle.id}
-            className="flex flex-col items-center bg-white rounded-2xl p-4 shadow-sm ring-1 ring-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all"
-          >
+          <article key={vehicle.id} className="flex flex-col">
             <VehicleCarousel images={vehicle.images} vehicleName={vehicle.name[locale]} />
-            <h3 className="mt-4 text-gray-900 font-bold text-center">
+
+            <h3 className="mt-7 font-display text-[28px] font-semibold tracking-display text-onyx">
               {vehicle.name[locale]}
             </h3>
+
             {vehicle.features.length > 0 && (
-              <ul className="flex flex-wrap justify-center items-center gap-2 mt-3">
-                {vehicle.features.map((feature) => {
-                  const Icon = FEATURE_ICONS[feature];
-                  if (!Icon) return null;
-                  const label = texts.fleet.features[feature];
-                  return (
-                    <li key={feature}>
-                      <span title={label} aria-label={label} className="inline-block">
-                        <Icon className="w-5 h-5 text-gray-700" aria-hidden="true" />
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
+              <p className="mt-4 text-[14px] uppercase tracking-[0.04em] text-onyx/55">
+                {vehicle.features.map((feature) => texts.fleet.features[feature]).join(" · ")}
+              </p>
             )}
-            <p className="mt-3 text-gray-700 text-center">
+
+            <p className="mt-4 text-[18px] leading-[1.3] tracking-body text-onyx/80">
               <RichText text={vehicle.description[locale]} />
             </p>
           </article>
