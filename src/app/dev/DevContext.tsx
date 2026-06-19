@@ -23,7 +23,7 @@ type DevApi = {
   lastError: string | null;
   /** Apply an immutable edit by mutating a fresh copy of the draft. */
   update: (mutator: (draft: SiteContent) => void) => void;
-  save: () => void;
+  save: () => { ok: boolean; error?: string };
   discard: () => void;
   resetToDefaults: () => void;
   exportJson: () => void;
@@ -67,6 +67,7 @@ export function DevProvider({ children }: { children: ReactNode }) {
     const result = saveContent(draft);
     setLastError(result.ok ? null : result.error ?? "Uložení se nezdařilo.");
     setDirty(false);
+    return result;
   };
 
   const discard = () => {
