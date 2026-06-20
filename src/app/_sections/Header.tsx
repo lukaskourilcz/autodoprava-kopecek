@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { Phone } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { telHref } from "@/lib/contactLinks";
@@ -22,10 +23,6 @@ const heroImages = [
 
 const SLIDE_INTERVAL_MS = 8000;
 
-// The full-bleed atmospheric hero: edge-to-edge aviation-style photography of
-// the fleet, washed in the stratosphere sky gradient, with a monumental
-// headline anchored to the bottom-left. No card, no shadow — the photograph and
-// the type are the only two elements.
 export default function Header() {
   const { locale, texts } = useContent();
   const phone = texts.contact.phone;
@@ -46,7 +43,8 @@ export default function Header() {
   return (
     <section
       id="home"
-      className="section relative min-h-[100dvh] overflow-hidden bg-stratosphere"
+      className="section relative bg-white overflow-hidden"
+      style={{ height: "calc(100dvh - var(--nav-height))", minHeight: "480px" }}
     >
       {heroImages.map((src, index) => (
         <Image
@@ -63,49 +61,45 @@ export default function Header() {
         />
       ))}
 
-      {/* Stratosphere wash at the top (keeps the transparent nav legible),
-          clearing to reveal the photograph, then a scrim at the foot so the
-          cloud-white headline always survives. */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40"
         aria-hidden="true"
-        style={{
-          backgroundImage:
-            "linear-gradient(to bottom, rgba(113,110,133,0.88) 0%, rgba(113,110,133,0.20) 36%, rgba(0,0,0,0.28) 76%, rgba(0,0,0,0.62) 100%)",
-        }}
       />
 
-      <div className="relative z-10 flex min-h-[100dvh] flex-col justify-end px-[40px] pb-16 pt-[140px] max-[640px]:px-5">
-        <div className="w-full max-w-3xl">
-          <p className="mb-5 font-text text-[18px] font-semibold uppercase tracking-[0.04em] text-cloud/90">
+      <div className="relative z-10 h-full flex items-center justify-center px-4">
+        <div className="w-full max-w-2xl bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl text-center p-7 sm:p-10 ring-1 ring-black/5">
+          <span className="section-accent" aria-hidden="true" />
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 mb-3">
+            {texts.home.heroText}
+          </h1>
+          <p className="text-sm sm:text-base text-gray-600 font-medium mb-5 uppercase tracking-widest">
             {texts.home.subtitle}
           </p>
-          <h1 className="text-hero max-w-[700px] text-cloud">{texts.home.heroText}</h1>
-
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button
-              variant="light"
-              href={telHref(phone)}
-              ariaLabel={`${texts.contact.callCta}: ${phone}`}
-            >
-              {texts.contact.callCta}
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-xl mx-auto">
+            {texts.home.description}
+          </p>
+          <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+            <Button href={telHref(phone)} ariaLabel={`${texts.contact.callCta}: ${phone}`}>
+              <Phone size={18} aria-hidden="true" />
+              <span>{texts.contact.callCta}</span>
+              <span className="hidden sm:inline">: {phone}</span>
             </Button>
-            <Button variant="light" href={`/${locale}#contact`}>
+            <Button href={`/${locale}#contact`} variant="secondary">
               {texts.contact.contactCta}
             </Button>
           </div>
-
-          <SlideDots
-            count={heroImages.length}
-            current={activeSlide}
-            onSelect={setActiveSlide}
-            variant="bar"
-            label="Hero slides"
-            slideLabel={(index, total) => `Snímek ${index} z ${total}`}
-            className="mt-10 justify-start gap-1"
-          />
         </div>
       </div>
+
+      <SlideDots
+        count={heroImages.length}
+        current={activeSlide}
+        onSelect={setActiveSlide}
+        variant="bar"
+        label="Hero slides"
+        slideLabel={(index, total) => `Snímek ${index} z ${total}`}
+        className="absolute left-1/2 bottom-3 -translate-x-1/2 z-20"
+      />
     </section>
   );
 }
