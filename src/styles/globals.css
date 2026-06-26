@@ -3,32 +3,15 @@
 @tailwind utilities;
 
 :root {
-  /* Heart Aerospace palette — near-monochrome with a single blue accent. */
-  --color-stratosphere: #716e85;
-  --color-jetstream-blue: #001489;
-  --color-onyx: #000000;
-  --color-cloud: #ffffff;
-
   --background: #ffffff;
-  --foreground: #000000;
-
-  /* Neue Haas Grotesk is proprietary; Helvetica Neue is the design's named
-     substitute and the closest metric-compatible system face. */
-  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-text: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  --nav-height: 76px;
+  --foreground: #171717;
+  --nav-height: 48px;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-text);
-  font-size: 18px;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -61,54 +44,22 @@ html {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Anchored sections clear the fixed navigation when jumped to. */
 .section {
   scroll-margin-top: var(--nav-height);
 }
 
-@layer components {
-  /* Monumental display headline — the brand's signature aerospace-scale voice.
-     156px at the top end, scaling down fluidly so it never overflows mobile. */
-  .text-display {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(3.25rem, 13vw, 156px);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  /* Hero headline — a phrase rather than a single word, so it runs a touch
-     smaller than the pure display token but keeps the same tracking. */
-  .text-hero {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(2.5rem, 8vw, 104px);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  /* Section headline on a cloud (white) canvas — 46px end size. */
-  .text-heading {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(2rem, 5vw, 46px);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  /* The atmospheric sky gradient that anchors every hero/feature band. */
-  .bg-atmosphere {
-    background-image: linear-gradient(
-      to bottom,
-      var(--color-stratosphere) 0%,
-      var(--color-cloud) 100%
-    );
-  }
+.section-accent {
+  display: inline-block;
+  width: 3rem;
+  height: 3px;
+  background-color: #eab308;
+  border-radius: 2px;
+  margin-bottom: 1rem;
 }
 
 @layer utilities {
-  /* Consistent keyboard-focus outline in the jetstream-blue accent. */
+  /* Consistent keyboard-focus outline used by every interactive element. */
   .focus-ring {
-    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-jetstream;
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400;
   }
 }

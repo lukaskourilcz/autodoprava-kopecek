@@ -1,8 +1,6 @@
-// The row of clickable indicators under an image slideshow. Each control is a
-// 44px touch target (the visible mark is smaller) and exposes the standard
-// tablist a11y roles so it works the same for the hero and the vehicle
-// carousels. Marks are sharp-cornered bars/squares in keeping with the
-// zero-radius design language.
+// The row of clickable dots under an image slideshow. Each dot is a 44px touch
+// target (the visible dot is smaller) and exposes the standard tablist a11y
+// roles so it works the same for the hero and the vehicle carousels.
 
 type Variant = "bar" | "dot";
 
@@ -27,7 +25,7 @@ export function SlideDots({
 }) {
   return (
     <div
-      className={`flex flex-wrap items-center justify-center ${className}`}
+      className={`flex flex-wrap justify-center ${className}`}
       role="tablist"
       aria-label={label}
     >
@@ -53,11 +51,11 @@ export function SlideDots({
 
 function dotClasses(variant: Variant, isActive: boolean): string {
   if (variant === "bar") {
-    return `block h-[3px] transition-all duration-300 ${
-      isActive ? "w-8 bg-cloud" : "w-4 bg-cloud/40 hover:bg-cloud/70"
+    return `block rounded-full transition-all duration-300 ${
+      isActive ? "w-8 h-2 bg-yellow-500" : "w-2 h-2 bg-white/70 hover:bg-white"
     }`;
   }
-  return `block w-2 h-2 transition-colors ${
-    isActive ? "bg-onyx" : "bg-onyx/20 hover:bg-onyx/40"
+  return `block w-2.5 h-2.5 rounded-full transition-colors ${
+    isActive ? "bg-yellow-500" : "bg-gray-300"
   }`;
 }
