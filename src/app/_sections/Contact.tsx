@@ -21,15 +21,15 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="section relative bg-cover bg-center md:bg-fixed py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-32"
+        className="section relative bg-cover bg-center py-12 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-32"
         style={{ backgroundImage: "url('/pics/footer-map.jpg')" }}
       >
         <div className="absolute inset-0 bg-gray-900/40" aria-hidden="true" />
-        <div className="relative max-w-4xl mx-auto bg-white/95 backdrop-blur-sm p-6 sm:p-10 rounded-2xl shadow-xl ring-1 ring-black/5">
-          <SectionHeading title={contact.title} description={contact.description} />
+        <div className="relative max-w-4xl mx-auto bg-white/95 backdrop-blur-sm p-5 sm:p-8 rounded-2xl shadow-xl ring-1 ring-black/5">
+          <SectionHeading title={contact.title} description={contact.description} className="mb-6" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            <address className="not-italic space-y-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+            <address className="not-italic space-y-4">
               <a
                 href={mapLink}
                 target="_blank"
@@ -99,7 +99,7 @@ export default function Contact() {
               </div>
             </address>
 
-            <div className="border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-10">
+            <div className="border-t md:border-t-0 md:border-l border-gray-200 pt-5 md:pt-0 md:pl-8">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">
                 {contact.billingTitle}
               </h3>
@@ -113,19 +113,19 @@ export default function Contact() {
                   <dd>{contact.taxID}</dd>
                 </div>
               </dl>
-              <div className="mt-6 flex justify-start">
+              <div className="mt-4 flex justify-start">
                 <Image
                   src="/pics/logo-black-footer.png"
                   alt={contact.logoAlt}
                   width={160}
                   height={160}
-                  className="object-contain w-32 h-auto"
+                  className="object-contain w-28 h-auto"
                 />
               </div>
             </div>
           </div>
 
-          <div className="mt-10 pt-8 border-t border-gray-200 flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="mt-6 pt-5 border-t border-gray-200 flex flex-col sm:flex-row gap-3 justify-center">
             <Button href={phoneLink}>
               <Phone size={18} aria-hidden="true" />
               {contact.callCta}
