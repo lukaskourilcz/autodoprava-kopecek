@@ -42,7 +42,7 @@ export default async function RootLayout({
       <body>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-onyx focus:text-cloud focus:px-4 focus:py-2 focus:font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-yellow-500 focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold"
         >
           Přeskočit na obsah
         </a>

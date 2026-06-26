@@ -4,15 +4,17 @@ import { Button } from "./components/ui/Button";
 
 export default function Error({ reset }: { reset: () => void }) {
   return (
-    <main className="flex min-h-[70vh] flex-col items-start justify-center bg-cloud px-[40px] max-[640px]:px-5">
-      <h1 className="text-heading text-onyx">Něco se pokazilo</h1>
-      <p className="mt-6 max-w-prose text-[18px] leading-[1.3] tracking-body text-onyx/70">
+    <main className="min-h-[60vh] flex flex-col items-center justify-center bg-gray-100 px-4 text-center">
+      <h1 className="text-3xl font-bold text-gray-800 mb-3">Něco se pokazilo</h1>
+      <p className="text-gray-700 mb-6">
         Zkuste prosím akci opakovat. Pokud problém přetrvává, kontaktujte nás
         telefonicky.
       </p>
-      <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+      <div className="flex gap-3">
         <Button onClick={reset}>Zkusit znovu</Button>
-        <Button href="/">Domů</Button>
+        <Button href="/" variant="secondary">
+          Domů
+        </Button>
       </div>
     </main>
   );
