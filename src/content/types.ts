@@ -50,8 +50,6 @@ export type SiteTexts = {
     subtitle: string;
     description: string;
     heroText: string;
-    /** Short heritage line shown next to the subtitle, e.g. "Family-run · since 2012". */
-    badge: string;
   };
   about: {
     /** Small uppercase label above the section title. */
@@ -138,8 +136,26 @@ export type SiteTexts = {
   };
 };
 
-/** The full editable content of the site: all texts (per language) plus the fleet. */
+/**
+ * Photos used by the fixed page sections. Paths are `/pics/...` for bundled
+ * images, or data:/https: URLs for uploaded and linked photos.
+ */
+export type SiteImages = {
+  /** Hero slideshow photos, shown in order. */
+  hero: string[];
+  /** The three photo tiles in the services section. */
+  services: {
+    schoolTransport: string;
+    airportTransfers: string;
+    cargoTransport: string;
+  };
+  /** The photos under the "about" text (shown two per row). */
+  about: string[];
+};
+
+/** The full editable content of the site: texts (per language), the fleet, and section photos. */
 export type SiteContent = {
   texts: Record<SupportedLocale, SiteTexts>;
   vehicles: Vehicle[];
+  images: SiteImages;
 };

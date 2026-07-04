@@ -8,30 +8,37 @@ import { GALLERY_IMAGES } from "@/content/gallery";
 import { useDev } from "./DevContext";
 import { ToolButton } from "./ui";
 
-export function ImageManager({ vehicleId }: { vehicleId: string }) {
-  const { content, update } = useDev();
+/**
+ * Generic photo-list editor: preview, reorder, remove, and add via link,
+ * upload, or the bundled gallery. `single` turns it into a one-photo slot
+ * where adding replaces the current photo.
+ */
+export function ImageListEditor({
+  images,
+  onEdit,
+  single = false,
+}: {
+  images: string[];
+  /** Applies a mutation to the underlying list inside the dev draft. */
+  onEdit: (mutator: (list: string[]) => void) => void;
+  single?: boolean;
+}) {
   const [url, setUrl] = useState("");
   const [showGallery, setShowGallery] = useState(false);
 
-  const vehicle = content.vehicles.find((item) => item.id === vehicleId);
-  if (!vehicle) return null;
-  const images = vehicle.images;
-
-  const withImages = (mutator: (images: string[]) => void) =>
-    update((draft) => {
-      const target = draft.vehicles.find((item) => item.id === vehicleId);
-      if (target) mutator(target.images);
-    });
-
   const addImage = (src: string) => {
     const trimmed = src.trim();
-    if (trimmed) withImages((list) => list.push(trimmed));
+    if (!trimmed) return;
+    onEdit((list) => {
+      if (single) list.splice(0, list.length, trimmed);
+      else list.push(trimmed);
+    });
   };
 
-  const removeImage = (index: number) => withImages((list) => list.splice(index, 1));
+  const removeImage = (index: number) => onEdit((list) => list.splice(index, 1));
 
   const moveImage = (index: number, direction: -1 | 1) =>
-    withImages((list) => {
+    onEdit((list) => {
       const target = index + direction;
       if (target < 0 || target >= list.length) return;
       [list[index], list[target]] = [list[target], list[index]];
@@ -60,28 +67,32 @@ export function ImageManager({ vehicleId }: { vehicleId: string }) {
               className="relative w-28 rounded-md border border-gray-200 p-1"
             >
               <img src={src} alt="" className="h-20 w-full rounded object-cover" />
-              {index === 0 && (
+              {!single && index === 0 && (
                 <span className="absolute left-2 top-2 rounded bg-yellow-500 px-1.5 py-0.5 text-[10px] font-semibold text-gray-900">
                   Hlavní
                 </span>
               )}
               <div className="mt-1 flex items-center justify-between">
-                <ToolButton
-                  tone="ghost"
-                  onClick={() => moveImage(index, -1)}
-                  disabled={index === 0}
-                  title="Doleva"
-                >
-                  <ChevronLeft className="h-4 w-4" aria-hidden="true" />
-                </ToolButton>
-                <ToolButton
-                  tone="ghost"
-                  onClick={() => moveImage(index, 1)}
-                  disabled={index === images.length - 1}
-                  title="Doprava"
-                >
-                  <ChevronRight className="h-4 w-4" aria-hidden="true" />
-                </ToolButton>
+                {!single && (
+                  <>
+                    <ToolButton
+                      tone="ghost"
+                      onClick={() => moveImage(index, -1)}
+                      disabled={index === 0}
+                      title="Doleva"
+                    >
+                      <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+                    </ToolButton>
+                    <ToolButton
+                      tone="ghost"
+                      onClick={() => moveImage(index, 1)}
+                      disabled={index === images.length - 1}
+                      title="Doprava"
+                    >
+                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                    </ToolButton>
+                  </>
+                )}
                 <ToolButton tone="danger" onClick={() => removeImage(index)} title="Odebrat">
                   <Trash2 className="h-4 w-4" aria-hidden="true" />
                 </ToolButton>
@@ -105,11 +116,18 @@ export function ImageManager({ vehicleId }: { vehicleId: string }) {
             setUrl("");
           }}
         >
-          <Plus className="h-4 w-4" aria-hidden="true" /> Přidat odkaz
+          <Plus className="h-4 w-4" aria-hidden="true" />{" "}
+          {single ? "Nastavit odkaz" : "Přidat odkaz"}
         </ToolButton>
         <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-md bg-gray-200 px-3 py-1.5 text-sm font-medium text-gray-800 transition-colors hover:bg-gray-300 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-yellow-400">
           <Upload className="h-4 w-4" aria-hidden="true" /> Nahrát
-          <input type="file" accept="image/*" multiple onChange={handleUpload} className="hidden" />
+          <input
+            type="file"
+            accept="image/*"
+            multiple={!single}
+            onChange={handleUpload}
+            className="hidden"
+          />
         </label>
         <ToolButton tone="ghost" onClick={() => setShowGallery((open) => !open)}>
           {showGallery ? "Skrýt galerii" : "Vybrat z galerie"}
@@ -123,14 +141,37 @@ export function ImageManager({ vehicleId }: { vehicleId: string }) {
               key={src}
               type="button"
               onClick={() => addImage(src)}
-              title="Přidat tuto fotografii"
+              title={single ? "Použít tuto fotografii" : "Přidat tuto fotografii"}
               className="overflow-hidden rounded focus-ring"
             >
-              <img src={src} alt="" className="h-16 w-full object-cover transition-transform hover:scale-105" />
+              <img
+                src={src}
+                alt=""
+                className="h-16 w-full object-cover transition-transform hover:scale-105"
+              />
             </button>
           ))}
         </div>
       )}
     </div>
+  );
+}
+
+/** Photo editor for one vehicle's gallery — the first photo is the card cover. */
+export function ImageManager({ vehicleId }: { vehicleId: string }) {
+  const { content, update } = useDev();
+  const vehicle = content.vehicles.find((item) => item.id === vehicleId);
+  if (!vehicle) return null;
+
+  return (
+    <ImageListEditor
+      images={vehicle.images}
+      onEdit={(mutator) =>
+        update((draft) => {
+          const target = draft.vehicles.find((item) => item.id === vehicleId);
+          if (target) mutator(target.images);
+        })
+      }
+    />
   );
 }

@@ -5,15 +5,13 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { interpolate } from "@/lib/format";
+import { isLocalImage } from "@/lib/images";
 import { FEATURE_ICONS } from "../components/icons";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { SlideDots } from "../components/ui/SlideDots";
 import { RichText } from "../components/ui/RichText";
 import { Reveal } from "../components/ui/Reveal";
 import type { SiteTexts } from "@/content/types";
-
-/** Bundled images live under /public; uploaded or linked photos are left unoptimized. */
-const isLocalImage = (src: string) => src.startsWith("/");
 
 function VehicleCarousel({
   images,
@@ -109,18 +107,18 @@ function VehicleCarousel({
             onClick={() => scrollToIndex(Math.max(currentIndex - 1, 0))}
             aria-label={a11y.previousPhoto}
             disabled={currentIndex === 0}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-ink rounded-full w-11 h-11 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus-ring"
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-ink rounded-full w-10 h-10 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus-ring"
           >
-            <ChevronLeft size={22} aria-hidden="true" />
+            <ChevronLeft size={20} aria-hidden="true" />
           </button>
           <button
             type="button"
             onClick={() => scrollToIndex(Math.min(currentIndex + 1, images.length - 1))}
             aria-label={a11y.nextPhoto}
             disabled={currentIndex === images.length - 1}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-ink rounded-full w-11 h-11 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus-ring"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-ink rounded-full w-10 h-10 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus-ring"
           >
-            <ChevronRight size={22} aria-hidden="true" />
+            <ChevronRight size={20} aria-hidden="true" />
           </button>
 
           <SlideDots
@@ -149,7 +147,7 @@ export default function Fleet() {
           <SectionHeading title={texts.fleet.title} description={texts.fleet.description} />
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {vehicles.map((vehicle) => (
             <Reveal key={vehicle.id}>
               <article className="h-full bg-white rounded-xl border border-gray-200 overflow-hidden">
@@ -158,15 +156,15 @@ export default function Fleet() {
                   vehicleName={vehicle.name[locale]}
                   a11y={texts.a11y}
                 />
-                <div className="p-5 sm:p-6">
-                  <h3 className="font-display text-xl font-semibold text-ink">
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-display text-lg font-semibold text-ink">
                     {vehicle.name[locale]}
                   </h3>
-                  <p className="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
+                  <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">
                     <RichText text={vehicle.description[locale]} />
                   </p>
                   {vehicle.features.length > 0 && (
-                    <ul className="flex flex-wrap gap-2 mt-4">
+                    <ul className="flex flex-wrap gap-1.5 mt-3">
                       {vehicle.features.map((feature) => {
                         const Icon = FEATURE_ICONS[feature];
                         if (!Icon) return null;
@@ -174,9 +172,9 @@ export default function Fleet() {
                         return (
                           <li
                             key={feature}
-                            className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700"
+                            className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-700"
                           >
-                            <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+                            <Icon className="w-3 h-3" aria-hidden="true" />
                             {label}
                           </li>
                         );

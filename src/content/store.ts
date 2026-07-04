@@ -52,6 +52,7 @@ function fromSaved(saved: unknown): SiteContent {
   return {
     texts: mergeTexts(defaultContent.texts, data.texts),
     vehicles: Array.isArray(data.vehicles) ? data.vehicles : defaultContent.vehicles,
+    images: mergeTexts(defaultContent.images, data.images),
   };
 }
 

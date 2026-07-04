@@ -33,13 +33,8 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="section relative bg-ink py-20 sm:py-28 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{ backgroundImage: "url('/pics/footer-map.jpg')" }}
-          aria-hidden="true"
-        />
-        <div className="container-site relative">
+      <section id="contact" className="section bg-ink py-20 sm:py-28">
+        <div className="container-site">
           <Reveal>
             <SectionHeading dark title={contact.title} description={contact.description} />
           </Reveal>

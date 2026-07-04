@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   BriefcaseConveyorBelt,
   Users,
@@ -7,11 +8,13 @@ import {
   Heater,
 } from "lucide-react";
 import { useContent } from "@/content/useContent";
+import { isLocalImage } from "@/lib/images";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Reveal } from "../components/ui/Reveal";
 
 export default function Services() {
-  const { services } = useContent().texts;
+  const { texts, images } = useContent();
+  const { services } = texts;
 
   // The four headline qualities shown as a slim strip under the heading.
   const qualities = [
@@ -21,16 +24,20 @@ export default function Services() {
     { Icon: BriefcaseConveyorBelt, ...services.items.luggage },
   ];
 
-  // The transport types shown as a numbered editorial list.
+  // The three most visual services get photo tiles…
+  const featured = [
+    { image: images.services.schoolTransport, ...services.irregularBusTransport.schoolTransport },
+    { image: images.services.airportTransfers, ...services.irregularBusTransport.airportTransfers },
+    { image: images.services.cargoTransport, ...services.cargoTransport },
+  ];
+
+  // …the rest are listed as a numbered editorial list.
   const transportTypes = [
-    services.irregularBusTransport.schoolTransport,
     services.irregularBusTransport.sportsTransport,
     services.irregularBusTransport.groupsTransport,
     services.corporateTransport,
     services.irregularBusTransport.weddingTransport,
     services.irregularBusTransport.replacementTransport,
-    services.irregularBusTransport.airportTransfers,
-    services.cargoTransport,
   ];
 
   return (
@@ -48,6 +55,36 @@ export default function Services() {
                 <h3 className="mt-3 font-display font-semibold text-ink">{title}</h3>
                 <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">{description}</p>
               </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal className="mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {featured.map(({ image, title, description }) => (
+              <article
+                key={title}
+                className="group relative rounded-xl overflow-hidden aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3]"
+              >
+                <Image
+                  src={image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 92vw, 380px"
+                  unoptimized={!isLocalImage(image)}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/5"
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  <h4 className="font-display text-lg font-semibold text-white">{title}</h4>
+                  <p className="mt-1 text-sm text-white/80 leading-relaxed line-clamp-3">
+                    {description}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </Reveal>

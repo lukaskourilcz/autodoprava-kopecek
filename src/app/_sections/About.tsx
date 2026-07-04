@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { Waypoints, ChevronsUp, ShieldPlus } from "lucide-react";
 import { useContent } from "@/content/useContent";
+import { isLocalImage } from "@/lib/images";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Reveal } from "../components/ui/Reveal";
 import type { AboutReason } from "@/content/types";
@@ -13,7 +15,8 @@ const reasonIcons: Record<AboutReason["icon"], typeof Waypoints> = {
 };
 
 export default function About() {
-  const { about } = useContent().texts;
+  const { texts, images } = useContent();
+  const { about } = texts;
 
   return (
     <section id="about" className="section bg-ink text-white py-20 sm:py-28">
@@ -31,6 +34,25 @@ export default function About() {
                 </p>
               ))}
             </div>
+            {images.about.length > 0 && (
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                {images.about.map((src, index) => (
+                  <div
+                    key={`${src}-${index}`}
+                    className="relative aspect-[4/3] rounded-xl overflow-hidden"
+                  >
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      sizes="(max-width: 1024px) 46vw, 350px"
+                      unoptimized={!isLocalImage(src)}
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </Reveal>
 
           {about.stats.length > 0 && (

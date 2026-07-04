@@ -1,4 +1,4 @@
-import type { SiteContent, SiteTexts, Vehicle } from "./types";
+import type { SiteContent, SiteImages, SiteTexts, Vehicle } from "./types";
 
 // The canonical content shipped with the site. This is what every visitor
 // sees unless the owner has saved overrides via the /dev editor (which live in
@@ -12,7 +12,6 @@ const cs: SiteTexts = {
     description:
       "Naše společnost se specializuje na autobusovou a nákladní dopravu. S našim rozsáhlým vozovým parkem a zkušeným týmem jsme připraveni zajistit veškeré vaše dopravní potřeby s důrazem na spolehlivost, pohodlí a bezpečnost. Nabízíme širokou nabídku služeb pro přepravu osob i zboží, a to nejen po České republice, ale i do zahraničí. Jsme tu pro vás, abychom vám poskytli profesionální a přátelský přístup ke každé zakázce.",
     heroText: "Spolehlivá doprava pro vaše potřeby.",
-    badge: "Rodinná firma · na cestách od roku 2012",
   },
   about: {
     kicker: "Rodinná dopravní firma od roku 2012",
@@ -191,7 +190,6 @@ const en: SiteTexts = {
     description:
       "Our company specializes in bus and freight transportation. With our extensive fleet and experienced team, we are ready to meet all your transportation needs with a focus on reliability, comfort, and safety. We offer a wide range of services for the transportation of passengers and goods, not only within the Czech Republic but also abroad. We are here for you to provide a professional and friendly approach to every order.",
     heroText: "Reliable transport for your needs.",
-    badge: "Family-run · on the road since 2012",
   },
   about: {
     kicker: "A family-run transport company since 2012",
@@ -370,7 +368,6 @@ const de: SiteTexts = {
     description:
       "Unser Unternehmen ist auf Bus- und Gütertransport spezialisiert. Mit unserem umfangreichen Fuhrpark und erfahrenen Team sind wir bereit, all Ihre Transportbedürfnisse mit Fokus auf Zuverlässigkeit, Komfort und Sicherheit zu erfüllen. Wir bieten eine breite Palette an Dienstleistungen für den Personen- und Gütertransport, nicht nur innerhalb der Tschechischen Republik, sondern auch ins Ausland. Wir sind für Sie da, um Ihnen einen professionellen und freundlichen Service für jede Bestellung zu bieten.",
     heroText: "Zuverlässiger Transport für Ihre Bedürfnisse.",
-    badge: "Familienbetrieb · seit 2012 unterwegs",
   },
   about: {
     kicker: "Familiengeführtes Transportunternehmen seit 2012",
@@ -710,7 +707,26 @@ const vehicles: Vehicle[] = [
   },
 ];
 
+const images: SiteImages = {
+  // Curated from the full uvodka set: Dolomites coach, depot fleet lineup,
+  // Adriatic-coast van, winter mountain pass, coach + truck pair.
+  hero: [
+    "/pics/uvodka.jpg",
+    "/pics/uvodka4.jpg",
+    "/pics/uvodka8.jpg",
+    "/pics/uvodka5.jpg",
+    "/pics/uvodka1.jpg",
+  ],
+  services: {
+    schoolTransport: "/pics/uvodka2.jpg",
+    airportTransfers: "/pics/man.jpg",
+    cargoTransport: "/pics/daf.jpg",
+  },
+  about: ["/pics/tourismo2.jpg", "/pics/mercedes1.jpg"],
+};
+
 export const defaultContent: SiteContent = {
   texts: { cs, en, de },
   vehicles,
+  images,
 };

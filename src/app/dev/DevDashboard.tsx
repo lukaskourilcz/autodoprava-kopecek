@@ -15,8 +15,30 @@ import { useDev } from "./DevContext";
 import { ToolButton } from "./ui";
 import { TextsEditor } from "./TextsEditor";
 import { VehiclesEditor } from "./VehiclesEditor";
+import { SiteImagesEditor } from "./SiteImagesEditor";
 
-type Tab = "texts" | "vehicles";
+type Tab = "texts" | "vehicles" | "images";
+
+const TABS: { value: Tab; label: string; description: string }[] = [
+  {
+    value: "texts",
+    label: "Texty",
+    description:
+      "Všechny texty webu ve třech jazycích (CZ / EN / DE). Rozklikněte sekci, upravte políčka a nahoře klikněte na „Uložit“.",
+  },
+  {
+    value: "vehicles",
+    label: "Vozový park",
+    description:
+      "Vozidla zobrazená v sekci Vozový park. Vozidla můžete přidávat, mazat a řadit šipkami; u každého upravíte název, popis, výbavu a fotografie. První fotografie je hlavní (zobrazuje se jako první).",
+  },
+  {
+    value: "images",
+    label: "Fotografie webu",
+    description:
+      "Fotografie jednotlivých sekcí webu — úvodní slideshow, dlaždice v sekci Služby a fotky v sekci O nás. Fotky vozidel upravíte v záložce Vozový park.",
+  },
+];
 
 export function DevDashboard({ onLock }: { onLock: () => void }) {
   const { dirty, lastError, save, discard, resetToDefaults, exportJson, importJson } =
@@ -86,7 +108,7 @@ export function DevDashboard({ onLock }: { onLock: () => void }) {
         </div>
 
         <div className="mx-auto flex max-w-5xl gap-1 px-4">
-          {(["texts", "vehicles"] as const).map((value) => (
+          {TABS.map(({ value, label }) => (
             <button
               key={value}
               type="button"
@@ -97,7 +119,7 @@ export function DevDashboard({ onLock }: { onLock: () => void }) {
                   : "border-transparent text-gray-500 hover:text-gray-800"
               }`}
             >
-              {value === "texts" ? "Texty" : "Vozový park"}
+              {label}
             </button>
           ))}
         </div>
@@ -109,12 +131,17 @@ export function DevDashboard({ onLock }: { onLock: () => void }) {
             {lastError}
           </p>
         )}
+        <p className="mb-2 text-sm text-gray-600">
+          {TABS.find((item) => item.value === tab)?.description}
+        </p>
         <p className="mb-6 text-sm text-gray-500">
           Změny se po uložení projeví na webu v tomto prohlížeči. Tlačítkem
           „Export“ stáhnete soubor, který lze uložit do kódu webu a zveřejnit tak
           změny pro všechny návštěvníky.
         </p>
-        {tab === "texts" ? <TextsEditor /> : <VehiclesEditor />}
+        {tab === "texts" && <TextsEditor />}
+        {tab === "vehicles" && <VehiclesEditor />}
+        {tab === "images" && <SiteImagesEditor />}
       </main>
     </div>
   );

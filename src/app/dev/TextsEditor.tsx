@@ -98,31 +98,67 @@ function TextNode({
   return null;
 }
 
+/** Friendly names and hints for each texts section, keyed by the SiteTexts group. */
+const SECTION_META: Record<string, { label: string; hint: string }> = {
+  home: {
+    label: "Úvod (hero)",
+    hint: "Texty na úvodní obrazovce: žlutý podtitul, hlavní nadpis a odstavec pod ním. Fotky slideshow upravíte v záložce „Fotografie webu“.",
+  },
+  about: {
+    label: "O nás",
+    hint: "Představení firmy: štítek nad nadpisem, odstavce, žlutá čísla (statistiky) a tři důvody „Proč si vybrat právě nás“.",
+  },
+  services: {
+    label: "Služby",
+    hint: "Čtyři přednosti (bezpečnost, komfort…) a názvy s popisy jednotlivých druhů dopravy. Fotky dlaždic upravíte v záložce „Fotografie webu“.",
+  },
+  fleet: {
+    label: "Vozový park",
+    hint: "Nadpis sekce a názvy výbavy (klimatizace, televize…). Samotná vozidla přidáte a upravíte v záložce „Vozový park“.",
+  },
+  contact: {
+    label: "Kontakt a patička",
+    hint: "Adresa, telefon, e-mail, provozní doba, fakturační údaje a texty tlačítek. Mapa se zobrazuje automaticky podle adresy.",
+  },
+  a11y: {
+    label: "Přístupnost",
+    hint: "Popisky pro čtečky obrazovky a ovládací prvky (menu, šipky u fotek…). Většinou není potřeba měnit.",
+  },
+  errors: {
+    label: "Chybové stránky",
+    hint: "Texty stránky „404 – nenalezeno“ a obecné chybové stránky.",
+  },
+};
+
 export function TextsEditor() {
   const { content } = useDev();
   const sections = Object.keys(content.texts.cs) as (keyof SiteTexts)[];
 
   return (
     <div className="space-y-3">
-      {sections.map((section) => (
-        <details key={section} className="rounded-lg bg-white shadow-sm ring-1 ring-gray-200">
-          <summary className="cursor-pointer px-4 py-3 font-semibold text-gray-900">
-            {humanizeKey(section)}
-          </summary>
-          <div className="space-y-4 border-t border-gray-100 p-4">
-            {Object.entries(content.texts.cs[section])
-              .filter(([key]) => key !== "icon")
-              .map(([key, value]) => (
-                <TextNode
-                  key={key}
-                  sample={value}
-                  path={[section, key]}
-                  label={humanizeKey(key)}
-                />
-              ))}
-          </div>
-        </details>
-      ))}
+      {sections.map((section) => {
+        const meta = SECTION_META[section];
+        return (
+          <details key={section} className="rounded-lg bg-white shadow-sm ring-1 ring-gray-200">
+            <summary className="cursor-pointer px-4 py-3 font-semibold text-gray-900">
+              {meta?.label ?? humanizeKey(section)}
+            </summary>
+            <div className="space-y-4 border-t border-gray-100 p-4">
+              {meta && <p className="text-sm text-gray-500">{meta.hint}</p>}
+              {Object.entries(content.texts.cs[section])
+                .filter(([key]) => key !== "icon")
+                .map(([key, value]) => (
+                  <TextNode
+                    key={key}
+                    sample={value}
+                    path={[section, key]}
+                    label={humanizeKey(key)}
+                  />
+                ))}
+            </div>
+          </details>
+        );
+      })}
     </div>
   );
 }

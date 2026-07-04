@@ -1,6 +1,6 @@
-// The row of clickable dots over an image slideshow. Each dot is a 44px touch
-// target (the visible dot is smaller) and exposes the standard tablist a11y
-// roles. Styled for photo backgrounds: white inactive dots, yellow active bar.
+// The row of clickable dots over an image slideshow. Each dot has a padded
+// touch target (the visible dot is smaller) and exposes the standard tablist
+// a11y roles. Styled for photo backgrounds: white inactive dots, yellow active bar.
 
 export function SlideDots({
   count,
@@ -35,7 +35,7 @@ export function SlideDots({
             aria-selected={isActive}
             aria-label={slideLabel(index + 1, count)}
             onClick={() => onSelect(index)}
-            className="min-w-[44px] min-h-[44px] flex items-center justify-center focus-ring"
+            className="min-w-[28px] min-h-[40px] flex items-center justify-center focus-ring"
           >
             <span
               className={`block rounded-full transition-all duration-300 ${

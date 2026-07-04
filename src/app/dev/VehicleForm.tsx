@@ -36,17 +36,23 @@ export function VehicleForm({ vehicleId }: { vehicleId: string }) {
         }
       />
 
-      <LocaleFields
-        label="Popis"
-        multiline
-        getValue={(locale) => vehicle.description[locale]}
-        onChange={(locale, value) =>
-          update((draft) => {
-            const target = draft.vehicles.find((item) => item.id === vehicleId);
-            if (target) target.description[locale] = value;
-          })
-        }
-      />
+      <div>
+        <LocaleFields
+          label="Popis"
+          multiline
+          getValue={(locale) => vehicle.description[locale]}
+          onChange={(locale, value) =>
+            update((draft) => {
+              const target = draft.vehicles.find((item) => item.id === vehicleId);
+              if (target) target.description[locale] = value;
+            })
+          }
+        />
+        <p className="mt-1.5 text-xs text-gray-500">
+          Tip: část textu zvýrazníte tučně pomocí značek &lt;b&gt;…&lt;/b&gt;, např.
+          „autobus s &lt;b&gt;kapacitou 51 míst&lt;/b&gt;“.
+        </p>
+      </div>
 
       <div>
         <span className="mb-2 block text-sm font-medium text-gray-700">Vybavení</span>
