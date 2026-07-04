@@ -54,6 +54,7 @@ const cs: SiteTexts = {
   services: {
     title: "Služby",
     description: "Nabízíme široké množství přepravních služeb.",
+    swipeHint: "Více",
     items: {
       safety: {
         title: "Bezpečnost",
@@ -212,6 +213,7 @@ const cs: SiteTexts = {
     photoOf: "Snímek {{current}} z {{total}}",
     heroSlides: "Úvodní fotografie",
     backToTop: "Zpět nahoru",
+    showAllFeatures: "Zobrazit veškerou výbavu",
   },
   errors: {
     notFoundTitle: "Stránka nenalezena",
@@ -274,6 +276,7 @@ const en: SiteTexts = {
   services: {
     title: "Services",
     description: "We offer a wide range of transport services.",
+    swipeHint: "More",
     items: {
       safety: {
         title: "Safety",
@@ -431,6 +434,7 @@ const en: SiteTexts = {
     photoOf: "Photo {{current}} of {{total}}",
     heroSlides: "Intro photos",
     backToTop: "Back to top",
+    showAllFeatures: "Show all equipment",
   },
   errors: {
     notFoundTitle: "Page not found",
@@ -493,6 +497,7 @@ const de: SiteTexts = {
   services: {
     title: "Dienstleistungen",
     description: "Wir bieten eine Vielzahl von Transportdienstleistungen an.",
+    swipeHint: "Mehr",
     items: {
       safety: {
         title: "Sicherheit",
@@ -651,6 +656,7 @@ const de: SiteTexts = {
     photoOf: "Foto {{current}} von {{total}}",
     heroSlides: "Einführungsfotos",
     backToTop: "Nach oben",
+    showAllFeatures: "Gesamte Ausstattung anzeigen",
   },
   errors: {
     notFoundTitle: "Seite nicht gefunden",

@@ -35,13 +35,13 @@ export function SlideDots({
             aria-selected={isActive}
             aria-label={slideLabel(index + 1, count)}
             onClick={() => onSelect(index)}
-            className="min-w-[28px] min-h-[40px] flex items-center justify-center focus-ring"
+            className="min-w-[14px] min-h-[24px] flex items-center justify-center focus-ring"
           >
             <span
               className={`block rounded-full transition-all duration-300 ${
                 isActive
-                  ? "w-8 h-2 bg-brand"
-                  : "w-2 h-2 bg-white/70 hover:bg-white shadow-sm"
+                  ? "w-3.5 h-1.5 bg-brand"
+                  : "w-1.5 h-1.5 bg-white/70 hover:bg-white shadow-sm"
               }`}
             />
           </button>

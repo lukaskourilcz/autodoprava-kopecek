@@ -11,7 +11,11 @@ import { SectionHeading } from "../components/ui/SectionHeading";
 import { SlideDots } from "../components/ui/SlideDots";
 import { RichText } from "../components/ui/RichText";
 import { Reveal } from "../components/ui/Reveal";
-import type { SiteTexts } from "@/content/types";
+import type { SiteTexts, Vehicle } from "@/content/types";
+import type { SupportedLocale } from "@/lib/locale";
+
+/** Chips shown before the "+N" expander, keeping all cards roughly equal height. */
+const MAX_VISIBLE_FEATURES = 4;
 
 function VehicleCarousel({
   images,
@@ -133,11 +137,84 @@ function VehicleCarousel({
             slideLabel={(index, total) =>
               interpolate(a11y.photoOf, { current: index, total })
             }
-            className="absolute left-1/2 bottom-0 -translate-x-1/2"
+            className="absolute left-2 bottom-1.5"
           />
         </>
       )}
     </div>
+  );
+}
+
+function VehicleCard({
+  vehicle,
+  locale,
+  texts,
+}: {
+  vehicle: Vehicle;
+  locale: SupportedLocale;
+  texts: SiteTexts;
+}) {
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  const capacity = vehicle.capacity?.[locale];
+  const visibleFeatures = showAllFeatures
+    ? vehicle.features
+    : vehicle.features.slice(0, MAX_VISIBLE_FEATURES);
+  const hiddenCount = vehicle.features.length - visibleFeatures.length;
+
+  return (
+    <article className="h-full flex flex-col bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div className="relative">
+        <VehicleCarousel
+          images={vehicle.images}
+          vehicleName={vehicle.name[locale]}
+          a11y={texts.a11y}
+        />
+        {capacity && (
+          <span className="absolute top-2.5 left-2.5 z-10 inline-flex items-center gap-1.5 rounded-full bg-ink/80 backdrop-blur-sm px-2.5 py-1 text-xs font-semibold text-white pointer-events-none">
+            <Users className="w-3.5 h-3.5" aria-hidden="true" />
+            {capacity}
+          </span>
+        )}
+      </div>
+      <div className="p-4 sm:p-5 flex flex-col flex-1">
+        <h3 className="font-display text-lg font-semibold text-ink">
+          {vehicle.name[locale]}
+        </h3>
+        <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">
+          <RichText text={vehicle.description[locale]} />
+        </p>
+        {vehicle.features.length > 0 && (
+          <ul className="flex flex-wrap gap-1.5 mt-auto pt-3">
+            {visibleFeatures.map((feature) => {
+              const Icon = FEATURE_ICONS[feature];
+              if (!Icon) return null;
+              const label = texts.fleet.features[feature];
+              return (
+                <li
+                  key={feature}
+                  className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-700"
+                >
+                  <Icon className="w-3 h-3" aria-hidden="true" />
+                  {label}
+                </li>
+              );
+            })}
+            {hiddenCount > 0 && (
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setShowAllFeatures(true)}
+                  aria-label={texts.a11y.showAllFeatures}
+                  className="inline-flex items-center rounded-full bg-gray-100 hover:bg-gray-200 px-2 py-0.5 text-[11px] font-semibold text-gray-700 transition-colors focus-ring"
+                >
+                  +{hiddenCount}
+                </button>
+              </li>
+            )}
+          </ul>
+        )}
+      </div>
+    </article>
   );
 }
 
@@ -152,54 +229,11 @@ export default function Fleet() {
         </Reveal>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {vehicles.map((vehicle) => {
-            const capacity = vehicle.capacity?.[locale];
-            return (
+          {vehicles.map((vehicle) => (
             <Reveal key={vehicle.id} className="h-full">
-              <article className="h-full flex flex-col bg-white rounded-xl border border-gray-200 overflow-hidden">
-                <div className="relative">
-                  <VehicleCarousel
-                    images={vehicle.images}
-                    vehicleName={vehicle.name[locale]}
-                    a11y={texts.a11y}
-                  />
-                  {capacity && (
-                    <span className="absolute top-2.5 left-2.5 z-10 inline-flex items-center gap-1.5 rounded-full bg-ink/80 backdrop-blur-sm px-2.5 py-1 text-xs font-semibold text-white pointer-events-none">
-                      <Users className="w-3.5 h-3.5" aria-hidden="true" />
-                      {capacity}
-                    </span>
-                  )}
-                </div>
-                <div className="p-4 sm:p-5 flex flex-col flex-1">
-                  <h3 className="font-display text-lg font-semibold text-ink">
-                    {vehicle.name[locale]}
-                  </h3>
-                  <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">
-                    <RichText text={vehicle.description[locale]} />
-                  </p>
-                  {vehicle.features.length > 0 && (
-                    <ul className="flex flex-wrap gap-1.5 mt-auto pt-3">
-                      {vehicle.features.map((feature) => {
-                        const Icon = FEATURE_ICONS[feature];
-                        if (!Icon) return null;
-                        const label = texts.fleet.features[feature];
-                        return (
-                          <li
-                            key={feature}
-                            className="inline-flex items-center gap-1 rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-700"
-                          >
-                            <Icon className="w-3 h-3" aria-hidden="true" />
-                            {label}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </div>
-              </article>
+              <VehicleCard vehicle={vehicle} locale={locale} texts={texts} />
             </Reveal>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>

@@ -69,6 +69,8 @@ export type SiteTexts = {
   services: {
     title: string;
     description: string;
+    /** Short label on mobile photo tiles hinting that swiping reveals the text. */
+    swipeHint: string;
     items: Record<"safety" | "comfort" | "capacity" | "luggage", TitleAndText>;
     irregularBusTransport: Record<
       | "schoolTransport"
@@ -144,6 +146,7 @@ export type SiteTexts = {
     photoOf: string;
     heroSlides: string;
     backToTop: string;
+    showAllFeatures: string;
   };
   /** Copy for the 404 and error pages, which render outside the locale segment. */
   errors: {

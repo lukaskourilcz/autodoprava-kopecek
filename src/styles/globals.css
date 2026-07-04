@@ -72,6 +72,21 @@ html {
   animation: slide-progress 8s linear forwards;
 }
 
+/* Gentle horizontal pulse on the mobile "swipe for more" hint. */
+@keyframes nudge-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}
+
+.nudge-x {
+  animation: nudge-x 1.6s ease-in-out infinite;
+}
+
 .section {
   scroll-margin-top: var(--nav-height);
 }
