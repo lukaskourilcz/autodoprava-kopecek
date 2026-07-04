@@ -3,7 +3,7 @@
 import { Waypoints, ChevronsUp, ShieldPlus } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { SectionHeading } from "../components/ui/SectionHeading";
-import { IconBadge } from "../components/ui/IconBadge";
+import { Reveal } from "../components/ui/Reveal";
 import type { AboutReason } from "@/content/types";
 
 const reasonIcons: Record<AboutReason["icon"], typeof Waypoints> = {
@@ -16,48 +16,61 @@ export default function About() {
   const { about } = useContent().texts;
 
   return (
-    <section
-      id="about"
-      className="section bg-gradient-to-b from-gray-100 to-gray-200 py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-32"
-    >
-      <div className="max-w-5xl mx-auto">
-        <SectionHeading title={about.title} />
+    <section id="about" className="section bg-ink text-white py-20 sm:py-28">
+      <div className="container-site">
+        <Reveal>
+          <SectionHeading dark kicker={about.kicker} title={about.title} />
+        </Reveal>
 
-        {about.paragraphs.map((paragraph, index) => (
-          <p
-            key={index}
-            className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:text-left text-center px-4 max-w-prose mx-auto"
-          >
-            {paragraph}
-          </p>
-        ))}
+        <div className="mt-10 grid gap-12 lg:grid-cols-[1fr,auto] lg:gap-20 items-start">
+          <Reveal>
+            <div className="space-y-5 max-w-prose">
+              {about.paragraphs.map((paragraph, index) => (
+                <p key={index} className="text-gray-300 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Reveal>
 
-        <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-sm ring-1 ring-gray-200 mt-12">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-8 text-center">
+          {about.stats.length > 0 && (
+            <Reveal>
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-8 lg:gap-10 lg:border-l lg:border-white/10 lg:pl-12 lg:min-w-[220px]">
+                {about.stats.map(({ value, label }) => (
+                  <div key={label}>
+                    <p className="font-display text-4xl sm:text-5xl font-bold text-brand tabular-nums leading-none">
+                      {value}
+                    </p>
+                    <p className="mt-2 text-sm text-gray-400">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
+        </div>
+
+        <Reveal className="mt-16 sm:mt-20">
+          <h3 className="font-display text-xl sm:text-2xl font-semibold text-white">
             {about.reasonsTitle}
           </h3>
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <ul className="mt-8 grid gap-8 md:grid-cols-3">
             {about.reasons.map((reason, index) => {
               const Icon = reasonIcons[reason.icon] ?? Waypoints;
               return (
-                <li key={index} className="flex flex-col items-center text-center px-2">
-                  <IconBadge className="w-12 h-12 mb-3 rounded-full bg-yellow-500 text-white shadow-sm">
-                    <Icon />
-                  </IconBadge>
-                  <p className="text-base text-gray-700 leading-relaxed">
-                    <span className="font-bold text-gray-900 block mb-1">
-                      {reason.title}
-                    </span>
+                <li key={index}>
+                  <Icon className="w-6 h-6 text-brand" aria-hidden="true" />
+                  <p className="mt-3 font-display font-semibold text-white">{reason.title}</p>
+                  <p className="mt-1.5 text-sm text-gray-400 leading-relaxed">
                     {reason.description}
                   </p>
                 </li>
               );
             })}
           </ul>
-          <p className="text-base sm:text-lg text-gray-700 mt-8 text-center max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-12 text-gray-300 leading-relaxed max-w-prose">
             {about.closingText}
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

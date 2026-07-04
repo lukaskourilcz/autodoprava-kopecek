@@ -12,13 +12,20 @@ const cs: SiteTexts = {
     description:
       "Naše společnost se specializuje na autobusovou a nákladní dopravu. S našim rozsáhlým vozovým parkem a zkušeným týmem jsme připraveni zajistit veškeré vaše dopravní potřeby s důrazem na spolehlivost, pohodlí a bezpečnost. Nabízíme širokou nabídku služeb pro přepravu osob i zboží, a to nejen po České republice, ale i do zahraničí. Jsme tu pro vás, abychom vám poskytli profesionální a přátelský přístup ke každé zakázce.",
     heroText: "Spolehlivá doprava pro vaše potřeby.",
+    badge: "Rodinná firma · na cestách od roku 2012",
   },
   about: {
+    kicker: "Rodinná dopravní firma od roku 2012",
     title: "O nás",
     paragraphs: [
       "Jsme rodinná dopravní firma, která působí na trhu již od roku 2012. Za tuhle dobu jsme nasbírali bohaté zkušenosti v oblasti autobusové dopravy a získali si důvěru mnoha spokojených zákazníků. Naším cílem je zajišťovat spolehlivé, bezpečné a pohodlné cestování pro jednotlivce, skupiny i firmy. Společnost vede pan Jiří Kopeček.",
       "Specializujeme se na nepravidelnou a linkovou dopravu, ať už jde o školní výlety, firemní akce, sportovní turnaje nebo jiné skupinové přepravy. Díky pravidelně udržovaným autobusům zajišťujeme maximální bezpečnost a komfort během cesty.",
       "Jsme tu pro vás, ať už potřebujete zajistit pohodlnou přepravu osob, nebo bezpečný transport nákladu. Rádi vám připravíme nabídku na míru – kontaktujte nás a přesvědčte se o kvalitě našich služeb sami!",
+    ],
+    stats: [
+      { value: "2012", label: "Na trhu od roku" },
+      { value: "7", label: "Vozidel ve vozovém parku" },
+      { value: "67", label: "Míst v největším autobusu" },
     ],
     reasonsTitle: "Proč si vybrat právě nás?",
     reasons: [
@@ -47,11 +54,6 @@ const cs: SiteTexts = {
   services: {
     title: "Služby",
     description: "Nabízíme široké množství přepravních služeb.",
-    list: [
-      "Přeprava osob v moderních autobusech",
-      "Nákladní doprava do zahraničí",
-      "Expresní kurýrní služby",
-    ],
     items: {
       safety: {
         title: "Bezpečnost",
@@ -140,6 +142,7 @@ const cs: SiteTexts = {
     addressLine2: "Lužice 696 18, ČR",
     addressLabel: "Adresa",
     mapLabel: "Otevřít v Mapách",
+    mapTitle: "Mapa – Autodoprava Kopeček, Lužice u Hodonína",
     phone: "+420 777 685 331",
     phoneLabel: "Telefon",
     callCta: "Zavolat",
@@ -147,7 +150,7 @@ const cs: SiteTexts = {
     emailLabel: "Email",
     mailSubject: "Poptávka přepravy",
     hoursLabel: "Provozní doba",
-    hours: "Po–Pá 7:00–17:00",
+    hours: "Po–Pá 7:00–17:00 · po domluvě kdykoliv",
     billingTitle: "Fakturační údaje",
     companyID: "67004997",
     companyIDLabel: "IČ",
@@ -156,6 +159,28 @@ const cs: SiteTexts = {
     logoAlt: "Logo Autodoprava Kopeček",
     footerNote: "© {{year}} Autodoprava Kopeček. Všechna práva vyhrazena.",
     contactCta: "Kontaktujte nás",
+    emailCta: "Napsat e-mail",
+  },
+  a11y: {
+    skipToContent: "Přeskočit na obsah",
+    changeLanguage: "Změnit jazyk",
+    openMenu: "Otevřít menu",
+    closeMenu: "Zavřít menu",
+    previousPhoto: "Předchozí fotografie",
+    nextPhoto: "Další fotografie",
+    photoOf: "Snímek {{current}} z {{total}}",
+    heroSlides: "Úvodní fotografie",
+    backToTop: "Zpět nahoru",
+  },
+  errors: {
+    notFoundTitle: "Stránka nenalezena",
+    notFoundDescription: "Stránka, kterou hledáte, neexistuje nebo byla přesunuta.",
+    backHome: "Zpět na úvod",
+    errorTitle: "Něco se pokazilo",
+    errorDescription:
+      "Zkuste prosím akci opakovat. Pokud problém přetrvává, kontaktujte nás telefonicky.",
+    retry: "Zkusit znovu",
+    home: "Domů",
   },
 };
 
@@ -166,13 +191,20 @@ const en: SiteTexts = {
     description:
       "Our company specializes in bus and freight transportation. With our extensive fleet and experienced team, we are ready to meet all your transportation needs with a focus on reliability, comfort, and safety. We offer a wide range of services for the transportation of passengers and goods, not only within the Czech Republic but also abroad. We are here for you to provide a professional and friendly approach to every order.",
     heroText: "Reliable transport for your needs.",
+    badge: "Family-run · on the road since 2012",
   },
   about: {
+    kicker: "A family-run transport company since 2012",
     title: "About Us",
     paragraphs: [
       "We are a family-owned transport company operating since 2012. Over the years, we have gained extensive experience in bus transport and earned the trust of many satisfied customers. Our goal is to provide reliable, safe, and comfortable travel for individuals, groups, and businesses. The company is led by Mr. Jiří Kopeček.",
       "We specialize in irregular and scheduled transport, whether it is school trips, corporate events, sports tournaments, or other group transportation. Thanks to regularly maintained buses, we ensure maximum safety and comfort during the journey.",
       "We are here for you, whether you need to arrange comfortable passenger transport or secure freight transportation. We are happy to provide a tailored offer – contact us and see the quality of our services for yourself!",
+    ],
+    stats: [
+      { value: "2012", label: "On the road since" },
+      { value: "7", label: "Vehicles in our fleet" },
+      { value: "67", label: "Seats in our largest coach" },
     ],
     reasonsTitle: "Why Choose Us?",
     reasons: [
@@ -201,11 +233,6 @@ const en: SiteTexts = {
   services: {
     title: "Services",
     description: "We offer a wide range of transport services.",
-    list: [
-      "Passenger transport in modern buses",
-      "Freight transport across borders",
-      "Express courier services",
-    ],
     items: {
       safety: {
         title: "Safety",
@@ -294,6 +321,7 @@ const en: SiteTexts = {
     addressLine2: "Lužice 696 18, CZ",
     addressLabel: "Address",
     mapLabel: "Open in Maps",
+    mapTitle: "Map – Autodoprava Kopeček, Lužice near Hodonín, Czech Republic",
     phone: "+420 777 685 331",
     phoneLabel: "Phone",
     callCta: "Call",
@@ -301,7 +329,7 @@ const en: SiteTexts = {
     emailLabel: "Email",
     mailSubject: "Transport inquiry",
     hoursLabel: "Office hours",
-    hours: "Mon–Fri 7:00–17:00",
+    hours: "Mon–Fri 7:00–17:00 · anytime by arrangement",
     billingTitle: "Billing Information",
     companyID: "67004997",
     companyIDLabel: "Company ID",
@@ -310,6 +338,28 @@ const en: SiteTexts = {
     logoAlt: "Autodoprava Kopeček logo",
     footerNote: "© {{year}} Autodoprava Kopeček. All rights reserved.",
     contactCta: "Contact us",
+    emailCta: "Send an email",
+  },
+  a11y: {
+    skipToContent: "Skip to content",
+    changeLanguage: "Change language",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    previousPhoto: "Previous photo",
+    nextPhoto: "Next photo",
+    photoOf: "Photo {{current}} of {{total}}",
+    heroSlides: "Intro photos",
+    backToTop: "Back to top",
+  },
+  errors: {
+    notFoundTitle: "Page not found",
+    notFoundDescription: "The page you are looking for does not exist or has been moved.",
+    backHome: "Back to homepage",
+    errorTitle: "Something went wrong",
+    errorDescription:
+      "Please try again. If the problem persists, contact us by phone.",
+    retry: "Try again",
+    home: "Home",
   },
 };
 
@@ -320,13 +370,20 @@ const de: SiteTexts = {
     description:
       "Unser Unternehmen ist auf Bus- und Gütertransport spezialisiert. Mit unserem umfangreichen Fuhrpark und erfahrenen Team sind wir bereit, all Ihre Transportbedürfnisse mit Fokus auf Zuverlässigkeit, Komfort und Sicherheit zu erfüllen. Wir bieten eine breite Palette an Dienstleistungen für den Personen- und Gütertransport, nicht nur innerhalb der Tschechischen Republik, sondern auch ins Ausland. Wir sind für Sie da, um Ihnen einen professionellen und freundlichen Service für jede Bestellung zu bieten.",
     heroText: "Zuverlässiger Transport für Ihre Bedürfnisse.",
+    badge: "Familienbetrieb · seit 2012 unterwegs",
   },
   about: {
+    kicker: "Familiengeführtes Transportunternehmen seit 2012",
     title: "Über uns",
     paragraphs: [
       "Wir sind ein familiengeführtes Transportunternehmen, das seit 2012 tätig ist. Im Laufe der Jahre haben wir umfangreiche Erfahrungen im Busverkehr gesammelt und das Vertrauen vieler zufriedener Kunden gewonnen. Unser Ziel ist es, zuverlässige, sichere und komfortable Reisen für Einzelpersonen, Gruppen und Unternehmen zu gewährleisten. Das Unternehmen wird von Herrn Jiří Kopeček geleitet.",
       "Wir sind auf unregelmäßigen und Linienverkehr spezialisiert, sei es für Schulausflüge, Firmenveranstaltungen, Sportturniere oder andere Gruppenreisen. Dank regelmäßig gewarteter Busse gewährleisten wir maximale Sicherheit und Komfort während der Fahrt.",
       "Wir sind für Sie da, egal ob Sie einen komfortablen Personentransport oder einen sicheren Warentransport benötigen. Wir erstellen Ihnen gerne ein maßgeschneidertes Angebot – kontaktieren Sie uns und überzeugen Sie sich selbst von der Qualität unserer Dienstleistungen!",
+    ],
+    stats: [
+      { value: "2012", label: "Auf dem Markt seit" },
+      { value: "7", label: "Fahrzeuge im Fuhrpark" },
+      { value: "67", label: "Sitzplätze im größten Bus" },
     ],
     reasonsTitle: "Warum uns wählen?",
     reasons: [
@@ -355,11 +412,6 @@ const de: SiteTexts = {
   services: {
     title: "Dienstleistungen",
     description: "Wir bieten eine Vielzahl von Transportdienstleistungen an.",
-    list: [
-      "Personenbeförderung in modernen Bussen",
-      "Frachttransporte ins Ausland",
-      "Express-Kurierdienste",
-    ],
     items: {
       safety: {
         title: "Sicherheit",
@@ -448,6 +500,7 @@ const de: SiteTexts = {
     addressLine2: "Lužice 696 18, CZ",
     addressLabel: "Adresse",
     mapLabel: "In Karten öffnen",
+    mapTitle: "Karte – Autodoprava Kopeček, Lužice bei Hodonín, Tschechien",
     phone: "+420 777 685 331",
     phoneLabel: "Telefon",
     callCta: "Anrufen",
@@ -455,7 +508,7 @@ const de: SiteTexts = {
     emailLabel: "Email",
     mailSubject: "Transportanfrage",
     hoursLabel: "Öffnungszeiten",
-    hours: "Mo–Fr 7:00–17:00",
+    hours: "Mo–Fr 7:00–17:00 · nach Vereinbarung jederzeit",
     billingTitle: "Rechnungsinformationen",
     companyID: "67004997",
     companyIDLabel: "Unternehmens-ID",
@@ -464,6 +517,28 @@ const de: SiteTexts = {
     logoAlt: "Autodoprava Kopeček Logo",
     footerNote: "© {{year}} Autodoprava Kopeček. Alle Rechte vorbehalten.",
     contactCta: "Kontaktieren Sie uns",
+    emailCta: "E-Mail schreiben",
+  },
+  a11y: {
+    skipToContent: "Zum Inhalt springen",
+    changeLanguage: "Sprache ändern",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
+    previousPhoto: "Vorheriges Foto",
+    nextPhoto: "Nächstes Foto",
+    photoOf: "Foto {{current}} von {{total}}",
+    heroSlides: "Einführungsfotos",
+    backToTop: "Nach oben",
+  },
+  errors: {
+    notFoundTitle: "Seite nicht gefunden",
+    notFoundDescription: "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    backHome: "Zur Startseite",
+    errorTitle: "Etwas ist schiefgelaufen",
+    errorDescription:
+      "Bitte versuchen Sie es erneut. Wenn das Problem weiterhin besteht, kontaktieren Sie uns telefonisch.",
+    retry: "Erneut versuchen",
+    home: "Startseite",
   },
 };
 

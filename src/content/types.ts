@@ -50,10 +50,16 @@ export type SiteTexts = {
     subtitle: string;
     description: string;
     heroText: string;
+    /** Short heritage line shown next to the subtitle, e.g. "Family-run · since 2012". */
+    badge: string;
   };
   about: {
+    /** Small uppercase label above the section title. */
+    kicker: string;
     title: string;
     paragraphs: string[];
+    /** Headline figures shown next to the intro, e.g. value "2012", label "On the road since". */
+    stats: { value: string; label: string }[];
     reasonsTitle: string;
     reasons: AboutReason[];
     closingText: string;
@@ -61,7 +67,6 @@ export type SiteTexts = {
   services: {
     title: string;
     description: string;
-    list: string[];
     items: Record<"safety" | "comfort" | "capacity" | "luggage", TitleAndText>;
     irregularBusTransport: Record<
       | "schoolTransport"
@@ -88,6 +93,8 @@ export type SiteTexts = {
     addressLine2: string;
     addressLabel: string;
     mapLabel: string;
+    /** Accessible title of the embedded map iframe. */
+    mapTitle: string;
     phone: string;
     phoneLabel: string;
     callCta: string;
@@ -104,6 +111,30 @@ export type SiteTexts = {
     logoAlt: string;
     footerNote: string;
     contactCta: string;
+    emailCta: string;
+  };
+  /** Translated labels for assistive tech and small UI chrome. */
+  a11y: {
+    skipToContent: string;
+    changeLanguage: string;
+    openMenu: string;
+    closeMenu: string;
+    previousPhoto: string;
+    nextPhoto: string;
+    /** Template with {{current}} and {{total}}, e.g. "Photo {{current}} of {{total}}". */
+    photoOf: string;
+    heroSlides: string;
+    backToTop: string;
+  };
+  /** Copy for the 404 and error pages, which render outside the locale segment. */
+  errors: {
+    notFoundTitle: string;
+    notFoundDescription: string;
+    backHome: string;
+    errorTitle: string;
+    errorDescription: string;
+    retry: string;
+    home: string;
   };
 };
 

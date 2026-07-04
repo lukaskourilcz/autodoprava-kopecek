@@ -5,23 +5,15 @@ import {
   Users,
   HeartHandshake,
   Heater,
-  Backpack,
-  Volleyball,
-  Building2,
-  PlaneTakeoff,
-  BookHeart,
-  Bus,
-  Route,
-  Truck,
 } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { SectionHeading } from "../components/ui/SectionHeading";
-import { IconBadge } from "../components/ui/IconBadge";
+import { Reveal } from "../components/ui/Reveal";
 
 export default function Services() {
   const { services } = useContent().texts;
 
-  // The four headline qualities shown as large yellow badges.
+  // The four headline qualities shown as a slim strip under the heading.
   const qualities = [
     { Icon: HeartHandshake, ...services.items.safety },
     { Icon: Heater, ...services.items.comfort },
@@ -29,50 +21,53 @@ export default function Services() {
     { Icon: BriefcaseConveyorBelt, ...services.items.luggage },
   ];
 
-  // The transport types shown as cards below.
+  // The transport types shown as a numbered editorial list.
   const transportTypes = [
-    { Icon: Backpack, ...services.irregularBusTransport.schoolTransport },
-    { Icon: Volleyball, ...services.irregularBusTransport.sportsTransport },
-    { Icon: Building2, ...services.irregularBusTransport.groupsTransport },
-    { Icon: Route, ...services.corporateTransport },
-    { Icon: BookHeart, ...services.irregularBusTransport.weddingTransport },
-    { Icon: Bus, ...services.irregularBusTransport.replacementTransport },
-    { Icon: PlaneTakeoff, ...services.irregularBusTransport.airportTransfers },
-    { Icon: Truck, ...services.cargoTransport },
+    services.irregularBusTransport.schoolTransport,
+    services.irregularBusTransport.sportsTransport,
+    services.irregularBusTransport.groupsTransport,
+    services.corporateTransport,
+    services.irregularBusTransport.weddingTransport,
+    services.irregularBusTransport.replacementTransport,
+    services.irregularBusTransport.airportTransfers,
+    services.cargoTransport,
   ];
 
   return (
-    <section
-      id="services"
-      className="section bg-gradient-to-b from-white to-gray-200 py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-32"
-    >
-      <div className="max-w-6xl mx-auto text-center">
-        <SectionHeading title={services.title} className="mb-12" />
+    <section id="services" className="section bg-gray-50 py-20 sm:py-28">
+      <div className="container-site">
+        <Reveal>
+          <SectionHeading title={services.title} description={services.description} />
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {qualities.map(({ Icon, title, description }) => (
-            <div key={title} className="flex flex-col items-center px-2">
-              <IconBadge className="w-16 h-16 mb-4 rounded-full bg-yellow-50 ring-1 ring-yellow-200 text-yellow-600">
-                <Icon className="w-8 h-8" aria-hidden="true" />
-              </IconBadge>
-              <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-              <p className="text-gray-600 text-sm mt-2 leading-relaxed">{description}</p>
-            </div>
-          ))}
-        </div>
+        <Reveal className="mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 lg:gap-x-0 lg:divide-x lg:divide-gray-200 border-y border-gray-200 py-8">
+            {qualities.map(({ Icon, title, description }) => (
+              <div key={title} className="lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <Icon className="w-6 h-6 text-brand" aria-hidden="true" />
+                <h3 className="mt-3 font-display font-semibold text-ink">{title}</h3>
+                <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {transportTypes.map(({ Icon, title, description }) => (
-            <article
-              key={title}
-              className="flex flex-col items-center text-center bg-white rounded-2xl p-6 shadow-sm ring-1 ring-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all"
-            >
-              <IconBadge className="w-14 h-14 mb-4 rounded-xl bg-gray-100 text-gray-700">
-                <Icon className="w-7 h-7" aria-hidden="true" />
-              </IconBadge>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
-            </article>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-12">
+          {transportTypes.map(({ title, description }, index) => (
+            <Reveal key={title}>
+              <article className="flex gap-5 py-6 border-b border-gray-200 h-full">
+                <span
+                  className="font-display text-sm font-semibold text-gray-400 tabular-nums pt-1"
+                  aria-hidden="true"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h4 className="font-display text-lg font-semibold text-ink">{title}</h4>
+                  <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">{description}</p>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,15 +1,17 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "outline";
 
 const variantClasses: Record<Variant, string> = {
-  primary: "bg-yellow-500 text-gray-900 hover:bg-yellow-400",
-  secondary: "bg-gray-900 text-white hover:bg-gray-800",
+  primary: "bg-brand text-ink hover:bg-brand-light",
+  secondary: "bg-ink text-white hover:bg-ink-soft",
+  /** For dark backgrounds (hero, contact). */
+  outline: "border border-white/40 text-white hover:border-white hover:bg-white/10",
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg active:translate-y-px transition-all min-h-[44px] focus-ring";
+  "inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-md transition-colors duration-150 min-h-[44px] focus-ring";
 
 type ButtonProps = {
   children: ReactNode;

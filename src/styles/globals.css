@@ -5,13 +5,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --nav-height: 48px;
+  --nav-height: 56px;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -44,17 +43,44 @@ html {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
+/* Slow zoom on the active hero slide; runs once per slide interval. */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.kenburns {
+  animation: kenburns 9s linear forwards;
+}
+
+/* Fill of the hero slide progress bar, timed to the slide interval. */
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.slide-progress {
+  transform-origin: left;
+  animation: slide-progress 8s linear forwards;
+}
+
 .section {
   scroll-margin-top: var(--nav-height);
 }
 
-.section-accent {
-  display: inline-block;
-  width: 3rem;
-  height: 3px;
-  background-color: #eab308;
-  border-radius: 2px;
-  margin-bottom: 1rem;
+@layer components {
+  /* One shared content container so every section aligns to the same grid. */
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
 }
 
 @layer utilities {

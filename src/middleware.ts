@@ -9,9 +9,10 @@ export function middleware(request: NextRequest) {
     ? segment
     : DEFAULT_LOCALE;
 
-  const response = NextResponse.next();
-  response.headers.set("x-locale", locale);
-  return response;
+  // Set the header on the *request* so server components can read it via headers().
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-locale", locale);
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {

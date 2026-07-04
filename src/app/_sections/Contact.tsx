@@ -1,148 +1,180 @@
 "use client";
 
 import Image from "next/image";
-import { Clock, Mail, MapPinHouse, Phone } from "lucide-react";
+import Link from "next/link";
+import { ArrowUp, ArrowUpRight, Clock, Mail, MapPinHouse, Phone } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { telHref, mailtoHref, mapsSearchHref } from "@/lib/contactLinks";
 import { interpolate } from "@/lib/format";
 import { SectionHeading } from "../components/ui/SectionHeading";
-import { IconBadge } from "../components/ui/IconBadge";
+import { Reveal } from "../components/ui/Reveal";
 import { Button } from "../components/ui/Button";
 
 export default function Contact() {
-  const { contact } = useContent().texts;
+  const { locale, texts } = useContent();
+  const { contact, a11y } = texts;
 
   const phoneLink = telHref(contact.phone);
   const mailLink = mailtoHref(contact.email, contact.mailSubject);
-  const mapLink = mapsSearchHref(`${contact.addressLine1}, ${contact.addressLine2}`);
+  const address = `${contact.addressLine1}, ${contact.addressLine2}`;
+  const mapLink = mapsSearchHref(address);
+  // Keyless Google Maps embed; see NEEDED.md for the optional Embed API upgrade.
+  const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
+    address
+  )}&z=12&hl=${locale}&output=embed`;
   const year = new Date().getFullYear();
+
+  const footerLinks = (["about", "services", "fleet", "contact"] as const).map((hash) => ({
+    hash,
+    label: texts[hash].title,
+  }));
+
+  const labelClasses = "block text-xs font-semibold uppercase tracking-wider text-gray-400";
 
   return (
     <>
-      <section
-        id="contact"
-        className="section relative bg-cover bg-center py-12 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-32"
-        style={{ backgroundImage: "url('/pics/footer-map.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gray-900/40" aria-hidden="true" />
-        <div className="relative max-w-4xl mx-auto bg-white/95 backdrop-blur-sm p-5 sm:p-8 rounded-2xl shadow-xl ring-1 ring-black/5">
-          <SectionHeading title={contact.title} description={contact.description} className="mb-6" />
+      <section id="contact" className="section relative bg-ink py-20 sm:py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{ backgroundImage: "url('/pics/footer-map.jpg')" }}
+          aria-hidden="true"
+        />
+        <div className="container-site relative">
+          <Reveal>
+            <SectionHeading dark title={contact.title} description={contact.description} />
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
-            <address className="not-italic space-y-4">
-              <a
-                href={mapLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start gap-3 text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                <IconBadge>
-                  <MapPinHouse className="w-5 h-5" aria-hidden="true" />
-                </IconBadge>
-                <span>
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    {contact.addressLabel}
+          <Reveal className="mt-12">
+            <div className="grid gap-12 lg:grid-cols-[1fr,320px]">
+              <address className="not-italic grid gap-8 sm:grid-cols-2">
+                <a
+                  href={mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-4 text-gray-200 hover:text-white transition-colors"
+                >
+                  <MapPinHouse className="w-5 h-5 mt-0.5 text-brand flex-shrink-0" aria-hidden="true" />
+                  <span>
+                    <span className={labelClasses}>{contact.addressLabel}</span>
+                    <span className="mt-1 block font-medium group-hover:underline">
+                      {contact.addressLine1}, {contact.addressLine2}
+                    </span>
+                    <span className="mt-0.5 flex items-center gap-1 text-xs text-gray-400">
+                      {contact.mapLabel}
+                      <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                    </span>
                   </span>
-                  <span className="block group-hover:underline">
-                    {contact.addressLine1}, {contact.addressLine2}
-                  </span>
-                  <span className="block text-xs text-gray-500 mt-0.5">
-                    {contact.mapLabel} →
-                  </span>
-                </span>
-              </a>
+                </a>
 
-              <a
-                href={phoneLink}
-                className="group flex items-start gap-3 text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                <IconBadge>
-                  <Phone className="w-5 h-5" aria-hidden="true" />
-                </IconBadge>
-                <span>
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    {contact.phoneLabel}
+                <a
+                  href={phoneLink}
+                  className="group flex items-start gap-4 text-gray-200 hover:text-white transition-colors"
+                >
+                  <Phone className="w-5 h-5 mt-0.5 text-brand flex-shrink-0" aria-hidden="true" />
+                  <span>
+                    <span className={labelClasses}>{contact.phoneLabel}</span>
+                    <span className="mt-1 block font-medium group-hover:underline">
+                      {contact.phone}
+                    </span>
                   </span>
-                  <span className="block font-medium group-hover:underline">
-                    {contact.phone}
-                  </span>
-                </span>
-              </a>
+                </a>
 
-              <a
-                href={mailLink}
-                className="group flex items-start gap-3 text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                <IconBadge>
-                  <Mail className="w-5 h-5" aria-hidden="true" />
-                </IconBadge>
-                <span>
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    {contact.emailLabel}
+                <a
+                  href={mailLink}
+                  className="group flex items-start gap-4 text-gray-200 hover:text-white transition-colors"
+                >
+                  <Mail className="w-5 h-5 mt-0.5 text-brand flex-shrink-0" aria-hidden="true" />
+                  <span>
+                    <span className={labelClasses}>{contact.emailLabel}</span>
+                    <span className="mt-1 block font-medium break-words group-hover:underline">
+                      {contact.email}
+                    </span>
                   </span>
-                  <span className="block font-medium group-hover:underline break-all">
-                    {contact.email}
-                  </span>
-                </span>
-              </a>
+                </a>
 
-              <div className="flex items-start gap-3 text-gray-700">
-                <IconBadge>
-                  <Clock className="w-5 h-5" aria-hidden="true" />
-                </IconBadge>
-                <span>
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    {contact.hoursLabel}
+                <div className="flex items-start gap-4 text-gray-200">
+                  <Clock className="w-5 h-5 mt-0.5 text-brand flex-shrink-0" aria-hidden="true" />
+                  <span>
+                    <span className={labelClasses}>{contact.hoursLabel}</span>
+                    <span className="mt-1 block">{contact.hours}</span>
                   </span>
-                  <span className="block">{contact.hours}</span>
-                </span>
-              </div>
-            </address>
-
-            <div className="border-t md:border-t-0 md:border-l border-gray-200 pt-5 md:pt-0 md:pl-8">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">
-                {contact.billingTitle}
-              </h3>
-              <dl className="space-y-2 text-gray-700">
-                <div className="flex gap-2">
-                  <dt className="font-semibold text-gray-900">{contact.companyIDLabel}:</dt>
-                  <dd>{contact.companyID}</dd>
                 </div>
-                <div className="flex gap-2">
-                  <dt className="font-semibold text-gray-900">{contact.taxIDLabel}:</dt>
-                  <dd>{contact.taxID}</dd>
-                </div>
-              </dl>
-              <div className="mt-4 flex justify-start">
+              </address>
+
+              <div className="lg:border-l lg:border-white/10 lg:pl-10">
+                <h3 className={`${labelClasses} mb-4`}>{contact.billingTitle}</h3>
+                <dl className="space-y-2 text-gray-200">
+                  <div className="flex gap-2">
+                    <dt className="font-semibold text-white">{contact.companyIDLabel}:</dt>
+                    <dd>{contact.companyID}</dd>
+                  </div>
+                  <div className="flex gap-2">
+                    <dt className="font-semibold text-white">{contact.taxIDLabel}:</dt>
+                    <dd>{contact.taxID}</dd>
+                  </div>
+                </dl>
                 <Image
-                  src="/pics/logo-black-footer.png"
+                  src="/pics/logo-whiteyellow-nav.png"
                   alt={contact.logoAlt}
-                  width={160}
-                  height={160}
-                  className="object-contain w-28 h-auto"
+                  width={881}
+                  height={411}
+                  className="object-contain w-36 h-auto mt-6"
                 />
               </div>
             </div>
-          </div>
 
-          <div className="mt-6 pt-5 border-t border-gray-200 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button href={phoneLink}>
-              <Phone size={18} aria-hidden="true" />
-              {contact.callCta}
-            </Button>
-            <Button href={mailLink} variant="secondary">
-              <Mail size={18} aria-hidden="true" />
-              {contact.emailLabel}
-            </Button>
-          </div>
+            <div className="mt-12 rounded-xl overflow-hidden border border-white/10 bg-ink-soft">
+              <iframe
+                src={mapEmbedSrc}
+                title={contact.mapTitle}
+                className="block w-full h-64 sm:h-80"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+              <Button href={phoneLink}>
+                <Phone size={18} aria-hidden="true" />
+                {contact.callCta}
+              </Button>
+              <Button href={mailLink} variant="outline">
+                <Mail size={18} aria-hidden="true" />
+                {contact.emailCta}
+              </Button>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <footer className="bg-gray-900 py-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <p className="text-gray-400 text-sm">
+      <footer className="bg-ink-deep border-t border-white/10 py-8">
+        <div className="container-site flex flex-col sm:flex-row items-center justify-between gap-5">
+          <nav>
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              {footerLinks.map(({ hash, label }) => (
+                <li key={hash}>
+                  <Link
+                    href={`/${locale}#${hash}`}
+                    className="text-sm text-gray-400 hover:text-white transition-colors focus-ring rounded"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <p className="text-gray-500 text-sm text-center">
             {interpolate(contact.footerNote, { year })}
           </p>
+          <Link
+            href={`/${locale}#home`}
+            aria-label={a11y.backToTop}
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 text-gray-300 hover:text-white hover:border-white/50 transition-colors focus-ring"
+          >
+            <ArrowUp size={18} aria-hidden="true" />
+          </Link>
         </div>
       </footer>
     </>
