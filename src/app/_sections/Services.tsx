@@ -20,6 +20,7 @@ export default function Services() {
   const { services, contact } = texts;
   const inquiryHref = (title: string) =>
     mailtoHref(contact.email, `${contact.mailSubject} – ${title}`);
+  const firstSentence = (text: string) => text.match(/^[^.!?]*[.!?]/)?.[0] ?? text;
 
   // The four headline qualities shown as a slim strip under the heading.
   const qualities = [
@@ -94,8 +95,8 @@ export default function Services() {
                       <ArrowUpRight className="w-[18px] h-[18px]" aria-hidden="true" />
                     </span>
                     <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
-                    <span className="mt-2 block text-sm text-gray-300 leading-relaxed line-clamp-6">
-                      {description}
+                    <span className="mt-2 block text-sm text-gray-300 leading-relaxed line-clamp-2">
+                      {firstSentence(description)}
                     </span>
                   </span>
                 </a>
