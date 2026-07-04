@@ -71,7 +71,22 @@ company" signal for locals.
   files are still in `/public/pics/` — to restore any, add it back to the
   `heroImages` list in `src/app/_sections/Header.tsx`.
 
-## 5. Optional: analytics
+## 5. Content I need from you for the last two trust sections
+
+Two high-impact additions are built-ready but need real material (I won't invent
+references or quotes):
+
+- **Client/reference logo strip** — 4–6 logos of schools, sports clubs, or firms
+  you regularly drive for (with their permission to display). Send me the logo
+  files and I'll add a greyscale strip above the contact section.
+- **Testimonials** — 2–3 short quotes from real customers (name + organisation).
+  I'll add a quotes section editable in /dev.
+
+Also: the FAQ answers I wrote are derived from facts already on the site
+(capacities, trailer/ski box, Vienna/Brno transfers, walking-floor trailer) —
+review them in /dev → Texty → „Časté dotazy" and adjust wording as you like.
+
+## 6. Optional: analytics
 
 If you want visitor stats, the lightweight options are Vercel Analytics (one
 package, no cookie banner needed) or Plausible (~9 €/mo, EU-hosted). Google

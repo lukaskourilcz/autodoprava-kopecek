@@ -28,6 +28,8 @@ export type Vehicle = {
   id: string;
   name: LocalizedText;
   description: LocalizedText;
+  /** Short seat-capacity label shown on the photo, e.g. "51 míst". Empty = hidden. */
+  capacity?: LocalizedText;
   /** Image paths (`/pics/...`) or absolute URLs. The first image is the cover. */
   images: string[];
   features: FeatureKey[];
@@ -61,6 +63,8 @@ export type SiteTexts = {
     reasonsTitle: string;
     reasons: AboutReason[];
     closingText: string;
+    /** Personal sign-off under the closing text, e.g. name "Jiří Kopeček", role "majitel". */
+    signature: { name: string; role: string };
   };
   services: {
     title: string;
@@ -110,6 +114,23 @@ export type SiteTexts = {
     footerNote: string;
     contactCta: string;
     emailCta: string;
+    /** One-line company blurb shown in the footer next to the logo. */
+    footerBlurb: string;
+  };
+  /** The yellow call-to-action band between the fleet and contact sections. */
+  cta: {
+    title: string;
+    description: string;
+  };
+  /** Frequently asked questions shown above the contact section. */
+  faq: {
+    title: string;
+    items: { question: string; answer: string }[];
+  };
+  /** Search-engine title and description for this language (~60 / ~160 chars). */
+  meta: {
+    title: string;
+    description: string;
   };
   /** Translated labels for assistive tech and small UI chrome. */
   a11y: {

@@ -1,9 +1,14 @@
 "use client";
 
-import { FEATURE_KEYS, type FeatureKey } from "@/content/types";
+import { SUPPORTED_LOCALES } from "@/lib/locale";
+import { FEATURE_KEYS, type FeatureKey, type LocalizedText } from "@/content/types";
 import { useDev } from "./DevContext";
 import { LocaleFields } from "./ui";
 import { ImageManager } from "./ImageManager";
+
+function emptyLocalizedText(): LocalizedText {
+  return Object.fromEntries(SUPPORTED_LOCALES.map((locale) => [locale, ""])) as LocalizedText;
+}
 
 export function VehicleForm({ vehicleId }: { vehicleId: string }) {
   const { content, update } = useDev();
@@ -51,6 +56,25 @@ export function VehicleForm({ vehicleId }: { vehicleId: string }) {
         <p className="mt-1.5 text-xs text-gray-500">
           Tip: část textu zvýrazníte tučně pomocí značek &lt;b&gt;…&lt;/b&gt;, např.
           „autobus s &lt;b&gt;kapacitou 51 míst&lt;/b&gt;“.
+        </p>
+      </div>
+
+      <div>
+        <LocaleFields
+          label="Kapacita (štítek na fotce)"
+          getValue={(locale) => vehicle.capacity?.[locale] ?? ""}
+          onChange={(locale, value) =>
+            update((draft) => {
+              const target = draft.vehicles.find((item) => item.id === vehicleId);
+              if (!target) return;
+              if (!target.capacity) target.capacity = emptyLocalizedText();
+              target.capacity[locale] = value;
+            })
+          }
+        />
+        <p className="mt-1.5 text-xs text-gray-500">
+          Krátký štítek zobrazený v rohu fotografie, např. „51 míst“. Necháte-li
+          prázdné, štítek se nezobrazí.
         </p>
       </div>
 

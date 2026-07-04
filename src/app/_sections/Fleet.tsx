@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Users } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { interpolate } from "@/lib/format";
 import { isLocalImage } from "@/lib/images";
@@ -71,7 +71,11 @@ function VehicleCarousel({
   }, [handleScroll]);
 
   return (
-    <div className="relative" aria-roledescription="carousel" aria-label={vehicleName}>
+    <div
+      className="relative w-full overflow-hidden"
+      aria-roledescription="carousel"
+      aria-label={vehicleName}
+    >
       <div
         ref={trackRef}
         className="flex gap-2 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
@@ -91,7 +95,7 @@ function VehicleCarousel({
                 total: images.length,
               })}`}
               fill
-              sizes="(max-width: 768px) 92vw, 560px"
+              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 280px"
               loading={index === 0 ? "eager" : "lazy"}
               unoptimized={!isLocalImage(src)}
               className="object-cover"
@@ -148,15 +152,25 @@ export default function Fleet() {
         </Reveal>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {vehicles.map((vehicle) => (
-            <Reveal key={vehicle.id}>
-              <article className="h-full bg-white rounded-xl border border-gray-200 overflow-hidden">
-                <VehicleCarousel
-                  images={vehicle.images}
-                  vehicleName={vehicle.name[locale]}
-                  a11y={texts.a11y}
-                />
-                <div className="p-4 sm:p-5">
+          {vehicles.map((vehicle) => {
+            const capacity = vehicle.capacity?.[locale];
+            return (
+            <Reveal key={vehicle.id} className="h-full">
+              <article className="h-full flex flex-col bg-white rounded-xl border border-gray-200 overflow-hidden">
+                <div className="relative">
+                  <VehicleCarousel
+                    images={vehicle.images}
+                    vehicleName={vehicle.name[locale]}
+                    a11y={texts.a11y}
+                  />
+                  {capacity && (
+                    <span className="absolute top-2.5 left-2.5 z-10 inline-flex items-center gap-1.5 rounded-full bg-ink/80 backdrop-blur-sm px-2.5 py-1 text-xs font-semibold text-white pointer-events-none">
+                      <Users className="w-3.5 h-3.5" aria-hidden="true" />
+                      {capacity}
+                    </span>
+                  )}
+                </div>
+                <div className="p-4 sm:p-5 flex flex-col flex-1">
                   <h3 className="font-display text-lg font-semibold text-ink">
                     {vehicle.name[locale]}
                   </h3>
@@ -164,7 +178,7 @@ export default function Fleet() {
                     <RichText text={vehicle.description[locale]} />
                   </p>
                   {vehicle.features.length > 0 && (
-                    <ul className="flex flex-wrap gap-1.5 mt-3">
+                    <ul className="flex flex-wrap gap-1.5 mt-auto pt-3">
                       {vehicle.features.map((feature) => {
                         const Icon = FEATURE_ICONS[feature];
                         if (!Icon) return null;
@@ -184,7 +198,8 @@ export default function Fleet() {
                 </div>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

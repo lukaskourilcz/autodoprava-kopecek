@@ -4,8 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { SUPPORTED_LOCALES, LOCALE_DETAILS } from "@/lib/locale";
+import { telHref } from "@/lib/contactLinks";
 import { useClickAway } from "@/hooks/useClickAway";
 import { useEscapeKey } from "@/hooks/useEscapeKey";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -67,7 +68,7 @@ export default function Navbar() {
             className="logo-animation h-9 w-auto block"
             priority
           />
-          <span className="hidden min-[400px]:inline font-display font-bold uppercase tracking-wider leading-none text-xs sm:text-[13px] whitespace-nowrap">
+          <span className="hidden min-[360px]:inline font-display font-bold uppercase tracking-wider leading-none text-[11px] min-[400px]:text-xs sm:text-[13px] whitespace-nowrap">
             <span className="text-brand-light">Autodoprava</span>
             <span className="text-white"> Kopeček</span>
           </span>
@@ -90,7 +91,7 @@ export default function Navbar() {
                   {label}
                   <span
                     aria-hidden="true"
-                    className={`absolute left-3 right-3 bottom-1.5 h-0.5 rounded-full bg-brand transition-opacity ${
+                    className={`absolute left-3 right-3 bottom-0 h-[3px] rounded-full bg-brand transition-opacity ${
                       isActive ? "opacity-100" : "opacity-0"
                     }`}
                   />
@@ -101,6 +102,20 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-1 sm:gap-2">
+          <a
+            href={telHref(texts.contact.phone)}
+            className="hidden md:inline-flex items-center gap-1.5 h-9 px-3.5 rounded-md bg-brand text-ink text-sm font-semibold hover:bg-brand-light transition-colors focus-ring"
+          >
+            <Phone size={15} aria-hidden="true" />
+            {texts.contact.phone}
+          </a>
+          <a
+            href={telHref(texts.contact.phone)}
+            aria-label={`${texts.contact.callCta}: ${texts.contact.phone}`}
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-light hover:bg-white/5 transition-colors focus-ring"
+          >
+            <Phone size={19} aria-hidden="true" />
+          </a>
           <div className="relative" ref={languageMenuRef}>
             <button
               type="button"
@@ -195,6 +210,15 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+      <div className="container-site mt-8">
+        <a
+          href={telHref(texts.contact.phone)}
+          className="flex items-center justify-center gap-2 w-full py-3.5 rounded-md bg-brand text-ink font-semibold hover:bg-brand-light transition-colors focus-ring"
+        >
+          <Phone size={18} aria-hidden="true" />
+          {texts.contact.callCta}: {texts.contact.phone}
+        </a>
+      </div>
     </div>
     </>
   );

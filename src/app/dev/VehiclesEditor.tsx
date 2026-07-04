@@ -17,6 +17,7 @@ function createVehicle(): Vehicle {
     id: `vehicle-${Date.now()}`,
     name: emptyLocalizedText(),
     description: emptyLocalizedText(),
+    capacity: emptyLocalizedText(),
     images: [],
     features: [],
   };

@@ -120,6 +120,18 @@ const SECTION_META: Record<string, { label: string; hint: string }> = {
     label: "Kontakt a patička",
     hint: "Adresa, telefon, e-mail, provozní doba, fakturační údaje a texty tlačítek. Mapa se zobrazuje automaticky podle adresy.",
   },
+  cta: {
+    label: "Žlutý pruh s výzvou",
+    hint: "Nadpis a text ve žlutém pruhu „Potřebujete dopravu?“ nad kontaktem.",
+  },
+  faq: {
+    label: "Časté dotazy",
+    hint: "Otázky a odpovědi v sekci Časté dotazy. Otázky můžete přidávat i mazat.",
+  },
+  meta: {
+    label: "SEO (vyhledávače)",
+    hint: "Titulek a popis, které se zobrazují ve výsledcích Googlu a při sdílení odkazu. Titulek ~60 znaků, popis ~160 znaků.",
+  },
   a11y: {
     label: "Přístupnost",
     hint: "Popisky pro čtečky obrazovky a ovládací prvky (menu, šipky u fotek…). Většinou není potřeba měnit.",

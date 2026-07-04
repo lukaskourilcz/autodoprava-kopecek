@@ -92,9 +92,16 @@ export default function Header() {
             {texts.home.subtitle}
           </p>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-white max-w-3xl">
-            {texts.home.heroText}
+            {texts.home.heroText.endsWith(".") ? (
+              <>
+                {texts.home.heroText.slice(0, -1)}
+                <span className="text-brand">.</span>
+              </>
+            ) : (
+              texts.home.heroText
+            )}
           </h1>
-          <p className="mt-4 text-white/80 leading-relaxed max-w-2xl line-clamp-3 max-sm:hidden">
+          <p className="mt-4 text-white/80 leading-relaxed max-w-2xl line-clamp-2 sm:line-clamp-3">
             {texts.home.description}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">

@@ -1,13 +1,15 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "outline";
+type Variant = "primary" | "secondary" | "outline" | "outlineDark";
 
 const variantClasses: Record<Variant, string> = {
   primary: "bg-brand text-ink hover:bg-brand-light",
   secondary: "bg-ink text-white hover:bg-ink-soft",
   /** For dark backgrounds (hero, contact). */
   outline: "border border-white/40 text-white hover:border-white hover:bg-white/10",
+  /** For light/yellow backgrounds (CTA band). */
+  outlineDark: "border border-ink/30 text-ink hover:border-ink hover:bg-ink/5",
 };
 
 const baseClasses =

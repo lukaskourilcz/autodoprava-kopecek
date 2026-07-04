@@ -6,6 +6,7 @@ import { useContent } from "@/content/useContent";
 import { isLocalImage } from "@/lib/images";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Reveal } from "../components/ui/Reveal";
+import { CountUp } from "../components/ui/CountUp";
 import type { AboutReason } from "@/content/types";
 
 const reasonIcons: Record<AboutReason["icon"], typeof Waypoints> = {
@@ -61,7 +62,7 @@ export default function About() {
                 {about.stats.map(({ value, label }) => (
                   <div key={label}>
                     <p className="font-display text-4xl sm:text-5xl font-bold text-brand tabular-nums leading-none">
-                      {value}
+                      <CountUp value={value} />
                     </p>
                     <p className="mt-2 text-sm text-gray-400">{label}</p>
                   </div>
@@ -92,6 +93,13 @@ export default function About() {
           <p className="mt-12 text-gray-300 leading-relaxed max-w-prose">
             {about.closingText}
           </p>
+          <div className="mt-10">
+            <span className="block w-8 h-0.5 bg-brand mb-3" aria-hidden="true" />
+            <p className="font-display text-xl font-semibold text-white">
+              {about.signature.name}
+            </p>
+            <p className="mt-0.5 text-sm text-gray-400">{about.signature.role}</p>
+          </div>
         </Reveal>
       </div>
     </section>

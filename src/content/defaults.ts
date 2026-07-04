@@ -49,6 +49,7 @@ const cs: SiteTexts = {
     ],
     closingText:
       "Máte speciální požadavky na přepravu? Rádi vám vyjdeme vstříc! Neváhejte nás kontaktovat a společně najdeme to nejlepší řešení na míru šité právě pro vás.",
+    signature: { name: "Jiří Kopeček", role: "majitel" },
   },
   services: {
     title: "Služby",
@@ -159,6 +160,47 @@ const cs: SiteTexts = {
     footerNote: "© {{year}} Autodoprava Kopeček. Všechna práva vyhrazena.",
     contactCta: "Kontaktujte nás",
     emailCta: "Napsat e-mail",
+    footerBlurb: "Rodinná autobusová a nákladní doprava z Lužic u Hodonína.",
+  },
+  cta: {
+    title: "Potřebujete dopravu?",
+    description:
+      "Zavolejte nám nebo napište – nabídku na míru vám připravíme obratem.",
+  },
+  faq: {
+    title: "Časté dotazy",
+    items: [
+      {
+        question: "Jak získám cenovou nabídku?",
+        answer:
+          "Stačí zavolat nebo napsat e-mail s termínem, trasou a počtem osob. Nabídku na míru vám připravíme obratem a zdarma.",
+      },
+      {
+        question: "Kolik osob dokážete přepravit?",
+        answer:
+          "Vozový park pokrývá vše od mikrobusu pro 7+1 osob po autobus s 67 místy. Vyberete si podle velikosti skupiny.",
+      },
+      {
+        question: "Převezete i kola, lyže nebo jiná objemná zavazadla?",
+        answer:
+          "Ano. K autobusům nabízíme připojení přívěsu nebo skiboxu, takže kola, lyže i kánoe s vámi pohodlně docestují.",
+      },
+      {
+        question: "Jezdíte i do zahraničí?",
+        answer:
+          "Jezdíme po celé České republice i do zahraničí – zájezdy, letištní transfery do Vídně či Brna a další cesty po Evropě.",
+      },
+      {
+        question: "Zajišťujete i nákladní dopravu?",
+        answer:
+          "Ano, specializujeme se na přepravu soupravou s návěsem walking floor – sypké materiály, recykláty i paletové náklady.",
+      },
+    ],
+  },
+  meta: {
+    title: "Autodoprava Kopeček | Autobusová a nákladní doprava Hodonín",
+    description:
+      "Rodinná autobusová a nákladní doprava od roku 2012. Zájezdy, letištní transfery, školní i firemní doprava po ČR a Evropě. Lužice u Hodonína.",
   },
   a11y: {
     skipToContent: "Přeskočit na obsah",
@@ -227,6 +269,7 @@ const en: SiteTexts = {
     ],
     closingText:
       "Do you have special transportation requirements? We will gladly accommodate you! Contact us, and together we will find the best solution for your freight.",
+    signature: { name: "Jiří Kopeček", role: "owner" },
   },
   services: {
     title: "Services",
@@ -337,6 +380,46 @@ const en: SiteTexts = {
     footerNote: "© {{year}} Autodoprava Kopeček. All rights reserved.",
     contactCta: "Contact us",
     emailCta: "Send an email",
+    footerBlurb: "Family-run bus and freight transport from Lužice near Hodonín.",
+  },
+  cta: {
+    title: "Need transport?",
+    description: "Call or write to us — we'll prepare a tailored quote right away.",
+  },
+  faq: {
+    title: "Frequently Asked Questions",
+    items: [
+      {
+        question: "How do I get a quote?",
+        answer:
+          "Just call or email us with your date, route, and number of passengers. We'll prepare a tailored quote promptly and free of charge.",
+      },
+      {
+        question: "How many people can you transport?",
+        answer:
+          "Our fleet covers everything from a 7+1 minibus to a 67-seat coach, so you can pick the right size for your group.",
+      },
+      {
+        question: "Can you carry bikes, skis, or other bulky luggage?",
+        answer:
+          "Yes. Our coaches can tow a trailer or carry a ski box, so bikes, skis, and canoes travel comfortably with you.",
+      },
+      {
+        question: "Do you also travel abroad?",
+        answer:
+          "We operate across the Czech Republic and abroad — tours, airport transfers to Vienna or Brno, and other trips around Europe.",
+      },
+      {
+        question: "Do you provide freight transport?",
+        answer:
+          "Yes, we specialize in transport with a walking-floor trailer — bulk materials, recyclables, and palletized goods.",
+      },
+    ],
+  },
+  meta: {
+    title: "Autodoprava Kopeček | Bus & Freight Transport, Czech Republic",
+    description:
+      "Family-run bus and freight transport since 2012. Coach hire, airport transfers, school and corporate transport across the Czech Republic and Europe.",
   },
   a11y: {
     skipToContent: "Skip to content",
@@ -405,6 +488,7 @@ const de: SiteTexts = {
     ],
     closingText:
       "Haben Sie spezielle Anforderungen an den Transport? Wir kommen Ihnen gerne entgegen! Kontaktieren Sie uns, und gemeinsam finden wir die beste Lösung für Ihre Fracht.",
+    signature: { name: "Jiří Kopeček", role: "Inhaber" },
   },
   services: {
     title: "Dienstleistungen",
@@ -515,6 +599,47 @@ const de: SiteTexts = {
     footerNote: "© {{year}} Autodoprava Kopeček. Alle Rechte vorbehalten.",
     contactCta: "Kontaktieren Sie uns",
     emailCta: "E-Mail schreiben",
+    footerBlurb: "Familiengeführter Bus- und Gütertransport aus Lužice bei Hodonín.",
+  },
+  cta: {
+    title: "Brauchen Sie einen Transport?",
+    description:
+      "Rufen Sie uns an oder schreiben Sie uns – wir erstellen Ihnen umgehend ein maßgeschneidertes Angebot.",
+  },
+  faq: {
+    title: "Häufige Fragen",
+    items: [
+      {
+        question: "Wie erhalte ich ein Angebot?",
+        answer:
+          "Rufen Sie uns einfach an oder schreiben Sie eine E-Mail mit Termin, Strecke und Personenzahl. Wir erstellen Ihnen umgehend und kostenlos ein maßgeschneidertes Angebot.",
+      },
+      {
+        question: "Wie viele Personen können Sie befördern?",
+        answer:
+          "Unser Fuhrpark reicht vom Kleinbus für 7+1 Personen bis zum Reisebus mit 67 Sitzplätzen – passend für jede Gruppengröße.",
+      },
+      {
+        question: "Transportieren Sie auch Fahrräder, Skier oder sperriges Gepäck?",
+        answer:
+          "Ja. An unsere Busse können Anhänger oder Skiboxen angekoppelt werden, sodass Fahrräder, Skier und Kanus bequem mitreisen.",
+      },
+      {
+        question: "Fahren Sie auch ins Ausland?",
+        answer:
+          "Wir fahren in der gesamten Tschechischen Republik und ins Ausland – Reisen, Flughafentransfers nach Wien oder Brünn und weitere Fahrten durch Europa.",
+      },
+      {
+        question: "Bieten Sie auch Gütertransport an?",
+        answer:
+          "Ja, wir sind auf Transporte mit Walking-Floor-Auflieger spezialisiert – Schüttgüter, Recyclingmaterialien und palettierte Waren.",
+      },
+    ],
+  },
+  meta: {
+    title: "Autodoprava Kopeček | Bus- und Gütertransport, Tschechien",
+    description:
+      "Familiengeführter Bus- und Gütertransport seit 2012. Busvermietung, Flughafentransfers, Schul- und Firmentransporte in Tschechien und Europa.",
   },
   a11y: {
     skipToContent: "Zum Inhalt springen",
@@ -552,6 +677,7 @@ const vehicles: Vehicle[] = [
       en: "This luxurious air-conditioned coach with a <b>capacity of 51 seats</b> is the ideal choice for long-distance tours.",
       de: "Dieser luxuriöse, klimatisierte Reisebus mit einer <b>Kapazität von 51 Sitzplätzen</b> ist die ideale Wahl für Fernreisen.",
     },
+    capacity: { cs: "51 míst", en: "51 seats", de: "51 Sitzplätze" },
     images: [
       "/pics/tourismo.jpg",
       "/pics/tourismo1.jpg",
@@ -584,6 +710,7 @@ const vehicles: Vehicle[] = [
       en: "A modern, spacious three-axle coach that accommodates up to <b>62 passengers</b>, making it perfect for long journeys.",
       de: "Ein moderner und geräumiger Reisebus, der bis zu <b>62 Passagiere</b> aufnehmen kann – perfekt für lange Reisen.",
     },
+    capacity: { cs: "62 míst", en: "62 seats", de: "62 Sitzplätze" },
     images: [
       "/pics/travego.jpg",
       "/pics/travego1.jpg",
@@ -615,6 +742,7 @@ const vehicles: Vehicle[] = [
       en: "A modern three-axle bus with a <b>capacity of 67 seats</b>. A great choice for regular bus service and larger groups.",
       de: "Eine ausgezeichnete Wahl für den nationalen Transport oder regelmäßige Linienfahrten. Dieser moderne Bus bietet <b>67 Sitzplätze</b>.",
     },
+    capacity: { cs: "67 míst", en: "67 seats", de: "67 Sitzplätze" },
     images: [
       "/pics/setra.jpg",
       "/pics/setra1.jpg",
@@ -636,6 +764,7 @@ const vehicles: Vehicle[] = [
       en: "Elegant and spacious Mercedes Viano with a <b>7+1 seating capacity</b> is ideal for the comfortable transportation of small groups.",
       de: "Eleganter und geräumiger Mercedes Viano mit einer <b>Kapazität von 7+1 Sitzplätzen</b> ist ideal für den komfortablen Transport kleiner Gruppen.",
     },
+    capacity: { cs: "7+1 míst", en: "7+1 seats", de: "7+1 Sitzplätze" },
     images: [
       "/pics/man.jpg",
       "/pics/man1.jpg",
@@ -659,6 +788,7 @@ const vehicles: Vehicle[] = [
       en: "A stylish smaller bus that offers maximum comfort for up to <b>36 people</b>. Ideal choice for smaller groups.",
       de: "Ein stilvoller, kleinerer Reisebus, der maximalen Komfort für bis zu <b>36 Personen</b> bietet. Perfekt für kleinere Gruppen.",
     },
+    capacity: { cs: "36 míst", en: "36 seats", de: "36 Sitzplätze" },
     images: ["/pics/tourino.jpg", "/pics/tourino2.jpg"],
     features: [
       "recliningSeats",
@@ -681,6 +811,7 @@ const vehicles: Vehicle[] = [
       en: "A reliable bus designed for domestic trips or regular bus service with a capacity of <b>59 seats</b>.",
       de: "Ein zuverlässiger Reisebus für Inlandsreisen oder regelmäßige Linienfahrten mit einer <b>Kapazität von 59 Sitzplätzen</b>.",
     },
+    capacity: { cs: "59 míst", en: "59 seats", de: "59 Sitzplätze" },
     images: [
       "/pics/karosa.jpg",
       "/pics/karosa1.jpg",

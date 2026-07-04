@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import {
+  ArrowUpRight,
   BriefcaseConveyorBelt,
   Users,
   HeartHandshake,
@@ -9,12 +10,15 @@ import {
 } from "lucide-react";
 import { useContent } from "@/content/useContent";
 import { isLocalImage } from "@/lib/images";
+import { mailtoHref } from "@/lib/contactLinks";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Reveal } from "../components/ui/Reveal";
 
 export default function Services() {
   const { texts, images } = useContent();
-  const { services } = texts;
+  const { services, contact } = texts;
+  const inquiryHref = (title: string) =>
+    mailtoHref(contact.email, `${contact.mailSubject} – ${title}`);
 
   // The four headline qualities shown as a slim strip under the heading.
   const qualities = [
@@ -62,13 +66,14 @@ export default function Services() {
         <Reveal className="mt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {featured.map(({ image, title, description }) => (
-              <article
+              <a
                 key={title}
-                className="group relative rounded-xl overflow-hidden aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3]"
+                href={inquiryHref(title)}
+                className="group relative block rounded-xl overflow-hidden aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] focus-ring"
               >
                 <Image
                   src={image}
-                  alt=""
+                  alt={title}
                   fill
                   sizes="(max-width: 768px) 92vw, 380px"
                   unoptimized={!isLocalImage(image)}
@@ -78,35 +83,50 @@ export default function Services() {
                   className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/5"
                   aria-hidden="true"
                 />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <h4 className="font-display text-lg font-semibold text-white">{title}</h4>
-                  <p className="mt-1 text-sm text-white/80 leading-relaxed line-clamp-3">
+                <span className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
+                  <ArrowUpRight className="w-[18px] h-[18px]" aria-hidden="true" />
+                </span>
+                <span className="absolute inset-x-0 bottom-0 p-5 block">
+                  <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
+                  <span className="mt-1 block text-sm text-white/80 leading-relaxed line-clamp-3">
                     {description}
-                  </p>
-                </div>
-              </article>
+                  </span>
+                </span>
+              </a>
             ))}
           </div>
         </Reveal>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-12">
-          {transportTypes.map(({ title, description }, index) => (
-            <Reveal key={title}>
-              <article className="flex gap-5 py-6 border-b border-gray-200 h-full">
+        <Reveal className="mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+            {transportTypes.map(({ title, description }, index) => (
+              <a
+                key={title}
+                href={inquiryHref(title)}
+                className="group flex gap-5 py-6 border-b border-gray-200 h-full focus-ring"
+              >
                 <span
                   className="font-display text-sm font-semibold text-gray-400 tabular-nums pt-1"
                   aria-hidden="true"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <div>
-                  <h4 className="font-display text-lg font-semibold text-ink">{title}</h4>
-                  <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">{description}</p>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+                <span className="flex-1 block">
+                  <h3 className="font-display text-lg font-semibold text-ink flex items-center justify-between gap-3">
+                    {title}
+                    <ArrowUpRight
+                      className="w-4 h-4 flex-shrink-0 text-brand opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity"
+                      aria-hidden="true"
+                    />
+                  </h3>
+                  <span className="mt-1.5 block text-sm text-gray-600 leading-relaxed">
+                    {description}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

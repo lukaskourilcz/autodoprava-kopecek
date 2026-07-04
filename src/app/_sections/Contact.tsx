@@ -118,11 +118,25 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-12 rounded-xl overflow-hidden border border-white/10 bg-ink-soft">
+            <div className="mt-12 relative rounded-xl overflow-hidden border border-white/10 bg-ink-soft">
+              {/* Fallback behind the iframe: visible when embeds are blocked (ad-blockers, strict privacy modes). */}
+              <a
+                href={mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 text-gray-300 hover:text-white transition-colors"
+              >
+                <MapPinHouse className="w-6 h-6 text-brand" aria-hidden="true" />
+                <span className="text-sm font-medium">{address}</span>
+                <span className="flex items-center gap-1 text-xs text-gray-400">
+                  {contact.mapLabel}
+                  <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </span>
+              </a>
               <iframe
                 src={mapEmbedSrc}
                 title={contact.mapTitle}
-                className="block w-full h-64 sm:h-80"
+                className="relative block w-full h-64 sm:h-80"
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
@@ -144,10 +158,23 @@ export default function Contact() {
         </div>
       </section>
 
-      <footer className="bg-ink-deep border-t border-white/10 py-8">
-        <div className="container-site flex flex-col sm:flex-row items-center justify-between gap-5">
+      <footer className="bg-ink-deep border-t border-white/10">
+        <div className="container-site py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <Image
+              src="/pics/logo-whiteyellow-nav.png"
+              alt={contact.logoAlt}
+              width={881}
+              height={411}
+              className="object-contain w-32 h-auto"
+            />
+            <p className="mt-4 text-sm text-gray-400 leading-relaxed max-w-xs">
+              {contact.footerBlurb}
+            </p>
+          </div>
+
           <nav>
-            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <ul className="space-y-2.5">
               {footerLinks.map(({ hash, label }) => (
                 <li key={hash}>
                   <Link
@@ -160,16 +187,47 @@ export default function Contact() {
               ))}
             </ul>
           </nav>
-          <p className="text-gray-500 text-sm text-center">
-            {interpolate(contact.footerNote, { year })}
-          </p>
-          <Link
-            href={`/${locale}#home`}
-            aria-label={a11y.backToTop}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 text-gray-300 hover:text-white hover:border-white/50 transition-colors focus-ring"
-          >
-            <ArrowUp size={18} aria-hidden="true" />
-          </Link>
+
+          <address className="not-italic space-y-2.5 text-sm">
+            <a
+              href={phoneLink}
+              className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors focus-ring rounded"
+            >
+              <Phone className="w-4 h-4 text-brand" aria-hidden="true" />
+              {contact.phone}
+            </a>
+            <a
+              href={mailLink}
+              className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors break-words focus-ring rounded"
+            >
+              <Mail className="w-4 h-4 text-brand" aria-hidden="true" />
+              {contact.email}
+            </a>
+            <a
+              href={mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors focus-ring rounded"
+            >
+              <MapPinHouse className="w-4 h-4 text-brand" aria-hidden="true" />
+              {address}
+            </a>
+          </address>
+        </div>
+
+        <div className="border-t border-white/10">
+          <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-gray-500 text-sm text-center">
+              {interpolate(contact.footerNote, { year })}
+            </p>
+            <Link
+              href={`/${locale}#home`}
+              aria-label={a11y.backToTop}
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 text-gray-300 hover:text-white hover:border-white/50 transition-colors focus-ring"
+            >
+              <ArrowUp size={18} aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </footer>
     </>
