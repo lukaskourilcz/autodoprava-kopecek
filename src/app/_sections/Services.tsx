@@ -84,10 +84,13 @@ export default function Services() {
                   />
                   <span
                     aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent pt-16 pb-4 px-5 transition-opacity duration-300 group-hover:opacity-0"
+                    className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent pt-20 pb-4 px-5 transition-opacity duration-300 group-hover:opacity-0"
                   >
                     <span className="font-display text-lg font-semibold text-white">
                       {title}
+                    </span>
+                    <span className="mt-1 block text-sm text-white/85 leading-relaxed line-clamp-2">
+                      {firstSentence(description)}
                     </span>
                   </span>
                   <span className="absolute inset-0 bg-ink opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
@@ -95,8 +98,8 @@ export default function Services() {
                       <ArrowUpRight className="w-[18px] h-[18px]" aria-hidden="true" />
                     </span>
                     <h3 className="font-display text-lg font-semibold text-white">{title}</h3>
-                    <span className="mt-2 block text-sm text-gray-300 leading-relaxed line-clamp-2">
-                      {firstSentence(description)}
+                    <span className="mt-2 block text-sm text-gray-300 leading-relaxed line-clamp-6">
+                      {description}
                     </span>
                   </span>
                 </a>
@@ -115,10 +118,13 @@ export default function Services() {
                       />
                       <span
                         aria-hidden="true"
-                        className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent pt-16 pb-4 px-5"
+                        className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent pt-20 pb-4 px-5"
                       >
                         <span className="font-display text-lg font-semibold text-white">
                           {title}
+                        </span>
+                        <span className="mt-1 block text-sm text-white/85 leading-relaxed line-clamp-2">
+                          {firstSentence(description)}
                         </span>
                       </span>
                       <span

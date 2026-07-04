@@ -2,7 +2,31 @@
 
 import { useSyncExternalStore } from "react";
 import { defaultContent } from "./defaults";
-import type { SiteContent } from "./types";
+import type { HeroImage, MobileFocus, SiteContent } from "./types";
+
+const MOBILE_FOCUS_VALUES: MobileFocus[] = ["left", "center", "right"];
+
+/**
+ * Saved hero entries may be plain strings (exports from before the mobile
+ * focus setting existed) — upgrade them to objects. Legacy strings keep the
+ * "right" focus that was hardcoded at the time.
+ */
+function normalizeHeroImages(list: unknown): HeroImage[] {
+  if (!Array.isArray(list)) return defaultContent.images.hero;
+  const result: HeroImage[] = [];
+  for (const item of list) {
+    if (typeof item === "string") {
+      result.push({ src: item, focus: "right" });
+    } else if (item && typeof item === "object" && typeof (item as HeroImage).src === "string") {
+      const focus = (item as HeroImage).focus;
+      result.push({
+        src: (item as HeroImage).src,
+        focus: MOBILE_FOCUS_VALUES.includes(focus) ? focus : "center",
+      });
+    }
+  }
+  return result;
+}
 
 // A tiny global store for the site's editable content.
 //
@@ -49,10 +73,12 @@ function mergeTexts<T>(base: T, override: unknown): T {
 function fromSaved(saved: unknown): SiteContent {
   if (!saved || typeof saved !== "object") return defaultContent;
   const data = saved as Partial<SiteContent>;
+  const images = mergeTexts(defaultContent.images, data.images);
+  images.hero = normalizeHeroImages(images.hero);
   return {
     texts: mergeTexts(defaultContent.texts, data.texts),
     vehicles: Array.isArray(data.vehicles) ? data.vehicles : defaultContent.vehicles,
-    images: mergeTexts(defaultContent.images, data.images),
+    images,
   };
 }
 

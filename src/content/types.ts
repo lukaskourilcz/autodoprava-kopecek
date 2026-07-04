@@ -160,13 +160,22 @@ export type SiteTexts = {
   };
 };
 
+/** Which part of a photo stays in frame when narrow screens crop it. */
+export type MobileFocus = "left" | "center" | "right";
+
+/** One hero slideshow photo with its mobile crop focus. */
+export type HeroImage = {
+  src: string;
+  focus: MobileFocus;
+};
+
 /**
  * Photos used by the fixed page sections. Paths are `/pics/...` for bundled
  * images, or data:/https: URLs for uploaded and linked photos.
  */
 export type SiteImages = {
   /** Hero slideshow photos, shown in order. */
-  hero: string[];
+  hero: HeroImage[];
   /** The three photo tiles in the services section. */
   services: {
     schoolTransport: string;

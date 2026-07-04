@@ -161,7 +161,7 @@ const cs: SiteTexts = {
     footerNote: "© {{year}} Autodoprava Kopeček. Všechna práva vyhrazena.",
     contactCta: "Kontaktujte nás",
     emailCta: "Napsat e-mail",
-    footerBlurb: "Rodinná autobusová a nákladní doprava z Lužic u Hodonína.",
+    footerBlurb: "Rodinná autobusová a nákladní doprava\nz Lužic u Hodonína.",
   },
   cta: {
     title: "Potřebujete dopravu?",
@@ -383,7 +383,7 @@ const en: SiteTexts = {
     footerNote: "© {{year}} Autodoprava Kopeček. All rights reserved.",
     contactCta: "Contact us",
     emailCta: "Send an email",
-    footerBlurb: "Family-run bus and freight transport from Lužice near Hodonín.",
+    footerBlurb: "Family-run bus and freight transport\nfrom Lužice near Hodonín.",
   },
   cta: {
     title: "Need transport?",
@@ -604,7 +604,7 @@ const de: SiteTexts = {
     footerNote: "© {{year}} Autodoprava Kopeček. Alle Rechte vorbehalten.",
     contactCta: "Kontaktieren Sie uns",
     emailCta: "E-Mail schreiben",
-    footerBlurb: "Familiengeführter Bus- und Gütertransport aus Lužice bei Hodonín.",
+    footerBlurb: "Familiengeführter Bus- und Gütertransport\naus Lužice bei Hodonín.",
   },
   cta: {
     title: "Brauchen Sie einen Transport?",
@@ -846,13 +846,14 @@ const vehicles: Vehicle[] = [
 
 const images: SiteImages = {
   // Curated from the full uvodka set: Dolomites coach, depot fleet lineup,
-  // Adriatic-coast van, winter mountain pass, coach + truck pair.
+  // Adriatic-coast van, winter mountain pass, coach + truck pair. The
+  // vehicles sit right-of-center in all of these, hence the focus values.
   hero: [
-    "/pics/uvodka.jpg",
-    "/pics/uvodka4.jpg",
-    "/pics/uvodka8.jpg",
-    "/pics/uvodka5.jpg",
-    "/pics/uvodka1.jpg",
+    { src: "/pics/uvodka.jpg", focus: "right" },
+    { src: "/pics/uvodka4.jpg", focus: "right" },
+    { src: "/pics/uvodka8.jpg", focus: "right" },
+    { src: "/pics/uvodka5.jpg", focus: "right" },
+    { src: "/pics/uvodka1.jpg", focus: "right" },
   ],
   services: {
     schoolTransport: "/pics/uvodka2.jpg",

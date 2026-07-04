@@ -9,8 +9,18 @@ import { telHref } from "@/lib/contactLinks";
 import { isLocalImage } from "@/lib/images";
 import { interpolate } from "@/lib/format";
 import { Button } from "../components/ui/Button";
+import type { MobileFocus } from "@/content/types";
 
 const SLIDE_INTERVAL_MS = 8000;
+
+/* Narrow screens crop landscape photos hard; the owner picks per photo
+   which part stays in frame (/dev → Fotografie webu). Desktop shows the
+   full width, so it always centers. */
+const focusClasses: Record<MobileFocus, string> = {
+  left: "object-[30%_center] md:object-center",
+  center: "object-center",
+  right: "object-[70%_center] md:object-center",
+};
 
 export default function Header() {
   const { locale, texts, images } = useContent();
@@ -57,7 +67,7 @@ export default function Header() {
       className="section relative bg-ink overflow-hidden"
       style={{ height: "calc(100dvh - var(--nav-height))", minHeight: "520px" }}
     >
-      {heroImages.map((src, index) =>
+      {heroImages.map(({ src, focus }, index) =>
         mountedSlides.has(index) ? (
           <div
             key={`${src}-${index}`}
@@ -73,8 +83,7 @@ export default function Header() {
               priority={index === 0}
               sizes="100vw"
               unoptimized={!isLocalImage(src)}
-              /* Narrow screens crop hard; the vehicles sit right-of-center in these photos. */
-              className={`object-cover object-[70%_center] md:object-center ${
+              className={`object-cover ${focusClasses[focus] ?? "object-center"} ${
                 index === activeSlide && !prefersReducedMotion ? "kenburns" : ""
               }`}
             />

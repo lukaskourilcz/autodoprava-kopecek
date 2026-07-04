@@ -168,7 +168,7 @@ export default function Contact() {
               height={411}
               className="object-contain w-32 h-auto"
             />
-            <p className="mt-4 text-sm text-gray-400 leading-relaxed max-w-xs">
+            <p className="mt-4 text-sm text-gray-400 leading-relaxed max-w-xs whitespace-pre-line">
               {contact.footerBlurb}
             </p>
           </div>
