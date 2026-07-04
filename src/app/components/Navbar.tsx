@@ -109,14 +109,7 @@ export default function Navbar() {
             <Phone size={15} aria-hidden="true" />
             {texts.contact.phone}
           </a>
-          <a
-            href={telHref(texts.contact.phone)}
-            aria-label={`${texts.contact.callCta}: ${texts.contact.phone}`}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-brand-light hover:bg-white/5 transition-colors focus-ring"
-          >
-            <Phone size={19} aria-hidden="true" />
-          </a>
-          <div className="relative" ref={languageMenuRef}>
+          <div className="relative hidden md:block" ref={languageMenuRef}>
             <button
               type="button"
               aria-label={`${texts.a11y.changeLanguage} (${activeLanguage.label})`}
@@ -210,7 +203,32 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <div className="container-site mt-8">
+      <div className="container-site mt-8 space-y-3">
+        <div
+          className="flex gap-2"
+          role="group"
+          aria-label={texts.a11y.changeLanguage}
+        >
+          {SUPPORTED_LOCALES.map((code) => {
+            const { label, flag } = LOCALE_DETAILS[code];
+            return (
+              <button
+                key={code}
+                type="button"
+                onClick={() => changeLanguage(code)}
+                aria-current={code === locale}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-md text-sm font-medium transition-colors focus-ring ${
+                  code === locale
+                    ? "bg-white/10 text-white"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                <Image src={flag} alt="" width={18} height={18} className="rounded-full" />
+                {label}
+              </button>
+            );
+          })}
+        </div>
         <a
           href={telHref(texts.contact.phone)}
           className="flex items-center justify-center gap-2 w-full py-3.5 rounded-md bg-brand text-ink font-semibold hover:bg-brand-light transition-colors focus-ring"

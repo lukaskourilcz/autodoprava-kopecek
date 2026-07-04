@@ -24,7 +24,7 @@ const cs: SiteTexts = {
     stats: [
       { value: "2012", label: "Na trhu od roku" },
       { value: "7", label: "Vozidel ve vozovém parku" },
-      { value: "67", label: "Míst v největším autobusu" },
+      { value: "500 000+", label: "Přes půl milionu přepravených zákazníků" },
     ],
     reasonsTitle: "Proč si vybrat právě nás?",
     reasons: [
@@ -246,7 +246,7 @@ const en: SiteTexts = {
     stats: [
       { value: "2012", label: "On the road since" },
       { value: "7", label: "Vehicles in our fleet" },
-      { value: "67", label: "Seats in our largest coach" },
+      { value: "500,000+", label: "Over half a million passengers transported" },
     ],
     reasonsTitle: "Why Choose Us?",
     reasons: [
@@ -467,7 +467,7 @@ const de: SiteTexts = {
     stats: [
       { value: "2012", label: "Auf dem Markt seit" },
       { value: "7", label: "Fahrzeuge im Fuhrpark" },
-      { value: "67", label: "Sitzplätze im größten Bus" },
+      { value: "500.000+", label: "Über eine halbe Million beförderte Fahrgäste" },
     ],
     reasonsTitle: "Warum uns wählen?",
     reasons: [

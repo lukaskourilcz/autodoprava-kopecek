@@ -5,11 +5,18 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 /**
  * Counts a whole number up from zero the first time it scrolls into view.
- * Non-numeric values (e.g. "7+1") render as-is. The real value is rendered
+ * Handles grouped values with a trailing plus ("500 000+", "500,000+");
+ * anything else (e.g. "7+1") renders as-is. The real value is rendered
  * until the animation starts, so crawlers and no-JS visitors see it too.
  */
 export function CountUp({ value, durationMs = 1200 }: { value: string; durationMs?: number }) {
-  const numeric = /^\d+$/.test(value) ? parseInt(value, 10) : null;
+  const match = value.match(/^([\d\s.,]+?)\s*(\+?)$/);
+  const digitsOnly = match ? match[1].replace(/\D/g, "") : "";
+  const numeric = digitsOnly ? parseInt(digitsOnly, 10) : null;
+  const separator = match?.[1].match(/[\s.,]/)?.[0] ?? "";
+  const suffix = match?.[2] ?? "";
+  const format = (n: number) =>
+    separator ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, separator) : String(n);
   const ref = useRef<HTMLSpanElement>(null);
   const startedRef = useRef(false);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -40,5 +47,9 @@ export function CountUp({ value, durationMs = 1200 }: { value: string; durationM
     return () => observer.disconnect();
   }, [numeric, prefersReducedMotion, durationMs]);
 
-  return <span ref={ref}>{numeric === null ? value : display}</span>;
+  return (
+    <span ref={ref}>
+      {numeric === null || display === null ? value : format(display) + suffix}
+    </span>
+  );
 }

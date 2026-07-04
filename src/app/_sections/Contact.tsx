@@ -113,7 +113,7 @@ export default function Contact() {
                   alt={contact.logoAlt}
                   width={881}
                   height={411}
-                  className="object-contain w-36 h-auto mt-6"
+                  className="hidden lg:block object-contain w-36 h-auto mt-6"
                 />
               </div>
             </div>

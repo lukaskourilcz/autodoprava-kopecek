@@ -73,7 +73,8 @@ export default function Header() {
               priority={index === 0}
               sizes="100vw"
               unoptimized={!isLocalImage(src)}
-              className={`object-cover object-center ${
+              /* Narrow screens crop hard; the vehicles sit right-of-center in these photos. */
+              className={`object-cover object-[70%_center] md:object-center ${
                 index === activeSlide && !prefersReducedMotion ? "kenburns" : ""
               }`}
             />
