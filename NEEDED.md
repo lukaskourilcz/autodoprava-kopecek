@@ -10,14 +10,14 @@ without any of it — these steps upgrade reliability, SEO, and legal cleanlines
 Each task has a one-line "why" and an importance score `[imp:N]` (5 = highest).
 Full how-to is in the numbered sections below.
 
-- [ ] **Create and verify a Google Business Profile** — the single strongest "established company" signal for locals searching Maps. `[imp:4]`
-- [ ] **Set up Google Search Console + submit the sitemap** — monitors indexing and search performance for the site. `[imp:3]`
-- [ ] **Send client/reference logos + 2–3 real testimonials** — the trust sections are built-ready but need real material to ship. `[imp:3]`
-- [ ] **Verify the Google Maps pin lands on the right address** — a wrong pin sends customers to the wrong place. `[imp:2]`
-- [ ] **Confirm the opening-hours wording and hero-photo selection** — avoids overpromising hours and locks the final image set. `[imp:2]`
-- [ ] **Review the FAQ answers in /dev** — they're derived from site facts and should read the way you'd say them. `[imp:2]`
-- [ ] **Pick and wire an analytics provider** — optional visitor stats; Vercel Analytics needs no cookie banner. `[imp:2]`
-- [ ] **Upgrade to the official Maps Embed API / add a GDPR click-to-load overlay** — optional reliability + stricter cookie consent. `[imp:1]`
+- [ ] **Create and verify a Google Business Profile** — the single strongest "established company" signal for locals searching Maps. `[imp:4]` `[owner:me]`
+- [ ] **Set up Google Search Console + submit the sitemap** — monitors indexing and search performance for the site. `[imp:3]` `[owner:me]`
+- [ ] **Send client/reference logos + 2–3 real testimonials** — the trust sections are built-ready but need real material to ship. `[imp:3]` `[owner:me]`
+- [ ] **Verify the Google Maps pin lands on the right address** — a wrong pin sends customers to the wrong place. `[imp:2]` `[owner:me]`
+- [ ] **Confirm the opening-hours wording and hero-photo selection** — avoids overpromising hours and locks the final image set. `[imp:2]` `[owner:me]`
+- [ ] **Review the FAQ answers in /dev** — they're derived from site facts and should read the way you'd say them. `[imp:2]` `[owner:me]`
+- [ ] **Pick and wire an analytics provider** — optional visitor stats; Vercel Analytics needs no cookie banner. `[imp:2]` `[owner:me]`
+- [ ] **Upgrade to the official Maps Embed API / add a GDPR click-to-load overlay** — optional reliability + stricter cookie consent. `[imp:1]` `[owner:ai]`
 
 ---
 
