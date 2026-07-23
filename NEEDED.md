@@ -108,3 +108,12 @@ If you want visitor stats, the lightweight options are Vercel Analytics (one
 package, no cookie banner needed) or Plausible (~9 €/mo, EU-hosted). Google
 Analytics 4 is free but requires a cookie consent banner under EU rules.
 Tell me which one and I'll wire it.
+
+## Developer tooling
+
+- [ ] **Install and initialize RTK (`rtk-ai/rtk`)** — RTK could not be set up from the Claude Code web session because its GitHub download host is outside the session's network allowlist (`github.com/rtk-ai/rtk` and its release binaries return HTTP 403). Set it up locally at home with the commands below, then enable it for this repository following `rtk --help` / the RTK docs (the exact per-repo command isn't documented here because the tool wouldn't install in the sandbox). `[imp:2]` `[owner:me]`
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+rtk init --global
+```
