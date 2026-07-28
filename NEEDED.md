@@ -15,6 +15,8 @@ Full how-to is in the numbered sections below.
 - [ ] **Send client/reference logos + 2–3 real testimonials** — the trust sections are built-ready but need real material to ship. `[imp:3]` `[owner:me]` `[time:1h]` `[kind:content]`
 - [ ] **Verify the Google Maps pin lands on the right address** — a wrong pin sends customers to the wrong place. `[imp:2]` `[owner:me]` `[time:1h]` `[kind:deploy]`
 - [ ] **Confirm the opening-hours wording and hero-photo selection** — avoids overpromising hours and locks the final image set. `[imp:2]` `[owner:me]` `[time:1h]` `[kind:content]`
+- [ ] **Confirm the cargo-transport wording still fits** — the text promises a *walking floor* semitrailer, which described the retired DAF rig; the tile now shows the Ford F-MAX. `[imp:3]` `[owner:me]` `[time:10m]` `[kind:content]`
+- [ ] **Check the fleet list is complete after the vehicle changes** — Tourino and DAF removed, Iveco Daily added, stat now reads 6 vehicles. `[imp:2]` `[owner:me]` `[time:10m]` `[kind:content]`
 - [ ] **Review the FAQ answers in /dev** — they're derived from site facts and should read the way you'd say them. `[imp:2]` `[owner:me]` `[time:20m]` `[kind:setup]`
 - [ ] **Pick and wire an analytics provider** — optional visitor stats; Vercel Analytics needs no cookie banner. `[imp:2]` `[owner:me]` `[time:20m]` `[kind:setup]`
 - [ ] **Upgrade to the official Maps Embed API / add a GDPR click-to-load overlay** — optional reliability + stricter cookie consent. `[imp:1]` `[owner:ai]` `[time:2h]` `[kind:legal]`
@@ -86,6 +88,9 @@ company" signal for locals.
   picnic, hotel forecourt, low-res trailer shot, gray-sky closeup). The dropped
   files are still in `/public/pics/` — to restore any, add it back to the
   `heroImages` list in `src/app/_sections/Header.tsx`.
+  The depot-lineup slide (`uvodka4.jpg`) was re-cropped narrower than the others
+  because the retired DAF stood at its right edge; say the word if you'd rather
+  swap in a different photo than run a tighter crop.
 
 ## 5. Content I need from you for the last two trust sections
 
