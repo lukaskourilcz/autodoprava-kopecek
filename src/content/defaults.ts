@@ -23,7 +23,7 @@ const cs: SiteTexts = {
     ],
     stats: [
       { value: "2012", label: "Na trhu od roku" },
-      { value: "7", label: "Vozidel ve vozovém parku" },
+      { value: "6", label: "Vozidel ve vozovém parku" },
       { value: "500 000+", label: "Přes půl milionu přepravených zákazníků" },
     ],
     reasonsTitle: "Proč si vybrat právě nás?",
@@ -245,7 +245,7 @@ const en: SiteTexts = {
     ],
     stats: [
       { value: "2012", label: "On the road since" },
-      { value: "7", label: "Vehicles in our fleet" },
+      { value: "6", label: "Vehicles in our fleet" },
       { value: "500,000+", label: "Over half a million passengers transported" },
     ],
     reasonsTitle: "Why Choose Us?",
@@ -466,7 +466,7 @@ const de: SiteTexts = {
     ],
     stats: [
       { value: "2012", label: "Auf dem Markt seit" },
-      { value: "7", label: "Fahrzeuge im Fuhrpark" },
+      { value: "6", label: "Fahrzeuge im Fuhrpark" },
       { value: "500.000+", label: "Über eine halbe Million beförderte Fahrgäste" },
     ],
     reasonsTitle: "Warum uns wählen?",
@@ -783,27 +783,27 @@ const vehicles: Vehicle[] = [
     features: ["recliningSeats", "seatBelts", "airConditioning", "tv"],
   },
   {
-    id: "tourino",
+    id: "iveco-daily",
     name: {
-      cs: "Mercedes-Benz Tourino",
-      en: "Mercedes-Benz Tourino",
-      de: "Mercedes-Benz Tourino",
+      cs: "Iveco Daily",
+      en: "Iveco Daily",
+      de: "Iveco Daily",
     },
     description: {
-      cs: "Stylový menší autobus, který přináší maximální komfort až <b>pro 36 osob</b>. Ideální volba pro menší skupiny.",
-      en: "A stylish smaller bus that offers maximum comfort for up to <b>36 people</b>. Ideal choice for smaller groups.",
-      de: "Ein stilvoller, kleinerer Reisebus, der maximalen Komfort für bis zu <b>36 Personen</b> bietet. Perfekt für kleinere Gruppen.",
+      cs: "Stylový menší autobus, který přináší maximální komfort až <b>pro 23 osob</b>. Ideální volba pro menší skupiny.",
+      en: "A stylish smaller bus that offers maximum comfort for up to <b>23 people</b>. Ideal choice for smaller groups.",
+      de: "Ein stilvoller, kleinerer Reisebus, der maximalen Komfort für bis zu <b>23 Personen</b> bietet. Perfekt für kleinere Gruppen.",
     },
-    capacity: { cs: "36 míst", en: "36 seats", de: "36 Sitzplätze" },
-    images: ["/pics/tourino.jpg", "/pics/tourino2.jpg"],
-    features: [
-      "recliningSeats",
-      "seatBelts",
-      "airConditioning",
-      "tv",
-      "microphone",
-      "fridge",
+    capacity: { cs: "23 míst", en: "23 seats", de: "23 Sitzplätze" },
+    images: [
+      "/pics/iveco.jpg",
+      "/pics/iveco1.jpg",
+      "/pics/iveco2.jpg",
+      "/pics/iveco3.jpg",
+      "/pics/iveco5.jpg",
+      "/pics/iveco4.jpg",
     ],
+    features: ["recliningSeats", "seatBelts", "airConditioning", "microphone"],
   },
   {
     id: "karosa",
@@ -827,27 +827,14 @@ const vehicles: Vehicle[] = [
     ],
     features: ["recliningSeats", "seatBelts", "airConditioning", "fridge"],
   },
-  {
-    id: "daf",
-    name: {
-      cs: "DAF XF 510 FT",
-      en: "DAF XF 510 FT",
-      de: "DAF XF 510 FT",
-    },
-    description: {
-      cs: "Výkonný tahač s hydraulickým okruhem, schopen splnit i náročnější přepravu nákladů v těžším terénu.",
-      en: "A powerful truck with a hydraulic circuit, capable of handling even more challenging transport in rough terrain.",
-      de: "Ein leistungsstarker LKW für großvolumige und effiziente Warentransporte über lange Strecken.",
-    },
-    images: ["/pics/daf.jpg", "/pics/daf1.jpg", "/pics/daf2.jpg", "/pics/daf3.jpg"],
-    features: [],
-  },
 ];
 
 const images: SiteImages = {
   // Curated from the full uvodka set: Dolomites coach, depot fleet lineup,
   // Adriatic-coast van, winter mountain pass, coach + truck pair. The
   // vehicles sit right-of-center in all of these, hence the focus values.
+  // uvodka4 is cropped narrower than the rest — the red DAF stood at its right
+  // edge and the company no longer runs that truck.
   hero: [
     { src: "/pics/uvodka.jpg", focus: "right" },
     { src: "/pics/uvodka4.jpg", focus: "right" },
@@ -858,7 +845,7 @@ const images: SiteImages = {
   services: {
     schoolTransport: "/pics/uvodka2.jpg",
     airportTransfers: "/pics/man.jpg",
-    cargoTransport: "/pics/daf.jpg",
+    cargoTransport: "/pics/fmax.jpg",
   },
   about: ["/pics/tourismo2.jpg", "/pics/mercedes1.jpg"],
 };
