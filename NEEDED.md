@@ -15,7 +15,7 @@ Full how-to is in the numbered sections below.
 - [ ] **Send client/reference logos + 2–3 real testimonials** — the trust sections are built-ready but need real material to ship. `[imp:3]` `[owner:me]` `[time:1h]` `[kind:content]`
 - [ ] **Verify the Google Maps pin lands on the right address** — a wrong pin sends customers to the wrong place. `[imp:2]` `[owner:me]` `[time:1h]` `[kind:deploy]`
 - [ ] **Confirm the opening-hours wording and hero-photo selection** — avoids overpromising hours and locks the final image set. `[imp:2]` `[owner:me]` `[time:1h]` `[kind:content]`
-- [ ] **Confirm the cargo-transport wording still fits** — the text promises a *walking floor* semitrailer, which described the retired DAF rig; the tile now shows the Ford F-MAX. `[imp:3]` `[owner:me]` `[time:10m]` `[kind:content]`
+- [ ] **Decide whether the Ford F-MAX gets a fleet card** — the fleet section is now all-passenger, but the site still sells cargo transport; the F-MAX (7AP 5428) does that work and has photos in the repo but has never had a card. `[imp:3]` `[owner:me]` `[time:10m]` `[kind:content]`
 - [ ] **Check the fleet list is complete after the vehicle changes** — Tourino and DAF removed, Iveco Daily added, stat now reads 6 vehicles. `[imp:2]` `[owner:me]` `[time:10m]` `[kind:content]`
 - [ ] **Review the FAQ answers in /dev** — they're derived from site facts and should read the way you'd say them. `[imp:2]` `[owner:me]` `[time:20m]` `[kind:setup]`
 - [ ] **Pick and wire an analytics provider** — optional visitor stats; Vercel Analytics needs no cookie banner. `[imp:2]` `[owner:me]` `[time:20m]` `[kind:setup]`
