@@ -1,9 +1,11 @@
 import type { SiteContent, SiteImages, SiteTexts, Vehicle } from "./types";
 
-// The canonical content shipped with the site. This is what every visitor
-// sees unless the owner has saved overrides via the /dev editor (which live in
-// the browser's localStorage). Exporting from /dev produces a JSON file with
-// the same shape, so edits can be copied back here to make them permanent.
+// The canonical content shipped with the site — this file is the only thing
+// visitors ever see. The /dev editor saves to the owner's own localStorage, so
+// its edits are a private preview, never publishing; a saved preview is also
+// discarded as soon as a deploy changes this file (see `store.ts`). Exporting
+// from /dev produces a JSON file with the same shape, so edits are published by
+// copying them back in here and deploying.
 
 const cs: SiteTexts = {
   home: {

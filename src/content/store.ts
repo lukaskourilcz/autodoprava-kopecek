@@ -36,12 +36,41 @@ function normalizeHeroImages(list: unknown): HeroImage[] {
 //   which re-renders with the owner's content.
 // - The /dev editor writes through the same store, so edits show up live on
 //   every open tab.
+//
+// Saved edits are a per-browser preview, not publishing — only the content in
+// `defaults.ts` reaches visitors. So a saved snapshot is tied to the deploy it
+// was made against (see `shippedFingerprint`): the moment a deploy changes the
+// shipped content, that snapshot is dropped. Without this, a snapshot saved
+// once would mask every later content change in the owner's own browser — the
+// site would look un-deployed to them while everyone else saw the new version,
+// and any photo the deploy removed would render as a broken image.
 
 const STORAGE_KEY = "autodoprava:content";
 
+/** localStorage payload: the owner's copy plus the deploy it belongs to. */
+type StoredSnapshot = { version: string; content: SiteContent };
+
 let current: SiteContent = defaultContent;
 let hydrated = false;
+let fingerprint: string | null = null;
 const listeners = new Set<() => void>();
+
+/**
+ * Cheap fingerprint (FNV-1a) of the content shipped with this deploy. Computed
+ * lazily and only when a saved snapshot actually exists, so visitors who have
+ * never opened /dev never pay for it.
+ */
+function shippedFingerprint(): string {
+  if (fingerprint !== null) return fingerprint;
+  const json = JSON.stringify(defaultContent);
+  let hash = 0x811c9dc5;
+  for (let index = 0; index < json.length; index++) {
+    hash ^= json.charCodeAt(index);
+    hash = Math.imul(hash, 0x01000193);
+  }
+  fingerprint = (hash >>> 0).toString(36);
+  return fingerprint;
+}
 
 function notify() {
   for (const listener of listeners) listener();
@@ -85,7 +114,14 @@ function fromSaved(saved: unknown): SiteContent {
 function readStorage(): SiteContent {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? fromSaved(JSON.parse(raw)) : defaultContent;
+    if (!raw) return defaultContent;
+    const saved = JSON.parse(raw) as Partial<StoredSnapshot> | null;
+    // No version = saved before this check existed, so it predates this deploy.
+    if (!saved || saved.version !== shippedFingerprint()) {
+      localStorage.removeItem(STORAGE_KEY);
+      return defaultContent;
+    }
+    return fromSaved(saved.content);
   } catch {
     return defaultContent;
   }
@@ -124,12 +160,16 @@ export function useSiteContent(): SiteContent {
  * updated so the live preview reflects the change; if writing to localStorage
  * fails (e.g. quota exceeded by large uploaded photos) the returned error lets
  * the editor warn the owner that the change won't survive a reload.
+ *
+ * The snapshot is stamped with the current deploy's fingerprint, so it stops
+ * being used as soon as a deploy ships different content.
  */
 export function saveContent(next: SiteContent): { ok: boolean; error?: string } {
   current = next;
   notify();
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    const snapshot: StoredSnapshot = { version: shippedFingerprint(), content: next };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
     return { ok: true };
   } catch {
     return {

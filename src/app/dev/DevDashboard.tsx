@@ -134,11 +134,13 @@ export function DevDashboard({ onLock }: { onLock: () => void }) {
         <p className="mb-2 text-sm text-gray-600">
           {TABS.find((item) => item.value === tab)?.description}
         </p>
-        <p className="mb-6 text-sm text-gray-500">
-          Změny se po uložení projeví na webu v tomto prohlížeči. Tlačítkem
-          „Export“ stáhnete soubor, který lze uložit do kódu webu a zveřejnit tak
-          změny pro všechny návštěvníky.
-        </p>
+        <div className="mb-6 rounded-md bg-yellow-50 px-4 py-3 text-sm text-yellow-900 ring-1 ring-yellow-200">
+          <strong className="font-semibold">„Uložit“ nezveřejňuje změny.</strong>{" "}
+          Uložený obsah je náhled jen v tomto prohlížeči — návštěvníci ho neuvidí.
+          Zveřejníte ho tak, že kliknete na „Export“ a stažený soubor předáte ke
+          vložení do kódu webu. Jakmile se nasadí nová verze webu, náhled v
+          prohlížeči se sám zahodí, aby vám web neukazoval starý obsah.
+        </div>
         {tab === "texts" && <TextsEditor />}
         {tab === "vehicles" && <VehiclesEditor />}
         {tab === "images" && <SiteImagesEditor />}
