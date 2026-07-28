@@ -800,6 +800,7 @@ const vehicles: Vehicle[] = [
       "/pics/iveco1.jpg",
       "/pics/iveco2.jpg",
       "/pics/iveco3.jpg",
+      "/pics/iveco5.jpg",
       "/pics/iveco4.jpg",
     ],
     features: ["recliningSeats", "seatBelts", "airConditioning", "microphone"],
