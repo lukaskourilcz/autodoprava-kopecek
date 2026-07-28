@@ -11,15 +11,9 @@ Each task has a one-line "why" and an importance score `[imp:N]` (5 = highest).
 Full how-to is in the numbered sections below.
 
 - [ ] **Create and verify a Google Business Profile** — the single strongest "established company" signal for locals searching Maps. `[imp:4]` `[owner:me]` `[time:1h]` `[kind:deploy]`
-- [ ] **Set up Google Search Console + submit the sitemap** — monitors indexing and search performance for the site. `[imp:3]` `[owner:me]` `[time:1h]` `[kind:deploy]`
-- [ ] **Send client/reference logos + 2–3 real testimonials** — the trust sections are built-ready but need real material to ship. `[imp:3]` `[owner:me]` `[time:1h]` `[kind:content]`
-- [ ] **Verify the Google Maps pin lands on the right address** — a wrong pin sends customers to the wrong place. `[imp:2]` `[owner:me]` `[time:1h]` `[kind:deploy]`
-- [ ] **Confirm the opening-hours wording and hero-photo selection** — avoids overpromising hours and locks the final image set. `[imp:2]` `[owner:me]` `[time:1h]` `[kind:content]`
 - [ ] **Decide whether the Ford F-MAX gets a fleet card** — the fleet section is now all-passenger, but the site still sells cargo transport; the F-MAX (7AP 5428) does that work and has photos in the repo but has never had a card. `[imp:3]` `[owner:me]` `[time:10m]` `[kind:content]`
 - [ ] **Delete two stale branches on GitHub** — `vercel/react-server-components-cve-vu-kvdv9b` (obsolete, its fix is superseded on main) and `claude/iveco-daily-vehicle-update-bh38pz` (merged). Agent sessions can't delete remote branches — the git proxy refuses ref deletions — so this one has to be a click in the GitHub UI. `[imp:1]` `[owner:me]` `[time:5m]` `[kind:setup]`
 - [ ] **Check the fleet list is complete after the vehicle changes** — Tourino and DAF removed, Iveco Daily added, stat now reads 6 vehicles. `[imp:2]` `[owner:me]` `[time:10m]` `[kind:content]`
-- [ ] **Review the FAQ answers in /dev** — they're derived from site facts and should read the way you'd say them. `[imp:2]` `[owner:me]` `[time:20m]` `[kind:setup]`
-- [ ] **Pick and wire an analytics provider** — optional visitor stats; Vercel Analytics needs no cookie banner. `[imp:2]` `[owner:me]` `[time:20m]` `[kind:setup]`
 - [ ] **Upgrade to the official Maps Embed API / add a GDPR click-to-load overlay** — optional reliability + stricter cookie consent. `[imp:1]` `[owner:ai]` `[time:2h]` `[kind:legal]`
 
 ---
@@ -118,7 +112,6 @@ Tell me which one and I'll wire it.
 ## Developer tooling
 
 - [ ] **Install and initialize RTK (`rtk-ai/rtk`)** — RTK could not be set up from the Claude Code web session because its GitHub download host is outside the session's network allowlist (`github.com/rtk-ai/rtk` and its release binaries return HTTP 403). Set it up locally at home with the commands below, then enable it for this repository following `rtk --help` / the RTK docs (the exact per-repo command isn't documented here because the tool wouldn't install in the sandbox). `[imp:2]` `[owner:me]` `[time:20m]` `[kind:setup]`
-- [ ] **Enable Vercel Web Analytics for this project** — turn on Web Analytics in the Vercel project so OwnDashboard's project Overview shows visitors and page views (it reads them via the Vercel API, matched by this repository). `[imp:2]` `[owner:me]` `[time:15m]` `[kind:setup]`
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
