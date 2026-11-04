@@ -24,7 +24,7 @@ export default function Contact() {
   )}&z=12&hl=${locale}&output=embed`;
   const year = new Date().getFullYear();
 
-  const footerLinks = (["about", "services", "fleet", "contact"] as const).map((hash) => ({
+  const footerLinks = (["about", "services", "fleet", "careers", "contact"] as const).map((hash) => ({
     hash,
     label: texts[hash].title,
   }));

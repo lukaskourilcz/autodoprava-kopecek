@@ -14,6 +14,7 @@ Full how-to is in the numbered sections below.
 - [ ] **Decide whether the Ford F-MAX gets a fleet card** — the fleet section is now all-passenger, but the site still sells cargo transport; the F-MAX (7AP 5428) does that work and has photos in the repo but has never had a card. `[imp:3]` `[owner:me]` `[time:10m]` `[kind:content]`
 - [ ] **Delete two stale branches on GitHub** — `vercel/react-server-components-cve-vu-kvdv9b` (obsolete, its fix is superseded on main) and `claude/iveco-daily-vehicle-update-bh38pz` (merged). Agent sessions can't delete remote branches — the git proxy refuses ref deletions — so this one has to be a click in the GitHub UI. `[imp:1]` `[owner:me]` `[time:5m]` `[kind:setup]`
 - [ ] **Check the fleet list is complete after the vehicle changes** — Tourino and DAF removed, Iveco Daily added, stat now reads 6 vehicles. `[imp:2]` `[owner:me]` `[time:10m]` `[kind:content]`
+- [ ] **Take the driver ad down once the position is filled** — the Kariéra section (`src/app/_sections/Careers.tsx`, texts under `careers` in `defaults.ts`) went live 2026-11-04; remove `<Careers />` from `LocalePage.tsx` and `"careers"` from the navbar/footer link lists, or ask an agent to. `[imp:2]` `[owner:me]` `[time:10m]` `[kind:content]`
 - [ ] **Upgrade to the official Maps Embed API / add a GDPR click-to-load overlay** — optional reliability + stricter cookie consent. `[imp:1]` `[owner:ai]` `[time:2h]` `[kind:legal]`
 
 ---
