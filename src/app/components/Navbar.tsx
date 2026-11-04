@@ -12,7 +12,7 @@ import { useEscapeKey } from "@/hooks/useEscapeKey";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useContent } from "@/content/useContent";
 
-const SECTION_IDS = ["about", "services", "fleet", "contact"] as const;
+const SECTION_IDS = ["about", "services", "fleet", "careers", "contact"] as const;
 
 export default function Navbar() {
   const router = useRouter();
@@ -74,7 +74,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map(({ hash, label }) => {
             const isActive = activeSection === hash;
             return (
@@ -82,7 +82,7 @@ export default function Navbar() {
                 <Link
                   href={`/${locale}#${hash}`}
                   aria-current={isActive ? "true" : undefined}
-                  className={`relative block px-3 h-10 leading-10 text-sm font-medium rounded-md transition-colors focus-ring ${
+                  className={`relative block whitespace-nowrap px-3 h-10 leading-10 text-sm font-medium rounded-md transition-colors focus-ring ${
                     isActive
                       ? "text-brand-light"
                       : "text-gray-100 hover:text-brand-light hover:bg-white/5"
@@ -104,12 +104,12 @@ export default function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2">
           <a
             href={telHref(texts.contact.phone)}
-            className="hidden md:inline-flex items-center gap-1.5 h-9 px-3.5 rounded-md bg-brand text-ink text-sm font-semibold hover:bg-brand-light transition-colors focus-ring"
+            className="hidden xl:inline-flex items-center gap-1.5 h-9 px-3.5 rounded-md bg-brand text-ink text-sm font-semibold hover:bg-brand-light transition-colors focus-ring"
           >
             <Phone size={15} aria-hidden="true" />
             {texts.contact.phone}
           </a>
-          <div className="relative hidden md:block" ref={languageMenuRef}>
+          <div className="relative hidden lg:block" ref={languageMenuRef}>
             <button
               type="button"
               aria-label={`${texts.a11y.changeLanguage} (${activeLanguage.label})`}
@@ -172,7 +172,7 @@ export default function Navbar() {
             aria-label={mobileMenuOpen ? texts.a11y.closeMenu : texts.a11y.openMenu}
             aria-expanded={mobileMenuOpen}
             aria-controls="primary-menu"
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-white hover:bg-white/5 transition-colors focus-ring"
+            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-white hover:bg-white/5 transition-colors focus-ring"
             onClick={() => setMobileMenuOpen((open) => !open)}
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -186,7 +186,7 @@ export default function Navbar() {
         would otherwise become the containing block of this fixed overlay. */}
     <div
       id="primary-menu"
-      className={`md:hidden fixed inset-x-0 top-[var(--nav-height)] bottom-0 z-40 bg-ink transition-all duration-300 ease-out ${
+      className={`lg:hidden fixed inset-x-0 top-[var(--nav-height)] bottom-0 z-40 bg-ink transition-all duration-300 ease-out ${
         mobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
       }`}
     >
