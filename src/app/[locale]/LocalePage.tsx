@@ -2,6 +2,7 @@ import Header from "../_sections/Header";
 import About from "../_sections/About";
 import Services from "../_sections/Services";
 import Fleet from "../_sections/Fleet";
+import Careers from "../_sections/Careers";
 import Faq from "../_sections/Faq";
 import CtaBand from "../_sections/CtaBand";
 import Contact from "../_sections/Contact";
@@ -15,6 +16,7 @@ export default function LocalePage() {
       <About />
       <Services />
       <Fleet />
+      <Careers />
       <Faq />
       <CtaBand />
       <Contact />
