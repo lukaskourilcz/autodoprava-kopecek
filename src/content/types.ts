@@ -90,6 +90,33 @@ export type SiteTexts = {
     /** Label shown for each equipment badge, e.g. `airConditioning` → "Air Conditioning". */
     features: Record<FeatureKey, string>;
   };
+  /** The "Careers" section with the current job advert. */
+  careers: {
+    /** Navigation label and section anchor title, e.g. "Kariéra". */
+    title: string;
+    /** Small uppercase label above the position name. */
+    kicker: string;
+    /** The advertised position, shown as the big heading. */
+    position: string;
+    /** Short chips under the heading, e.g. "Brigáda", "Jednodenní i vícedenní jízdy". */
+    tags: string[];
+    paragraphs: string[];
+    workTitle: string;
+    /** Kinds of trips the driver will do. */
+    work: string[];
+    fleetTitle: string;
+    /** Bus brands in the fleet, e.g. "Mercedes", "Setra". */
+    fleetBrands: string[];
+    requirementsTitle: string;
+    requirements: string[];
+    closingText: string;
+    /** Label above the phone button, e.g. "Více info na telefonu". */
+    phoneLabel: string;
+    /** Number applicants should call. */
+    phone: string;
+    /** Contact person under the call button. */
+    signature: { name: string; role: string };
+  };
   contact: {
     title: string;
     description: string;
