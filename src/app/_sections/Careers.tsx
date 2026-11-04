@@ -47,7 +47,7 @@ export default function Careers() {
   return (
     <section
       id="careers"
-      className="section relative overflow-hidden bg-ink-deep text-white py-20 sm:py-28"
+      className="section relative overflow-hidden bg-ink-deep text-white py-20 sm:py-28 lg:py-20"
     >
       <script
         type="application/ld+json"
@@ -65,7 +65,7 @@ export default function Careers() {
       />
 
       <div className="container-site relative">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16 items-start">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-16 items-start">
           <div>
             <Reveal>
               <SectionHeading dark kicker={careers.kicker} title={careers.position} />
@@ -127,12 +127,12 @@ export default function Careers() {
 
           <Reveal>
             <article className="overflow-hidden rounded-2xl bg-white text-ink shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:sticky lg:top-[calc(var(--nav-height)+1.5rem)]">
-              <div className="relative aspect-[16/9]">
+              <div className="relative aspect-[16/9] lg:aspect-[21/8]">
                 <Image
                   src="/pics/uvodka7.jpg"
                   alt=""
                   fill
-                  sizes="(max-width: 1024px) 100vw, 400px"
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
@@ -142,29 +142,29 @@ export default function Careers() {
                 </p>
               </div>
 
-              <div className="p-6 sm:p-8">
-                <h3 className="font-display text-xl font-bold">{careers.requirementsTitle}</h3>
-                <ul className="mt-5 space-y-3.5">
+              <div className="p-6 sm:p-8 lg:px-7 lg:py-6">
+                <h3 className="font-display text-xl lg:text-lg font-bold">{careers.requirementsTitle}</h3>
+                <ul className="mt-5 space-y-3.5 lg:mt-4 lg:space-y-2.5">
                   {careers.requirements.map((requirement) => (
                     <li key={requirement} className="flex items-start gap-3">
                       <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand">
                         <Check className="h-3.5 w-3.5 text-ink" strokeWidth={3} aria-hidden="true" />
                       </span>
-                      <span className="text-gray-700 leading-snug">{requirement}</span>
+                      <span className="text-gray-700 leading-snug lg:text-[15px]">{requirement}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-7 border-t border-gray-200 pt-6">
-                  <p className="font-medium text-ink">{careers.closingText}</p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">
+                <div className="mt-7 border-t border-gray-200 pt-6 lg:mt-5 lg:pt-5">
+                  <p className="font-medium text-ink lg:text-[15px]">{careers.closingText}</p>
+                  <p className="mt-4 lg:mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">
                     {careers.phoneLabel}
                   </p>
-                  <Button href={telHref(careers.phone)} className="mt-2 w-full text-lg">
+                  <Button href={telHref(careers.phone)} className="mt-2 w-full text-lg lg:text-base">
                     <Phone size={18} aria-hidden="true" />
                     {careers.phone}
                   </Button>
-                  <div className="mt-6 flex items-center gap-3">
+                  <div className="mt-6 lg:mt-4 flex items-center gap-3">
                     <span className="block h-0.5 w-8 bg-brand" aria-hidden="true" />
                     <p className="text-sm">
                       <span className="font-display font-semibold text-ink">
